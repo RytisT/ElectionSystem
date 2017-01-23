@@ -3,11 +3,16 @@
  */
 package lt.itakademija.database.models;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -29,6 +34,12 @@ public class Parties {
 	@NotNull
 	@Length(min = 1, max = 50)
 	private String title;
+	
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "PARTY_ID")
+	private List<Candidates> candidates;
+	
 
 	public Parties(Integer id, String title) {
 		this.id = id;

@@ -4,7 +4,6 @@
 package lt.itakademija.database.models;
 
 import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -52,6 +51,8 @@ public class Candidates {
 	@Column(name = "description")
 	@Length(min = 0, max = 255)
 	private String description;
+	
+		
 	
 	public Candidates(Integer id, Integer constituency_id,Integer party_id, String name, String last_name, Date date_of_birth, String description) {
 		this.id = id;

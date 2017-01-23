@@ -3,11 +3,13 @@
  */
 package lt.itakademija.database.models;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -39,6 +41,11 @@ public class Districts {
 
 	@Column(name = "address")
 	private String address;
+	
+	
+	@OneToOne(cascade = CascadeType.ALL)
+    private District_Representatives district_representatives;
+	
 	
 	public Districts(Integer id, Integer constituency_id, String title, Long number_of_voters, String address) {
 		this.id = id;
