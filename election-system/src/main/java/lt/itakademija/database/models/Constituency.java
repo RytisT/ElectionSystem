@@ -38,23 +38,14 @@ public class Constituency {
 	@Length(min = 1, max = 30)
 	private String title;
 	
-	
-	
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "CONSTITUENCY_ID")
-	private List<Districts> districts;
-	
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "CONSTITUENCY_ID")
-	private List<Candidates> candidates;
-	
-	
-	
+		
 
-	public Constituency(Integer id, String title, Date deletedTime) {
-		this.id = id;
-		this.title = title;
-	}
+//	public Constituency(Integer id, String title) {
+//		this.id = id;
+//		this.title = title;
+//	}
+
+	
 
 	public Integer getId() {
 		return id;
@@ -70,6 +61,32 @@ public class Constituency {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "CONSTITUENCY_ID")
+	private List<Districts> districts;
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "CONSTITUENCY_ID")
+	private List<Candidates> candidates;
+
+
+
+	public List<Districts> getDistricts() {
+		return districts;
+	}
+
+	public void setDistricts(List<Districts> districts) {
+		this.districts = districts;
+	}
+
+	public List<Candidates> getCandidates() {
+		return candidates;
+	}
+
+	public void setCandidates(List<Candidates> candidates) {
+		this.candidates = candidates;
 	}
 
 
