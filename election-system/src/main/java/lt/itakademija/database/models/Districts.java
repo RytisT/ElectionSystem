@@ -16,21 +16,20 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.validator.constraints.Length;
 
 /**
- * @author CodeCamp
- * 2017
+ * @author CodeCamp 2017
  */
 @Entity
 @Table(name = "Districts")
 public class Districts {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
 	private Integer id;
-	
+
 	@Column(name = "constituency_id")
 	private Integer constituency_id;
-	
+
 	@Column(name = "title")
 	@NotNull
 	@Length(min = 1, max = 50)
@@ -41,19 +40,18 @@ public class Districts {
 
 	@Column(name = "address")
 	private String address;
-	
-	
+
 	@OneToOne(cascade = CascadeType.ALL)
-    private District_Representatives district_representatives;
-	
-	
-	public Districts(Integer id, Integer constituency_id, String title, Long number_of_voters, String address) {
-		this.id = id;
-		this.constituency_id = constituency_id;
-		this.title = title;
-		this.number_of_voters = number_of_voters;
-		this.address = address;
-	}
+	private District_Representatives district_representatives;
+
+	// public Districts(Integer id, Integer constituency_id, String title, Long
+	// number_of_voters, String address) {
+	// this.id = id;
+	// this.constituency_id = constituency_id;
+	// this.title = title;
+	// this.number_of_voters = number_of_voters;
+	// this.address = address;
+	// }
 
 	public Integer getId() {
 		return id;
@@ -93,6 +91,14 @@ public class Districts {
 
 	public void setAddress(String address) {
 		this.address = address;
+	}
+
+	public District_Representatives getDistrict_representatives() {
+		return district_representatives;
+	}
+
+	public void setDistrict_representatives(District_Representatives district_representatives) {
+		this.district_representatives = district_representatives;
 	}
 
 }

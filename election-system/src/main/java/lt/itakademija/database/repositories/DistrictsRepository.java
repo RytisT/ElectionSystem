@@ -14,29 +14,25 @@ import org.springframework.stereotype.Repository;
 import lt.itakademija.database.models.Districts;
 
 /**
- * @author CodeCamp
- * 2017
+ * @author CodeCamp 2017
  */
 @Repository
 public class DistrictsRepository {
-	
-	private static final String FIND_ALL = "SELECT d from Districts d";
-	
+
 	@Autowired
 	private EntityManager entityManager;
-	
-	@SuppressWarnings("unchecked")
-	public List<Districts> findAllDistricts() {
-		return entityManager.createQuery(FIND_ALL).getResultList();
+
+	public List<Districts> findAll() {
+		return entityManager.createQuery("SELECT d from Districts d").getResultList();
 	}
 
 	@Transactional
-	public Districts saveOrUpdate(Districts districts) {
-		if (districts.getId() == null) {
-			entityManager.persist(districts);
-			return districts;
+	public Districts saveOrUpdate(Districts d) {
+		if (d.getId() == null) {
+			entityManager.persist(d);
+			return d;
 		} else {
-			Districts merged = entityManager.merge(districts);
+			Districts merged = entityManager.merge(d);
 			entityManager.persist(merged);
 			return merged;
 		}

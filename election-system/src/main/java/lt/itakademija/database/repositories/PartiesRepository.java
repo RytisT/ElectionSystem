@@ -14,29 +14,25 @@ import org.springframework.stereotype.Repository;
 import lt.itakademija.database.models.Parties;
 
 /**
- * @author CodeCamp
- * 2017
+ * @author CodeCamp 2017
  */
 @Repository
 public class PartiesRepository {
-	
-private static final String FIND_ALL = "SELECT p from Parties p";
-	
+
 	@Autowired
 	private EntityManager entityManager;
 	
-	@SuppressWarnings("unchecked")
-	public List<Parties> findAllParties() {
-		return entityManager.createQuery(FIND_ALL).getResultList();
+	public List<Parties> findAll() {
+		return entityManager.createQuery("SELECT p from Parties p").getResultList();
 	}
 
 	@Transactional
-	public Parties saveOrUpdate(Parties parties) {
-		if (parties.getId() == null) {
-			entityManager.persist(parties);
-			return parties;
+	public Parties saveOrUpdate(Parties p) {
+		if (p.getId() == null) {
+			entityManager.persist(p);
+			return p;
 		} else {
-			Parties merged = entityManager.merge(parties);
+			Parties merged = entityManager.merge(p);
 			entityManager.persist(merged);
 			return merged;
 		}

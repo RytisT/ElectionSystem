@@ -41,10 +41,10 @@ public class Parties {
 	private List<Candidates> candidates;
 	
 
-	public Parties(Integer id, String title) {
-		this.id = id;
-		this.title = title;
-	}
+//	public Parties(Integer id, String title) {
+//		this.id = id;
+//		this.title = title;
+//	}
 
 	public Integer getId() {
 		return id;
@@ -60,6 +60,14 @@ public class Parties {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}
+
+	public List<Candidates> getCandidates() {
+		return candidates;
+	}
+
+	public void setCandidates(List<Candidates> candidates) {
+		this.candidates = candidates;
 	}
 	
 	

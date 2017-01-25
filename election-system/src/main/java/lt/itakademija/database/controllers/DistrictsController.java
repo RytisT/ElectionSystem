@@ -3,37 +3,36 @@
  */
 package lt.itakademija.database.controllers;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import lt.itakademija.database.models.Districts;
-import lt.itakademija.database.repositories.DistrictsRepository;
+import lt.itakademija.database.services.DistrictsService;
 
 /**
- * @author CodeCamp
- * 2017
+ * @author CodeCamp 2017
  */
 @RestController
 @CrossOrigin
 public class DistrictsController {
-	
+
 	@Autowired
-	private DistrictsRepository districtsRepository;
-	
-	@RequestMapping(value = "/api/districts", method = RequestMethod.GET)
-	public List<Districts> findAllDistricts() {
-		return districtsRepository.findAllDistricts();
+	private DistrictsService service;
+
+	// postman
+	// localhost:8080/api/districts
+	@RequestMapping(value = "/api/districts")
+	public Iterable<Districts> districts() {
+		return service.findAll();
 	}
 
-	@RequestMapping(value = "/api/districts", method = RequestMethod.POST)
-	public Districts createOrUpdateDistricts(@RequestBody Districts districts) {
-		return districtsRepository.saveOrUpdate(districts);
+	@PostMapping("/api/districts")
+	public Districts createOrUpdateDistricts(@RequestBody Districts d) {
+		return service.saveOrUpdate(d);
 	}
 
 }

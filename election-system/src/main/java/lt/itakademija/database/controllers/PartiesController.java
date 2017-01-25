@@ -3,37 +3,36 @@
  */
 package lt.itakademija.database.controllers;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import lt.itakademija.database.models.Parties;
-import lt.itakademija.database.repositories.PartiesRepository;
+import lt.itakademija.database.services.PartiesService;
 
 /**
- * @author CodeCamp
- * 2017
+ * @author CodeCamp 2017
  */
 @RestController
 @CrossOrigin
 public class PartiesController {
-	
+
 	@Autowired
-	private PartiesRepository partiesRepository;
-	
-	@RequestMapping(value = "/api/parties", method = RequestMethod.GET)
-	public List<Parties> findAllParties() {
-		return partiesRepository.findAllParties();
+	private PartiesService service;
+
+	// postman
+	// localhost:8080/api/parties
+	@RequestMapping(value = "/api/parties")
+	public Iterable<Parties> parties() {
+		return service.findAll();
 	}
 
-	@RequestMapping(value = "/api/parties", method = RequestMethod.POST)
-	public Parties createOrUpdateParties(@RequestBody Parties parties) {
-		return partiesRepository.saveOrUpdate(parties);
+	@PostMapping("/api/parties")
+	public Parties createOrUpdateParties(@RequestBody Parties p) {
+		return service.saveOrUpdate(p);
 	}
 
 }
