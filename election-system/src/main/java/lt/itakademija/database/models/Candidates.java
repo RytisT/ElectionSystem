@@ -45,7 +45,6 @@ public class Candidates {
 	
 	@Column(name = "date_of_birth")
 	@NotNull
-	@Length(min = 1, max = 10)
 	private Date date_of_birth;
 	
 	@Column(name = "description")

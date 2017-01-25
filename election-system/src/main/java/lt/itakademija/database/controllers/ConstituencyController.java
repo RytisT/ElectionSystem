@@ -25,15 +25,15 @@ public class ConstituencyController {
 	@Autowired
 	private ConstituencyService service;
 
-	// mappingai nuorodos postamana Pvz:
+	// postman
 	// localhost:8080/api/constituencies
 	@RequestMapping(value = "/api/constituencies")
 	public Iterable<Constituency> constituencies() {
 		return service.findAll();
 	}
 
-	// mappingai nuorodos postamana Pvz:
-	// localhost:8080/api/products?title=samsung
+	// postman
+	// localhost:8080/api/constituencies?title=LT
 	@GetMapping(value = "/api/constituencies", params = { "title" })
 	public Iterable<Constituency> findConstituenciesByTitle(@RequestParam String title) {
 		return service.findByTitle(title);

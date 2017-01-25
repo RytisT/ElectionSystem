@@ -14,29 +14,25 @@ import org.springframework.stereotype.Repository;
 import lt.itakademija.database.models.District_Representatives;
 
 /**
- * @author CodeCamp
- * 2017
+ * @author CodeCamp 2017
  */
 @Repository
 public class District_Representatives_Repository {
-	
-private static final String FIND_ALL = "SELECT r from District_Representatives r";
-	
+
 	@Autowired
 	private EntityManager entityManager;
-	
-	@SuppressWarnings("unchecked")
-	public List<District_Representatives> findAllDistrict_Representatives() {
-		return entityManager.createQuery(FIND_ALL).getResultList();
+
+	public List<District_Representatives> findAll() {
+		return entityManager.createQuery("SELECT r from District_Representatives r").getResultList();
 	}
 
 	@Transactional
-	public District_Representatives saveOrUpdate(District_Representatives district_representatives) {
-		if (district_representatives.getId() == null) {
-			entityManager.persist(district_representatives);
-			return district_representatives;
+	public District_Representatives saveOrUpdate(District_Representatives r) {
+		if (r.getId() == null) {
+			entityManager.persist(r);
+			return r;
 		} else {
-			District_Representatives merged = entityManager.merge(district_representatives);
+			District_Representatives merged = entityManager.merge(r);
 			entityManager.persist(merged);
 			return merged;
 		}

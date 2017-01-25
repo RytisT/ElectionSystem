@@ -19,10 +19,12 @@ import lt.itakademija.database.services.CandidatesService;
 @RestController
 @CrossOrigin
 public class CandidatesController {
-	
+
 	@Autowired
 	private CandidatesService service;
-	
+
+	// postman
+	// localhost:8080/api/candidates
 	@RequestMapping(value = "/api/candidates")
 	public Iterable<Candidates> candidates() {
 		return service.findAll();
