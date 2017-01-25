@@ -14,29 +14,25 @@ import org.springframework.stereotype.Repository;
 import lt.itakademija.database.models.Candidates;
 
 /**
- * @author CodeCamp
- * 2017
+ * @author CodeCamp 2017
  */
 @Repository
 public class CandidatesRepository {
 	
-private static final String FIND_ALL = "SELECT c from Candidates c";
-	
 	@Autowired
 	private EntityManager entityManager;
 	
-	@SuppressWarnings("unchecked")
-	public List<Candidates> findAllCandidates() {
-		return entityManager.createQuery(FIND_ALL).getResultList();
+	public List<Candidates> findAll() {
+		return entityManager.createQuery("SELECT c from Candidates c").getResultList();
 	}
 
 	@Transactional
-	public Candidates saveOrUpdate(Candidates candidates) {
-		if (candidates.getId() == null) {
-			entityManager.persist(candidates);
-			return candidates;
+	public Candidates saveOrUpdate(Candidates c) {
+		if (c.getId() == null) {
+			entityManager.persist(c);
+			return c;
 		} else {
-			Candidates merged = entityManager.merge(candidates);
+			Candidates merged = entityManager.merge(c);
 			entityManager.persist(merged);
 			return merged;
 		}

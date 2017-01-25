@@ -54,15 +54,15 @@ public class Candidates {
 	
 		
 	
-	public Candidates(Integer id, Integer constituency_id,Integer party_id, String name, String last_name, Date date_of_birth, String description) {
-		this.id = id;
-		this.constituency_id = constituency_id;
-		this.party_id = party_id;
-		this.name = name;
-		this.last_name = last_name;
-		this.date_of_birth = date_of_birth;
-		this.description = description;
-	}
+//	public Candidates(Integer id, Integer constituency_id,Integer party_id, String name, String last_name, Date date_of_birth, String description) {
+//		this.id = id;
+//		this.constituency_id = constituency_id;
+//		this.party_id = party_id;
+//		this.name = name;
+//		this.last_name = last_name;
+//		this.date_of_birth = date_of_birth;
+//		this.description = description;
+//	}
 
 	public Integer getId() {
 		return id;
@@ -119,5 +119,7 @@ public class Candidates {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
+	
 
 }

@@ -14,7 +14,8 @@ import lt.itakademija.database.models.Constituency;
 import lt.itakademija.database.repositories.ConstituencyRepository;
 
 /**
- * @author CodeCamp 2017
+ * @author CodeCamp
+ * 2017
  */
 @Service
 public class ConstituencyService {

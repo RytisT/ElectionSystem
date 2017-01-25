@@ -20,7 +20,7 @@ public class ConstituencyRepository {
 
 	@Autowired
 	private EntityManager entityManager;
-	
+
 	public Constituency saveOrUpdate(Constituency c) {
 		if (c.getId() == null) {
 			entityManager.persist(c);
@@ -31,7 +31,6 @@ public class ConstituencyRepository {
 			return merged;
 		}
 	}
-
 
 	public Iterable<Constituency> findByTitle(String title) {
 
@@ -44,8 +43,6 @@ public class ConstituencyRepository {
 	public List<Constituency> findAll() {
 		return entityManager.createQuery("select c from Constituency c").getResultList();
 	}
-
-	
 
 	// public Constituency findConstituencyById(Integer id) {
 	// Constituency constituency = entityManager.find(Constituency.class, id);
