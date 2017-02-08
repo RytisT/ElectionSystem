@@ -11,7 +11,8 @@ var MainPageComponent = React.createClass( {
                     <ul>
                         <li><a>Rinkimų apylinkių rezultatai</a></li>
                         <li><a>Rinkimų apygardų rezultatai</a></li>
-                        <li><a>Daugiamandatė rinkimų apygardos rezultatai</a></li>
+                        <li><a>Vienmandatės rinkimų apygardos rezultatai</a></li>
+                        <li><a>Daugiamandatės rinkimų apygardos rezultatai</a></li>
                         <li><a>Konsoliduoti rinkimų apygardos rezultatai</a></li>
                     </ul>
                 </div>
