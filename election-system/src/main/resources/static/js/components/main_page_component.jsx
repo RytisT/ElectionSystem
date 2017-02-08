@@ -27,6 +27,7 @@ var MainPageComponent = React.createClass( {
                         <li><a style={styles.cursor}>Vienmandatės rinkimų apygardos rezultatai</a></li>
                         <li><a style={styles.cursor}>Daugiamandatės rinkimų apygardos rezultatai</a></li>
                         <li><a style={styles.cursor}>Konsoliduoti rinkimų apygardos rezultatai</a></li>
+                        <li><a style={styles.cursor}>Kandidatai</a></li>
                     </ul>
                 </div>
             </div>
