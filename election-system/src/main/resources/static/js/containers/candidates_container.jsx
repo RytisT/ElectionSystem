@@ -17,9 +17,9 @@ var CandidatesContainer = React.createClass( {
     },
 
 
-    // Admin mygtuko paspaudimo action
-    handleAdmin() {
-        this.context.router.push( '/Admin' );
+    // Find mygtuko paspaudimo action
+    handleFind() {
+        this.context.router.push( '/FindCandidate' );
     },
 
     // Main page mygtuko paspaudimo action
@@ -30,7 +30,7 @@ var CandidatesContainer = React.createClass( {
 
 
     render: function() {
-        return <CandidatesComponent candidates={this.state.candidates} onAdminClick={this.handleAdmin} onMainPageClick={this.handleMainPage} />
+        return <CandidatesComponent candidates={this.state.candidates} onFindClick={this.handleFind} onMainPageClick={this.handleMainPage} />
     }
 });
 

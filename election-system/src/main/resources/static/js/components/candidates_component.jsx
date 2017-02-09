@@ -60,14 +60,6 @@ var CandidatesComponent = React.createClass( {
                 </div>
             </div>
         )
-//        return (
-//            <form>
-//                <h1> Candidates </h1>
-//                <button className="btn btn-success" style={styles.space} onClick={this.props.onFindClick}  >Find Candidate</button>
-//                <button className="btn btn-success" onClick={this.props.onMainPageClick}  >Main page</button>
-//
-//            </form>
-//        )
     }
 });
 
