@@ -11,6 +11,10 @@ var styles = {
     },
     cursor: {
         cursor: 'pointer'
+    },
+    line: {
+        borderBottom: '1px solid #888',
+        marginTop: '10px'
     }
 };
 
@@ -34,6 +38,7 @@ var CandidatesComponent = React.createClass( {
                 <h1> Candidates </h1>
                 <button className="btn btn-success" style={styles.space} onClick={this.props.onFindClick}  >Find Candidate</button>
                 <button className="btn btn-success" onClick={this.props.onMainPageClick}  >Main page</button>
+                <div style={styles.line} ></div>
                 <div className="panel panel-default" style={styles.marginTop}>
 
                     <div className="panel-heading">THE LIST OF CANDIDATES</div>

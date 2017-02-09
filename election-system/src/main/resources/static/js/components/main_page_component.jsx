@@ -8,6 +8,10 @@ var styles = {
   },
   cursor: {
       cursor: 'pointer'
+  },
+  line: {
+      borderBottom: '1px solid #888',
+      marginTop: '10px'
   }
 };
 
@@ -19,6 +23,7 @@ var MainPageComponent = React.createClass( {
                 <h1> Election system </h1>
                 <button className="btn btn-success" style={styles.space} onClick={this.props.onAdminClick}  >Admin</button>
                 <button className="btn btn-success" onClick={this.props.onRepresentativesClick}  >Representatives</button>
+                <div style={styles.line} ></div>
                 <div> <p style={styles.menu}> Sąrašai </p> </div>
                 <div>
                     <ul>
