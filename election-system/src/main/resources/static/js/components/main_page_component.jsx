@@ -19,7 +19,7 @@ var MainPageComponent = React.createClass( {
                 <h1> Election system </h1>
                 <button className="btn btn-success"  style={styles.space} onClick={this.props.onAdminClick}  >Admin</button>
                 <button className="btn btn-success" onClick={this.props.onRepresentativesClick}  >Representatives</button>
-                <div> <p style={styles.results}> Rezultatai </p> </div>
+                <div> <p style={styles.results}> Sąrašai </p> </div>
                 <div>
                     <ul>
                         <li><a style={styles.cursor}>Rinkimų apylinkių rezultatai</a></li>
@@ -28,6 +28,7 @@ var MainPageComponent = React.createClass( {
                         <li><a style={styles.cursor}>Daugiamandatės rinkimų apygardos rezultatai</a></li>
                         <li><a style={styles.cursor}>Konsoliduoti rinkimų apygardos rezultatai</a></li>
                         <li><a style={styles.cursor}>Kandidatai</a></li>
+                        <li><a style={styles.cursor}>Partijos</a></li>
                     </ul>
                 </div>
             </div>
