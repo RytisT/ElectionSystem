@@ -12,15 +12,10 @@ var MainPageContainer = React.createClass( {
         this.context.router.push( '/Representatives' );
     },
 
-    // Candidates nuorodos paspaudimo action
-    handleCandidates() {
-        this.context.router.push( '/Candidates' );
-    },
-
 
 
     render: function() {
-        return <MainPageComponent onAdminClick={this.handleAdmin} onRepresentativesClick={this.handleRepresentatives} onCandidatesClick={this.handleCandidates} />
+        return <MainPageComponent onAdminClick={this.handleAdmin} onRepresentativesClick={this.handleRepresentatives} />
     }
 });
 
