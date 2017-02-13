@@ -37,6 +37,12 @@ public class District_Representatives {
 	@NotNull
 	@Length(min = 1, max = 30)
 	private String last_name;
+	
+	@Column(name = "login")
+	private String login;
+	
+	@Column(name = "password")
+	private String password;
 
 	// public District_Representatives(Integer id, Integer district_id, String
 	// name, String last_name) {
@@ -76,6 +82,22 @@ public class District_Representatives {
 
 	public void setLast_name(String last_name) {
 		this.last_name = last_name;
+	}
+
+	public String getLogin() {
+		return login;
+	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 }

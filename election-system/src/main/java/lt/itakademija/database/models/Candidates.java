@@ -4,11 +4,16 @@
 package lt.itakademija.database.models;
 
 import java.util.Date;
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -51,7 +56,8 @@ public class Candidates {
 	@Length(min = 0, max = 255)
 	private String description;
 	
-		
+	@Column(name = "party_list_seat")
+	private Integer party_list_seat;	
 	
 //	public Candidates(Integer id, Integer constituency_id,Integer party_id, String name, String last_name, Date date_of_birth, String description) {
 //		this.id = id;
@@ -117,6 +123,28 @@ public class Candidates {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	public Integer getParty_list_seat() {
+		return party_list_seat;
+	}
+
+	public void setParty_list_seat(Integer party_list_seat) {
+		this.party_list_seat = party_list_seat;
+	}
+
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "CANDIDATES_ID")
+	private List<Single_Results> single_results;
+
+
+
+	public List<Single_Results> getSingle_results() {
+		return single_results;
+	}
+
+	public void setSingle_results(List<Single_Results> single_results) {
+		this.single_results = single_results;
 	}
 	
 	

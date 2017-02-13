@@ -35,10 +35,17 @@ public class Parties {
 	@Length(min = 1, max = 50)
 	private String title;
 	
-	
+	@Column(name = "PARTY_CODE") 
+	@Length(min = 1, max = 30)
+    private String Party_Code;	
+
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "PARTY_ID")
 	private List<Candidates> candidates;
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "PARTY_ID")
+	private List<Multi_Results> multi_results;
 	
 
 //	public Parties(Integer id, String title) {
@@ -60,6 +67,14 @@ public class Parties {
 
 	public void setTitle(String title) {
 		this.title = title;
+	}	
+	
+	public String getParty_Code() {
+		return Party_Code;
+	}
+
+	public void setParty_Code(String party_Code) {
+		Party_Code = party_Code;
 	}
 
 	public List<Candidates> getCandidates() {
@@ -68,6 +83,14 @@ public class Parties {
 
 	public void setCandidates(List<Candidates> candidates) {
 		this.candidates = candidates;
+	}
+
+	public List<Multi_Results> getMulti_results() {
+		return multi_results;
+	}
+
+	public void setMulti_results(List<Multi_Results> multi_results) {
+		this.multi_results = multi_results;
 	}
 	
 	

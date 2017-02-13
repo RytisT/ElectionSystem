@@ -3,12 +3,16 @@
  */
 package lt.itakademija.database.models;
 
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -40,19 +44,24 @@ public class Districts {
 
 	@Column(name = "address")
 	private String address;
+	
+	@Column(name = "VOTED_SINGLE")
+    private Integer votedSingle;
+
+    @Column(name = "VOTED_SINGLE_CORRUPT")
+    private Integer votedSingleCorrupt;
+
+    @Column(name = "VOTED_MULTI")
+    private Integer votedMulti;
+
+    @Column(name = "VOTED_MULTI_CORRUPT")
+    private Integer votedMultiCorrupt;
+    
+    
 
 	@OneToOne(cascade = CascadeType.ALL)
 	private District_Representatives district_representatives;
-
-	// public Districts(Integer id, Integer constituency_id, String title, Long
-	// number_of_voters, String address) {
-	// this.id = id;
-	// this.constituency_id = constituency_id;
-	// this.title = title;
-	// this.number_of_voters = number_of_voters;
-	// this.address = address;
-	// }
-
+	
 	public Integer getId() {
 		return id;
 	}
@@ -93,6 +102,38 @@ public class Districts {
 		this.address = address;
 	}
 
+	public Integer getVotedSingle() {
+		return votedSingle;
+	}
+
+	public void setVotedSingle(Integer votedSingle) {
+		this.votedSingle = votedSingle;
+	}
+
+	public Integer getVotedSingleCorrupt() {
+		return votedSingleCorrupt;
+	}
+
+	public void setVotedSingleCorrupt(Integer votedSingleCorrupt) {
+		this.votedSingleCorrupt = votedSingleCorrupt;
+	}
+
+	public Integer getVotedMulti() {
+		return votedMulti;
+	}
+
+	public void setVotedMulti(Integer votedMulti) {
+		this.votedMulti = votedMulti;
+	}
+
+	public Integer getVotedMultiCorrupt() {
+		return votedMultiCorrupt;
+	}
+
+	public void setVotedMultiCorrupt(Integer votedMultiCorrupt) {
+		this.votedMultiCorrupt = votedMultiCorrupt;
+	}
+
 	public District_Representatives getDistrict_representatives() {
 		return district_representatives;
 	}
@@ -100,5 +141,31 @@ public class Districts {
 	public void setDistrict_representatives(District_Representatives district_representatives) {
 		this.district_representatives = district_representatives;
 	}
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "DISTRICTS_ID")
+	private List<Single_Results> single_results;
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "DISTRICTS_ID")
+	private List<Multi_Results> multi_results;
+
+	public List<Single_Results> getSingle_results() {
+		return single_results;
+	}
+
+	public void setSingle_results(List<Single_Results> single_results) {
+		this.single_results = single_results;
+	}
+
+	public List<Multi_Results> getMulti_results() {
+		return multi_results;
+	}
+
+	public void setMulti_results(List<Multi_Results> multi_results) {
+		this.multi_results = multi_results;
+	}
+	
+	
 
 }
