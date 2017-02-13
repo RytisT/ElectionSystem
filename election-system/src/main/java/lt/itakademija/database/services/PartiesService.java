@@ -17,25 +17,27 @@ import lt.itakademija.database.repositories.PartiesRepository;
  * @author CodeCamp 2017
  */
 @Service
+@Transactional
 public class PartiesService {
 	
 	@Autowired
 	private PartiesRepository repository;
 
-	@Transactional(readOnly = true)
+
 	public List<Parties> findAll() {
-		List<Parties> all = repository.findAll();
-		return all.stream().map(p -> {
-			Parties newP = new Parties();
-			newP.setId(p.getId());
-			newP.setTitle(p.getTitle());
-			return newP;
-		}).collect(Collectors.toList());
+	    return repository.findAll();
 	}
 
-	@Transactional
 	public Parties saveOrUpdate(Parties p) {
-		return repository.saveOrUpdate(p);
+		return repository.save(p);
+	}
+	
+	public void deleteById(Integer id){
+	    repository.delete(id);
+	}
+	
+	public Parties findById(Integer id){
+	    return repository.findOne(id);
 	}
 
 }

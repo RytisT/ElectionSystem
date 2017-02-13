@@ -11,34 +11,34 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import lt.itakademija.database.models.Districts;
+import lt.itakademija.database.models.Parties;
 import lt.itakademija.database.repositories.DistrictsRepository;
 
 /**
  * @author CodeCamp 2017
  */
 @Service
+@Transactional
 public class DistrictsService {
 	
 	@Autowired
 	private DistrictsRepository repository;
 	
-	@Transactional(readOnly = true)
+	
 	public List<Districts> findAll() {
-		List<Districts> all = repository.findAll();
-		return all.stream().map(d -> {
-			Districts newD = new Districts();
-			newD.setId(d.getId());
-			newD.setConstituency_id(d.getConstituency_id());
-			newD.setTitle(d.getTitle());
-			newD.setNumber_of_voters(d.getNumber_of_voters());
-			newD.setAddress(d.getAddress());
-			return newD;
-		}).collect(Collectors.toList());
+	    return repository.findAll();
 	}
 
-	@Transactional
+	
 	public Districts saveOrUpdate(Districts d) {
-		return repository.saveOrUpdate(d);
+		return repository.save(d);
 	}
 
+    public void deleteById(Integer id){
+        repository.delete(id);
+    }
+    
+    public Districts findById(Integer id){
+        return repository.findOne(id);
+    }
 }
