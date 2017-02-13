@@ -1,3 +1,12 @@
+var App = React.createClass( {
+    render: function() {
+        return (
+            <div style={{ paddingTop: '20px' }}>
+                {this.props.children}
+            </div>
+        );
+    }
+});
 
 var NoMatch = React.createClass( {
     render: function() {
@@ -5,5 +14,20 @@ var NoMatch = React.createClass( {
     }
 });
 
-ReactDOM.render(routes, document.getElementById("root"));
+var Router = ReactRouter.Router;
+var Route = ReactRouter.Route;
+var IndexRoute = ReactRouter.IndexRoute;
+var hashHistory = ReactRouter.hashHistory;
 
+ReactDOM.render((
+    <Router history={hashHistory}>
+        <Route path="/" component={App}>
+            <IndexRoute component={MainPageContainer} />
+            <Route path="/hello-world" component={HelloWorldComponent} />
+            <Route path="/candidates" component={CandidatesContainer} />
+            <Route path="/candidates/add-candidate" component={AddCandidateContainer} />
+            <Route path="/candidates/edit/:candidateId" component={EditCandidateContainer} />
+            <Route path="*" component={NoMatch} />
+        </Route>
+    </Router>
+), document.getElementById( 'root' ) );

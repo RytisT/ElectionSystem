@@ -6,6 +6,7 @@ package lt.itakademija.database.repositories;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +37,15 @@ public class CandidatesRepository {
 			entityManager.persist(merged);
 			return merged;
 		}
+	}
+
+	@Transactional
+	public Iterable<Candidates> findById(Integer id) {
+		Query q = entityManager.createQuery(
+	            "SELECT DISTINCT c FROM Candidates c " +
+	            "WHERE c.id = :id");
+	    q.setParameter("id", id);
+	    return q.getResultList();
 	}
 
 }

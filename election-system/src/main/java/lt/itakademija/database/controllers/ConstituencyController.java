@@ -34,15 +34,15 @@ public class ConstituencyController {
 
 	// postman
 	// localhost:8080/api/constituencies?title=LT
-/*	@GetMapping(value = "/api/constituencies", params = { "title" })
+	@GetMapping(value = "/api/constituencies", params = { "title" })
 	public Iterable<Constituency> findConstituenciesByTitle(@RequestParam String title) {
 		return service.findByTitle(title);
-	}*/
+	}
 
-/*	@PostMapping("/api/constituencies")
+	@PostMapping("/api/constituencies")
 	public Constituency createOrUpdateConstituency(@RequestBody Constituency c) {
 		return service.saveOrUpdate(c);
-	}*/
+	}
 
 	// @RequestMapping(value = "/api/constituency", method = RequestMethod.POST)
 	// public Constituency createOrUpdateConstituency(@RequestBody Constituency

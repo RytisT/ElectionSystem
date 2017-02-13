@@ -43,6 +43,11 @@ public class CandidatesService {
 		return repository.saveOrUpdate(c);
 	}
 
+	@Transactional(readOnly = true)
+	public Iterable<Candidates> findById(Integer id) {
+		return repository.findById(id);
+	}
+
 	// @Transactional(readOnly = true)
 	// public Iterable<Candidates> findByName(String name) {
 	// return repository.findByName(name);
