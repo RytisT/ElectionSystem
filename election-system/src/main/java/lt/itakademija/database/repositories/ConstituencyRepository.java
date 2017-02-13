@@ -3,6 +3,7 @@
  */
 package lt.itakademija.database.repositories;
 
+import java.util.Arrays;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -40,8 +41,10 @@ public class ConstituencyRepository {
 		return q.getResultList();
 	}
 
-	public List<Constituency> findAll() {
-		return entityManager.createQuery("select c from Constituency c").getResultList();
+	public List<Constituency> findAll(){
+		String query = "select c from Constituency c";
+		List<Constituency> constituencies = entityManager.createQuery(query).getResultList();
+		return constituencies;
 	}
 
 	// public Constituency findConstituencyById(Integer id) {
