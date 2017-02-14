@@ -36,7 +36,7 @@ public class Parties {
 	private String title;
 	
 	@Column(name = "PARTY_CODE") 
-	@Length(min = 1, max = 30)
+	@Length(min = 1, max = 6)
     private String Party_Code;	
 
 	@OneToMany(cascade = CascadeType.ALL)
