@@ -23,12 +23,26 @@ var CandidatesComponent = React.createClass( {
         var self = this;
         var candidatesList = this.props.candidates.map( function( candidate, index ) {
 
+            // published date
+            var d = new Date( candidate.date_of_birth );
+            var year = d.getFullYear();
+            var month = d.getMonth() + 1;
+            var date = d.getDate();
+            // jei menuo vienzenklis sk tai prieki bus 0 pvz: 03
+            if ( month < 10 ) {
+                month = '0' + month;
+            }
+            if ( date < 10 ) {
+                date = '0' + date;
+            }
+            var fullDate = year + '-' + month + '-' + date;
+
             return (
                 <tr key={index}>
                     <td>{candidate.id}</td>
                     <td>{candidate.name}</td>
                     <td>{candidate.last_name}</td>
-                    <td>{candidate.date_of_birth}</td>
+                    <td>{fullDate}</td>    
                     <td>{candidate.description}</td>
                     <td>
                         <button type="button" className="btn btn-default" onClick={self.props.onEditItem( candidate )}>
@@ -54,7 +68,7 @@ var CandidatesComponent = React.createClass( {
                                 <th>LAST NAME</th>
                                 <th>DATE OF BIRTH</th>
                                 <th>DESCRIPTION</th>
-
+                                <th>EDIT</th>
                             </tr>
                         </thead>
                         <tbody>

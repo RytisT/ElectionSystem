@@ -1,3 +1,4 @@
+
 var EditCandidateContainer = React.createClass( {
     getInitialState: function() {
         return {
@@ -14,6 +15,7 @@ var EditCandidateContainer = React.createClass( {
         e.preventDefault();
         var self = this;
         axios.put( '/api/candidates/' + this.state.candidate.id, this.state.candidate ).then( function() {
+            console.log('candidate updated');
             self.context.router.push( '/candidates' );
         });
     },    
@@ -23,7 +25,7 @@ var EditCandidateContainer = React.createClass( {
         var self = this;
         var candidateId = this.props.params.candidateId;
         axios.get( '/api/candidates/' + candidateId ).then( function( response ) {
-            self.setState( { candidate: response.data });
+            self.setState({ candidate: response.data });
         });
     },
     
@@ -34,7 +36,7 @@ var EditCandidateContainer = React.createClass( {
         return function( e ) {
             var candidate = self.state.candidate;
             candidate[fieldName] = e.target.value;
-            self.setState( { candidate: candidate });
+            self.setState({ candidate: candidate });
         };
     },
 

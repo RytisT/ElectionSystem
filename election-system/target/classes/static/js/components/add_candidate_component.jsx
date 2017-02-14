@@ -1,3 +1,5 @@
+
+
 var AddCandidateComponent = React.createClass( {
     render: function() {
         return (
@@ -9,7 +11,7 @@ var AddCandidateComponent = React.createClass( {
                 <label>Last Name</label><br />
                 <input className="form-control" type="text" value={this.props.candidate.last_name} onChange={this.props.onFieldChange( 'last_name' )} /><br />
                 <label>Date Of Birth:</label><br />
-                <input className="form-control" type="text" value={this.props.candidate.date_of_birth} onChange={this.props.onFieldChange( 'date_of_birth' )} /><br />
+                <input className="form-control" type="date" value={this.props.candidate.date_of_birth} onChange={this.props.onFieldChange( 'date_of_birth' )} /><br />
                 <label>Description:</label><br />
                 <input className="form-control" type="text" value={this.props.candidate.description} onChange={this.props.onFieldChange( 'description' )} /><br />
                 <button className="btn btn-success" style={{ marginRight: '20px' }} onClick={this.props.onSaveClick}  >Add</button>

@@ -45,7 +45,8 @@ public class Candidates {
 	
 	@Column(name = "date_of_birth")
 	@NotNull
-	private String date_of_birth;
+	
+	private Date date_of_birth;
 	
 	@Column(name = "description")
 	@Length(min = 0, max = 255)
@@ -103,11 +104,11 @@ public class Candidates {
 		this.last_name = last_name;
 	}
 
-	public String getDate_of_birth() {
+	public Date getDate_of_birth() {
 		return date_of_birth;
 	}
 
-	public void setDate_of_birth(String date_of_birth) {
+	public void setDate_of_birth(Date date_of_birth) {
 		this.date_of_birth = date_of_birth;
 	}
 
