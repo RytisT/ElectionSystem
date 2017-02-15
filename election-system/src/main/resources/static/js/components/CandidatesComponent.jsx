@@ -14,7 +14,10 @@ var styles = {
     },
     line: {
         borderBottom: '1px solid #888',
-        marginTop: '10px'
+        margin: '20 0 20 0'
+    },
+    blue: {
+        color: '#0080ff'
     }
 };
 
@@ -42,38 +45,38 @@ var CandidatesComponent = React.createClass( {
                     <td>{candidate.id}</td>
                     <td>{candidate.name}</td>
                     <td>{candidate.last_name}</td>
-                    <td>{fullDate}</td>    
+                    <td>{fullDate}</td>
                     <td>{candidate.description}</td>
                     <td>
                         <button type="button" className="btn btn-default" onClick={self.props.onEditItem( candidate )}>
                             <span className="glyphicon glyphicon-pencil"></span></button>
                     </td>
                     <td>
-                    <button type="button" className="btn btn-default" onClick={self.props.onRemoveItem( candidate )}>
-                        <span className="glyphicon glyphicon-remove"></span></button>
-                </td>
+                        <button type="button" className="btn btn-default" onClick={self.props.onRemoveItem( candidate )}>
+                            <span className="glyphicon glyphicon-remove"></span></button>
+                    </td>
                 </tr>
             );
         });
         return (
             <div className="">
-                <h1> Candidates </h1>
-                <button className="btn btn-primary btn-lg" style={styles.space} onClick={this.props.onAddClick}  >Add Candidate</button>
-                <button className="btn btn-primary btn-lg" onClick={this.props.onMainPageClick}  >Main page</button>
+                <h2 style={styles.blue}> Kandidatai </h2>
+                <button className="btn btn-primary btn-lg" style={styles.space} onClick={this.props.onAddClick}  >Pridėti kandidatą (laikinai)</button>
+                <button className="btn btn-primary btn-lg" onClick={this.props.onMainPageClick}  >Namai (laikinai)</button>
                 <div style={styles.line} ></div>
                 <div className="panel panel-default" style={styles.marginTop}>
 
-                    <div className="panel-heading">THE LIST OF CANDIDATES</div>
+                    <div className="panel-heading">Kandidatų sąrašas</div>
                     <table className="table table-striped">
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>NAME</th>
-                                <th>LAST NAME</th>
-                                <th>DATE OF BIRTH</th>
-                                <th>DESCRIPTION</th>
-                                <th>EDIT</th>
-                                <th>REMOVE</th>
+                                <th>VARDAS</th>
+                                <th>PAVARDĖ</th>
+                                <th>GIMIMO DATA</th>
+                                <th>APRAŠYMAS</th>
+                                <th>KEISTI</th>
+                                <th>TRINTI</th>
                             </tr>
                         </thead>
                         <tbody>

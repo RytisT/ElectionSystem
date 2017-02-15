@@ -13,7 +13,6 @@ var CandidatesContainer = React.createClass( {
                     candidates: response.data
                 });
             });
-
     },
 
 
@@ -36,14 +35,11 @@ var CandidatesContainer = React.createClass( {
     },
 
     // Remove candidate mygtuko action
-
     handleCandidateRemove: function( candidate ) {
         var self = this;
         return function() {
             axios.delete( '/api/candidates/' + candidate.id ).then( function(response) {                
-                self.setState( {                
-                    candidates: response.data
-                });
+                self.componentWillMount();
             });
         };
     },

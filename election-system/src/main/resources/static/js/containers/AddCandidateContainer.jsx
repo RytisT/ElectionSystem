@@ -26,7 +26,7 @@ var AddCandidateContainer = React.createClass( {
         e.preventDefault();
         var self = this;
         axios.post( '/api/candidates', this.state.candidate ).then( function() {
-            self.context.router.push( '/admin/candidates' );
+            self.context.router.push( '/candidates' );
         });
     },
 
@@ -40,7 +40,7 @@ var AddCandidateContainer = React.createClass( {
     },
 
     handleCancelClick() {
-        this.context.router.push( '/admin/candidates' );
+        this.context.router.push( '/candidates' );
     },
 
     render: function() {

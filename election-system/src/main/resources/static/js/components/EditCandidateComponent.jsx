@@ -1,20 +1,31 @@
+var styles = {
+    line: {
+        borderBottom: '1px solid #888',
+        margin: '20 0 20 0'
+    },
+    blue: {
+        color: '#0080ff'
+    }
+};
+
 var EditCandidateComponent = React.createClass( {
     render: function() {
         return (
             <form>
-                <h3>Editing Candidate</h3>
+                <h2 style={styles.blue}>Kandidato redagavimas</h2>
+                <div style={styles.line} ></div>
 
-                <label>Name:</label><br />
+                <label>Vardas:</label><br />
                 <input className="form-control" type="text" value={this.props.candidate.name} onChange={this.props.onFieldChange( 'name' )} /><br />
-                <label>Last Name</label><br />
+                <label>Pavardė</label><br />
                 <input className="form-control" type="text" value={this.props.candidate.last_name} onChange={this.props.onFieldChange( 'last_name' )} /><br />
-                <label>Date Of Birth:</label><br />
+                <label>Gimimo data:</label><br />
                 <input className="form-control" type="date" value={this.props.candidate.date_of_birh} onChange={this.props.onFieldChange( 'date_of_birth' )} /><br />
-                <label>Description</label><br />
+                <label>Aprašymas</label><br />
                 <input className="form-control" type="text" value={this.props.candidate.description} onChange={this.props.onFieldChange( 'description' )} /><br />
 
-                <button className="btn btn-success" style={{ marginRight: '20px' }} onClick={this.props.onSaveClick}  >Save</button>
-                <button className="btn btn-success" style={{ marginRight: '20px' }} onClick={this.props.onCancelClick}  >Cancel</button>
+                <button className="btn btn-success" style={{ marginRight: '20px' }} onClick={this.props.onSaveClick}  >Išsaugoti</button>
+                <button className="btn btn-success" style={{ marginRight: '20px' }} onClick={this.props.onCancelClick}  >Atšaukti</button>
             </form>
         )
     }

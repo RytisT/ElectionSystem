@@ -17,7 +17,7 @@ var EditCandidateContainer = React.createClass( {
         var self = this;
         axios.put( '/api/candidates/' + this.state.candidate.id, this.state.candidate ).then( function() {
             console.log('candidate updated');
-            self.context.router.push( '/admin/candidates' );
+            self.context.router.push( 'candidates' );
         });
     },    
    
@@ -42,7 +42,7 @@ var EditCandidateContainer = React.createClass( {
     },
 
     handleCancelClick() {
-        this.context.router.push( '/admin/candidates' );
+        this.context.router.push( '/candidates' );
     },
 
     render: function() {
