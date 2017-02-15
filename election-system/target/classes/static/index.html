@@ -1,79 +1,91 @@
 <html>
 <head>
-  <title>Election System </title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <link
-    rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
-    crossorigin="anonymous"
-  >
+<title>Election System</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	crossorigin="anonymous">
 
-  <style>
-    body {
-      background-color: #bcbcbc;
-      padding: 20px;
-      margin: 0;
-    }
-    h1, h2, p, ul, li {
-      font-family: Helvetica, Arial, sans-serif;
-    }
-    ul.header li {
-      display: inline;
-      list-style-type: none;
-      margin: 0;
-    }
-    ul.header {
-      background-color: #111;
-      padding: 0;
-    }
-    ul.header li a {
-      color: #FFF;
-      font-weight: bold;
-      text-decoration: none;
-      padding: 20px;
-      display: inline-block;
-    }
-    .content {
-      background-color: #FFF;
-      padding: 20px;
-    }
-    .content h2 {
-      padding: 0;
-      margin: 0;
-    }
-    .content li {
-      margin-bottom: 10px;
-    }
+<style>
+body {
+	background-color: #bcbcbc;
+	padding: 20px;
+	margin: 0;
+}
 
-    .active {
-      background-color: #0099FF;
-    }
-  </style>
+h1, h2, p, ul, li {
+	font-family: Helvetica, Arial, sans-serif;
+}
+
+ul.header li {
+	display: inline;
+	list-style-type: none;
+	margin: 0;
+}
+
+ul.header {
+	background-color: #111;
+	padding: 0;
+}
+
+ul.header li a {
+	color: #FFF;
+	font-weight: bold;
+	text-decoration: none;
+	padding: 20px;
+	display: inline-block;
+}
+
+.content {
+	background-color: #FFF;
+	padding: 20px;
+}
+
+.content h2 {
+	padding: 0;
+	margin: 0;
+}
+
+.content li {
+	margin-bottom: 10px;
+}
+
+.active {
+	background-color: #0099FF;
+}
+</style>
 </head>
 <body>
 
 
 
-  <div id="root" class="container"></div>
+	<div id="root" class="container"></div>
 
-  <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
-  <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
-  <script src="https://unpkg.com/react-router@2.8.1/umd/ReactRouter.js"></script>
-  <script src="https://unpkg.com/babel-core@5.8.38/browser.min.js"></script>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+	<script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+	<script src="https://unpkg.com/react-router@2.8.1/umd/ReactRouter.js"></script>
+	<script src="https://unpkg.com/babel-core@5.8.38/browser.min.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-  <script type="text/babel" src="/js/components/Constituencies.jsx"></script>
-  <script type="text/babel" src="/js/components/App.jsx"></script>
-  <script type="text/babel" src="/js/components/Districts.jsx"></script>
+	<script type="text/babel" src="/js/components/main_page_component.jsx"></script>
+	<script type="text/babel" src="/js/components/Constituencies.jsx"></script>
+	<script type="text/babel" src="/js/components/App.jsx"></script>
+	<script type="text/babel" src="/js/components/Districts.jsx"></script>
+	<script type="text/babel" src="/js/components/candidates_component.jsx"></script>
+	<script type="text/babel" src="/js/components/add_candidate_component.jsx"></script>
+	<script type="text/babel" src="/js/components/edit_candidate_component.jsx"></script>
+
+	<script type="text/babel" src="/js/containers/main_page_container.jsx"></script>
+	<script type="text/babel" src="/js/containers/ConstituenciesContainer.jsx"></script>
+	<script type="text/babel" src="/js/containers/DistrictsContainer.jsx"></script>
+	<script type="text/babel" src="/js/containers/candidates_container.jsx"></script>
+	<script type="text/babel" src="/js/containers/add_candidate_container.jsx"></script>
+	<script type="text/babel" src="/js/containers/edit_candidate_container.jsx"></script>
 
 
-  <script type="text/babel" src="/js/containers/ConstituenciesContainer.jsx"></script>
-  <script type="text/babel" src="/js/containers/DistrictsContainer.jsx"></script>
-
-
-
-  <script type="text/babel" src="/js/config/routes.jsx"></script>
-  <script type="text/babel" src="/js/index.jsx"></script>
+	<script type="text/babel" src="/js/config/routes.jsx"></script>
+	<script type="text/babel" src="/js/index.jsx"></script>
 </body>
 </html>
