@@ -48,6 +48,9 @@ public class Candidates {
 	@Length(min = 1, max = 30)
 	private String last_name;
 	
+	@Column(name = "personal_id")
+	private Long personal_id;
+	
 	@Column(name = "date_of_birth")
 	@NotNull
 	private Date date_of_birth;
@@ -108,6 +111,14 @@ public class Candidates {
 	public void setLast_name(String last_name) {
 		this.last_name = last_name;
 	}	
+
+	public Long getPersonal_code() {
+		return personal_id;
+	}
+
+	public void setPersonal_code(Long personal_code) {
+		this.personal_id = personal_code;
+	}
 
 	public Date getDate_of_birth() {
 		return date_of_birth;

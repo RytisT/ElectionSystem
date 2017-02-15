@@ -7,7 +7,7 @@ var routes = (
     <Router history={hashHistory}>
     <Router>
     <Route path='/' component={App}>
-        <IndexRoute component={ConstituenciesContainer} />
+        <IndexRoute component={MainPageContainer} />
         <Route path="/stuff" component={Constituencies} />
         <Route path="/district/:distId" component={DistrictContainer} />
         <Route path="/Contacts" component={Constituencies} />
