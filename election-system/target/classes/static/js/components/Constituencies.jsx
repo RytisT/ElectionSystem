@@ -16,7 +16,7 @@ var Constituencies = React.createClass({
                     <td>{constituency.title}</td>
                     <td><button type="button" className="btn btn-info" onClick={_this.props.onEditDistrict(constituency)}>Redaguoti apylinkes</button></td>
                     <td></td>
-                    <td><button type="button" className="btn btn-danger">Trinti</button></td>
+                    <td><button type="button" className="btn btn-danger" onClick={_this.props.onDeleteConst(constituency)}>Trinti</button></td>
                 </tr>
             );
         });
@@ -35,6 +35,19 @@ var Constituencies = React.createClass({
                    </thead>
                    <tbody>
                         {constituenciesList}
+                        <tr>
+                            <form >
+                                <td>
+                                    <input placeholder="Apygardos Pavadinimas" value={this.props.constName} type="text" />
+                                </td>
+                                <td></td>
+                                <td>
+                                    <button className="btn btn-block btn-success" type="submit">Continue</button>
+                                </td>
+                                <td></td>
+
+                            </form>
+                        </tr>
                    </tbody>
 
                </table>
