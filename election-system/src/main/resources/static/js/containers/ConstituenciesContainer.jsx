@@ -22,16 +22,11 @@ var ConstituenciesContainer = React.createClass({
     },
 
 
-    handleDeleteEntry: function(constituency) {
+    handleDeleteConst: function(constituency) {
         var _this = this;
         return function() {
-            axios.put('/api/constituencies/'+ constituency.id).then(function(response) {
-                axios.get('/api/constituencies')
-                    .then(function (response) {
-                        self.setState({
-                            constituencies: response.data
-                        });
-                    });
+            axios.delete('/api/constituencies/'+ constituency.id).then(function(response) {
+                _this.componentWillMount();
             });
         };
     },
@@ -43,11 +38,24 @@ var ConstituenciesContainer = React.createClass({
        }
     },
 
+    handleSubmitConst: function (constituency) {
+        e.preventDefault();
+        this.setState
+        var _this = this;
+        return function() {
+            axios.post('/api/constituencies/', this.state.const).then(function(response) {
+                _this.componentWillMount();
+            });
+        };
+    },
+
 
     render: function() {
         return(
             <Constituencies constituencies={this.state.constituencies}
                       onEditDistrict={this.handleEditDistricts}
+                            onDeleteConst ={this.handleDeleteConst}
+                            onSubmitConst ={this.handleSubmitConst}
             />
         )
     }
