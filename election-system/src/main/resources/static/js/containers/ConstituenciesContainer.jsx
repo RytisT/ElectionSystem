@@ -34,7 +34,7 @@ var ConstituenciesContainer = React.createClass({
     handleEditDistricts: function (constituency) {
         var _this = this;
         return function(){
-           _this.context.router.push("/district/" + constituency.id);
+           _this.context.router.push("/admin/district/" + constituency.id);
        }
     },
 
@@ -52,7 +52,7 @@ var ConstituenciesContainer = React.createClass({
 
     render: function() {
         return(
-            <Constituencies constituencies={this.state.constituencies}
+            <ConstituenciesComponent constituencies={this.state.constituencies}
                       onEditDistrict={this.handleEditDistricts}
                             onDeleteConst ={this.handleDeleteConst}
                             onSubmitConst ={this.handleSubmitConst}

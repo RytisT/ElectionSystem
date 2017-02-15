@@ -1,7 +1,7 @@
 var Link = ReactRouter.Link;
 
 
-var Constituencies = React.createClass({
+var ConstituenciesComponent = React.createClass({
 
 
 
@@ -36,17 +36,24 @@ var Constituencies = React.createClass({
                    <tbody>
                         {constituenciesList}
                         <tr>
-                            <form >
-                                <td>
-                                    <input placeholder="Apygardos Pavadinimas" value={this.props.constName} type="text" />
-                                </td>
+                            <td>
+                                <form>
+                                <table>
+                                    <tbody>
+                                    <tr>
+                                        <td>
+                                            <input placeholder="Apygardos Pavadinimas" value={this.props.constName} type="text" />
+                                        </td>
+                                        <td></td>
+                                        <td>
+                                            <button className="btn btn-block btn-success" type="submit">Continue</button>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                </form>
+                            </td>
                                 <td></td>
-                                <td>
-                                    <button className="btn btn-block btn-success" type="submit">Continue</button>
-                                </td>
-                                <td></td>
-
-                            </form>
                         </tr>
                    </tbody>
 
@@ -57,8 +64,8 @@ var Constituencies = React.createClass({
    }
 });
 
-Constituencies.propTypes = {
+ConstituenciesComponent.propTypes = {
     constituencies: React.PropTypes.array.isRequired
 };
 
-window.Constituencies = Constituencies;
+window.ConstituenciesComponent = ConstituenciesComponent;

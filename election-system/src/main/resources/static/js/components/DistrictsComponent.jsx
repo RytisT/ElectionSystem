@@ -1,7 +1,7 @@
 /**
  * Created by rytis on 17.2.10.
  */
-var Districts = React.createClass({
+var DistrictsComponent = React.createClass({
     render: function() {
         return(
          <div></div>
@@ -9,4 +9,4 @@ var Districts = React.createClass({
     }
 });
 
-window.Districts = Districts;
+window.DistrictsComponent = DistrictsComponent;

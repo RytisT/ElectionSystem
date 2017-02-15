@@ -8,14 +8,16 @@ var routes = (
     <Router>
     <Route path='/' component={App}>
         <IndexRoute component={MainPageContainer} />
-        <Route path="/stuff" component={Constituencies} />
-        <Route path="/district/:distId" component={DistrictContainer} />
-        <Route path="/Contacts" component={Constituencies} />
-        <Route path="/admin" component={ConstituenciesContainer} />
+        <Route path="/admin" component={AdminComponent}>
+            <IndexRoute component={ConstituenciesContainer} />
+            <Route path="/admin/stuff" component={ConstituenciesContainer} />
+            <Route path="/admin/contacts" component={ConstituenciesContainer} />
+            <Route path="/admin/district/:distId" component={DistrictContainer} />
+            <Route path="/admin/candidates" component={CandidatesContainer} />
+            <Route path="/admin/candidates/add-candidate" component={AddCandidateContainer} />
+            <Route path="/admin/candidates/edit/:candidateId" component={EditCandidateContainer} />
+        </Route>
         <Route path="/candidates" component={CandidatesContainer} />
-        <Route path="/admin/candidates" component={CandidatesContainer} />
-        <Route path="/admin/candidates/add-candidate" component={AddCandidateContainer} />
-        <Route path="/admin/candidates/edit/:candidateId" component={EditCandidateContainer} />
     </Route>
     </Router>
     </Router>

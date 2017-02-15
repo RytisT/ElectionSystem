@@ -23,7 +23,7 @@ var DistrictContainer = React.createClass({
 
     render: function () {
         return(
-            <Districts />
+            <DistrictsComponent />
         )
     }
 });
