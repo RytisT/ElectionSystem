@@ -6,10 +6,8 @@ var ConstituenciesComponent = React.createClass({
 
 
     render: function() {
-        console.log("aa");
         var _this = this;
         var constituenciesList = this.props.constituencies.map(function (constituency, index) {
-            console.log(constituency.title);
 
             return(
                 <tr key={index}>
@@ -37,21 +35,7 @@ var ConstituenciesComponent = React.createClass({
                         {constituenciesList}
                         <tr>
                             <td>
-                                <form>
-                                <table>
-                                    <tbody>
-                                    <tr>
-                                        <td>
-                                            <input placeholder="Apygardos Pavadinimas" value={this.props.constName} type="text" />
-                                        </td>
-                                        <td></td>
-                                        <td>
-                                            <button className="btn btn-block btn-success" type="submit">Continue</button>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                                </form>
+
                             </td>
                                 <td></td>
                         </tr>

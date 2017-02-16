@@ -47,7 +47,11 @@ var CandidatesContainer = React.createClass( {
 
 
     render: function() {
-        return <CandidatesComponent candidates={this.state.candidates} onAddClick={this.handleAdd} onMainPageClick={this.handleMainPage} onEditItem={this.handleCandidateEdit} onRemoveItem={this.handleCandidateRemove} />
+        return <CandidatesComponent candidates={this.state.candidates}
+                                    onAddClick={this.handleAdd}
+                                    onMainPageClick={this.handleMainPage}
+                                    onEditItem={this.handleCandidateEdit}
+                                    onRemoveItem={this.handleCandidateRemove} />
     }
 });
 
