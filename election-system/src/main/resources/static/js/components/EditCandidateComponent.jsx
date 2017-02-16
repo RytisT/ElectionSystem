@@ -20,7 +20,7 @@ var EditCandidateComponent = React.createClass( {
                 <label>Pavardė</label><br />
                 <input className="form-control" type="text" value={this.props.candidate.last_name} onChange={this.props.onFieldChange( 'last_name' )} /><br />
                 <label>Gimimo data:</label><br />
-                <input className="form-control" type="date" value={this.props.candidate.date_of_birh} onChange={this.props.onFieldChange( 'date_of_birth' )} /><br />
+                <input className="form-control" type="date" value={this.props.candidate.date_of_birth} onChange={this.props.onFieldChange( 'date_of_birth' )} /><br />
                 <label>Aprašymas</label><br />
                 <input className="form-control" type="text" value={this.props.candidate.description} onChange={this.props.onFieldChange( 'description' )} /><br />
 

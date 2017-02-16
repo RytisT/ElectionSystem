@@ -29,7 +29,7 @@ var CandidatesComponent = React.createClass( {
         var self = this;
         var candidatesList = this.props.candidates.map( function( candidate, index ) {
 
-            // published date
+            // date
             var d = new Date( candidate.date_of_birth );
             var year = d.getFullYear();
             var month = d.getMonth() + 1;
@@ -51,7 +51,8 @@ var CandidatesComponent = React.createClass( {
                     <td>{fullDate}</td>
                     <td style={styles.width}>
                         <button type="button" className="btn btn-default" onClick={self.props.onDescriptionItemClick( candidate )}
-                            data-toggle="tooltip" data-placement="top" title="Kandidato informacija">
+                            data-toggle="tooltip" data-placement="top" title="Kandidato informacija"
+                    data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             <span className="glyphicon glyphicon-info-sign"></span></button>
                     </td>
                     <td style={styles.width}>

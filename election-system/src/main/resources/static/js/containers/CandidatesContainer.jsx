@@ -19,7 +19,7 @@ var CandidatesContainer = React.createClass( {
     handleCandidateDescription: function( candidate ) {
         var self = this;
         return function() {
-            self.context.router.push( '/candidates/description/' + candidate.id );
+            self.context.router.push( '/candidate/description/' + candidate.id );
         }
     },
 
