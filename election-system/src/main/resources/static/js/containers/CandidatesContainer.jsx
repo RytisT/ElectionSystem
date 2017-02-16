@@ -15,6 +15,13 @@ var CandidatesContainer = React.createClass( {
             });
     },
 
+    // Description mygtuko paspaudimo action
+    handleCandidateDescription: function( candidate ) {
+        var self = this;
+        return function() {
+            self.context.router.push( '/candidates/description/' + candidate.id );
+        }
+    },
 
     // Add mygtuko paspaudimo action
     handleAdd() {
@@ -38,20 +45,21 @@ var CandidatesContainer = React.createClass( {
     handleCandidateRemove: function( candidate ) {
         var self = this;
         return function() {
-            axios.delete( '/api/candidates/' + candidate.id ).then( function(response) {                
+            axios.delete( '/api/candidates/' + candidate.id ).then( function( response ) {
                 self.componentWillMount();
             });
         };
     },
-    
+
 
 
     render: function() {
         return <CandidatesComponent candidates={this.state.candidates}
-                                    onAddClick={this.handleAdd}
-                                    onMainPageClick={this.handleMainPage}
-                                    onEditItem={this.handleCandidateEdit}
-                                    onRemoveItem={this.handleCandidateRemove} />
+            onAddClick={this.handleAdd}
+            onMainPageClick={this.handleMainPage}
+            onEditItem={this.handleCandidateEdit}
+            onDescriptionItemClick={this.handleCandidateDescription}
+            onRemoveItem={this.handleCandidateRemove} />
     }
 });
 

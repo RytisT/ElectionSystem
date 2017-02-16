@@ -18,6 +18,9 @@ var styles = {
     },
     blue: {
         color: '#0080ff'
+    },
+    width: {
+        width: '20px'
     }
 };
 
@@ -41,17 +44,20 @@ var CandidatesComponent = React.createClass( {
             var fullDate = year + '-' + month + '-' + date;
 
             return (
-                <tr key={index}>
+                <tr id="candidatesList" key={index}>
                     <td>{candidate.id}</td>
                     <td>{candidate.name}</td>
                     <td>{candidate.last_name}</td>
                     <td>{fullDate}</td>
-                    <td>{candidate.description}</td>
-                    <td>
+                    <td style={styles.width}>
+                        <button type="button" className="btn btn-default" onClick={self.props.onDescriptionItemClick( candidate )}>
+                            <span className="glyphicon glyphicon-info-sign"></span></button>
+                    </td>
+                    <td style={styles.width}>
                         <button type="button" className="btn btn-default" onClick={self.props.onEditItem( candidate )}>
                             <span className="glyphicon glyphicon-pencil"></span></button>
                     </td>
-                    <td>
+                    <td style={styles.width}>
                         <button type="button" className="btn btn-default" onClick={self.props.onRemoveItem( candidate )}>
                             <span className="glyphicon glyphicon-remove"></span></button>
                     </td>
@@ -61,12 +67,12 @@ var CandidatesComponent = React.createClass( {
         return (
             <div className="">
                 <h2 style={styles.blue}> Kandidatai </h2>
-                <button className="btn btn-primary btn-lg" style={styles.space} onClick={this.props.onAddClick}  >Pridėti kandidatą (laikinai)</button>
-                <button className="btn btn-primary btn-lg" onClick={this.props.onMainPageClick}  >Namai (laikinai)</button>
                 <div style={styles.line} ></div>
+                <div>
+                    <button className="btn btn-block btn-success" type="submit"
+                        onClick={this.props.onAddClick} >Prideti kandidatą</button>
+                </div>
                 <div className="panel panel-default" style={styles.marginTop}>
-
-                    <div className="panel-heading">Kandidatų sąrašas</div>
                     <table className="table table-striped">
                         <thead>
                             <tr>
@@ -74,9 +80,9 @@ var CandidatesComponent = React.createClass( {
                                 <th>VARDAS</th>
                                 <th>PAVARDĖ</th>
                                 <th>GIMIMO DATA</th>
-                                <th>APRAŠYMAS</th>
-                                <th>KEISTI</th>
-                                <th>TRINTI</th>
+                                <th> </th>
+                                <th> </th>
+                                <th> </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -91,7 +97,8 @@ var CandidatesComponent = React.createClass( {
 
 CandidatesComponent.propTypes = {
     onAddClick: React.PropTypes.func.isRequired,
-    onMainPageClick: React.PropTypes.func.isRequired
+    onMainPageClick: React.PropTypes.func.isRequired,
+    onDescriptionItemClick: React.PropTypes.func.isRequired
 };
 
 window.CandidatesComponent = CandidatesComponent;
