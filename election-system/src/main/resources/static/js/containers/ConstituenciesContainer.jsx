@@ -43,8 +43,6 @@ var ConstituenciesContainer = React.createClass({
     },
 
     handleSubmitConst: function (constituency) {
-        console.log(this.state.constituency);
-        constituency.preventDefault();
         var _this = this;
             axios.post('/api/constituencies', this.state.constituency).then(function() {
                 _this.componentWillMount();
@@ -66,13 +64,13 @@ var ConstituenciesContainer = React.createClass({
     render: function() {
         return(
             <div>
-                <ConstituenciesComponent constituencies={this.state.constituencies}
-                            onEditDistrict={this.handleEditDistricts}
-                            onDeleteConst ={this.handleDeleteConst}
-                />
                 <AddConstituencyComponent constituency={this.state.constituency}
                                           onFieldChange = {this.handleFieldChange}
                                           onSubmitConst ={this.handleSubmitConst}
+                />
+                <ConstituenciesComponent constituencies={this.state.constituencies}
+                            onEditDistrict={this.handleEditDistricts}
+                            onDeleteConst ={this.handleDeleteConst}
                 />
             </div>
         )
