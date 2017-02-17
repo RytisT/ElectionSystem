@@ -29,7 +29,12 @@ var CandidatesContainer = React.createClass( {
     },
 
     // Main page mygtuko paspaudimo action
-    handleMainPage() {
+//    handleMainPage() {
+//        this.context.router.push( '/' );
+//    },
+
+    // Cancel mygtuko paspaudimo action
+    handleCancelClick() {
         this.context.router.push( '/' );
     },
 
@@ -59,7 +64,8 @@ var CandidatesContainer = React.createClass( {
             onMainPageClick={this.handleMainPage}
             onEditItem={this.handleCandidateEdit}
             onDescriptionItemClick={this.handleCandidateDescription}
-            onRemoveItem={this.handleCandidateRemove} />
+            onRemoveItem={this.handleCandidateRemove}
+            onCancelClick={this.handleCancelClick} />
     }
 });
 

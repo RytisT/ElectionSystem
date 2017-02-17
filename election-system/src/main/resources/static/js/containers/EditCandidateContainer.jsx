@@ -15,7 +15,7 @@ var EditCandidateContainer = React.createClass( {
     handleSaveClick: function( e ) {
         e.preventDefault();
         var self = this;
-        axios.put( '/api/candidates/' + this.state.candidate.id, this.state.candidate ).then( function() {
+        axios.post( '/api/candidates/', this.state.candidate ).then( function() {
             console.log('candidate updated');
             self.context.router.push( 'candidates' );
         });

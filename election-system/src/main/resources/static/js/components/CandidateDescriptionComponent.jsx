@@ -23,7 +23,7 @@ var CandidateDescriptionComponent = React.createClass( {
                 <span id="cdtitle">Pavardė: </span><span>{this.props.candidate.last_name}</span><br />
                 <span id="cdtitle">Gimimo data: </span><span>{this.props.candidate.date_of_birth}</span><br /><br />
                 <span>{this.props.candidate.description}</span><br /><br />
-                <button className="btn btn-success" style={{ marginRight: '20px' }} onClick={this.props.onCancelClick}  >Grįžti</button>
+                <button id="CandidateDescriptionCancel" className="btn btn-success" style={{ marginRight: '20px' }} onClick={this.props.onCancelClick}  >Grįžti</button>
             </div>
         )
     }

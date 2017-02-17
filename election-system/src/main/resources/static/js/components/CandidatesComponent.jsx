@@ -50,18 +50,18 @@ var CandidatesComponent = React.createClass( {
                     <td>{candidate.last_name}</td>
                     <td>{fullDate}</td>
                     <td style={styles.width}>
-                        <button type="button" className="btn btn-default" onClick={self.props.onDescriptionItemClick( candidate )}
+                        <button id="CandidateInfo" type="button" className="btn btn-default" onClick={self.props.onDescriptionItemClick( candidate )}
                             data-toggle="tooltip" data-placement="top" title="Kandidato informacija"
-                    data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             <span className="glyphicon glyphicon-info-sign"></span></button>
                     </td>
                     <td style={styles.width}>
-                        <button type="button" className="btn btn-default" onClick={self.props.onEditItem( candidate )}
+                        <button id="CandidateEdit" type="button" className="btn btn-default" onClick={self.props.onEditItem( candidate )}
                             data-toggle="tooltip" data-placement="top" title="Redaguoti kandidatą">
                             <span className="glyphicon glyphicon-pencil"></span></button>
                     </td>
                     <td style={styles.width}>
-                        <button type="button" className="btn btn-default" onClick={self.props.onRemoveItem( candidate )}
+                        <button id="CandidateDelete" type="button" className="btn btn-default" onClick={self.props.onRemoveItem( candidate )}
                             data-toggle="tooltip" data-placement="top" title="Trinti kandidatą">
                             <span className="glyphicon glyphicon-remove"></span></button>
                     </td>
@@ -73,7 +73,7 @@ var CandidatesComponent = React.createClass( {
                 <h2 style={styles.blue}> Kandidatai </h2>
                 <div style={styles.line} ></div>
                 <div>
-                    <button className="btn btn-block btn-success" type="submit"
+                    <button id="CandidateAdd" className="btn btn-block btn-success" type="submit"
                         onClick={this.props.onAddClick} >Prideti kandidatą</button>
                 </div>
                 <div className="panel panel-default" style={styles.marginTop}>
@@ -94,7 +94,11 @@ var CandidatesComponent = React.createClass( {
                         </tbody>
                     </table>
                 </div>
+                <div>
+                <button id="CandidateReturn" className="btn btn-success" style={{ marginRight: '20px' }} onClick={this.props.onCancelClick}  >Grįžti</button>
+                </div>
             </div>
+
         )
     }
 });
