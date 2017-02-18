@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 
@@ -30,18 +31,24 @@ public class District_Representatives {
 
 	@Column(name = "name")
 	@NotNull
-	@Length(min = 1, max = 30)
+	@Pattern(regexp = ".*([a-zA-ZąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)", message = "District Representative NAME contains invalid characters. ")	
+	@Length(min=1, max=40, message="District Representative NAME must not be empty and length can not be longer than {max} symbols. ")
 	private String name;
 
 	@Column(name = "last_name")
 	@NotNull
-	@Length(min = 1, max = 30)
+	@Pattern(regexp = ".*([a-zA-ZąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)", message = "District Representative LAST NAME contains invalid characters. ")	
+	@Length(min=1, max=40, message="District Representative LAST NAME must not be empty and length can not be longer than {max} symbols. ")
 	private String last_name;
 	
 	@Column(name = "login")
+	@Pattern(regexp = ".*([a-zA-ZąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)", message = "District Representative LOGIN contains invalid characters. ")	
+	@Length(min=1, max=30, message="District Representative LOGIN must not be empty and length can not be longer than {max} symbols. ")
 	private String login;
 	
 	@Column(name = "password")
+	//@Pattern(regexp = ".*([a-zA-ZąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)", message = "District Representative PASSWORD contains invalid characters. ")	
+	@Length(min=1, max=20, message="District Representative PASSWORD must not be empty and length can not be longer than {max} symbols. ")
 	private String password;
 
 	// public District_Representatives(Integer id, Integer district_id, String

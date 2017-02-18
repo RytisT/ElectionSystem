@@ -13,9 +13,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 
@@ -34,15 +34,18 @@ public class Districts {
 	@Column(name = "constituency_id")
 	private Integer constituency_id;
 
-	@Column(name = "title")
-	@NotNull
-	@Length(min = 1, max = 50)
+	@Column(name = "title", unique=true)
+	@NotNull(message = "DISTRICTS TITLE can not be empty")
+	@Pattern(regexp = ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)", message = "DISTRICTS TITLE contains invalid characters. ")	
+	@Length(min=1, max=30, message="DISTRICTS TITLE must not be empty and length can not be longer than {max} symbols. ")
 	private String title;
 
 	@Column(name = "number_of_voters")
 	private Long number_of_voters;
 
 	@Column(name = "address")
+	//@Pattern(regexp = ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)", message = "DISTRICTS ADDRESS contains invalid characters. ")	
+	@Length(min=0, max=100, message="DISTRICTS ADDRESS must not be empty and length can not be longer than {max} symbols. ")
 	private String address;
 	
 	@Column(name = "VOTED_SINGLE")
@@ -59,8 +62,21 @@ public class Districts {
     
     
 
-	@OneToOne(cascade = CascadeType.ALL)
-	private District_Representatives district_representatives;
+//    @OneToOne(cascade = CascadeType.ALL)
+//	@PrimaryKeyJoinColumn
+//	private District_Representatives district_representatives;
+    
+    @OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "DISTRICT_ID")
+	private List<District_Representatives> district_representatives;
+    
+    @OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "DISTRICT_ID")
+	private List<Single_Results> single_results;
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "DISTRICT_ID")
+	private List<Multi_Results> multi_results;
 	
 	public Integer getId() {
 		return id;
@@ -134,21 +150,13 @@ public class Districts {
 		this.votedMultiCorrupt = votedMultiCorrupt;
 	}
 
-	public District_Representatives getDistrict_representatives() {
+	public List<District_Representatives> getDistrict_representatives() {
 		return district_representatives;
 	}
 
-	public void setDistrict_representatives(District_Representatives district_representatives) {
+	public void setDistrict_representatives(List<District_Representatives> district_representatives) {
 		this.district_representatives = district_representatives;
 	}
-	
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "DISTRICTS_ID")
-	private List<Single_Results> single_results;
-	
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "DISTRICTS_ID")
-	private List<Multi_Results> multi_results;
 
 	public List<Single_Results> getSingle_results() {
 		return single_results;

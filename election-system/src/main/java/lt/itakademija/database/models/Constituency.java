@@ -15,6 +15,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 
@@ -32,12 +33,12 @@ public class Constituency {
 	@Column(name = "id")
 	private Integer id;
 
-	@Column(name = "title")
-	@NotNull
-	@Length(min = 1, max = 30)
+	@Column(name = "title", unique=true)	
+	@NotNull(message = "Constituency TITLE can not be empty")
+	@Pattern(regexp = ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)", message = "Constituency TITLE contains invalid characters. ")	
+	@Length(min=1, max=30, message="Constituency TITLE must not be empty and length can not be longer than {max} symbols. ")
 	private String title;
 	
-		
 
 //	public Constituency(Integer id, String title) {
 //		this.id = id;
@@ -61,6 +62,7 @@ public class Constituency {
 	public void setTitle(String title) {
 		this.title = title;
 	}
+	
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "CONSTITUENCY_ID")
