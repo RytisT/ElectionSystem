@@ -28,6 +28,7 @@ var CandidatesComponent = React.createClass( {
     render: function() {
         var self = this;
         var candidatesList = this.props.candidates.map( function( candidate, index ) {
+        
 
             // date
             var d = new Date( candidate.date_of_birth );
@@ -44,8 +45,8 @@ var CandidatesComponent = React.createClass( {
             var fullDate = year + '-' + month + '-' + date;
 
             return (
-                <tr id="candidatesList" key={index}>
-                    <td>{candidate.id}</td>
+                <tr id="candidatesList" key={index} >
+                    <td></td>
                     <td>{candidate.name}</td>
                     <td>{candidate.last_name}</td>
                     <td>{fullDate}</td>
@@ -55,7 +56,15 @@ var CandidatesComponent = React.createClass( {
                             data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             <span className="glyphicon glyphicon-info-sign"></span></button>
                     </td>
-                    <td style={styles.width}>
+                    
+                </tr>
+            );
+        });
+        
+        /* Papildomai mygtukai
+         * 
+         * 
+         * <td style={styles.width}>
                         <button id="CandidateEdit" type="button" className="btn btn-default" onClick={self.props.onEditItem( candidate )}
                             data-toggle="tooltip" data-placement="top" title="Redaguoti kandidatą">
                             <span className="glyphicon glyphicon-pencil"></span></button>
@@ -65,28 +74,28 @@ var CandidatesComponent = React.createClass( {
                             data-toggle="tooltip" data-placement="top" title="Trinti kandidatą">
                             <span className="glyphicon glyphicon-remove"></span></button>
                     </td>
-                </tr>
-            );
-        });
+         * 
+         */
+        
+        
+        
         return (
             <div className="">
                 <h2 style={styles.blue}> Kandidatai </h2>
                 <div style={styles.line} ></div>
                 <div>
-                    <button id="CandidateAdd" className="btn btn-block btn-success" type="submit"
-                        onClick={this.props.onAddClick} >Prideti kandidatą</button>
+                    
                 </div>
-                <div className="panel panel-default" style={styles.marginTop}>
-                    <table className="table table-striped">
+                <div className="panel panel-default" style={styles.marginTop}  id="candidatesTable">
+                    <table className="table table-striped" >
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                <th id="CandidateListNumber">Eil.Nr.</th>
                                 <th>VARDAS</th>
                                 <th>PAVARDĖ</th>
                                 <th>GIMIMO DATA</th>
                                 <th> </th>
-                                <th> </th>
-                                <th> </th>
+                                
                             </tr>
                         </thead>
                         <tbody>
@@ -102,6 +111,14 @@ var CandidatesComponent = React.createClass( {
         )
     }
 });
+
+/* papildomas add mygtukas i tuscia div 
+ * 
+ * <button id="CandidateAdd" className="btn btn-block btn-success" type="submit"
+                        onClick={this.props.onAddClick} >Prideti kandidatą</button>
+ * 
+ */
+
 
 CandidatesComponent.propTypes = {
     onAddClick: React.PropTypes.func.isRequired,

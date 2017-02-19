@@ -4,10 +4,9 @@ $('document').ready(function() {
 		alert("veikia")
 	});
 
-	
 	$(function() {
 		$('[data-toggle="tooltip"]').tooltip()
 	})
-	
+
 
 });
