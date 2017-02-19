@@ -15,6 +15,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 
@@ -30,13 +31,15 @@ public class Parties {
 	@Column(name = "id")
 	private Integer id;
 
-	@Column(name = "title")
-	@NotNull
-	@Length(min = 1, max = 50)
+	@Column(name = "title", unique=true)
+	@NotNull(message = "PARTIES TITLE can not be empty")
+	@Pattern(regexp = ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)", message = "PARTIES TITLE contains invalid characters. ")	
+	@Length(min=1, max=100, message="PARTIES TITLE must not be empty and length can not be longer than {max} symbols. ")
 	private String title;
 	
-	@Column(name = "PARTY_CODE") 
-	@Length(min = 1, max = 6)
+	@Column(name = "PARTY_CODE", unique=true) 
+	@Pattern(regexp = ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)", message = "PARTIES PARTY_CODE contains invalid characters. ")	
+	@Length(min=1, max=6, message="PARTIES PARTY_CODE must not be empty and length can not be longer than {max} symbols. ")
     private String Party_Code;	
 
 	@OneToMany(cascade = CascadeType.ALL)

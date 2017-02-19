@@ -16,6 +16,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.Length;
 
@@ -39,28 +40,35 @@ public class Candidates {
 	private Integer party_id;
 	
 	@Column(name = "name")
-	@NotNull
-	@Length(min = 1, max = 30)
+	@NotNull(message = "Candidates NAME can not be empty")
+	@Pattern(regexp = ".*([a-zA-ZąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)", message = "Candidates NAME contains invalid characters. ")	
+	@Length(min=1, max=40, message="Candidates NAME must not be empty and length can not be longer than {max} symbols. ")
 	private String name;
 	
 	@Column(name = "last_name")
-	@NotNull
-	@Length(min = 1, max = 30)
+	@NotNull(message = "Candidates LAST NAME can not be empty")
+	@Pattern(regexp = ".*([a-zA-ZąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)", message = "Candidates LAST NAME contains invalid characters")	
+	@Length(min=1, max=40, message="Candidates LAST NAME must not be empty and length can not be longer than {max} symbols. ")
 	private String last_name;
 	
-	@Column(name = "personal_id")
-	private Long personal_id;
+	@Column(name = "personal_id", unique=true)
+	@Pattern(regexp = ".*([0-9]$)", message = "Candidates PERSONAL_ID contains invalid characters. Only numbers accepted. ")	
+	@Length(min=11, max=11, message="Candidates PERSONAL_ID must be exacly {max} characters in length. ")
+	private String personal_id;
 	
 	@Column(name = "date_of_birth")
-	@NotNull
+	@NotNull(message = "Candidates DATE OF BIRTH can not be empty")
 	private Date date_of_birth;
 	
 	@Column(name = "description")
-	@Length(min = 0, max = 255)
+	//@Pattern(regexp = ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)", message = "Candidates DESCRIPTION contains invalid characters. ")		
+	@Length(min=0, max=300, message="Candidates DESCRIPTION length can not be longer than {max} symbols. ")
 	private String description;
 	
-	@Column(name = "party_list_seat")
-	private Integer party_list_seat;	
+	@Column(name = "party_list_seat", unique=true)
+	@Pattern(regexp = ".*([0-9]$)", message = "Candidates PARTY LIST SEAT contains invalid characters. Only numbers accepted. ")	
+	@Length(min=0, max=3, message="Candidates PARTY LIST SEAT length can not be longer than {max} symbols. ")
+	private String party_list_seat;	
 	
 //	public Candidates(Integer id, Integer constituency_id,Integer party_id, String name, String last_name, Date date_of_birth, String description) {
 //		this.id = id;
@@ -112,12 +120,12 @@ public class Candidates {
 		this.last_name = last_name;
 	}	
 
-	public Long getPersonal_code() {
+	public String getPersonal_code() {
 		return personal_id;
 	}
 
-	public void setPersonal_code(Long personal_code) {
-		this.personal_id = personal_code;
+	public void setPersonal_code(String personal_id) {
+		this.personal_id = personal_id;
 	}
 
 	public Date getDate_of_birth() {
@@ -136,11 +144,11 @@ public class Candidates {
 		this.description = description;
 	}
 	
-	public Integer getParty_list_seat() {
+	public String getParty_list_seat() {
 		return party_list_seat;
 	}
 
-	public void setParty_list_seat(Integer party_list_seat) {
+	public void setParty_list_seat(String party_list_seat) {
 		this.party_list_seat = party_list_seat;
 	}
 

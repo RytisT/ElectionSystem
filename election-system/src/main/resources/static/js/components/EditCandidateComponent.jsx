@@ -24,8 +24,8 @@ var EditCandidateComponent = React.createClass( {
                 <label>Aprašymas</label><br />
                 <input className="form-control" type="text" value={this.props.candidate.description} onChange={this.props.onFieldChange( 'description' )} /><br />
 
-                <button className="btn btn-success" style={{ marginRight: '20px' }} onClick={this.props.onSaveClick}  >Išsaugoti</button>
-                <button className="btn btn-success" style={{ marginRight: '20px' }} onClick={this.props.onCancelClick}  >Atšaukti</button>
+                <button id="EditCandidateSave" className="btn btn-success" style={{ marginRight: '20px' }} onClick={this.props.onSaveClick}  >Išsaugoti</button>
+                <button id="EditCandidateCancel" className="btn btn-success" style={{ marginRight: '20px' }} onClick={this.props.onCancelClick}  >Atšaukti</button>
             </form>
         )
     }

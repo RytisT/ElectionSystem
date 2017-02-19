@@ -41,7 +41,7 @@ var MainPageComponent = React.createClass( {
                         <tr style={styles.rows}>Vienmandatės rinkimų apygardos rezultatai</tr>
                         <tr style={styles.rows}>Daugiamandatės rinkimų apygardos rezultatai</tr>
                         <tr style={styles.rows}>Konsoliduoti rinkimų apygardos rezultatai</tr>
-                        <tr onClick={this.props.onCandidatesClick} style={styles.rows}>Kandidatų sąrašas</tr>
+                        <tr id="MainPageCandidates" onClick={this.props.onCandidatesClick} style={styles.rows}>Kandidatų sąrašas</tr>
                         <tr style={styles.rows}>Partijų sąrašas</tr>
                     </tbody>
                 </table>

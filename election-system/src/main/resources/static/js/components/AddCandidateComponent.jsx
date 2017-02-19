@@ -23,8 +23,8 @@ var AddCandidateComponent = React.createClass( {
                 <input className="form-control" type="date" value={this.props.candidate.date_of_birth} onChange={this.props.onFieldChange( 'date_of_birth' )} /><br />
                 <label>Aprašymas:</label><br />
                 <input className="form-control" type="text" value={this.props.candidate.description} onChange={this.props.onFieldChange( 'description' )} /><br />
-                <button className="btn btn-success" style={{ marginRight: '20px' }} onClick={this.props.onSaveClick}  >Išsaugoti</button>
-                <button className="btn btn-success" style={{ marginRight: '20px' }} onClick={this.props.onCancelClick}  >Atšaukti</button>
+                <button id="AddCandidateSave" className="btn btn-success" style={{ marginRight: '20px' }} onClick={this.props.onSaveClick}  >Išsaugoti</button>
+                <button id="AddCandidateCancel" className="btn btn-success" style={{ marginRight: '20px' }} onClick={this.props.onCancelClick}  >Atšaukti</button>
             </form>
         )
     }
