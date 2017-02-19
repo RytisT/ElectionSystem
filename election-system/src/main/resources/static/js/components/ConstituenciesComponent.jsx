@@ -14,7 +14,7 @@ var ConstituenciesComponent = React.createClass({
                     <td>{constituency.title}</td>
                     <td><button type="button" className="btn btn-info" onClick={_this.props.onEditDistrict(constituency)}>Redaguoti apylinkes</button></td>
                     <td></td>
-                    <td><button type="button" className="btn btn-danger" onClick={_this.props.onDeleteConst(constituency)}>Trinti</button></td>
+                    <td><button type="button" className="btn btn-danger" onClick={_this.props.onDelete(constituency)}>Trinti</button></td>
                 </tr>
             );
         });

@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package lt.itakademija.database.models;
 
@@ -44,24 +44,37 @@ public class Districts {
 
 	@Column(name = "address")
 	private String address;
-	
+
 	@Column(name = "VOTED_SINGLE")
-    private Integer votedSingle;
+	private Integer votedSingle;
 
-    @Column(name = "VOTED_SINGLE_CORRUPT")
-    private Integer votedSingleCorrupt;
+	@Column(name = "VOTED_SINGLE_CORRUPT")
+	private Integer votedSingleCorrupt;
 
-    @Column(name = "VOTED_MULTI")
-    private Integer votedMulti;
+	@Column(name = "VOTED_MULTI")
+	private Integer votedMulti;
 
-    @Column(name = "VOTED_MULTI_CORRUPT")
-    private Integer votedMultiCorrupt;
-    
-    
+	@Column(name = "VOTED_MULTI_CORRUPT")
+	private Integer votedMultiCorrupt;
 
-	@OneToOne(cascade = CascadeType.ALL)
-	private District_Representatives district_representatives;
-	
+
+
+//    @OneToOne(cascade = CascadeType.ALL)
+//	@JoinColumn(name = "DISTRICTS_ID")
+//	private District_Representatives district_representatives;
+
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "DISTRICT_ID")
+	private List<District_Representatives> district_representatives;
+
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "DISTRICT_ID")
+	private List<Single_Results> single_results;
+
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "DISTRICT_ID")
+	private List<Multi_Results> multi_results;
+
 	public Integer getId() {
 		return id;
 	}
@@ -134,21 +147,14 @@ public class Districts {
 		this.votedMultiCorrupt = votedMultiCorrupt;
 	}
 
-	public District_Representatives getDistrict_representatives() {
+
+	public List<District_Representatives> getDistrict_representatives() {
 		return district_representatives;
 	}
 
-	public void setDistrict_representatives(District_Representatives district_representatives) {
+	public void setDistrict_representatives(List<District_Representatives> district_representatives) {
 		this.district_representatives = district_representatives;
 	}
-	
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "DISTRICTS_ID")
-	private List<Single_Results> single_results;
-	
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "DISTRICTS_ID")
-	private List<Multi_Results> multi_results;
 
 	public List<Single_Results> getSingle_results() {
 		return single_results;
@@ -165,7 +171,7 @@ public class Districts {
 	public void setMulti_results(List<Multi_Results> multi_results) {
 		this.multi_results = multi_results;
 	}
-	
-	
+
+
 
 }

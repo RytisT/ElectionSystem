@@ -27,11 +27,11 @@ var ConstituenciesContainer = React.createClass({
 
 
     handleDeleteConst: function(constituency) {
-        var _this = this;
         return function() {
+            console.log(constituency);
             axios.delete('/api/constituencies/'+ constituency.id).then(function(response) {
-                _this.componentWillMount();
-            });
+                this.componentWillMount();
+            }.bind(this));
         };
     },
 
@@ -44,7 +44,7 @@ var ConstituenciesContainer = React.createClass({
 
     handleSubmitConst: function (constituency) {
         var _this = this;
-            axios.post('/api/constituencies', this.state.constituency).then(function() {
+            axios.post('/api/constituencies', constituency).then(function() {
                 _this.componentWillMount();
             });
         },
@@ -55,7 +55,6 @@ var ConstituenciesContainer = React.createClass({
             var tempConstituency = _this.state.constituency;
             tempConstituency[fieldName] = constituency.target.value;
             _this.setState( { constituency: tempConstituency });
-            console.log(_this.state.constituency);
 
         };
     },
@@ -70,7 +69,7 @@ var ConstituenciesContainer = React.createClass({
                 />
                 <ConstituenciesComponent constituencies={this.state.constituencies}
                             onEditDistrict={this.handleEditDistricts}
-                            onDeleteConst ={this.handleDeleteConst}
+                            onDeleteConst ={this.handleDeleteConst()}
                 />
             </div>
         )
