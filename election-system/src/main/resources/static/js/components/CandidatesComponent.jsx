@@ -43,6 +43,7 @@ var CandidatesComponent = React.createClass( {
                 date = '0' + date;
             }
             var fullDate = year + '-' + month + '-' + date;
+           
 
             return (
                 <tr id="candidatesList" key={index} >
@@ -86,11 +87,11 @@ var CandidatesComponent = React.createClass( {
                 <div>
                     
                 </div>
-                <div className="panel panel-default" style={styles.marginTop}  id="candidatesTable">
+                <div className="panel panel-default" style={styles.marginTop}  id="Table">
                     <table className="table table-striped" >
                         <thead>
                             <tr>
-                                <th id="CandidateListNumber">Eil.Nr.</th>
+                                <th id="RowNumber">Eil.Nr.</th>
                                 <th>VARDAS</th>
                                 <th>PAVARDĖ</th>
                                 <th>GIMIMO DATA</th>
@@ -122,7 +123,6 @@ var CandidatesComponent = React.createClass( {
 
 CandidatesComponent.propTypes = {
     onAddClick: React.PropTypes.func.isRequired,
-    onMainPageClick: React.PropTypes.func.isRequired,
     onDescriptionItemClick: React.PropTypes.func.isRequired
 };
 

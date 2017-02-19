@@ -63,18 +63,15 @@ ul.header li a {
 	color: #008000;
 }
 
-/* Candidates */
-#candidatesTable table {
+/* Tables */
+#Table table {
 	counter-reset: line-number;
 }
 
-#candidatesTable td:first-child:before {
+#Table td:first-child:before {
 	content: counter(line-number) ".";
 	counter-increment: line-number;
 	padding-right: 0.3em;
 	padding-left: 15px;
 }
 
-#CandidateListNumber {
-	width: 30px;
-}

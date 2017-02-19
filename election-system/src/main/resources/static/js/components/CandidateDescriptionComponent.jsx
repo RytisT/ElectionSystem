@@ -19,6 +19,8 @@ var CandidateDescriptionComponent = React.createClass( {
 
                 <span id="cdtitle">Vardas:  </span><span>{this.props.candidate.name}</span><br />
                 <span id="cdtitle">Pavardė: </span><span>{this.props.candidate.last_name}</span><br />
+                
+                <br />
                 <span>{this.props.candidate.description}</span><br /><br />
                 <button id="CandidateDescriptionCancel" className="btn btn-success" style={{ marginRight: '20px' }} onClick={this.props.onCancelClick}  >Grįžti</button>
             </div>
@@ -26,8 +28,11 @@ var CandidateDescriptionComponent = React.createClass( {
     }
 });
 
+//<span id="cdtitle">Partinė priklausomybė: </span><span>{this.props.party.title}</span><br />
+
 CandidateDescriptionComponent.propTypes = {
-    candidate: React.PropTypes.object.isRequired
+    candidate: React.PropTypes.object.isRequired,
+    party: React.PropTypes.object.isRequired
 };
 
 window.CandidateDescriptionComponent = CandidateDescriptionComponent;
