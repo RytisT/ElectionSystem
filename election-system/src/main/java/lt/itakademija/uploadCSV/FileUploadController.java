@@ -3,8 +3,8 @@ package lt.itakademija.uploadCSV;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.stream.Collectors;
 
-@Controller
+@RestController
 public class FileUploadController {
 
     private final StorageService storageService;
@@ -51,14 +51,10 @@ public class FileUploadController {
     }
 
     @PostMapping("/uploadForm")
-    public String handleFileUpload(@RequestParam("file") MultipartFile file,
-                                   RedirectAttributes redirectAttributes) throws SQLException {
+    public ResponseEntity<?> handleFileUpload(@RequestParam("file") MultipartFile file) throws SQLException {
 
         storageService.store(file);
-        redirectAttributes.addFlashAttribute("message",
-                "Failas sekmingai ikeltas " + file.getOriginalFilename() + "!");
-
-        return "redirect:/uploadForm";
+        return  new ResponseEntity<>(HttpStatus.OK);
     }
 
     @ExceptionHandler(StorageFileNotFoundException.class)
