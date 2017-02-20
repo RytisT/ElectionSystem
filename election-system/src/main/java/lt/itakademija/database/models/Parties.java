@@ -27,8 +27,8 @@ import org.hibernate.validator.constraints.Length;
 public class Parties {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id")
+//	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "id", unique=true)
 	private Integer id;
 
 	@Column(name = "title", unique=true)

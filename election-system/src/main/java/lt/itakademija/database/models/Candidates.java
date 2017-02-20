@@ -13,6 +13,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -120,7 +121,7 @@ public class Candidates {
 		this.last_name = last_name;
 	}	
 
-	public String getPersonal_code() {
+	public String getPersonal_id() {
 		return personal_id;
 	}
 
@@ -157,7 +158,6 @@ public class Candidates {
 	private List<Single_Results> single_results;
 
 
-
 	public List<Single_Results> getSingle_results() {
 		return single_results;
 	}
@@ -165,6 +165,8 @@ public class Candidates {
 	public void setSingle_results(List<Single_Results> single_results) {
 		this.single_results = single_results;
 	}
+
+
 	
 	
 
