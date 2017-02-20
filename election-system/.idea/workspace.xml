@@ -47,7 +47,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SingleConstituencyContainer.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SingleConstituencyContainer.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/containers/SingleConstituencyContainer.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="126">
@@ -67,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="60" column="49" lean-forward="false" selection-start-line="60" selection-start-column="49" selection-end-line="60" selection-end-column="49" />
+            <state relative-caret-position="369">
+              <caret line="38" column="22" lean-forward="true" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -132,12 +132,12 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/js/components/EditDistrictRepresentativeComponent.jsx" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/config/routes.jsx" />
         <option value="$PROJECT_DIR$/src/main/java/lt/itakademija/database/models/Districts.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/index.html" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/containers/ConstituenciesContainer.jsx" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/components/AddConstituencyComponent.jsx" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/components/ConstituenciesComponent.jsx" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/components/SingleConstituencyComponent.jsx" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/containers/SingleConstituencyContainer.jsx" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/index.html" />
       </list>
     </option>
   </component>
@@ -916,12 +916,12 @@
       <workItem from="1487208768840" duration="19777000" />
       <workItem from="1487335196360" duration="28839000" />
       <workItem from="1487424382568" duration="76000" />
-      <workItem from="1487433625362" duration="38735000" />
+      <workItem from="1487433625362" duration="40474000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120534000" />
+    <option name="totallyTimeSpent" value="122273000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1347,14 +1347,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="60" column="49" lean-forward="false" selection-start-line="60" selection-start-column="49" selection-end-line="60" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/AddConstituencyComponent.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -1399,6 +1391,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="38" column="22" lean-forward="true" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
           <folding />
         </state>
       </provider>
