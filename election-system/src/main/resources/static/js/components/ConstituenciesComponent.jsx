@@ -6,18 +6,16 @@ var ConstituenciesComponent = React.createClass({
 
 
     render: function() {
-        var _this = this;
         var constituenciesList = this.props.constituencies.map(function (constituency, index) {
 
             return(
-                <tr key={index}>
-                    <td>{constituency.title}</td>
-                    <td><button type="button" className="btn btn-info" onClick={_this.props.onEditDistrict(constituency)}>Redaguoti apylinkes</button></td>
-                    <td></td>
-                    <td><button type="button" className="btn btn-danger" onClick={_this.props.onDelete(constituency)}>Trinti</button></td>
-                </tr>
+                <SingleConstituencyContainer constituency={constituency}
+                                             key={index}
+                                             onEditDistrict={this.props.onEditDistrict}
+                                             onDeleteConst ={this.props.onDeleteConst}
+                                             onFieldChange = {this.props.onFieldChange}/>
             );
-        });
+        }.bind(this));
 
 
         return(
@@ -27,7 +25,6 @@ var ConstituenciesComponent = React.createClass({
                     <tr>
                        <th>Apygarda</th>
                         <th>Apylinkes</th>
-                        <th></th>
                        <th>Trinti</th>
                     </tr>
                    </thead>
