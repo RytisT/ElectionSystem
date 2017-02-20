@@ -8,6 +8,11 @@ var CandidateDescriptionContainer = React.createClass( {
                 last_name: '',
                 date_of_birth: '',
                 description: ''
+            },
+            party: {
+                id: this.props.params.id,
+                title: '',
+                party_Code:''
             }
         }
     },
@@ -19,7 +24,12 @@ var CandidateDescriptionContainer = React.createClass( {
         axios.get( '/api/candidates/' + candidateId ).then( function( response ) {
             self.setState({ candidate: response.data });
         });
+//        var partyId = this.props.params.partyId;
+//        axios.get( '/api/parties/' + partyId ).then( function( response ) {
+//            self.setState({ party: response.data });
+//        });
     }, 
+
 
     handleCancelClick() {
         this.context.router.push( '/candidates' );
@@ -29,6 +39,7 @@ var CandidateDescriptionContainer = React.createClass( {
         return (
             <CandidateDescriptionComponent
                 candidate={this.state.candidate}
+                party={this.state.party}
                 onCancelClick={this.handleCancelClick}
                 />
         );

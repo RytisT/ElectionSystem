@@ -54,14 +54,24 @@ ul.header li a {
 	background-color: #0099FF;
 }
 
-		/* Candidates Description */
-
+/* Candidates Description */
 #description span {
 	font-size: 20px;
 }
 
 #cdtitle {
-	color: #0066cc;
+	color: #008000;
 }
 
-					
+/* Tables */
+#Table table {
+	counter-reset: line-number;
+}
+
+#Table td:first-child:before {
+	content: counter(line-number) ".";
+	counter-increment: line-number;
+	padding-right: 0.3em;
+	padding-left: 15px;
+}
+

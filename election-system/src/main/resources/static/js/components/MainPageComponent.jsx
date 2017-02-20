@@ -42,7 +42,7 @@ var MainPageComponent = React.createClass( {
                         <tr style={styles.rows}>Daugiamandatės rinkimų apygardos rezultatai</tr>
                         <tr style={styles.rows}>Konsoliduoti rinkimų apygardos rezultatai</tr>
                         <tr id="MainPageCandidates" onClick={this.props.onCandidatesClick} style={styles.rows}>Kandidatų sąrašas</tr>
-                        <tr style={styles.rows}>Partijų sąrašas</tr>
+                        <tr id="MainPageParties" onClick={this.props.onPartiesClick}style={styles.rows}>Partijų sąrašas</tr>
                     </tbody>
                 </table>
 
@@ -57,7 +57,8 @@ var MainPageComponent = React.createClass( {
 MainPageComponent.propTypes = {
     onAdminClick: React.PropTypes.func.isRequired,
     onRepresentativesClick: React.PropTypes.func.isRequired,
-    onCandidatesClick: React.PropTypes.func.isRequired
+    onCandidatesClick: React.PropTypes.func.isRequired,
+    onPartiesClick: React.PropTypes.func.isRequired
 };
 
 window.MainPageComponent = MainPageComponent;
