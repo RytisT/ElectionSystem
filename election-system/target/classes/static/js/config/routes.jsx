@@ -20,6 +20,7 @@ var routes = (
         <Route path="/candidates" component={CandidatesContainer} />
         <Route path="/parties" component={UserPartiesContainer} />
         <Route path="/candidate/description/:candidateId" component={CandidateDescriptionContainer} />
+        <Route path="/representative" component={RepresentativeContainer} />
     </Route>
     </Router>
     </Router>
