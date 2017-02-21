@@ -34,10 +34,10 @@ public class Districts {
     @Column(name = "constituency_id")
     private Integer constituency_id;
 
-    @Column(name = "title", unique=true)
+    @Column(name = "title", unique = true)
     @NotNull(message = "DISTRICTS TITLE can not be empty")
     @Pattern(regexp = ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)", message = "DISTRICTS TITLE contains invalid characters. ")
-    @Length(min=1, max=30, message="DISTRICTS TITLE must not be empty and length can not be longer than {max} symbols. ")
+    @Length(min = 1, max = 30, message = "DISTRICTS TITLE must not be empty and length can not be longer than {max} symbols. ")
     private String title;
 
     @Column(name = "number_of_voters")
@@ -45,7 +45,7 @@ public class Districts {
 
     @Column(name = "address")
     //@Pattern(regexp = ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)", message = "DISTRICTS ADDRESS contains invalid characters. ")
-    @Length(min=0, max=100, message="DISTRICTS ADDRESS must not be empty and length can not be longer than {max} symbols. ")
+    @Length(min = 0, max = 100, message = "DISTRICTS ADDRESS must not be empty and length can not be longer than {max} symbols. ")
     private String address;
 
     @Column(name = "VOTED_SINGLE")
@@ -59,7 +59,6 @@ public class Districts {
 
     @Column(name = "VOTED_MULTI_CORRUPT")
     private Integer votedMultiCorrupt;
-
 
 
 //    @OneToOne(cascade = CascadeType.ALL)
@@ -173,7 +172,6 @@ public class Districts {
     public void setMulti_results(List<Multi_Results> multi_results) {
         this.multi_results = multi_results;
     }
-
 
 
 }

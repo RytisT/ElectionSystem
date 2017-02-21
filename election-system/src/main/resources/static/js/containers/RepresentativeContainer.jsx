@@ -1,15 +1,15 @@
-var RepresentativeContainer = React.createClass( {
-    getInitialState: function() {
+var RepresentativeContainer = React.createClass({
+    getInitialState: function () {
         return {
             parties: []
         };
     },
 
-    componentWillMount: function() {
+    componentWillMount: function () {
         var self = this;
-        axios.get( '/api/parties' )
-            .then( function( response ) {
-                self.setState( {
+        axios.get('/api/parties')
+            .then(function (response) {
+                self.setState({
                     parties: response.data
                 });
             });
@@ -18,7 +18,7 @@ var RepresentativeContainer = React.createClass( {
     render: function () {
         return (
             <div>
-                <MultiVotesComponent parties={this.state.parties} />
+                <MultiVotesComponent parties={this.state.parties}/>
                 <SingleVotesComponent />
             </div>
         )

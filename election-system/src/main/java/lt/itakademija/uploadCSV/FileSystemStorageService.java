@@ -32,7 +32,7 @@ public class FileSystemStorageService implements StorageService {
                 throw new StorageException("Sąrašas tuščias " + file.getOriginalFilename());
             }
             Files.copy(file.getInputStream(), this.rootLocation.resolve(file.getOriginalFilename()));
-            new toDB().CSVtoH2("./upload/"+(file.getOriginalFilename()), "CANDIDATE");
+            new toDB().CSVtoH2("./upload/" + (file.getOriginalFilename()), "CANDIDATE");
         } catch (IOException e) {
             throw new StorageException("Nepavyko ikelti sąrašo " + file.getOriginalFilename(), e);
         }
@@ -60,10 +60,9 @@ public class FileSystemStorageService implements StorageService {
         try {
             Path file = load(filename);
             Resource resource = new UrlResource(file.toUri());
-            if(resource.exists() || resource.isReadable()) {
+            if (resource.exists() || resource.isReadable()) {
                 return resource;
-            }
-            else {
+            } else {
                 throw new StorageFileNotFoundException("Neimanoma nuskaityti failo: " + filename);
 
             }

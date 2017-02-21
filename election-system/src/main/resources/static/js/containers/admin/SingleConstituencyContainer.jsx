@@ -1,7 +1,6 @@
-
 var SingleConstituencyContainer = React.createClass({
 
-    getInitialState: function() {
+    getInitialState: function () {
         return {
             isEditing: false,
             constituency: this.props.constituency,
@@ -11,20 +10,20 @@ var SingleConstituencyContainer = React.createClass({
     },
 
 
-    handleFieldChange: function( fieldName ) {
-        return function(constituency) {
+    handleFieldChange: function (fieldName) {
+        return function (constituency) {
             var tempConstituency = this.state.constituency;
             tempConstituency[fieldName] = constituency.target.value;
-            if(!this.state.isChanged){
-                this.setState({fieldContainer : constituency.target.value})
+            if (!this.state.isChanged) {
+                this.setState({fieldContainer: constituency.target.value})
             }
-            this.setState( { constituency: tempConstituency, isChanged: true});
+            this.setState({constituency: tempConstituency, isChanged: true});
         }.bind(this);
     },
 
     handleEditConst: function (constitut) {
 
-        if(this.state.isEditing) {
+        if (this.state.isEditing) {
             this.setState({isEditing: false})
             this.state.constituency.title = this.state.fieldContainer;
             this.forceUpdate()
@@ -39,21 +38,20 @@ var SingleConstituencyContainer = React.createClass({
             .then(this.setState({isEditing: false}))
     },
 
-    render: function() {
-        return(
+    render: function () {
+        return (
             <SingleConstituencyComponent constituency={this.props.constituency}
                                          onEditDistrict={this.props.onEditDistrict}
                                          onEditConst={this.handleEditConst}
-                                         onDeleteConst ={this.props.onDeleteConst}
-                                         onSaveConst = {this.handleSaveConst}
-                                         isEditing = {this.state.isEditing}
-                                         onFieldChange = {this.handleFieldChange}/>
+                                         onDeleteConst={this.props.onDeleteConst}
+                                         onSaveConst={this.handleSaveConst}
+                                         isEditing={this.state.isEditing}
+                                         onFieldChange={this.handleFieldChange}/>
         );
 
 
     }
 });
-
 
 
 window.SingleConstituencyContainer = SingleConstituencyContainer;

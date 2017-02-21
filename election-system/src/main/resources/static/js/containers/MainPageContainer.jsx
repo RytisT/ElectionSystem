@@ -1,32 +1,30 @@
-var MainPageContainer = React.createClass( {
+var MainPageContainer = React.createClass({
 
 
+    // admin mygtuko paspaudimo action
+    handleAdmin() {
+        this.context.router.push('/admin');
+    },
 
-        // admin mygtuko paspaudimo action
-        handleAdmin() {
-            this.context.router.push( '/admin' );
-        },
-    
-        // Representatives mygtuko paspaudimo action
-        handleRepresentatives() {
-            this.context.router.push( '/Representatives' );
-        },
+    // Representatives mygtuko paspaudimo action
+    handleRepresentatives() {
+        this.context.router.push('/Representatives');
+    },
 
     // Kandidatu nuorodos paspaudimo action
     handleCandidates() {
-        this.context.router.push( '/Candidates' );
+        this.context.router.push('/Candidates');
     },
 
     // Partiju nuorodos paspaudimo action
     handleParties() {
-        this.context.router.push( '/Parties' );
+        this.context.router.push('/Parties');
     },
 
 
-
-    render: function() {
+    render: function () {
         return <MainPageComponent onAdminClick={this.handleAdmin} onRepresentativesClick={this.handleRepresentatives}
-            onCandidatesClick={this.handleCandidates} onPartiesClick={this.handleParties} />
+                                  onCandidatesClick={this.handleCandidates} onPartiesClick={this.handleParties}/>
     }
 });
 

@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package lt.itakademija.database.controllers;
 
@@ -25,19 +25,19 @@ import lt.itakademija.database.services.DistrictsService;
 @RequestMapping(value = "/api/districts")
 public class DistrictsController {
 
-	@Autowired
-	private DistrictsService service;
+    @Autowired
+    private DistrictsService service;
 
-	@GetMapping
-	public Iterable<Districts> districts() {
-		return service.findAll();
-	}
+    @GetMapping
+    public Iterable<Districts> districts() {
+        return service.findAll();
+    }
 
-	@PostMapping
-	public Districts createOrUpdateDistricts(@RequestBody Districts d) {
-		return service.saveOrUpdate(d);
-	}
-	
+    @PostMapping
+    public Districts createOrUpdateDistricts(@RequestBody Districts d) {
+        return service.saveOrUpdate(d);
+    }
+
     @DeleteMapping(value = "/{id}")
     public void deleteById(@PathVariable("id") Integer id) {
         service.deleteById(id);

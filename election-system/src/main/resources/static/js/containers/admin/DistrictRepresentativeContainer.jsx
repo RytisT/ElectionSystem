@@ -1,6 +1,5 @@
-
 var DistrictRepresentativeContainer = React.createClass({
-    getInitialState: function(){
+    getInitialState: function () {
         return {
             existing: false,
             editing: false,
@@ -14,11 +13,11 @@ var DistrictRepresentativeContainer = React.createClass({
         }
     },
 
-    handleFieldChange: function( fieldName ) {
-        return function(representative) {
+    handleFieldChange: function (fieldName) {
+        return function (representative) {
             var tempRepresentative = this.state.representative;
             tempRepresentative[fieldName] = representative.target.value;
-            this.setState( { representative: tempRepresentative });
+            this.setState({representative: tempRepresentative});
 
         }.bind(this);
     },
@@ -26,8 +25,8 @@ var DistrictRepresentativeContainer = React.createClass({
     handleSubmit: function (representative) {
         (representative.district_id === "") && (representative.district_id = this.props.distId);
         console.log("adding:", representative)
-        axios.post('/api/representatives/', representative).then(function() {
-            this.setState( { editing: false });
+        axios.post('/api/representatives/', representative).then(function () {
+            this.setState({editing: false, existing: true});
         }.bind(this));
     },
 
@@ -35,11 +34,11 @@ var DistrictRepresentativeContainer = React.createClass({
 
     },
 
-    changeExistingState: function(){
-        if(this.state.existing){
-            this.setState( { existing: false });
+    changeExistingState: function () {
+        if (this.state.existing) {
+            this.setState({existing: false});
         } else {
-            this.setState( { existing: true });
+            this.setState({existing: true});
         }
     },
 
@@ -48,9 +47,9 @@ var DistrictRepresentativeContainer = React.createClass({
     },
 
 
-    componentWillMount: function() {
-        if (this.props.distRep[0] != null){
-            this.setState( { existing: true, representative: this.props.distRep[0] });
+    componentWillMount: function () {
+        if (this.props.distRep[0] != null) {
+            this.setState({existing: true, representative: this.props.distRep[0]});
 
         }
     },
@@ -60,8 +59,8 @@ var DistrictRepresentativeContainer = React.createClass({
                                                 existing={this.state.existing}
                                                 editing={this.state.editing}
                                                 onEdit={this.handleEditRep}
-                                                onFieldChange = {this.handleFieldChange}
-                                                onSubmit = {this.handleSubmit}
+                                                onFieldChange={this.handleFieldChange}
+                                                onSubmit={this.handleSubmit}
                                                 onDelete={this.handleDelete}/>
     }
 });

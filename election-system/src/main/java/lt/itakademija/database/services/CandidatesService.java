@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package lt.itakademija.database.services;
 
@@ -31,11 +31,11 @@ public class CandidatesService {
         return repository.save(c);
     }
 
-    public void deleteById(Integer id){
+    public void deleteById(Integer id) {
         repository.delete(id);
     }
-    
-    public Candidates findById(Integer id){
+
+    public Candidates findById(Integer id) {
         return repository.findOne(id);
     }
 

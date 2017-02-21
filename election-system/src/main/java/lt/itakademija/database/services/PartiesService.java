@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package lt.itakademija.database.services;
 
@@ -19,25 +19,25 @@ import lt.itakademija.database.repositories.PartiesRepository;
 @Service
 @Transactional
 public class PartiesService {
-	
-	@Autowired
-	private PartiesRepository repository;
+
+    @Autowired
+    private PartiesRepository repository;
 
 
-	public List<Parties> findAll() {
-	    return repository.findAll();
-	}
+    public List<Parties> findAll() {
+        return repository.findAll();
+    }
 
-	public Parties saveOrUpdate(Parties p) {
-		return repository.save(p);
-	}
-	
-	public void deleteById(Integer id){
-	    repository.delete(id);
-	}
-	
-	public Parties findById(Integer id){
-	    return repository.findOne(id);
-	}
+    public Parties saveOrUpdate(Parties p) {
+        return repository.save(p);
+    }
+
+    public void deleteById(Integer id) {
+        repository.delete(id);
+    }
+
+    public Parties findById(Integer id) {
+        return repository.findOne(id);
+    }
 
 }

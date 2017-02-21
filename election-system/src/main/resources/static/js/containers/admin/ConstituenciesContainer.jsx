@@ -4,7 +4,7 @@ var ConstituenciesContainer = React.createClass({
         router: React.PropTypes.object.isRequired
     },
 
-    getInitialState: function() {
+    getInitialState: function () {
         return {
             constituency: {
                 title: ''
@@ -13,7 +13,7 @@ var ConstituenciesContainer = React.createClass({
         };
     },
 
-    componentWillMount: function() {
+    componentWillMount: function () {
         axios.get('/api/constituencies')
             .then(function (response) {
                 this.setState({
@@ -24,10 +24,10 @@ var ConstituenciesContainer = React.createClass({
     },
 
 
-    handleDeleteConst: function(constituency) {
-        return function() {
-            axios.delete('/api/constituencies/'+ constituency.id)
-                .then(function(response){
+    handleDeleteConst: function (constituency) {
+        return function () {
+            axios.delete('/api/constituencies/' + constituency.id)
+                .then(function (response) {
                     axios.get('/api/constituencies')
                         .then(function (response) {
                                 this.setState({
@@ -41,45 +41,45 @@ var ConstituenciesContainer = React.createClass({
     },
 
     handleEditDistricts: function (constituency) {
-        return function(){
-           this.context.router.push("/admin/district/" + constituency.id);
-       }.bind(this)
+        return function () {
+            this.context.router.push("/admin/district/" + constituency.id);
+        }.bind(this)
     },
 
     handleSubmitConst: function (constituency) {
-            axios.post('/api/constituencies', constituency)
-                .then(function(response){
-                    axios.get('/api/constituencies')
-                        .then(function (response) {
-                                this.setState({
-                                    constituencies: response.data
-                                });
+        axios.post('/api/constituencies', constituency)
+            .then(function (response) {
+                axios.get('/api/constituencies')
+                    .then(function (response) {
+                            this.setState({
+                                constituencies: response.data
+                            });
 
-                            }.bind(this)
-                        )
-                }.bind(this));
-        },
+                        }.bind(this)
+                    )
+            }.bind(this));
+    },
 
-    handleFieldChange: function( fieldName ) {
-        return function(constituency) {
+    handleFieldChange: function (fieldName) {
+        return function (constituency) {
             var tempConstituency = this.state.constituency;
             tempConstituency[fieldName] = constituency.target.value;
-            this.setState( { constituency: tempConstituency });
+            this.setState({constituency: tempConstituency});
 
         }.bind(this);
     },
 
 
-    render: function() {
-        return(
+    render: function () {
+        return (
             <div>
                 <AddConstituencyComponent constituency={this.state.constituency}
-                                          onFieldChange = {this.handleFieldChange}
-                                          onSubmitConst ={this.handleSubmitConst}
+                                          onFieldChange={this.handleFieldChange}
+                                          onSubmitConst={this.handleSubmitConst}
                 />
                 <ConstituenciesComponent constituencies={this.state.constituencies}
-                            onEditDistrict={this.handleEditDistricts}
-                            onDeleteConst ={this.handleDeleteConst}
+                                         onEditDistrict={this.handleEditDistricts}
+                                         onDeleteConst={this.handleDeleteConst}
                 />
             </div>
         )

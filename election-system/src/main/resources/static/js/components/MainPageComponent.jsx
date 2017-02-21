@@ -25,28 +25,29 @@ var styles = {
     }
 };
 
-var MainPageComponent = React.createClass( {
-    render: function() {
+var MainPageComponent = React.createClass({
+    render: function () {
 
         return (
             <div className="">
                 <h2 style={styles.blue}>Rinkimų rezultatai ir sąrašai</h2>
-                <div style={styles.line} ></div>
+                <div style={styles.line}></div>
 
                 <table className="table table-hover" id="menu">
 
                     <tbody>
-                        <tr style={styles.rows}>Rinkimų apylinkių rezultatai</tr>
-                        <tr style={styles.rows}>Rinkimų apygardų rezultatai</tr>
-                        <tr style={styles.rows}>Vienmandatės rinkimų apygardos rezultatai</tr>
-                        <tr style={styles.rows}>Daugiamandatės rinkimų apygardos rezultatai</tr>
-                        <tr style={styles.rows}>Konsoliduoti rinkimų apygardos rezultatai</tr>
-                        <tr id="MainPageCandidates" onClick={this.props.onCandidatesClick} style={styles.rows}>Kandidatų sąrašas</tr>
-                        <tr id="MainPageParties" onClick={this.props.onPartiesClick}style={styles.rows}>Partijų sąrašas</tr>
+                    <tr style={styles.rows}>Rinkimų apylinkių rezultatai</tr>
+                    <tr style={styles.rows}>Rinkimų apygardų rezultatai</tr>
+                    <tr style={styles.rows}>Vienmandatės rinkimų apygardos rezultatai</tr>
+                    <tr style={styles.rows}>Daugiamandatės rinkimų apygardos rezultatai</tr>
+                    <tr style={styles.rows}>Konsoliduoti rinkimų apygardos rezultatai</tr>
+                    <tr id="MainPageCandidates" onClick={this.props.onCandidatesClick} style={styles.rows}>Kandidatų
+                        sąrašas
+                    </tr>
+                    <tr id="MainPageParties" onClick={this.props.onPartiesClick} style={styles.rows}>Partijų sąrašas
+                    </tr>
                     </tbody>
                 </table>
-
-
 
 
             </div>

@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package lt.itakademija.database.controllers;
 
@@ -28,28 +28,28 @@ import lt.itakademija.database.services.ConstituencyService;
 @RequestMapping(value = "/api/constituencies")
 public class ConstituencyController {
 
-	@Autowired
-	private ConstituencyService service;
+    @Autowired
+    private ConstituencyService service;
 
-	@GetMapping
-	public List<Constituency> findAll() {
-		return service.findAll();
-	}
+    @GetMapping
+    public List<Constituency> findAll() {
+        return service.findAll();
+    }
 
-	@PostMapping
-	public Constituency createOrUpdateConstituency(@RequestBody Constituency c) {
-		return service.saveOrUpdate(c);
-	}
-	
-	@DeleteMapping(value ="/{id}")
-	public void deleteById(@PathVariable("id") Integer id){
-	    service.deleteById(id);
-	}
-	
-	@GetMapping(value ="/{id}")
-	public Constituency findById(@PathVariable("id") Integer id){
-	    return service.findById(id);
-	}
+    @PostMapping
+    public Constituency createOrUpdateConstituency(@RequestBody Constituency c) {
+        return service.saveOrUpdate(c);
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public void deleteById(@PathVariable("id") Integer id) {
+        service.deleteById(id);
+    }
+
+    @GetMapping(value = "/{id}")
+    public Constituency findById(@PathVariable("id") Integer id) {
+        return service.findById(id);
+    }
 
 
 }

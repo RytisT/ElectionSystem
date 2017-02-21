@@ -1,6 +1,6 @@
 var SingleDistrictContainer = React.createClass({
 
-    getInitialState: function() {
+    getInitialState: function () {
         return {
             isEditing: false,
             district: this.props.district,
@@ -10,20 +10,20 @@ var SingleDistrictContainer = React.createClass({
     },
 
 
-    handleFieldChange: function( fieldName ) {
-        return function(district) {
+    handleFieldChange: function (fieldName) {
+        return function (district) {
             var tempConstituency = this.state.district;
             tempConstituency[fieldName] = district.target.value;
-            if(!this.state.isChanged){
-                this.setState({fieldContainer : district.target.value})
+            if (!this.state.isChanged) {
+                this.setState({fieldContainer: district.target.value})
             }
-            this.setState( { district: tempConstituency, isChanged: true});
+            this.setState({district: tempConstituency, isChanged: true});
         }.bind(this);
     },
 
     handleEditDist: function () {
 
-        if(this.state.isEditing) {
+        if (this.state.isEditing) {
             this.setState({isEditing: false})
             this.state.district.title = this.state.fieldContainer;
             this.forceUpdate()
@@ -39,13 +39,13 @@ var SingleDistrictContainer = React.createClass({
     },
 
     render: function () {
-        return(
-            <SingleDistrictComponent district = {this.props.district}
+        return (
+            <SingleDistrictComponent district={this.props.district}
                                      onDelete={this.props.onDelete}
                                      onEditDist={this.handleEditDist}
-                                     onSaveDist = {this.handleSaveDist}
-                                     isEditing = {this.state.isEditing}
-                                     onFieldChange = {this.handleFieldChange}/>
+                                     onSaveDist={this.handleSaveDist}
+                                     isEditing={this.state.isEditing}
+                                     onFieldChange={this.handleFieldChange}/>
         )
     }
 });

@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package lt.itakademija.database.services;
 
@@ -20,23 +20,23 @@ import lt.itakademija.database.repositories.District_Representatives_Repository;
 @Service
 @Transactional
 public class District_Representatives_Service {
-	
-	@Autowired
-	private District_Representatives_Repository repository;
-	
-	public List<District_Representatives> findAll() {
-	    return repository.findAll();
-	}
-	
-	public District_Representatives saveOrUpdate(District_Representatives r) {
-		return repository.save(r);
-	}
 
-    public void deleteById(Integer id){
+    @Autowired
+    private District_Representatives_Repository repository;
+
+    public List<District_Representatives> findAll() {
+        return repository.findAll();
+    }
+
+    public District_Representatives saveOrUpdate(District_Representatives r) {
+        return repository.save(r);
+    }
+
+    public void deleteById(Integer id) {
         repository.delete(id);
     }
-    
-    public District_Representatives findById(Integer id){
+
+    public District_Representatives findById(Integer id) {
         return repository.findOne(id);
     }
-    }
+}

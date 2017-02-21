@@ -19,28 +19,28 @@ import lt.itakademija.database.services.Single_Results_Service;
 @CrossOrigin
 @RequestMapping(value = "/api/multi_results")
 public class Multi_Results_Controller {
-	
-	@Autowired
-	private Multi_Results_Service service;
-	
-	@GetMapping
-	public Iterable<Multi_Results> multi_results() {
-		return service.findAll();
-	}
 
-	@PostMapping
-	public Multi_Results createOrUpdateMulti_Results(@RequestBody Multi_Results mr) {
-		return service.saveOrUpdate(mr);
-	}
-	
-	@DeleteMapping(value="/{id}")
-	public void deleteMulti_ResultsById(@PathVariable("id") Integer id){
-	    service.deleteById(id);
-	}
-	
-	@GetMapping(value="/{id}")
-	public Multi_Results findMulti_ResultsById(@PathVariable("id") Integer id){
-	    return service.findById(id);
-	}
+    @Autowired
+    private Multi_Results_Service service;
+
+    @GetMapping
+    public Iterable<Multi_Results> multi_results() {
+        return service.findAll();
+    }
+
+    @PostMapping
+    public Multi_Results createOrUpdateMulti_Results(@RequestBody Multi_Results mr) {
+        return service.saveOrUpdate(mr);
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public void deleteMulti_ResultsById(@PathVariable("id") Integer id) {
+        service.deleteById(id);
+    }
+
+    @GetMapping(value = "/{id}")
+    public Multi_Results findMulti_ResultsById(@PathVariable("id") Integer id) {
+        return service.findById(id);
+    }
 
 }

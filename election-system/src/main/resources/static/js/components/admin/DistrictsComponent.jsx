@@ -6,15 +6,15 @@ var DistrictsComponent = React.createClass({
 
     districtList: function () {
         return this.props.districts.map(function (district, index) {
-            return(
-                    <SingleDistrictContainer key={index} district = {district} onDelete={this.props.onDelete}/>
+            return (
+                <SingleDistrictContainer key={index} district={district} onDelete={this.props.onDelete}/>
             )
         }.bind(this))
     },
 
 
-    render: function() {
-        return(
+    render: function () {
+        return (
             <div className="">
                 <table className="table table-striped">
                     <thead>

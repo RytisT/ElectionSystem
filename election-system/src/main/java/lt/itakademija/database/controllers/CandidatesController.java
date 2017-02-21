@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package lt.itakademija.database.controllers;
 
@@ -24,28 +24,28 @@ import lt.itakademija.database.services.CandidatesService;
 @RequestMapping(value = "/api/candidates")
 public class CandidatesController {
 
-	@Autowired
-	private CandidatesService service;
+    @Autowired
+    private CandidatesService service;
 
-	@GetMapping
-	public Iterable<Candidates> candidates() {
-		return service.findAll();
-	}
+    @GetMapping
+    public Iterable<Candidates> candidates() {
+        return service.findAll();
+    }
 
-	@PostMapping
-	public Candidates createOrUpdateCandidates(@RequestBody Candidates c) {
-		return service.saveOrUpdate(c);
-	}
-	
-	@DeleteMapping(value="/{id}")
-	public void deleteCandidateById(@PathVariable("id") Integer id){
-	    service.deleteById(id);
-	}
-	
-	@GetMapping(value="/{id}")
-	public Candidates findCandidateById(@PathVariable("id") Integer id){
-	    return service.findById(id);
-	}
-	
+    @PostMapping
+    public Candidates createOrUpdateCandidates(@RequestBody Candidates c) {
+        return service.saveOrUpdate(c);
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public void deleteCandidateById(@PathVariable("id") Integer id) {
+        service.deleteById(id);
+    }
+
+    @GetMapping(value = "/{id}")
+    public Candidates findCandidateById(@PathVariable("id") Integer id) {
+        return service.findById(id);
+    }
+
 
 }

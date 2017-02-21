@@ -24,12 +24,12 @@ var styles = {
     }
 };
 
-var UserPartiesComponent = React.createClass( {
-    render: function() {
+var UserPartiesComponent = React.createClass({
+    render: function () {
         var self = this;
-        var partiesList = this.props.parties.map( function( party, index ) {
+        var partiesList = this.props.parties.map(function (party, index) {
             return (
-                <tr id="partiesList" key={index} >
+                <tr id="partiesList" key={index}>
                     <td></td>
                     <td>{party.title}</td>
                     <td>{party.party_Code}</td>
@@ -40,28 +40,30 @@ var UserPartiesComponent = React.createClass( {
         return (
             <div className="">
                 <h2 style={styles.blue}> Partijos </h2>
-                <div style={styles.line} ></div>
+                <div style={styles.line}></div>
                 <div>
 
                 </div>
                 <div className="panel panel-default" style={styles.marginTop} id="Table">
-                    <table className="table table-striped" >
+                    <table className="table table-striped">
                         <thead>
-                            <tr>
-                                <th id="RowNumber">Eil.Nr.</th>
-                                <th>Partijos pavadinimas</th>
-                                <th>Partijos kodas</th>
-                                <th> </th>
+                        <tr>
+                            <th id="RowNumber">Eil.Nr.</th>
+                            <th>Partijos pavadinimas</th>
+                            <th>Partijos kodas</th>
+                            <th></th>
 
-                            </tr>
+                        </tr>
                         </thead>
                         <tbody>
-                            {partiesList}
+                        {partiesList}
                         </tbody>
                     </table>
                 </div>
                 <div>
-                    <button id="PartiesReturn" className="btn btn-success" style={{ marginRight: '20px' }} onClick={this.props.onCancelClick}  >Grįžti</button>
+                    <button id="PartiesReturn" className="btn btn-success" style={{marginRight: '20px'}}
+                            onClick={this.props.onCancelClick}>Grįžti
+                    </button>
                 </div>
             </div>
 
@@ -70,7 +72,6 @@ var UserPartiesComponent = React.createClass( {
 });
 
 
-UserPartiesComponent.propTypes = {
-};
+UserPartiesComponent.propTypes = {};
 
 window.UserPartiesComponent = UserPartiesComponent;

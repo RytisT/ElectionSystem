@@ -1,12 +1,10 @@
-$('document').ready(function() {
-	
-	//alert("veikia");
+$('document').ready(function () {
 
-	$('#login').click(function() {
-		alert("veikia")
-	});
+    //alert("veikia");
 
-	
+    $('#login').click(function () {
+        alert("veikia")
+    });
 
 
 });

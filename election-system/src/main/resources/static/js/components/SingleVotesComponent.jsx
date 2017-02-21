@@ -24,7 +24,7 @@ var styles = {
     }
 };
 
-var SingleVotesComponent = React.createClass( {
+var SingleVotesComponent = React.createClass({
 
     render: function () {
         return (

@@ -24,15 +24,15 @@ var styles = {
     }
 };
 
-var MultiVotesComponent = React.createClass( {
+var MultiVotesComponent = React.createClass({
 
     render: function () {
         var self = this;
-        var partiesList = this.props.parties.map( function( party, index ) {
+        var partiesList = this.props.parties.map(function (party, index) {
 
             return (
 
-                <tr id="partiesList" key={index} >
+                <tr id="partiesList" key={index}>
                     <td></td>
                     <td>{party.party_Code}</td>
                     <td>{party.title}</td>
@@ -50,9 +50,9 @@ var MultiVotesComponent = React.createClass( {
         return (
             <div className="">
                 <h2 style={styles.blue}> Daugiamandatininkų rezultatų suvedimas </h2>
-                <div style={styles.line} ></div>
-                <div className="panel panel-default" style={styles.marginTop}  id="Table">
-                    <table className="table table-striped" >
+                <div style={styles.line}></div>
+                <div className="panel panel-default" style={styles.marginTop} id="Table">
+                    <table className="table table-striped">
                         <thead>
                         <tr>
                             <th id="RowNumber">Eil.Nr.</th>
