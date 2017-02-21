@@ -1,26 +1,32 @@
-var SingleVotesContainer = React.createClass( {
-        getInitialState: function() {
-            return {
-                candidates: []
-            };
-        },
+var RepresentativeContainer = React.createClass( {
+    getInitialState: function() {
+        return {
+            parties: []
+        };
+    },
 
-        componentWillMount: function() {
-            var self = this;
-            axios.get( '/api/candidates' )
-                .then( function( response ) {
-                    self.setState( {
-                        candidates: response.data
-                    });
+    componentWillMount: function() {
+        var self = this;
+        axios.get( '/api/parties' )
+            .then( function( response ) {
+                self.setState( {
+                    parties: response.data
                 });
-        },
+            });
+    },
+
     render: function () {
-        return <SingleVotesComponent />
+        return (
+            <div>
+                <MultiVotesComponent parties={this.state.parties} />
+                <SingleVotesComponent />
+            </div>
+        )
     }
 });
 
-SingleVotesContainer.contextTypes = {
+RepresentativeContainer.contextTypes = {
     router: React.PropTypes.object.isRequired,
 };
 
-window.SingleVotesContainer = SingleVotesContainer;
+window.RepresentativeContainer = RepresentativeContainer;
