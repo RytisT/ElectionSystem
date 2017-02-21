@@ -39,5 +39,4 @@ public class District_Representatives_Service {
     public District_Representatives findById(Integer id){
         return repository.findOne(id);
     }
-    
-}
+    }
