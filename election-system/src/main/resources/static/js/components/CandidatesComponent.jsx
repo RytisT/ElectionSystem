@@ -24,22 +24,22 @@ var styles = {
     }
 };
 
-var CandidatesComponent = React.createClass({
-    render: function () {
+var CandidatesComponent = React.createClass( {
+    render: function() {
         var self = this;
-        var candidatesList = this.props.candidates.map(function (candidate, index) {
+        var candidatesList = this.props.candidates.map( function( candidate, index ) {
 
 
             // date
-            var d = new Date(candidate.date_of_birth);
+            var d = new Date( candidate.date_of_birth );
             var year = d.getFullYear();
             var month = d.getMonth() + 1;
             var date = d.getDate();
             // jei menuo vienzenklis sk tai prieki bus 0 pvz: 03
-            if (month < 10) {
+            if ( month < 10 ) {
                 month = '0' + month;
             }
-            if (date < 10) {
+            if ( date < 10 ) {
                 date = '0' + date;
             }
             var fullDate = year + '-' + month + '-' + date;
@@ -53,10 +53,10 @@ var CandidatesComponent = React.createClass({
                     <td>{fullDate}</td>
                     <td style={styles.width}>
                         <button id="CandidateInfo" type="button" className="btn btn-default"
-                                onClick={self.props.onDescriptionItemClick(candidate)}
-                                data-toggle="tooltip" data-placement="top" title="Kandidato informacija"
-                                data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
-                                aria-controls="collapseOne">
+                            onClick={self.props.onDescriptionItemClick( candidate )}
+                            data-toggle="tooltip" data-placement="top" title="Kandidato informacija"
+                            data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
+                            aria-controls="collapseOne">
                             <span className="glyphicon glyphicon-info-sign"></span></button>
                     </td>
 
@@ -85,29 +85,45 @@ var CandidatesComponent = React.createClass({
             <div className="">
                 <h2 style={styles.blue}> Kandidatai </h2>
                 <div style={styles.line}></div>
-                <div>
+                <div> </div>
+
+                <div className="input-group">
+                    <input type="text" className="form-control" placeholder="Search for..." />
+                    <span className="input-group-btn">
+                        <button id="candidateSearch" className="btn btn-default" type="button"
+                            onClick={( event ) => {
+                                if ( $( '#FullList' ).is( ":hidden" ) ) {
+                                    $( '#FullList' ).show();
+                                } else {
+                                    $( '#FullList' ).hide();
+                                }
+                            }
+                            }
+                            >Ieškoti!</button>
+                    </span>
 
                 </div>
+
                 <div className="panel panel-default" style={styles.marginTop} id="Table">
                     <table className="table table-striped">
                         <thead>
-                        <tr>
-                            <th id="RowNumber">Eil.Nr.</th>
-                            <th>VARDAS</th>
-                            <th>PAVARDĖ</th>
-                            <th>GIMIMO DATA</th>
-                            <th></th>
+                            <tr>
+                                <th id="RowNumber">Eil.Nr.</th>
+                                <th>VARDAS</th>
+                                <th>PAVARDĖ</th>
+                                <th>GIMIMO DATA</th>
+                                <th></th>
 
-                        </tr>
+                            </tr>
                         </thead>
-                        <tbody>
-                        {candidatesList}
+                        <tbody id="FullList">
+                            {candidatesList}
                         </tbody>
                     </table>
                 </div>
                 <div>
-                    <button id="CandidateReturn" className="btn btn-success" style={{marginRight: '20px'}}
-                            onClick={this.props.onCancelClick}>Grįžti
+                    <button id="CandidateReturn" className="btn btn-success" style={{ marginRight: '20px' }}
+                        onClick={this.props.onCancelClick}>Grįžti
                     </button>
                 </div>
             </div>
