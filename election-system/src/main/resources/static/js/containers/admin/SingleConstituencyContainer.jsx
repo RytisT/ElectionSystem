@@ -4,15 +4,12 @@ var SingleConstituencyContainer = React.createClass({
     getInitialState: function() {
         return {
             isEditing: false,
-            constituency: [],
+            constituency: this.props.constituency,
             isChanged: false,
             fieldContainer: ""
         };
     },
 
-    componentWillMount: function () {
-        this.setState({constituency: this.props.constituency})
-    },
 
     handleFieldChange: function( fieldName ) {
         return function(constituency) {

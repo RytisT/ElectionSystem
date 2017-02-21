@@ -17,16 +17,16 @@ var AddConstituencyComponent = React.createClass({
     handleSubmitConstituency: function() {
         if(this.state.adding){
                 return(
-                        <div>
+                        <div className=" well col-md-10  col-md-offset-1">
                             <form>
                                 <table>
                                     <tbody>
                                     <tr>
-                                        <td>
+                                        <td className="col-md-10">
                                             <input className="form-control" placeholder="Apygardos Pavadinimas" value={this.props.constituency.title}
                                                    onChange={this.props.onFieldChange( 'title' )} type="text" />
                                         </td>
-                                        <td>
+                                        <td className="col-md-2">
                                             <button className="btn btn-block btn-success" type="submit"
                                                     onClick={(event) => { this.props.onSubmitConst(this.props.constituency); this.changeAddingState();}}>Continue</button>
                                         </td>
@@ -44,7 +44,7 @@ var AddConstituencyComponent = React.createClass({
            return(
                        <div>
                        <button className="btn btn-block btn-success" type="submit"
-                               onClick={this.changeAddingState}>Prideti apylinke</button>
+                               onClick={this.changeAddingState}>Prideti apygarda</button>
                        </div>)
         }
     },

@@ -2,9 +2,9 @@ var MainPageContainer = React.createClass( {
 
 
 
-        // Admin mygtuko paspaudimo action
+        // admin mygtuko paspaudimo action
         handleAdmin() {
-            this.context.router.push( '/Admin' );
+            this.context.router.push( '/admin' );
         },
     
         // Representatives mygtuko paspaudimo action

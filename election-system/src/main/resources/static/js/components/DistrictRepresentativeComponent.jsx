@@ -1,30 +1,7 @@
 
 var DistrictRepresentativeComponent = React.createClass({
-    getInitialState: function(){
-        return {
-            existing: false,
-            representative: {
-                id: "",
-                district_id: "",
-                name: "",
-                last_name: "",
-                login: "",
-                password: ""
-            }
-        }
-    },
 
-    componentWillMount: function() {
-        if (this.props.distRep[0] != null){
-            this.setState( { existing: true });
-
-        }
-    },
-
-    handleRepresentative: function(){
-        var _this = this;
-
-        if(!this.state.existing){
+    addNewRepresentative: function () {
             return(
                 <div>
                     <button type="button" className="btn btn-success" data-toggle="modal" data-target="#addRepresentative">Prideti apylinkes atstova</button>
@@ -34,21 +11,20 @@ var DistrictRepresentativeComponent = React.createClass({
                             <div className="modal-content">
                                 <div className="modal-header">
                                     <button type="button" className="close" data-dismiss="modal">&times;</button>
-                                    <h4 className="modal-title">Prideti apylinkes atstovaaa</h4>
+                                    <h4 className="modal-title">Prideti apylinkes atstova</h4>
                                 </div>
                                 <div className="modal-body">
                                     <form>
-                                        <input  className="form-control" placeholder="Vardas" value={this.state.representative.name}
-                                                onChange={_this.onFieldChange( 'name' )} type="text" />
-                                        <input  className="form-control" placeholder="Pavarde" value={this.state.representative.last_name}
-                                                onChange={_this.onFieldChange( 'last_name' )} type="text" />
-                                        <input  className="form-control" placeholder="Prisijungimo vardas" value={this.state.representative.login}
-                                                onChange={_this.onFieldChange( 'login' )} type="text" />
-                                        <input  className="form-control" placeholder="Slaptazodis" value={this.state.representative.password}
-                                                onChange={_this.onFieldChange( 'password' )} type="password" />
+                                        <input  className="form-control" placeholder="Vardas" value={this.props.distRep.name}
+                                                onChange={this.props.onFieldChange( 'name' )} type="text" />
+                                        <input  className="form-control" placeholder="Pavarde" value={this.props.distRep.last_name}
+                                                onChange={this.props.onFieldChange( 'last_name' )} type="text" />
+                                        <input  className="form-control" placeholder="Prisijungimo vardas" value={this.props.distRep.login}
+                                                onChange={this.props.onFieldChange( 'login' )} type="text" />
+                                        <input  className="form-control" placeholder="Slaptazodis" value={this.props.distRep.password}
+                                                onChange={this.props.onFieldChange( 'password' )} type="password" />
 
-                                        <button className="btn btn-block btn-success" type="submit"
-                                                onClick={(event) => { this.onSubmit(this.state.representative); this.changeExistingState();}}>Prideti</button>
+                                        <button className="btn btn-block btn-success" type="submit" onClick={() => this.props.onSubmit(this.props.distRep)}>Prideti</button>
 
                                         <button type="button" className="btn btn-block btn-danger" data-dismiss="modal">Cancel</button>
 
@@ -58,55 +34,94 @@ var DistrictRepresentativeComponent = React.createClass({
                                     <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
             )
-        }else{
+    },
 
+    editExistingRepresentative: function () {
+        if(this.props.editing){
             return(
-                <div>
-                    <button type="button" className="btn btn-default" data-toggle="modal" data-target={"#" + this.props.distRep[0].id}>{this.props.distRep[0].name} {this.props.distRep[0].last_name}</button>
-                    <EditDistrictRepresentativeComponent distRep={this.props.distRep[0]}/>
+                <div className="modal-body">
+                <form>
+                    <input  className="form-control" placeholder="Vardas" value={this.props.distRep.name}
+                            onChange={this.props.onFieldChange( 'name' )} type="text" />
+                    <input  className="form-control" placeholder="Pavarde" value={this.props.distRep.last_name}
+                            onChange={this.props.onFieldChange( 'last_name' )} type="text" />
+                    <input  className="form-control" placeholder="Prisijungimo vardas" value={this.props.distRep.login}
+                            onChange={this.props.onFieldChange( 'login' )} type="text" />
+                    <input  className="form-control" placeholder="Slaptazodis" value={this.props.distRep.password}
+                            onChange={this.props.onFieldChange( 'password' )} type="password" />
+
+                    <button className="btn btn-block btn-success" type="submit" onClick={() => this.props.onSubmit(this.props.distRep)}>Prideti</button>
+
+                    <button type="button" className="btn btn-block btn-danger" data-dismiss="modal">Cancel</button>
+                </form>
+                </div>
+            )
+        } else {
+            return(
+                <div className="modal-body">
+                    <table className="table">
+                        <tbody>
+                        <tr>
+                            <td>Vardas: </td>
+                            <td>{this.props.distRep.name}</td>
+                        </tr>
+                        <tr>
+                            <td>Pavarde: </td>
+                            <td>{this.props.distRep.last_name}</td>
+                        </tr>
+                        <tr>
+                            <td>Prisijungimo vardas: </td>
+                            <td>{this.props.distRep.login}</td>
+                        </tr>
+                        <tr>
+                            <td>Slaptazodis: </td>
+                            <td>{this.props.distRep.password}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <button className="btn btn-block btn-success" type="submit" onClick={this.props.onEdit}>Redaguoti</button>
                 </div>
             )
         }
     },
 
 
-    onFieldChange: function( fieldName ) {
-        var _this = this;
-        return function(representative) {
-            var tempRepresentative = _this.state.representative;
-            tempRepresentative[fieldName] = representative.target.value;
-            _this.setState( { representative: tempRepresentative });
-
-        };
-    },
-
-    onSubmit: function (representative) {
-        var _this = this;
-        representative.district_id = this.props.distId;
-        axios.post('/api/representatives', representative).then(function() {
-                _this.setState( { representative: representative });
-        });
-    },
-
-    changeExistingState(){
-        if(this.state.existing){
-            this.setState( { existing: false });
-        } else {
-            this.setState( { existing: true });
-        }
-    },
-    render: function () {
-        return(
+    representativeWrapper: function(){
+        return (
             <div>
-            {this.handleRepresentative()}
+                <button type="button" className="btn btn-default" data-toggle="modal" data-target={"#" + this.props.distRep.id}>{this.props.distRep.name} {this.props.distRep.last_name}</button>
+                <div className="modal fade" id={this.props.distRep.id} role="dialog">
+                    <div className="modal-dialog">
+
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <button type="button" className="close" data-dismiss="modal">&times;</button>
+                                <h4 className="modal-title">{this.props.distRep.name} {this.props.distRep.last_name}</h4>
+                            </div>
+                            {this.editExistingRepresentative()}
+                            <div className="modal-footer">
+                                <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         )
+    },
+    render: function () {
+        if(!this.props.existing){
+            return this.addNewRepresentative()
+        }else{
+            return this.representativeWrapper()
+        }
     }
+
+
 });
 
 window.DistrictRepresentativeComponent = DistrictRepresentativeComponent;

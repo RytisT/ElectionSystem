@@ -5,12 +5,11 @@ var DistrictsComponent = React.createClass({
 
 
     districtList: function () {
-        var _this = this;
-        return _this.props.districts.map(function (district, index) {
+        return this.props.districts.map(function (district, index) {
             return(
-                    <SingleDistrictComponent key={index} district = {district} onDelete={_this.props.onDelete}/>
+                    <SingleDistrictContainer key={index} district = {district} onDelete={this.props.onDelete}/>
             )
-        })
+        }.bind(this))
     },
 
 
