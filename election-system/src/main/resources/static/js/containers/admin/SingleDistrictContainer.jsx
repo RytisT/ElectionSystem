@@ -5,7 +5,11 @@ var SingleDistrictContainer = React.createClass({
             isEditing: false,
             district: this.props.district,
             isChanged: false,
-            fieldContainer: []
+            fieldContainer: {
+                address: "",
+                number_of_voters: "",
+                title: ""
+            }
         };
     },
 
@@ -15,8 +19,12 @@ var SingleDistrictContainer = React.createClass({
             var tempConstituency = this.state.district;
             tempConstituency[fieldName] = district.target.value;
             if (!this.state.isChanged) {
-                this.setState({fieldContainer: district.target.value})
+                console.log(district)
+                this.state.fieldContainer.title = this.state.district.title;
+                this.state.fieldContainer.number_of_voters = this.state.district.number_of_voters;
+                this.state.fieldContainer.address = this.state.district.address;
             }
+            console.log(this.state.fieldContainer)
             this.setState({district: tempConstituency, isChanged: true});
         }.bind(this);
     },
@@ -25,7 +33,9 @@ var SingleDistrictContainer = React.createClass({
 
         if (this.state.isEditing) {
             this.setState({isEditing: false})
-            this.state.district.title = this.state.fieldContainer;
+            this.state.district.title = this.state.fieldContainer.title;
+            this.state.district.number_of_voters = this.state.fieldContainer.number_of_voters;
+            this.state.district.address = this.state.fieldContainer.address;
             this.forceUpdate()
         } else {
             this.setState({isEditing: true})

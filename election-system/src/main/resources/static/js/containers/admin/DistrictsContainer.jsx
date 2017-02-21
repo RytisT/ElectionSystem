@@ -16,42 +16,38 @@ var DistrictContainer = React.createClass({
     },
 
     componentWillMount: function () {
-        var _this = this;
         var distId = this.props.routeParams.distId;
         axios.get('/api/constituencies/' + distId)
             .then(function (response) {
-                _this.setState({
+                this.setState({
                     districts: response.data.districts
                 });
-            })
+            }.bind(this))
     },
 
     handleDeleteDist: function (district) {
-        var _this = this;
         return function () {
             axios.delete('/api/districts/' + district.id).then(function (response) {
-                _this.componentWillMount();
-            });
+                this.componentWillMount();
+            }.bind(this));
         };
     },
 
 
     handleSubmitDist: function (district) {
-        var _this = this;
         district.constituency_id = this.props.routeParams.distId;
         axios.post('/api/districts', district).then(function () {
-            _this.componentWillMount();
-        });
+            this.componentWillMount();
+        }.bind(this));
     },
 
     handleFieldChange: function (fieldName) {
-        var _this = this;
         return function (district) {
-            var tempDistrict = _this.state.district;
+            var tempDistrict = this.state.district;
             tempDistrict[fieldName] = district.target.value;
-            _this.setState({district: tempDistrict});
+            this.setState({district: tempDistrict});
 
-        };
+        }.bind(this);
     },
 
     render: function () {
