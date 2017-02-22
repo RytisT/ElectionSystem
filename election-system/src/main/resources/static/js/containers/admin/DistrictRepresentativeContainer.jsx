@@ -2,7 +2,7 @@ var DistrictRepresentativeContainer = React.createClass({
     getInitialState: function () {
         return {
             existing: false,
-            editing: false,
+            editing: true,
             representative: {
                 district_id: "",
                 name: "",
@@ -27,6 +27,8 @@ var DistrictRepresentativeContainer = React.createClass({
         console.log("adding:", representative)
         axios.post('/api/representatives/', representative).then(function () {
             this.setState({editing: false, existing: true});
+            this.state.representative.district_id = this.props.distId;
+            this.forceUpdate();
         }.bind(this));
     },
 
@@ -48,14 +50,15 @@ var DistrictRepresentativeContainer = React.createClass({
 
 
     componentWillMount: function () {
-        if (this.props.distRep[0] != null) {
-            this.setState({existing: true, representative: this.props.distRep[0]});
+        if (this.props.distRep != null) {
+            this.setState({existing: true, editing: false, representative: this.props.distRep});
 
         }
     },
 
     render: function () {
         return <DistrictRepresentativeComponent distRep={this.state.representative}
+                                                distId={this.props.distId}
                                                 existing={this.state.existing}
                                                 editing={this.state.editing}
                                                 onEdit={this.handleEditRep}

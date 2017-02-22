@@ -23,14 +23,20 @@ var DistrictContainer = React.createClass({
                     districts: response.data.districts
                 });
             }.bind(this))
+
     },
 
     handleDeleteDist: function (district) {
         return function () {
+            var constId = district.constituency_id;
             axios.delete('/api/districts/' + district.id).then(function (response) {
-                this.componentWillMount();
+                axios.get('/api/constituencies/' + constId)
+                    .then(function (response) {
+                            this.setState({districts: response.data.districts});
+
+                        }.bind(this))
             }.bind(this));
-        };
+        }.bind(this);
     },
 
 

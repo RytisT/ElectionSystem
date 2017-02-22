@@ -3,10 +3,10 @@ var DistrictRepresentativeComponent = React.createClass({
     addNewRepresentative: function () {
         return (
             <div>
-                <button type="button" className="btn btn-success" data-toggle="modal" data-target="#addRepresentative">
+                <button type="button" className="btn btn-success" data-toggle="modal" data-target={"#" + this.props.distId}>
                     Prideti apylinkes atstova
                 </button>
-                <div className="modal fade" id="addRepresentative" role="dialog">
+                <div className="modal fade" id={"add" + this.props.distId} role="dialog">
                     <div className="modal-dialog">
 
                         <div className="modal-content">
@@ -74,6 +74,7 @@ var DistrictRepresentativeComponent = React.createClass({
         } else {
             return (
                 <div className="modal-body">
+                    {console.log(this.props.editing, this.props.existing)}
                     <table className="table">
                         <tbody>
                         <tr>
@@ -105,9 +106,7 @@ var DistrictRepresentativeComponent = React.createClass({
     representativeWrapper: function () {
         return (
             <div>
-                <button type="button" className="btn btn-default" data-toggle="modal"
-                        data-target={"#" + this.props.distRep.id}>{this.props.distRep.name} {this.props.distRep.last_name}</button>
-                <div className="modal fade" id={this.props.distRep.id} role="dialog">
+                <div className="modal fade" id={this.props.distId} role="dialog">
                     <div className="modal-dialog">
 
                         <div className="modal-content">
@@ -127,13 +126,21 @@ var DistrictRepresentativeComponent = React.createClass({
         )
     },
     render: function () {
-        if (!this.props.existing) {
-            return this.addNewRepresentative()
-        } else {
-            return this.representativeWrapper()
-        }
-    }
+        return this.props.existing
+            ?<div>
+                <button type="button" className="btn btn-default" data-toggle="modal"
+                        data-target={"#" + this.props.distId}>{this.props.distRep.name} {this.props.distRep.last_name}</button>
+                {this.representativeWrapper()}
+            </div>
+            :<div>
+                <button type="button" className="btn btn-success" data-toggle="modal" data-target={"#" + this.props.distId}>
+                    Prideti apylinkes atstova
+                </button>
+                {this.representativeWrapper()}
+            </div>
 
+
+    }
 
 });
 

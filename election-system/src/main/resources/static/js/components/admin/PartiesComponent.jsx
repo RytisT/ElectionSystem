@@ -12,7 +12,6 @@ var PartiesComponent = React.createClass({
         return (
             <div>
 
-                <div className="panel panel-default">
                     <table className="table table-striped">
                         <thead>
                         <tr>
@@ -29,7 +28,6 @@ var PartiesComponent = React.createClass({
                         {partiesList}
                         </tbody>
                     </table>
-                </div>
             </div>
 
         )
