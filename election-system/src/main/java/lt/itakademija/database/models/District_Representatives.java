@@ -17,10 +17,6 @@ import org.hibernate.validator.constraints.Length;
 public class District_Representatives {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    private Integer id;
-
     @Column(name = "district_id")
     private Integer district_id;
 
@@ -53,28 +49,21 @@ public class District_Representatives {
     // this.name = name;
     // this.last_name = last_name;
     // }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Integer getDistrict_id() {
-        return district_id;
-    }
-
-    public void setDistrict_id(Integer district_id) {
-        this.district_id = district_id;
-    }
+    
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public Integer getDistrict_id() {
+		return district_id;
+	}
+
+	public void setDistrict_id(Integer district_id) {
+		this.district_id = district_id;
+	}
+
+	public void setName(String name) {
         this.name = name;
     }
 

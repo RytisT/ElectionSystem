@@ -9,6 +9,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -125,9 +126,9 @@ public class Candidates {
         return personal_id;
     }
 
-    public void setPersonal_code(String personal_id) {
-        this.personal_id = personal_id;
-    }
+	public void setPersonal_id(String personal_id) {
+		this.personal_id = personal_id;
+	}
 
     public Date getDate_of_birth() {
         return date_of_birth;
@@ -156,7 +157,13 @@ public class Candidates {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "CANDIDATES_ID")
     private List<Single_Results> single_results;
+    
+ 
+//    @ManyToOne
+//    @JoinColumn(nullable = true, name= "ID")
+//    private Parties partyDependencies;
 
+   
 
     public List<Single_Results> getSingle_results() {
         return single_results;
@@ -165,6 +172,5 @@ public class Candidates {
     public void setSingle_results(List<Single_Results> single_results) {
         this.single_results = single_results;
     }
-
 
 }
