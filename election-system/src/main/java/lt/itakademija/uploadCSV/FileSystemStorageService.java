@@ -32,7 +32,7 @@ public class FileSystemStorageService implements StorageService {
                 throw new StorageException("Sąrašas tuščias " + file.getOriginalFilename());
             }
             Files.copy(file.getInputStream(), this.rootLocation.resolve(file.getOriginalFilename()));
-            new toDB().CSVtoH2("./upload/" + (file.getOriginalFilename()), "CANDIDATE");
+            new toDB().CSVtoH2("./upload/" + (file.getOriginalFilename()), "CANDIDATES");
         } catch (IOException e) {
             throw new StorageException("Nepavyko ikelti sąrašo " + file.getOriginalFilename(), e);
         }

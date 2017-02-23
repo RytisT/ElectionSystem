@@ -25,7 +25,7 @@ public class FileUploadController {
         this.storageService = storageService;
     }
 
-    @GetMapping(value = {"/uploadForm"})
+    @GetMapping("/uploadForm")
     public String listUploadedFiles(Model model) throws IOException {
 
         model.addAttribute("files", storageService
@@ -51,7 +51,7 @@ public class FileUploadController {
     }
 
     @PostMapping("/uploadForm")
-    public ResponseEntity<?> handleFileUpload(@RequestParam("file") MultipartFile file) throws SQLException {
+    public ResponseEntity<?> handleFileUpload(@RequestParam("file") MultipartFile file, RedirectAttributes redirectAttributes) throws SQLException {
 
         storageService.store(file);
         return new ResponseEntity<>(HttpStatus.OK);

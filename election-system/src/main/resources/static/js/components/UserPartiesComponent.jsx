@@ -30,9 +30,17 @@ var UserPartiesComponent = React.createClass({
         var partiesList = this.props.parties.map(function (party, index) {
             return (
                 <tr id="partiesList" key={index}>
-                    <td></td>
+                    <td>{party.id}</td>
                     <td>{party.title}</td>
                     <td>{party.party_Code}</td>
+                    <td style={styles.width}>
+                    <button id="PartyInfo" type="button" className="btn btn-default"
+                        onClick={self.props.onDescriptionItemClick( party )}
+                        data-toggle="tooltip" data-placement="top" title="Kandidatų sąrašas"
+                        data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
+                        aria-controls="collapseOne">
+                        <span className="glyphicon glyphicon-info-sign"></span></button>
+                </td>
                 </tr>
             );
         });
@@ -44,11 +52,11 @@ var UserPartiesComponent = React.createClass({
                 <div>
 
                 </div>
-                <div className="panel panel-default" style={styles.marginTop} id="Table">
+                <div className="panel panel-default" style={styles.marginTop}>
                     <table className="table table-striped">
                         <thead>
                         <tr>
-                            <th id="RowNumber">Eil.Nr.</th>
+                            <th>Partijos numeris</th>
                             <th>Partijos pavadinimas</th>
                             <th>Partijos kodas</th>
                             <th></th>
@@ -72,6 +80,6 @@ var UserPartiesComponent = React.createClass({
 });
 
 
-UserPartiesComponent.propTypes = {};
+UserPartiesComponent.propTypes = { onDescriptionItemClick: React.PropTypes.func.isRequired };
 
 window.UserPartiesComponent = UserPartiesComponent;

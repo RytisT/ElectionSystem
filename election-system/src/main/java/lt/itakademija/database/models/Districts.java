@@ -78,11 +78,11 @@ public class Districts {
 //    private List<District_Representatives> district_representatives;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "DISTRICT_ID")
+    @JoinColumn(name = "DISTRICTS_ID")
     private List<Single_Results> single_results;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "DISTRICT_ID")
+    @JoinColumn(name = "DISTRICTS_ID")
     private List<Multi_Results> multi_results;
 
     public Integer getId() {

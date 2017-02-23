@@ -14,7 +14,7 @@ var EditCandidateContainer = React.createClass({
     handleSaveClick: function (e) {
         e.preventDefault();
         var self = this;
-        axios.post('/api/candidates/', this.state.candidate).then(function () {
+        axios.post('/api/candidates.jsx/', this.state.candidate).then(function () {
             console.log('candidate updated');
             self.context.router.push('candidates');
         });
@@ -24,7 +24,7 @@ var EditCandidateContainer = React.createClass({
     componentDidMount: function () {
         var self = this;
         var candidateId = this.props.params.candidateId;
-        axios.get('/api/candidates/' + candidateId).then(function (response) {
+        axios.get('/api/candidates.jsx/' + candidateId).then(function (response) {
             self.setState({candidate: response.data});
         });
     },
@@ -40,7 +40,7 @@ var EditCandidateContainer = React.createClass({
     },
 
     handleCancelClick() {
-        this.context.router.push('/candidates');
+        this.context.router.push('/candidates.jsx');
     },
 
     render: function () {

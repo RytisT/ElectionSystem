@@ -7,7 +7,7 @@ var CandidatesContainer = React.createClass({
 
     componentWillMount: function () {
         var self = this;
-        axios.get('/api/candidates')
+        axios.get('/api/candidates.jsx')
             .then(function (response) {
                 self.setState({
                     candidates: response.data
@@ -25,7 +25,7 @@ var CandidatesContainer = React.createClass({
 
     // Add mygtuko paspaudimo action
     handleAdd() {
-        this.context.router.push('/admin/candidates/add-candidate');
+        this.context.router.push('/admin/candidates.jsx/add-candidate');
     },
 
     // Main page mygtuko paspaudimo action
@@ -42,7 +42,7 @@ var CandidatesContainer = React.createClass({
     handleCandidateEdit: function (candidate) {
         var self = this;
         return function () {
-            self.context.router.push('/admin/candidates/edit/' + candidate.id);
+            self.context.router.push('/admin/candidates.jsx/edit/' + candidate.id);
         }
     },
 
@@ -50,7 +50,7 @@ var CandidatesContainer = React.createClass({
     handleCandidateRemove: function (candidate) {
         var self = this;
         return function () {
-            axios.delete('/api/candidates/' + candidate.id).then(function (response) {
+            axios.delete('/api/candidates.jsx/' + candidate.id).then(function (response) {
                 self.componentWillMount();
             });
         };
