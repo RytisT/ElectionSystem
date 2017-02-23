@@ -1,36 +1,46 @@
-
-var CandidateDescriptionContainer = React.createClass( {
-    getInitialState: function() {
+var CandidateDescriptionContainer = React.createClass({
+    getInitialState: function () {
         return {
             candidate: {
                 id: this.props.params.id,
-                name: '',                
+                name: '',
                 last_name: '',
                 date_of_birth: '',
                 description: ''
+            },
+            party: {
+                id: this.props.params.id,
+                title: '',
+                party_Code: ''
             }
         }
     },
 
-   
-    componentDidMount: function() {
+
+    componentDidMount: function () {
         var self = this;
         var candidateId = this.props.params.candidateId;
-        axios.get( '/api/candidates/' + candidateId ).then( function( response ) {
-            self.setState({ candidate: response.data });
+        axios.get('/api/candidates/' + candidateId).then(function (response) {
+            self.setState({candidate: response.data});
         });
-    }, 
-
-    handleCancelClick() {
-        this.context.router.push( '/candidates' );
+//        var partyId = this.props.params.partyId;
+//        axios.get( '/api/parties/' + partyId ).then( function( response ) {
+//            self.setState({ party: response.data });
+//        });
     },
 
-    render: function() {
+
+    handleCancelClick() {
+        this.context.router.push('/candidates');
+    },
+
+    render: function () {
         return (
             <CandidateDescriptionComponent
                 candidate={this.state.candidate}
+                party={this.state.party}
                 onCancelClick={this.handleCancelClick}
-                />
+            />
         );
     }
 });

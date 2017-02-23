@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package lt.itakademija.database.controllers;
 

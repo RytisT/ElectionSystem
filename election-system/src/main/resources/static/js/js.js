@@ -1,13 +1,10 @@
-$('document').ready(function() {
+$('document').ready(function () {
 
-	$('#login').click(function() {
-		alert("veikia")
-	});
+    //alert("veikia");
 
-	
-	$(function() {
-		$('[data-toggle="tooltip"]').tooltip()
-	})
-	
+    $('#login').click(function () {
+        alert("veikia")
+    });
+
 
 });

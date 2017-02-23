@@ -31,22 +31,22 @@ var MainPageComponent = React.createClass( {
         return (
             <div className="">
                 <h2 style={styles.blue}>Rinkimų rezultatai ir sąrašai</h2>
-                <div style={styles.line} ></div>
+                <div style={styles.line}></div>
 
                 <table className="table table-hover" id="menu">
 
                     <tbody>
-                        <tr style={styles.rows}>Rinkimų apylinkių rezultatai</tr>
-                        <tr style={styles.rows}>Rinkimų apygardų rezultatai</tr>
-                        <tr style={styles.rows}>Vienmandatės rinkimų apygardos rezultatai</tr>
-                        <tr style={styles.rows}>Daugiamandatės rinkimų apygardos rezultatai</tr>
-                        <tr style={styles.rows}>Konsoliduoti rinkimų apygardos rezultatai</tr>
-                        <tr onClick={this.props.onCandidatesClick} style={styles.rows}>Kandidatų sąrašas</tr>
-                        <tr style={styles.rows}>Partijų sąrašas</tr>
+                        <tr style={styles.rows}><td>Rinkimų apylinkių rezultatai</td></tr>
+                        <tr style={styles.rows}><td>Rinkimų apygardų rezultatai</td></tr>
+                        <tr style={styles.rows}><td>Vienmandatės rinkimų apygardos rezultatai</td></tr>
+                        <tr style={styles.rows}><td>Daugiamandatės rinkimų apygardos rezultatai</td></tr>
+                        <tr style={styles.rows}><td>Konsoliduoti rinkimų apygardos rezultatai</td></tr>
+                        <tr id="MainPageCandidates" onClick={this.props.onCandidatesClick} style={styles.rows}><td>Kandidatų sąrašas</td></tr>
+                        <tr id="MainPageParties" onClick={this.props.onPartiesClick} style={styles.rows}><td>Partijų sąrašas</td></tr>
                     </tbody>
                 </table>
 
-                
+
             </div>
         )
     }
@@ -55,7 +55,8 @@ var MainPageComponent = React.createClass( {
 MainPageComponent.propTypes = {
     onAdminClick: React.PropTypes.func.isRequired,
     onRepresentativesClick: React.PropTypes.func.isRequired,
-    onCandidatesClick: React.PropTypes.func.isRequired
+    onCandidatesClick: React.PropTypes.func.isRequired,
+    onPartiesClick: React.PropTypes.func.isRequired
 };
 
 window.MainPageComponent = MainPageComponent;

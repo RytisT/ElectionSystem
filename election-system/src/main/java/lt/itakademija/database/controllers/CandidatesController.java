@@ -1,6 +1,3 @@
-/**
- * 
- */
 package lt.itakademija.database.controllers;
 
 import java.util.List;
@@ -71,3 +68,4 @@ public class CandidatesController {
 
 
 }
+

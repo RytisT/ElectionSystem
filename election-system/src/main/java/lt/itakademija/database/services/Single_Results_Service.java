@@ -12,23 +12,23 @@ import lt.itakademija.database.repositories.Single_Results_Repository;
 @Service
 @Transactional
 public class Single_Results_Service {
-	
-	@Autowired
-	private Single_Results_Repository repository;
-	
-	public List<Single_Results> findAll() {
-	    return repository.findAll();
-	}
-	
-	public Single_Results saveOrUpdate(Single_Results sr) {
-		return repository.save(sr);
-	}
 
-    public void deleteById(Integer id){
+    @Autowired
+    private Single_Results_Repository repository;
+
+    public List<Single_Results> findAll() {
+        return repository.findAll();
+    }
+
+    public Single_Results saveOrUpdate(Single_Results sr) {
+        return repository.save(sr);
+    }
+
+    public void deleteById(Integer id) {
         repository.delete(id);
     }
-    
-    public Single_Results findById(Integer id){
+
+    public Single_Results findById(Integer id) {
         return repository.findOne(id);
     }
 
