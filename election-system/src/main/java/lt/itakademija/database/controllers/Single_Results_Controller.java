@@ -40,5 +40,5 @@ public class Single_Results_Controller {
 	public Single_Results findSingleResultsById(@PathVariable("id") Integer id){
 	    return service.findById(id);
 	}
-
+	
 }

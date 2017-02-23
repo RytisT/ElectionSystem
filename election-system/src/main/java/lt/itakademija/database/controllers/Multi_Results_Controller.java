@@ -11,9 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import lt.itakademija.database.models.Multi_Results;
-import lt.itakademija.database.models.Single_Results;
 import lt.itakademija.database.services.Multi_Results_Service;
-import lt.itakademija.database.services.Single_Results_Service;
 
 @RestController
 @CrossOrigin

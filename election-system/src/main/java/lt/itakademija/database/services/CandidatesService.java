@@ -38,5 +38,20 @@ public class CandidatesService {
     public Candidates findById(Integer id){
         return repository.findOne(id);
     }
+    
+    public List<Candidates> findByConstituency(Integer constId){
+        return repository.findByConstituencies(constId);
+    }
+    
+    public List<Candidates> findByFirstName(String candidateName){
+        return repository.findByName(candidateName);
+    }
 
+    public List<Candidates> findByLastName(String candidateLastName){
+        return repository.findByLast_name(candidateLastName);
+    }
+    
+    public List<Candidates> findByPartyId(Integer partyId){
+        return repository.findByParty_id(partyId);
+    }
 }
