@@ -19,6 +19,7 @@ var routes = (
                 </Route>
                 <Route path="/candidates" component={CandidatesContainer}/>
                 <Route path="/parties" component={UserPartiesContainer}/>
+                <Route path="/party/description/:partyId" component={PartyDescriptionContainer}/>
                 <Route path="/candidate/description/:candidateId" component={CandidateDescriptionContainer}/>
                 <Route path="/representative" component={RepresentativeContainer}/>
             </Route>
