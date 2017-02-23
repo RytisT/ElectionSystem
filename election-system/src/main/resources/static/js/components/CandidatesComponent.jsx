@@ -92,11 +92,11 @@ var CandidatesComponent = React.createClass( {
                     <span className="input-group-btn">
                         <button id="candidateSearch" className="btn btn-default" type="button"
                             onClick={( event ) => {
-                                if ( $( '#FullList' ).is( ":hidden" ) ) {
-                                    $( '#FullList' ).show();
-                                } else {
-                                    $( '#FullList' ).hide();
-                                }
+//                                if ( $( '#FullList' ).is( ":hidden" ) ) {
+//                                    $( '#FullList' ).show();
+//                                } else {
+//                                    $( '#FullList' ).hide();
+//                                }
                             }
                             }
                             >Ieškoti!</button>
