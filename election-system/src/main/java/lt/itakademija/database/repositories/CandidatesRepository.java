@@ -21,5 +21,11 @@ public interface CandidatesRepository extends JpaRepository<Candidates, Integer>
     
     @Query("SELECT c FROM Candidates c where c.party_id=:party_id")
     public List<Candidates> findByParty_id(@Param("party_id") Integer partyId); 
+    
+    
+    @Query("SELECT c FROM Candidates c where c.party_id=:party_id "
+            + "and c.party_list_seat=:party_list_seat")
+    public Candidates findByPartyAndSeat(@Param("party_id") Integer partyId,
+            @Param("party_list_seat") Integer partySeat ); 
 
 }

@@ -40,6 +40,9 @@ public class ConsolidatedResultCalculationService {
         return allWinningCandidates;
     }
 
+    /*
+     * returns List of candidates which won mandates in proportional system 
+     */
     public List<Candidates> getMultiWinnerCandidates() {
         List<Candidates> singleCandidates = getWinningSingleCandidates();
         List<Candidates> multiWinners = new ArrayList<>();
@@ -49,12 +52,26 @@ public class ConsolidatedResultCalculationService {
             int numberMandates = partyMandateCount.getValue();
             while (numberMandates != 0) {
                 for (Candidates partyCandidates : candidateService.findByPartyId(partyMandateCount.getKey())) {
+                    if(multiWinners.contains(partyCandidates) || singleCandidates.contains(partyCandidates)){
+                        Candidates newPartyCandidate = candidateService.findByPartyAndSeat(partyMandateCount.getKey(), 
+                                partyCandidates.getParty_list_seat()+1);
+                        multiWinners.add(newPartyCandidate);
+                    }else{
                     multiWinners.add(partyCandidates);
+                    }
                     numberMandates--;
                 }
             }
         }
         return multiWinners;
     }
+    
+    public List<Candidates> consolidatedWinner(){
+        List<Candidates> winnersFinal = new ArrayList<>();
+        winnersFinal.addAll(getWinningSingleCandidates());
+        winnersFinal.addAll(getMultiWinnerCandidates());
+        return  winnersFinal;
+    }
+    
 
 }

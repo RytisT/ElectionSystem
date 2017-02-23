@@ -20,7 +20,7 @@ public class ConsolidatedResultCalculationController {
     
     @GetMapping
     public List<Candidates> getResults(){
-        return consolidateResult.getMultiWinnerCandidates();
+        return consolidateResult.consolidatedWinner();
     }
     
 }

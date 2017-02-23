@@ -70,7 +70,7 @@ public class Candidates {
     @Column(name = "party_list_seat", unique = true)
     @Pattern(regexp = ".*([0-9]$)", message = "Candidates PARTY LIST SEAT contains invalid characters. Only numbers accepted. ")
     @Length(min = 0, max = 3, message = "Candidates PARTY LIST SEAT length can not be longer than {max} symbols. ")
-    private String party_list_seat;
+    private Integer party_list_seat;
 
 //	public Candidates(Integer id, Integer constituency_id,Integer party_id, String name, String last_name, Date date_of_birth, String description) {
 //		this.id = id;
@@ -146,11 +146,11 @@ public class Candidates {
         this.description = description;
     }
 
-    public String getParty_list_seat() {
+    public Integer getParty_list_seat() {
         return party_list_seat;
     }
 
-    public void setParty_list_seat(String party_list_seat) {
+    public void setParty_list_seat(Integer party_list_seat) {
         this.party_list_seat = party_list_seat;
     }
 

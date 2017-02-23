@@ -1,0 +1,6 @@
+#FileLock
+#Thu Feb 23 11:32:19 EET 2017
+hostName=Odinas
+id=15a6a5057b6b3efbe7d94cee029dc478aec90ba10a4
+method=file
+server=192.168.56.1\:51054
