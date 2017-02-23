@@ -20,7 +20,7 @@ var CandidateDescriptionContainer = React.createClass({
     componentDidMount: function () {
         var self = this;
         var candidateId = this.props.params.candidateId;
-        axios.get('/api/candidates.jsx/' + candidateId).then(function (response) {
+        axios.get('/api/candidates/' + candidateId).then(function (response) {
             self.setState({candidate: response.data});
         });
 //        var partyId = this.props.params.partyId;
@@ -31,7 +31,7 @@ var CandidateDescriptionContainer = React.createClass({
 
 
     handleCancelClick() {
-        this.context.router.push('/candidates.jsx');
+        this.context.router.push('/candidates');
     },
 
     render: function () {

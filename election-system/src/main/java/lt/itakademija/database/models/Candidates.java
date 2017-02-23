@@ -67,9 +67,9 @@ public class Candidates {
     @Length(min = 0, max = 300, message = "Candidates DESCRIPTION length can not be longer than {max} symbols. ")
     private String description;
 
-    @Column(name = "party_list_seat", unique = true)
-    @Pattern(regexp = ".*([0-9]$)", message = "Candidates PARTY LIST SEAT contains invalid characters. Only numbers accepted. ")
-    @Length(min = 0, max = 3, message = "Candidates PARTY LIST SEAT length can not be longer than {max} symbols. ")
+    @Column(name = "party_list_seat")
+    //@Pattern(regexp = ".*([0-9]$)", message = "Candidates PARTY LIST SEAT contains invalid characters. Only numbers accepted. ")
+    //@Length(min = 0, max = 3, message = "Candidates PARTY LIST SEAT length can not be longer than {max} symbols. ")
     private Integer party_list_seat;
 
 //	public Candidates(Integer id, Integer constituency_id,Integer party_id, String name, String last_name, Date date_of_birth, String description) {
