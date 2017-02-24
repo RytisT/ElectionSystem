@@ -56,9 +56,9 @@ var UserPartiesComponent = React.createClass({
                     <table className="table table-striped">
                         <thead>
                         <tr>
-                            <th>Partijos numeris</th>
-                            <th>Partijos pavadinimas</th>
-                            <th>Partijos kodas</th>
+                            <th>PARTIJOS NR.</th>
+                            <th>PARTIJOS PAVADINIMAS</th>
+                            <th>TRUMPINYS</th>
                             <th></th>
 
                         </tr>

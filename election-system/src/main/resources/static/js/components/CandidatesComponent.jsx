@@ -34,14 +34,9 @@ var CandidatesComponent = React.createClass( {
             var d = new Date( candidate.date_of_birth );
             var year = d.getFullYear();
             var month = d.getMonth() + 1;
-            var date = d.getDate();
-            // jei menuo vienzenklis sk tai prieki bus 0 pvz: 03
-            if ( month < 10 ) {
-                month = '0' + month;
-            }
-            if ( date < 10 ) {
-                date = '0' + date;
-            }
+            var date = d.getDate();            
+            if ( month < 10 ) { month = '0' + month; }
+            if ( date < 10 ) { date = '0' + date; }
             var fullDate = year + '-' + month + '-' + date;
 
 
@@ -141,7 +136,6 @@ var CandidatesComponent = React.createClass( {
 
 
 CandidatesComponent.propTypes = {
-    onAddClick: React.PropTypes.func.isRequired,
     onDescriptionItemClick: React.PropTypes.func.isRequired
 };
 

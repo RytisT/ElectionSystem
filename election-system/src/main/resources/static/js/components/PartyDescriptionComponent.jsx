@@ -29,19 +29,13 @@ var PartyDescriptionComponent = React.createClass( {
         var self = this;
         var membersList = this.props.candidates.map( function( candidate, index ) {
 
-
             // date
             var d = new Date( candidate.date_of_birth );
             var year = d.getFullYear();
             var month = d.getMonth() + 1;
             var date = d.getDate();
-            // jei menuo vienzenklis sk tai prieki bus 0 pvz: 03
-            if ( month < 10 ) {
-                month = '0' + month;
-            }
-            if ( date < 10 ) {
-                date = '0' + date;
-            }
+            if ( month < 10 ) { month = '0' + month; }
+            if ( date < 10 ) { date = '0' + date; }
             var fullDate = year + '-' + month + '-' + date;
 
             return (
@@ -49,12 +43,20 @@ var PartyDescriptionComponent = React.createClass( {
                     <td></td>
                     <td>{candidate.name}</td>
                     <td>{candidate.last_name}</td>
-                    <td>{fullDate}</td>                    
+                    <td>{fullDate}</td>
+                    <td style={styles.width}>
+                    <button id="MemberInfo" type="button" className="btn btn-default"
+                        onClick={self.props.onDescriptionItemClick( candidate )}
+                        data-toggle="tooltip" data-placement="top" title="Kandidato informacija"
+                        data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
+                        aria-controls="collapseOne">
+                        <span className="glyphicon glyphicon-info-sign"></span></button>
+                </td>
                 </tr>
             );
         });
 
-        
+
         return (
             <div className="">
                 <h2 style={styles.blue}> Partijos nariai </h2>
@@ -90,6 +92,6 @@ var PartyDescriptionComponent = React.createClass( {
     }
 });
 
-PartyDescriptionComponent.propTypes = {};
+PartyDescriptionComponent.propTypes = {onDescriptionItemClick: React.PropTypes.func.isRequired};
 
 window.PartyDescriptionComponent = PartyDescriptionComponent;

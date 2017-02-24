@@ -3,6 +3,7 @@
  */
 package lt.itakademija.database.models;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -63,10 +64,10 @@ public class Districts {
     private Integer votedMultiCorrupt;
     
     @Column(name = "VOTED_SINGLE_TIME")
-    private String votedSingleTime;
+    private Date votedSingleTime;
     
     @Column(name = "VOTED_MULTI_TIME")
-    private String votedMultiTime;
+    private Date votedMultiTime;
 
 
     @OneToOne(cascade = CascadeType.ALL)
@@ -173,19 +174,19 @@ public class Districts {
         this.multi_results = multi_results;
     }
 
-	public String getVotedSingleTime() {
+	public Date getVotedSingleTime() {
 		return votedSingleTime;
 	}
 
-	public void setVotedSingleTime(String votedSingleTime) {
+	public void setVotedSingleTime(Date votedSingleTime) {
 		this.votedSingleTime = votedSingleTime;
 	}
 
-	public String getVotedMultiTime() {
+	public Date getVotedMultiTime() {
 		return votedMultiTime;
 	}
 
-	public void setVotedMultiTime(String votedMultiTime) {
+	public void setVotedMultiTime(Date votedMultiTime) {
 		this.votedMultiTime = votedMultiTime;
 	}
 
