@@ -126,9 +126,9 @@ public class Candidates {
         return personal_id;
     }
 
-	public void setPersonal_id(String personal_id) {
-		this.personal_id = personal_id;
-	}
+    public void setPersonal_id(String personal_id) {
+        this.personal_id = personal_id;
+    }
 
     public Date getDate_of_birth() {
         return date_of_birth;
@@ -157,13 +157,12 @@ public class Candidates {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "CANDIDATES_ID")
     private List<Single_Results> single_results;
-    
- 
+
+
 //    @ManyToOne
 //    @JoinColumn(nullable = true, name= "ID")
 //    private Parties partyDependencies;
 
-   
 
     public List<Single_Results> getSingle_results() {
         return single_results;

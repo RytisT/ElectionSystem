@@ -52,12 +52,12 @@ public class ConsolidatedResultCalculationService {
             int numberMandates = partyMandateCount.getValue();
             while (numberMandates != 0) {
                 for (Candidates partyCandidates : candidateService.findByPartyId(partyMandateCount.getKey())) {
-                    if(multiWinners.contains(partyCandidates) || singleCandidates.contains(partyCandidates)){
-                        Candidates newPartyCandidate = candidateService.findByPartyAndSeat(partyMandateCount.getKey(), 
-                                partyCandidates.getParty_list_seat()+1);
+                    if (multiWinners.contains(partyCandidates) || singleCandidates.contains(partyCandidates)) {
+                        Candidates newPartyCandidate = candidateService.findByPartyAndSeat(partyMandateCount.getKey(),
+                                partyCandidates.getParty_list_seat() + 1);
                         multiWinners.add(newPartyCandidate);
-                    }else{
-                    multiWinners.add(partyCandidates);
+                    } else {
+                        multiWinners.add(partyCandidates);
                     }
                     numberMandates--;
                 }
@@ -65,13 +65,13 @@ public class ConsolidatedResultCalculationService {
         }
         return multiWinners;
     }
-    
-    public List<Candidates> consolidatedWinner(){
+
+    public List<Candidates> consolidatedWinner() {
         List<Candidates> winnersFinal = new ArrayList<>();
         winnersFinal.addAll(getWinningSingleCandidates());
         winnersFinal.addAll(getMultiWinnerCandidates());
-        return  winnersFinal;
+        return winnersFinal;
     }
-    
+
 
 }

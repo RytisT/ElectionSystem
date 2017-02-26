@@ -49,11 +49,11 @@ var SinglePartyContainer = React.createClass({
         return (
             <SinglePartyComponent party={this.props.party}
                                   isEditing={this.state.isEditing}
-                                    onSave={this.handleSaveParty}
-                                    onDelte={this.props.onDelete}
-                                    onFieldChange={this.handleFieldChange}
-                                    onDeleteParty={this.props.onDeleteParty}
-                                    onEdit={this.handleEditParty}/>
+                                  onSave={this.handleSaveParty}
+                                  onDelte={this.props.onDelete}
+                                  onFieldChange={this.handleFieldChange}
+                                  onDeleteParty={this.props.onDeleteParty}
+                                  onEdit={this.handleEditParty}/>
         )
     }
 });

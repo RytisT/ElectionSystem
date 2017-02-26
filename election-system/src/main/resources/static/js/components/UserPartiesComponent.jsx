@@ -34,13 +34,13 @@ var UserPartiesComponent = React.createClass({
                     <td>{party.title}</td>
                     <td>{party.party_Code}</td>
                     <td style={styles.width}>
-                    <button id="PartyInfo" type="button" className="btn btn-default"
-                        onClick={self.props.onDescriptionItemClick( party )}
-                        data-toggle="tooltip" data-placement="top" title="Partijos narių sąrašas"
-                        data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
-                        aria-controls="collapseOne">
-                        <span className="glyphicon glyphicon-info-sign"></span></button>
-                </td>
+                        <button id="PartyInfo" type="button" className="btn btn-default"
+                                onClick={self.props.onDescriptionItemClick(party)}
+                                data-toggle="tooltip" data-placement="top" title="Partijos narių sąrašas"
+                                data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
+                                aria-controls="collapseOne">
+                            <span className="glyphicon glyphicon-info-sign"></span></button>
+                    </td>
                 </tr>
             );
         });
@@ -80,6 +80,6 @@ var UserPartiesComponent = React.createClass({
 });
 
 
-UserPartiesComponent.propTypes = { onDescriptionItemClick: React.PropTypes.func.isRequired };
+UserPartiesComponent.propTypes = {onDescriptionItemClick: React.PropTypes.func.isRequired};
 
 window.UserPartiesComponent = UserPartiesComponent;

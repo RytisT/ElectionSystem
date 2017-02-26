@@ -9,23 +9,23 @@ import org.springframework.data.repository.query.Param;
 import lt.itakademija.database.models.Candidates;
 import lt.itakademija.database.models.Districts;
 
-public interface CandidatesRepository extends JpaRepository<Candidates, Integer>{
-    
+public interface CandidatesRepository extends JpaRepository<Candidates, Integer> {
+
     @Query("SELECT c FROM Candidates c where c.constituency_id=:constituency_id")
     public List<Candidates> findByConstituencies(@Param("constituency_id") Integer constituency_id);
-    
+
     public List<Candidates> findByName(@Param("name") String candidateName);
-    
+
     @Query("SELECT c FROM Candidates c where c.last_name=:last_name")
     public List<Candidates> findByLast_name(@Param("last_name") String candidateLastName);
-    
+
     @Query("SELECT c FROM Candidates c where c.party_id=:party_id")
-    public List<Candidates> findByParty_id(@Param("party_id") Integer partyId); 
-    
-    
+    public List<Candidates> findByParty_id(@Param("party_id") Integer partyId);
+
+
     @Query("SELECT c FROM Candidates c where c.party_id=:party_id "
             + "and c.party_list_seat=:party_list_seat")
     public Candidates findByPartyAndSeat(@Param("party_id") Integer partyId,
-            @Param("party_list_seat") Integer partySeat ); 
+                                         @Param("party_list_seat") Integer partySeat);
 
 }

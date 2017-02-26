@@ -61,17 +61,17 @@ public class Districts {
 
     @Column(name = "VOTED_MULTI_CORRUPT")
     private Integer votedMultiCorrupt;
-    
+
     @Column(name = "VOTED_SINGLE_TIME")
     private String votedSingleTime;
-    
+
     @Column(name = "VOTED_MULTI_TIME")
     private String votedMultiTime;
 
 
     @OneToOne(cascade = CascadeType.ALL)
-	@PrimaryKeyJoinColumn
-	private District_Representatives district_representatives;
+    @PrimaryKeyJoinColumn
+    private District_Representatives district_representatives;
 
 //    @OneToMany(cascade = CascadeType.ALL)
 //    @JoinColumn(name = "DISTRICT_ID")
@@ -156,7 +156,7 @@ public class Districts {
     public void setVotedMultiCorrupt(Integer votedMultiCorrupt) {
         this.votedMultiCorrupt = votedMultiCorrupt;
     }
-   
+
     public List<Single_Results> getSingle_results() {
         return single_results;
     }
@@ -173,29 +173,29 @@ public class Districts {
         this.multi_results = multi_results;
     }
 
-	public String getVotedSingleTime() {
-		return votedSingleTime;
-	}
+    public String getVotedSingleTime() {
+        return votedSingleTime;
+    }
 
-	public void setVotedSingleTime(String votedSingleTime) {
-		this.votedSingleTime = votedSingleTime;
-	}
+    public void setVotedSingleTime(String votedSingleTime) {
+        this.votedSingleTime = votedSingleTime;
+    }
 
-	public String getVotedMultiTime() {
-		return votedMultiTime;
-	}
+    public String getVotedMultiTime() {
+        return votedMultiTime;
+    }
 
-	public void setVotedMultiTime(String votedMultiTime) {
-		this.votedMultiTime = votedMultiTime;
-	}
+    public void setVotedMultiTime(String votedMultiTime) {
+        this.votedMultiTime = votedMultiTime;
+    }
 
-	public District_Representatives getDistrict_representatives() {
-		return district_representatives;
-	}
+    public District_Representatives getDistrict_representatives() {
+        return district_representatives;
+    }
 
-	public void setDistrict_representatives(District_Representatives district_representatives) {
-		this.district_representatives = district_representatives;
-	}
+    public void setDistrict_representatives(District_Representatives district_representatives) {
+        this.district_representatives = district_representatives;
+    }
 
 
 }

@@ -13,28 +13,28 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin
 @RequestMapping(value = "/api/multi")
 public class ResultMultiCalculationController {
-    
+
     @Autowired
     private ResultMultiCalculationService multiService;
-    
-    
+
+
     @GetMapping
-    public Integer allVotes(){
+    public Integer allVotes() {
         return multiService.allVotes();
     }
-    
-    @GetMapping(value="/multiResults")
-    public Map<Integer, Integer> findByAll(){
+
+    @GetMapping(value = "/multiResults")
+    public Map<Integer, Integer> findByAll() {
         return multiService.validParties();
     }
-    
-    @GetMapping(value="/percent")
-    public Map<Integer, Float> percentVotes(){
+
+    @GetMapping(value = "/percent")
+    public Map<Integer, Float> percentVotes() {
         return multiService.percentVotes();
     }
-    
-    @GetMapping(value="/valid")
-    public Map<Integer, Integer> validParties(){
+
+    @GetMapping(value = "/valid")
+    public Map<Integer, Integer> validParties() {
         return multiService.mandatesByParty();
     }
 

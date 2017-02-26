@@ -100,48 +100,48 @@ public class ResultMultiCalculationService {
         }
         return validParties;
     }
- 
+
     /*
      * returns maps<party id, number of mandates in proportional system>
      */
     public Map<Integer, Integer> mandatesByParty() {
-        
+
         int leftMandates = numberOfSeats;
         Map<Integer, Integer> quotientParty = new HashMap<>();
         //threshold for single mandate
-        int mandateByPartyProportional = 0; 
-        if(allVotes()%numberOfSeats != 0){
-            mandateByPartyProportional = allVotes()/(numberOfSeats) + 1;
-        }else{
-            mandateByPartyProportional =allVotes()/numberOfSeats;
+        int mandateByPartyProportional = 0;
+        if (allVotes() % numberOfSeats != 0) {
+            mandateByPartyProportional = allVotes() / (numberOfSeats) + 1;
+        } else {
+            mandateByPartyProportional = allVotes() / numberOfSeats;
         }
         // mandates without quotients
         Map<Integer, Integer> mandatesResults = new HashMap<>();
-        for(Integer party : validParties().keySet()){            
-            mandatesResults.put(party, validParties().get(party)/mandateByPartyProportional);
-            quotientParty.put(party, validParties().get(party)%mandateByPartyProportional);
-            leftMandates -= validParties().get(party)/mandateByPartyProportional;
+        for (Integer party : validParties().keySet()) {
+            mandatesResults.put(party, validParties().get(party) / mandateByPartyProportional);
+            quotientParty.put(party, validParties().get(party) % mandateByPartyProportional);
+            leftMandates -= validParties().get(party) / mandateByPartyProportional;
         }
-        
+
         //mandates quotient method, sort by quotient
-        
-        Map<Integer,Integer> resultSortedQuotient = new LinkedHashMap<Integer, Integer>();
+
+        Map<Integer, Integer> resultSortedQuotient = new LinkedHashMap<Integer, Integer>();
         Set<Entry<Integer, Integer>> set = quotientParty.entrySet();
         List<Entry<Integer, Integer>> list = new ArrayList<Entry<Integer, Integer>>(set);
-        Collections.sort( list, new Comparator<Map.Entry<Integer, Integer>>()
-        {
+        Collections.sort(list, new Comparator<Map.Entry<Integer, Integer>>() {
             @Override
-            public int compare(Entry<Integer, Integer> o1, Entry<Integer, Integer> o2 ) {
-                return (o2.getValue()).compareTo( o1.getValue());
+            public int compare(Entry<Integer, Integer> o1, Entry<Integer, Integer> o2) {
+                return (o2.getValue()).compareTo(o1.getValue());
             }
-        } );
-        for(Entry<Integer, Integer> entry:list){
-            if(leftMandates !=0){
-            resultSortedQuotient.put(entry.getKey(), entry.getValue());
-            mandatesResults.put(entry.getKey(), mandatesResults.get(entry.getKey())+1);
-            leftMandates--;
-            }}
-        
+        });
+        for (Entry<Integer, Integer> entry : list) {
+            if (leftMandates != 0) {
+                resultSortedQuotient.put(entry.getKey(), entry.getValue());
+                mandatesResults.put(entry.getKey(), mandatesResults.get(entry.getKey()) + 1);
+                leftMandates--;
+            }
+        }
+
         return mandatesResults;
     }
 

@@ -22,10 +22,10 @@ public class ResultsController {
         return service.singleWinners();
     }
 
-    @GetMapping(value="/{id}")
+    @GetMapping(value = "/{id}")
     public Map<Integer, Integer> findByCon(@PathVariable("id") Integer id) {
         return service.winnerCalculationByConstituency(id);
     }
-    
-    
+
+
 }

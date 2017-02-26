@@ -7,17 +7,17 @@ var SinglePartyComponent = React.createClass({
 
             ? <tr>
                 <td><input className="form-control"
-                                                placeholder="Partijos numeris"
-                                                value={this.props.party.id}
-                                                onChange={this.props.onFieldChange('id')} type="number"/></td>
-                <td><input className="form-control"  placeholder="Partijos trumpinys"
-                                                value={this.props.party.party_Code}
-                                                onChange={this.props.onFieldChange('party_Code')} type="text"/>
+                           placeholder="Partijos numeris"
+                           value={this.props.party.id}
+                           onChange={this.props.onFieldChange('id')} type="number"/></td>
+                <td><input className="form-control" placeholder="Partijos trumpinys"
+                           value={this.props.party.party_Code}
+                           onChange={this.props.onFieldChange('party_Code')} type="text"/>
                 </td>
                 <td><input className="form-control"
-                                                placeholder="Iveskite apylinkes adresa"
-                                                value={this.props.party.title}
-                                                onChange={this.props.onFieldChange('title')} type="text"/></td>
+                           placeholder="Iveskite apylinkes adresa"
+                           value={this.props.party.title}
+                           onChange={this.props.onFieldChange('title')} type="text"/></td>
                 <td>
                     Kandidatai
                 </td>
@@ -26,18 +26,25 @@ var SinglePartyComponent = React.createClass({
                     <button type="button" className="btn btn-danger" onClick={this.props.onEdit}>Atsaukti</button>
                 </td>
                 <td>
-                    <button type="button" className="btn btn-danger" onClick={this.props.onDeleteParty(this.props.party)}>
+                    <button type="button" className="btn btn-danger"
+                            onClick={this.props.onDeleteParty(this.props.party)}>
                         Trinti
                     </button>
                 </td>
-                </tr>
+            </tr>
             : <tr>
                 <td>{this.props.party.id}</td>
                 <td>{this.props.party.party_Code}</td>
                 <td>{this.props.party.title}</td>
                 <td>Kandidatai</td>
-                <td> <button type="button" className="btn btn-info" onClick={this.props.onEdit}>Redaguoti</button></td>
-                <td> <button type="button" className="btn btn-danger" onClick={this.props.onDeleteParty(this.props.party)}>Trinti</button></td>
+                <td>
+                    <button type="button" className="btn btn-info" onClick={this.props.onEdit}>Redaguoti</button>
+                </td>
+                <td>
+                    <button type="button" className="btn btn-danger"
+                            onClick={this.props.onDeleteParty(this.props.party)}>Trinti
+                    </button>
+                </td>
 
             </tr>
     }

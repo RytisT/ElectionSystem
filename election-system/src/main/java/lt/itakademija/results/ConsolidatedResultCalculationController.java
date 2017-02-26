@@ -17,10 +17,10 @@ public class ConsolidatedResultCalculationController {
 
     @Autowired
     ConsolidatedResultCalculationService consolidateResult;
-    
+
     @GetMapping
-    public List<Candidates> getResults(){
+    public List<Candidates> getResults() {
         return consolidateResult.consolidatedWinner();
     }
-    
+
 }

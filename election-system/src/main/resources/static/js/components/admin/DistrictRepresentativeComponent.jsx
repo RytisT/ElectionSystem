@@ -3,7 +3,8 @@ var DistrictRepresentativeComponent = React.createClass({
     addNewRepresentative: function () {
         return (
             <div>
-                <button type="button" className="btn btn-success" data-toggle="modal" data-target={"#" + this.props.distId}>
+                <button type="button" className="btn btn-success" data-toggle="modal"
+                        data-target={"#" + this.props.distId}>
                     Prideti apylinkes atstova
                 </button>
                 <div className="modal fade" id={"add" + this.props.distId} role="dialog">
@@ -127,13 +128,14 @@ var DistrictRepresentativeComponent = React.createClass({
     },
     render: function () {
         return this.props.existing
-            ?<div>
+            ? <div>
                 <button type="button" className="btn btn-default" data-toggle="modal"
                         data-target={"#" + this.props.distId}>{this.props.distRep.name} {this.props.distRep.last_name}</button>
                 {this.representativeWrapper()}
             </div>
-            :<div>
-                <button type="button" className="btn btn-success" data-toggle="modal" data-target={"#" + this.props.distId}>
+            : <div>
+                <button type="button" className="btn btn-success" data-toggle="modal"
+                        data-target={"#" + this.props.distId}>
                     Prideti apylinkes atstova
                 </button>
                 {this.representativeWrapper()}

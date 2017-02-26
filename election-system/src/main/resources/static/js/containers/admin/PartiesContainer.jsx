@@ -52,15 +52,15 @@ var PartiesContainer = React.createClass({
 
 
     render: function () {
-        return(
+        return (
             <div>
-            <AddPartyComponent party={this.state.party}
-                               onSubmit={this.handleSubmitParty}
-                                onFieldChange={this.handleFieldChange}/>
-            <PartiesComponent parties={this.state.parties}
-                                onDeleteParty={this.handleDeleteParty}/>
+                <AddPartyComponent party={this.state.party}
+                                   onSubmit={this.handleSubmitParty}
+                                   onFieldChange={this.handleFieldChange}/>
+                <PartiesComponent parties={this.state.parties}
+                                  onDeleteParty={this.handleDeleteParty}/>
             </div>
-            )
+        )
     }
 });
 

@@ -49,22 +49,22 @@ public class CandidatesController {
     }
 
     //search candidates by constituency ID
-    @GetMapping(value="/search")
-	public List<Candidates> findByConstituency(@RequestParam(value = "constituency_id", required = false) Integer constId, 
-	        @RequestParam(value = "name", required = false) String candidateName,
-	        @RequestParam(value = "last_name", required = false) String candidateLastName,
-	        @RequestParam(value = "party_id", required = false) Integer partyId){
-        if(constId!=null){
+    @GetMapping(value = "/search")
+    public List<Candidates> findByConstituency(@RequestParam(value = "constituency_id", required = false) Integer constId,
+                                               @RequestParam(value = "name", required = false) String candidateName,
+                                               @RequestParam(value = "last_name", required = false) String candidateLastName,
+                                               @RequestParam(value = "party_id", required = false) Integer partyId) {
+        if (constId != null) {
             return service.findByConstituency(constId);
-        }else if(candidateName!=null){
-            return service.findByFirstName(candidateName); 
-        }else if(candidateLastName!=null){
+        } else if (candidateName != null) {
+            return service.findByFirstName(candidateName);
+        } else if (candidateLastName != null) {
             return service.findByLastName(candidateLastName);
-        }else if(partyId!=null){
+        } else if (partyId != null) {
             return service.findByPartyId(partyId);
         }
-	    return null;
-	}
+        return null;
+    }
 
 
 }

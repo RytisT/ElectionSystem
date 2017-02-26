@@ -25,8 +25,8 @@ var styles = {
     }
 };
 
-var MainPageComponent = React.createClass( {
-    render: function() {
+var MainPageComponent = React.createClass({
+    render: function () {
 
         return (
             <div className="">
@@ -36,13 +36,27 @@ var MainPageComponent = React.createClass( {
                 <table className="table table-hover" id="menu">
 
                     <tbody>
-                        <tr style={styles.rows}><td>Rinkimų apylinkių rezultatai</td></tr>
-                        <tr style={styles.rows}><td>Rinkimų apygardų rezultatai</td></tr>
-                        <tr style={styles.rows}><td>Vienmandatės rinkimų apygardos rezultatai</td></tr>
-                        <tr style={styles.rows}><td>Daugiamandatės rinkimų apygardos rezultatai</td></tr>
-                        <tr style={styles.rows}><td>Konsoliduoti rinkimų apygardos rezultatai</td></tr>
-                        <tr id="MainPageCandidates" onClick={this.props.onCandidatesClick} style={styles.rows}><td>Kandidatų sąrašas</td></tr>
-                        <tr id="MainPageParties" onClick={this.props.onPartiesClick} style={styles.rows}><td>Partijų sąrašas</td></tr>
+                    <tr style={styles.rows}>
+                        <td>Rinkimų apylinkių rezultatai</td>
+                    </tr>
+                    <tr style={styles.rows}>
+                        <td>Rinkimų apygardų rezultatai</td>
+                    </tr>
+                    <tr style={styles.rows}>
+                        <td>Vienmandatės rinkimų apygardos rezultatai</td>
+                    </tr>
+                    <tr style={styles.rows}>
+                        <td>Daugiamandatės rinkimų apygardos rezultatai</td>
+                    </tr>
+                    <tr style={styles.rows}>
+                        <td>Konsoliduoti rinkimų apygardos rezultatai</td>
+                    </tr>
+                    <tr id="MainPageCandidates" onClick={this.props.onCandidatesClick} style={styles.rows}>
+                        <td>Kandidatų sąrašas</td>
+                    </tr>
+                    <tr id="MainPageParties" onClick={this.props.onPartiesClick} style={styles.rows}>
+                        <td>Partijų sąrašas</td>
+                    </tr>
                     </tbody>
                 </table>
 

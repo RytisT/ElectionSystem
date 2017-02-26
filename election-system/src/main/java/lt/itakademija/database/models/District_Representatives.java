@@ -49,21 +49,21 @@ public class District_Representatives {
     // this.name = name;
     // this.last_name = last_name;
     // }
-    
+
 
     public String getName() {
         return name;
     }
 
     public Integer getDistrict_id() {
-		return district_id;
-	}
+        return district_id;
+    }
 
-	public void setDistrict_id(Integer district_id) {
-		this.district_id = district_id;
-	}
+    public void setDistrict_id(Integer district_id) {
+        this.district_id = district_id;
+    }
 
-	public void setName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
