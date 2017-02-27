@@ -16,18 +16,17 @@ public class toDB {
 
         try {
             Connection conn = DriverManager.getConnection(this.url, user, pass);
-
             String ln;
             String firstLine = read.readLine();
             while ((ln = read.readLine()) != null) {
                 String[] line = ln.split(",");
                 System.out.println("INSERT INTO " + table + " (party_id," + firstLine + ")" +
                         " VALUES ('" + partyId + "', '" + line[0] + "', '" + line[1] + "', '" + line[2] + "', '"
-                        + line[3] + "', '" + line[4] + "');");
+                        + line[3] + "', '" + line[4] + "', '" + line[5] + "');");
                 PreparedStatement stmt = conn.prepareStatement(
                         "INSERT INTO " + table + " (party_id," + firstLine + ")" +
                                 " VALUES ('" + partyId + "', '" + line[0] + "', '" + line[1] + "', '" + line[2] + "', '"
-                                + line[3] + "', '" + line[4] + "');"
+                                + line[3] + "', '" + line[4] + "', '" + line[5] + "');"
                 );
                 stmt.executeUpdate();
             }
