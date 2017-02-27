@@ -3,9 +3,9 @@ var DistrictRepresentativeComponent = React.createClass({
     addNewRepresentative: function () {
         return (
             <div>
-                <button type="button" className="btn btn-success" data-toggle="modal"
+                <button id="Add District Rep" type="button" className="btn btn-success" data-toggle="modal"
                         data-target={"#" + this.props.distId}>
-                    Prideti apylinkes atstova
+                    Pridėti apylinkės atstovą
                 </button>
                 <div className="modal fade" id={"add" + this.props.distId} role="dialog">
                     <div className="modal-dialog">
@@ -13,34 +13,34 @@ var DistrictRepresentativeComponent = React.createClass({
                         <div className="modal-content">
                             <div className="modal-header">
                                 <button type="button" className="close" data-dismiss="modal">&times;</button>
-                                <h4 className="modal-title">Prideti apylinkes atstova</h4>
+                                <h4 className="modal-title">Pridėti apylinkės atstovą</h4>
                             </div>
                             <div className="modal-body">
                                 <form>
-                                    <input className="form-control" placeholder="Vardas" value={this.props.distRep.name}
+                                    <input id="Rep name" className="form-control" placeholder="Vardas" value={this.props.distRep.name}
                                            onChange={this.props.onFieldChange('name')} type="text"/>
-                                    <input className="form-control" placeholder="Pavarde"
+                                    <input id="Rep surname" className="form-control" placeholder="Pavardė"
                                            value={this.props.distRep.last_name}
                                            onChange={this.props.onFieldChange('last_name')} type="text"/>
-                                    <input className="form-control" placeholder="Prisijungimo vardas"
+                                    <input id="Rep login name" className="form-control" placeholder="Prisijungimo vardas"
                                            value={this.props.distRep.login}
                                            onChange={this.props.onFieldChange('login')} type="text"/>
-                                    <input className="form-control" placeholder="Slaptazodis"
+                                    <input id="Rep password" className="form-control" placeholder="Slaptažodis"
                                            value={this.props.distRep.password}
                                            onChange={this.props.onFieldChange('password')} type="password"/>
 
-                                    <button className="btn btn-block btn-success" type="submit"
-                                            onClick={() => this.props.onSubmit(this.props.distRep)}>Prideti
+                                    <button id="Submit Rep" className="btn btn-block btn-success" type="submit"
+                                            onClick={() => this.props.onSubmit(this.props.distRep)}>Pridėti
                                     </button>
 
-                                    <button type="button" className="btn btn-block btn-danger" data-dismiss="modal">
+                                    <button id="Cancel" type="button" className="btn btn-block btn-danger" data-dismiss="modal">
                                         Cancel
                                     </button>
 
                                 </form>
                             </div>
                             <div className="modal-footer">
-                                <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" className="btn btn-default" data-dismiss="modal">Uždaryti</button>
                             </div>
                         </div>
                     </div>
@@ -54,21 +54,21 @@ var DistrictRepresentativeComponent = React.createClass({
             return (
                 <div className="modal-body">
                     <form>
-                        <input className="form-control" placeholder="Vardas" value={this.props.distRep.name}
+                        <input id="Rep name" className="form-control" placeholder="Vardas" value={this.props.distRep.name}
                                onChange={this.props.onFieldChange('name')} type="text"/>
-                        <input className="form-control" placeholder="Pavarde" value={this.props.distRep.last_name}
+                        <input id="Rep surname" className="form-control" placeholder="Pavardė" value={this.props.distRep.last_name}
                                onChange={this.props.onFieldChange('last_name')} type="text"/>
-                        <input className="form-control" placeholder="Prisijungimo vardas"
+                        <input id="Rep login name" className="form-control" placeholder="Prisijungimo vardas"
                                value={this.props.distRep.login}
                                onChange={this.props.onFieldChange('login')} type="text"/>
-                        <input className="form-control" placeholder="Slaptazodis" value={this.props.distRep.password}
+                        <input id="Rep password" className="form-control" placeholder="Slaptažodis" value={this.props.distRep.password}
                                onChange={this.props.onFieldChange('password')} type="password"/>
 
-                        <button className="btn btn-block btn-success" type="submit"
-                                onClick={() => this.props.onSubmit(this.props.distRep)}>Prideti
+                        <button id="Submit Rep" className="btn btn-block btn-success" type="submit"
+                                onClick={() => this.props.onSubmit(this.props.distRep)}>Pridėti
                         </button>
 
-                        <button type="button" className="btn btn-block btn-danger" data-dismiss="modal">Cancel</button>
+                        <button id="Cancel" type="button" className="btn btn-block btn-danger" data-dismiss="modal">Atšaukti</button>
                     </form>
                 </div>
             )
@@ -83,7 +83,7 @@ var DistrictRepresentativeComponent = React.createClass({
                             <td>{this.props.distRep.name}</td>
                         </tr>
                         <tr>
-                            <td>Pavarde:</td>
+                            <td>Pavardė:</td>
                             <td>{this.props.distRep.last_name}</td>
                         </tr>
                         <tr>
@@ -91,7 +91,7 @@ var DistrictRepresentativeComponent = React.createClass({
                             <td>{this.props.distRep.login}</td>
                         </tr>
                         <tr>
-                            <td>Slaptazodis:</td>
+                            <td>Slaptažodis:</td>
                             <td>{this.props.distRep.password}</td>
                         </tr>
                         </tbody>
@@ -117,7 +117,7 @@ var DistrictRepresentativeComponent = React.createClass({
                             </div>
                             {this.editExistingRepresentative()}
                             <div className="modal-footer">
-                                <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
+                                <button type="button" className="btn btn-default" data-dismiss="modal">Uždaryti</button>
                             </div>
                         </div>
 
@@ -129,14 +129,14 @@ var DistrictRepresentativeComponent = React.createClass({
     render: function () {
         return this.props.existing
             ? <div>
-                <button type="button" className="btn btn-default" data-toggle="modal"
+                <button id="Rep information" type="button" className="btn btn-default" data-toggle="modal"
                         data-target={"#" + this.props.distId}>{this.props.distRep.name} {this.props.distRep.last_name}</button>
                 {this.representativeWrapper()}
             </div>
             : <div>
-                <button type="button" className="btn btn-success" data-toggle="modal"
+                <button id="Add Rep" type="button" className="btn btn-success" data-toggle="modal"
                         data-target={"#" + this.props.distId}>
-                    Prideti apylinkes atstova
+                    Pridėti apylinkės atstovą
                 </button>
                 {this.representativeWrapper()}
             </div>

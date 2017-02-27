@@ -19,10 +19,10 @@ var DistrictsComponent = React.createClass({
                 <table className="table table-striped">
                     <thead>
                     <tr>
-                        <th>Apylinke</th>
-                        <th>Rinkeju skaicius</th>
+                        <th>Apylinkė</th>
+                        <th>Rinkejų skaičius</th>
                         <th>Adresas</th>
-                        <th>Apylinkes atstovas</th>
+                        <th>Apylinkės atstovas</th>
                         <th>Redaguoti</th>
                         <th>Trinti</th>
                     </tr>
