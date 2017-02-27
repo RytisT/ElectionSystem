@@ -70,6 +70,7 @@ public class Candidates {
     //@Length(min = 0, max = 3, message = "Candidates PARTY LIST SEAT length can not be longer than {max} symbols. ")
     private Integer party_list_seat;
 
+
 //	public Candidates(Integer id, Integer constituency_id,Integer party_id, String name, String last_name, Date date_of_birth, String description) {
 //		this.id = id;
 //		this.constituency_id = constituency_id;

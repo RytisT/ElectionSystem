@@ -32,6 +32,9 @@ public class Parties {
     @Column(name = "id", unique = true)
     private Integer id;
 
+    @Column(name = "candidates_file", unique = true)
+    private String candidates_file;
+
     @Column(name = "title", unique = true)
     @NotNull(message = "PARTIES TITLE can not be empty")
     @Pattern(regexp = ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)", message = "PARTIES TITLE contains invalid characters. ")
@@ -58,6 +61,14 @@ public class Parties {
 //		this.id = id;
 //		this.title = title;
 //	}
+
+    public String getCandidates_file() {
+        return candidates_file;
+    }
+
+    public void setCandidates_file(String candidates_file) {
+        this.candidates_file = candidates_file;
+    }
 
     public Integer getId() {
         return id;
