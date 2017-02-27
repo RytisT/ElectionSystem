@@ -7,7 +7,7 @@ import java.sql.*;
 
 public class toDB {
 
-    private String url = "jdbc:h2:~/Desktop/ElectionSystem/ElectionSystem/ElectionSystem/election-system/data/db;";
+    private String url = "jdbc:h2:./data/db;";
     private String user = "sa";
     private String pass = "";
 

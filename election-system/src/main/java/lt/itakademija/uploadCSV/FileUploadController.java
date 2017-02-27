@@ -52,7 +52,7 @@ public class FileUploadController {
 
     @PostMapping("/uploadForm")
     public ResponseEntity<?> handleFileUpload(@RequestParam("file") MultipartFile file,
-                                              @RequestHeader Integer partyId,
+                                              @RequestHeader Integer partyId
                                               ) throws SQLException {
 
         storageService.store(file, partyId);
