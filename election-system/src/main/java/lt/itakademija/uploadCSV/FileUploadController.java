@@ -51,9 +51,11 @@ public class FileUploadController {
     }
 
     @PostMapping("/uploadForm")
-    public ResponseEntity<?> handleFileUpload(@RequestParam("file") MultipartFile file, RedirectAttributes redirectAttributes) throws SQLException {
+    public ResponseEntity<?> handleFileUpload(@RequestParam("file") MultipartFile file,
+                                              @RequestHeader Integer partyId,
+                                              ) throws SQLException {
 
-        storageService.store(file);
+        storageService.store(file, partyId);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

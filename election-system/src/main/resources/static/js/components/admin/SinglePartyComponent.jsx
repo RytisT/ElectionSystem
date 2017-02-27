@@ -19,7 +19,9 @@ var SinglePartyComponent = React.createClass({
                            value={this.props.party.title}
                            onChange={this.props.onFieldChange('title')} type="text"/></td>
                 <td>
-                    Kandidatai
+                    <button type="button" className="btn btn-info"
+                            onClick={this.props.onCandidates(this.props.party)}>Kandidatai
+                    </button>
                 </td>
                 <td>
                     <button type="button" className="btn btn-success" onClick={this.props.onSave}>Issaugoti</button>
@@ -36,7 +38,11 @@ var SinglePartyComponent = React.createClass({
                 <td>{this.props.party.id}</td>
                 <td>{this.props.party.party_Code}</td>
                 <td>{this.props.party.title}</td>
-                <td>Kandidatai</td>
+                <td><button type="button" className="btn btn-info"
+                            onClick={this.props.onCandidates(this.props.party)}>Kandidatai
+                </button>
+                    {this.props.onCandidates(this.props.party)}
+                </td>
                 <td>
                     <button type="button" className="btn btn-info" onClick={this.props.onEdit}>Redaguoti</button>
                 </td>

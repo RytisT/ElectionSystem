@@ -32,9 +32,9 @@ var DistrictContainer = React.createClass({
             axios.delete('/api/districts/' + district.id).then(function (response) {
                 axios.get('/api/constituencies/' + constId)
                     .then(function (response) {
-                        this.setState({districts: response.data.districts});
+                            this.setState({districts: response.data.districts});
 
-                    }.bind(this))
+                        }.bind(this))
             }.bind(this));
         }.bind(this);
     },

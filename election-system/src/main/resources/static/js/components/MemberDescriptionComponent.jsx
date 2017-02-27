@@ -9,7 +9,7 @@ var styles = {
 };
 
 
-var CandidateDescriptionComponent = React.createClass({
+var MemberDescriptionComponent = React.createClass({
     render: function () {
         
         var d = new Date( this.props.candidate.date_of_birth );
@@ -31,8 +31,8 @@ var CandidateDescriptionComponent = React.createClass({
                 <span id="cdtitle">Vieta partijos sąraše: </span><span>{this.props.candidate.party_list_seat}</span><br />
                 <br />
                 <span>{this.props.candidate.description}</span><br /><br />
-                <button id="CandidateDescriptionCancel" className="btn btn-success" style={{marginRight: '20px'}}
-                        onClick={this.props.onCancelClick}>Grįžti
+                <button id="MemberDescriptionCancel" className="btn btn-success" style={{marginRight: '20px'}}
+                        onClick={this.props.onCancelClick}>Grįžti į partijų sąrašą
                 </button>
             </div>
         )
@@ -40,8 +40,8 @@ var CandidateDescriptionComponent = React.createClass({
 });
 
 
-CandidateDescriptionComponent.propTypes = {
+MemberDescriptionComponent.propTypes = {
     candidate: React.PropTypes.object.isRequired
 };
 
-window.CandidateDescriptionComponent = CandidateDescriptionComponent;
+window.MemberDescriptionComponent = MemberDescriptionComponent;

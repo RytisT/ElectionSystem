@@ -25,8 +25,8 @@ var AddCandidateContainer = React.createClass({
     handleSaveClick: function (e) {
         e.preventDefault();
         var self = this;
-        axios.post('/api/candidates.jsx', this.state.candidate).then(function () {
-            self.context.router.push('/candidates.jsx');
+        axios.post('/api/candidates', this.state.candidate).then(function () {
+            self.context.router.push('/candidates');
         });
     },
 
@@ -40,7 +40,7 @@ var AddCandidateContainer = React.createClass({
     },
 
     handleCancelClick() {
-        this.context.router.push('/candidates.jsx');
+        this.context.router.push('/candidates');
     },
 
     render: function () {

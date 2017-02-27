@@ -7,7 +7,7 @@ var CandidatesContainer = React.createClass({
 
     componentWillMount: function () {
         var self = this;
-        axios.get('/api/candidates.jsx')
+        axios.get('/api/candidates')
             .then(function (response) {
                 self.setState({
                     candidates: response.data
@@ -15,7 +15,7 @@ var CandidatesContainer = React.createClass({
             });
     },
 
-    // Description mygtuko paspaudimo action
+    // Description 
     handleCandidateDescription: function (candidate) {
         var self = this;
         return function () {
@@ -23,34 +23,34 @@ var CandidatesContainer = React.createClass({
         }
     },
 
-    // Add mygtuko paspaudimo action
+    // Add 
     handleAdd() {
-        this.context.router.push('/admin/candidates.jsx/add-candidate');
+        this.context.router.push('/admin/candidates/add-candidate');
     },
 
-    // Main page mygtuko paspaudimo action
+    // Main page 
 //    handleMainPage() {
 //        this.context.router.push( '/' );
 //    },
 
-    // Cancel mygtuko paspaudimo action
+    // Cancel 
     handleCancelClick() {
         this.context.router.push('/');
     },
 
-    // Edit candidate mygtuko action
+    // Edit candidate 
     handleCandidateEdit: function (candidate) {
         var self = this;
         return function () {
-            self.context.router.push('/admin/candidates.jsx/edit/' + candidate.id);
+            self.context.router.push('/admin/candidates/edit/' + candidate.id);
         }
     },
 
-    // Remove candidate mygtuko action
+    // Remove candidate 
     handleCandidateRemove: function (candidate) {
         var self = this;
         return function () {
-            axios.delete('/api/candidates.jsx/' + candidate.id).then(function (response) {
+            axios.delete('/api/candidates/' + candidate.id).then(function (response) {
                 self.componentWillMount();
             });
         };

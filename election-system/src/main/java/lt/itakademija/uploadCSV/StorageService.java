@@ -12,7 +12,7 @@ public interface StorageService {
 
     void init();
 
-    void store(MultipartFile file) throws SQLException;
+    void store(MultipartFile file, Integer partyId) throws SQLException;
 
     Stream<Path> loadAll();
 

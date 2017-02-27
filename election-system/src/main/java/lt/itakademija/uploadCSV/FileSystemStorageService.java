@@ -26,13 +26,16 @@ public class FileSystemStorageService implements StorageService {
     }
 
     @Override
-    public void store(MultipartFile file) throws SQLException {
+    public void store(MultipartFile file, Integer partyId) throws SQLException {
         try {
             if (file.isEmpty()) {
                 throw new StorageException("Sąrašas tuščias " + file.getOriginalFilename());
             }
+            if (file.isEmpty()) {
+                throw new StorageException("Partijos numeris nenurodytas");
+            }
             Files.copy(file.getInputStream(), this.rootLocation.resolve(file.getOriginalFilename()));
-            new toDB().CSVtoH2("./upload/" + (file.getOriginalFilename()), "CANDIDATES");
+            new toDB().CSVtoH2("./upload/" + (file.getOriginalFilename()), "CANDIDATES", partyId);
         } catch (IOException e) {
             throw new StorageException("Nepavyko ikelti sąrašo " + file.getOriginalFilename(), e);
         }

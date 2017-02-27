@@ -53,6 +53,7 @@ var SinglePartyContainer = React.createClass({
                                   onDelte={this.props.onDelete}
                                   onFieldChange={this.handleFieldChange}
                                   onDeleteParty={this.props.onDeleteParty}
+                                  onCandidates={this.props.onCandidates}
                                   onEdit={this.handleEditParty}/>
         )
     }

@@ -5,13 +5,13 @@ var PartiesComponent = React.createClass({
                 <SinglePartyContainer party={party}
                                       key={index}
                                       onDeleteParty={this.props.onDeleteParty}
+                                      onCandidates={this.props.onCandidates}
                 />
             );
         }.bind(this));
 
         return (
             <div>
-
                 <table className="table table-striped">
                     <thead>
                     <tr>

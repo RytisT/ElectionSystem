@@ -1,4 +1,9 @@
 var PartiesContainer = React.createClass({
+
+    contextTypes: {
+        router: React.PropTypes.object.isRequired
+    },
+
     getInitialState: function () {
         return {
             parties: [],
@@ -35,6 +40,12 @@ var PartiesContainer = React.createClass({
         }.bind(this);
     },
 
+    handleCandidates: function (party) {
+        return function () {
+            this.context.router.push("/admin/party-candidates/" + party.id);
+        }.bind(this)
+    },
+
     handleSubmitParty: function (party) {
         console.log(party);
         axios.post('/api/parties', party).then(function () {
@@ -58,6 +69,7 @@ var PartiesContainer = React.createClass({
                                    onSubmit={this.handleSubmitParty}
                                    onFieldChange={this.handleFieldChange}/>
                 <PartiesComponent parties={this.state.parties}
+                                  onCandidates={this.handleCandidates}
                                   onDeleteParty={this.handleDeleteParty}/>
             </div>
         )
