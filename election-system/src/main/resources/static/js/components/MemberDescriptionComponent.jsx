@@ -25,7 +25,7 @@ var MemberDescriptionComponent = React.createClass({
                 <h2 style={styles.blue}>Informacija apie kandidatą</h2>
                 <div style={styles.line}></div>
 
-                <span id="cdtitle">Vardas:  </span><span>{this.props.candidate.name} {this.props.candidate.last_name}</span><br />
+                <span id="cdtitle">Vardas/Pavardė:  </span><span>{this.props.candidate.name} {this.props.candidate.last_name}</span><br />
                 <span id="cdtitle">Gimimo data: </span><span>{fullDate}</span><br />
                 <span id="cdtitle">Partinė priklausomybė (partijos Nr.): </span><span>{this.props.candidate.party_id}</span><br />
                 <span id="cdtitle">Vieta partijos sąraše: </span><span>{this.props.candidate.party_list_seat}</span><br />

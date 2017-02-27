@@ -47,7 +47,7 @@ var CandidatesComponent = React.createClass( {
                     <td>{candidate.last_name}</td>
                     <td>{fullDate}</td>
                     <td style={styles.width}>
-                        <button id="CandidateInfo" type="button" className="btn btn-default"
+                        <button id={"CandidateInfo" + candidate.id} type="button" className="btn btn-default"
                                 onClick={self.props.onDescriptionItemClick( candidate )}
                                 data-toggle="tooltip" data-placement="top" title="Kandidato informacija"
                                 data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
@@ -75,29 +75,24 @@ var CandidatesComponent = React.createClass( {
          *
          */
 
-
+//             <span className="input-group-btn">
+//                        <button id="candidateSearch" className="btn btn-default" type="button"
+//                                onClick={( event ) => {
+////                                if ( $( '#FullList' ).is( ":hidden" ) ) {
+////                                    $( '#FullList' ).show();
+////                                } else {
+////                                    $( '#FullList' ).hide();
+////                                }
+//                                }
+//                                }
+//                        >Ieškoti!</button>
+//                    </span> 
         return (
             <div className="">
                 <h2 style={styles.blue}> Kandidatai </h2>
                 <div style={styles.line}></div>
-                <div> </div>
-
-                <div className="input-group">
-                    <input type="text" className="form-control" placeholder="Search for..." />
-                    <span className="input-group-btn">
-                        <button id="candidateSearch" className="btn btn-default" type="button"
-                                onClick={( event ) => {
-//                                if ( $( '#FullList' ).is( ":hidden" ) ) {
-//                                    $( '#FullList' ).show();
-//                                } else {
-//                                    $( '#FullList' ).hide();
-//                                }
-                                }
-                                }
-                        >Ieškoti!</button>
-                    </span>
-
-                </div>
+                <div> </div>                        
+          
 
                 <div className="panel panel-default" style={styles.marginTop} id="Table">
                     <table className="table table-striped">

@@ -24,10 +24,11 @@ var styles = {
     }
 };
 
-var PartyDescriptionComponent = React.createClass( {
+var CandidatesSearchComponent = React.createClass( {
     render: function() {
         var self = this;
-        var membersList = this.props.candidates.map( function( candidate, index ) {
+        var candidatesList = this.props.candidates.map( function( candidate, index ) {
+
 
             // date
             var d = new Date( candidate.date_of_birth );
@@ -37,6 +38,7 @@ var PartyDescriptionComponent = React.createClass( {
             if ( month < 10 ) { month = '0' + month; }
             if ( date < 10 ) { date = '0' + date; }
             var fullDate = year + '-' + month + '-' + date;
+            
 
             return (
                 <tr id="candidatesList" key={index}>
@@ -45,24 +47,58 @@ var PartyDescriptionComponent = React.createClass( {
                     <td>{candidate.last_name}</td>
                     <td>{fullDate}</td>
                     <td style={styles.width}>
-                        <button id={"MemberInfo" + candidate.id}  type="button" className="btn btn-default"
+                        <button id={"CandidateInfo2" + candidate.id}  type="button" className="btn btn-default"
                                 onClick={self.props.onDescriptionItemClick( candidate )}
                                 data-toggle="tooltip" data-placement="top" title="Kandidato informacija"
                                 data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
                                 aria-controls="collapseOne">
                             <span className="glyphicon glyphicon-info-sign"></span></button>
                     </td>
+
                 </tr>
             );
         });
 
+        /* Papildomai mygtukai
+         *
+         *
+         * <td style={styles.width}>
+         <button id="CandidateEdit" type="button" className="btn btn-default" onClick={self.props.onEditItem( candidate )}
+         data-toggle="tooltip" data-placement="top" title="Redaguoti kandidatą">
+         <span className="glyphicon glyphicon-pencil"></span></button>
+         </td>
+         <td style={styles.width}>
+         <button id="CandidateDelete" type="button" className="btn btn-default" onClick={self.props.onRemoveItem( candidate )}
+         data-toggle="tooltip" data-placement="top" title="Trinti kandidatą">
+         <span className="glyphicon glyphicon-remove"></span></button>
+         </td>
+         *
+         */
+
 
         return (
             <div className="">
-                <h2 style={styles.blue}> Partijos nariai </h2>
+                <h2 style={styles.blue}> Kandidatai </h2>
                 <div style={styles.line}></div>
                 <div> </div>
 
+                <div className="input-group">
+                    <input id="SearchByName" type="text" className="form-control" placeholder="Įveskite kandidato vardą..." />
+                    <span className="input-group-btn">
+                        <button id="candidateSearch" className="btn btn-default" type="button" 
+                                onClick={( event ) => { 
+                                
+//                                if ( $( '#FullList' ).is( ":hidden" ) ) {
+//                                    $( '#FullList' ).show();
+//                                } else {
+//                                    $( '#FullList' ).hide();
+//                                }
+                                }
+                                }
+                        >Ieškoti!</button>
+                    </span>
+
+                </div>
 
                 <div className="panel panel-default" style={styles.marginTop} id="Table">
                     <table className="table table-striped">
@@ -77,12 +113,12 @@ var PartyDescriptionComponent = React.createClass( {
                         </tr>
                         </thead>
                         <tbody id="FullList">
-                        {membersList}
+                        {candidatesList}
                         </tbody>
                     </table>
                 </div>
                 <div>
-                    <button id="PartyInfoReturn" className="btn btn-success" style={{ marginRight: '20px' }}
+                    <button id="CandidateReturn" className="btn btn-success" style={{ marginRight: '20px' }}
                             onClick={this.props.onCancelClick}>Grįžti
                     </button>
                 </div>
@@ -92,6 +128,16 @@ var PartyDescriptionComponent = React.createClass( {
     }
 });
 
-PartyDescriptionComponent.propTypes = {onDescriptionItemClick: React.PropTypes.func.isRequired};
+/* papildomas add mygtukas i tuscia div 
+ * 
+ * <button id="CandidateAdd" className="btn btn-block btn-success" type="submit"
+ onClick={this.props.onAddClick} >Prideti kandidatą</button>
+ * 
+ */
 
-window.PartyDescriptionComponent = PartyDescriptionComponent;
+
+CandidatesSearchComponent.propTypes = {
+    onDescriptionItemClick: React.PropTypes.func.isRequired
+};
+
+window.CandidatesSearchComponent = CandidatesSearchComponent;
