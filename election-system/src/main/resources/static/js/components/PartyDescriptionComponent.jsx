@@ -40,50 +40,50 @@ var PartyDescriptionComponent = React.createClass( {
 
             return (
                 <tr id="candidatesList" key={index}>
-                    <td></td>
+                    <td>{candidate.party_list_seat}</td>
                     <td>{candidate.name}</td>
                     <td>{candidate.last_name}</td>
                     <td>{fullDate}</td>
                     <td style={styles.width}>
-                        <button id={"MemberInfo" + candidate.id}  type="button" className="btn btn-default"
-                                onClick={self.props.onDescriptionItemClick( candidate )}
-                                data-toggle="tooltip" data-placement="top" title="Kandidato informacija"
-                                data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
-                                aria-controls="collapseOne">
+                        <button id={"MemberInfo" + candidate.id} type="button" className="btn btn-default"
+                            onClick={self.props.onDescriptionItemClick( candidate )}
+                            data-toggle="tooltip" data-placement="top" title="Kandidato informacija"
+                            data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
+                            aria-controls="collapseOne">
                             <span className="glyphicon glyphicon-info-sign"></span></button>
                     </td>
                 </tr>
             );
         });
-
+      
 
         return (
             <div className="">
-                <h2 style={styles.blue}> Partijos nariai </h2>
+                <h2 style={styles.blue}> Partijos Nr:{this.props.candidate.name} nariai </h2>
                 <div style={styles.line}></div>
                 <div> </div>
 
 
-                <div className="panel panel-default" style={styles.marginTop} id="Table">
+                <div className="panel panel-default" style={styles.marginTop}>
                     <table className="table table-striped">
                         <thead>
-                        <tr>
-                            <th id="RowNumber">Eil.Nr.</th>
-                            <th>VARDAS</th>
-                            <th>PAVARDĖ</th>
-                            <th>GIMIMO DATA</th>
-                            <th></th>
+                            <tr>
+                                <th>VIETA<br />PARTIJOJE</th>
+                                <th>VARDAS</th>
+                                <th>PAVARDĖ</th>
+                                <th>GIMIMO DATA</th>
+                                <th></th>
 
-                        </tr>
+                            </tr>
                         </thead>
                         <tbody id="FullList">
-                        {membersList}
+                            {membersList}
                         </tbody>
                     </table>
                 </div>
                 <div>
                     <button id="PartyInfoReturn" className="btn btn-success" style={{ marginRight: '20px' }}
-                            onClick={this.props.onCancelClick}>Grįžti
+                        onClick={this.props.onCancelClick}>Grįžti
                     </button>
                 </div>
             </div>
@@ -92,6 +92,6 @@ var PartyDescriptionComponent = React.createClass( {
     }
 });
 
-PartyDescriptionComponent.propTypes = {onDescriptionItemClick: React.PropTypes.func.isRequired};
+PartyDescriptionComponent.propTypes = { candidate: React.PropTypes.object.isRequired, onDescriptionItemClick: React.PropTypes.func.isRequired };
 
 window.PartyDescriptionComponent = PartyDescriptionComponent;

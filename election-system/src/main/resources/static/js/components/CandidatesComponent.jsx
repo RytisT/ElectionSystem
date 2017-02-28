@@ -46,6 +46,9 @@ var CandidatesComponent = React.createClass( {
                     <td>{candidate.name}</td>
                     <td>{candidate.last_name}</td>
                     <td>{fullDate}</td>
+                    <td>{candidate.constituency_id}</td>
+                    <td>{candidate.party_id}</td>                    
+                    <td>{candidate.party_list_seat}</td>
                     <td style={styles.width}>
                         <button id={"CandidateInfo" + candidate.id} type="button" className="btn btn-default"
                                 onClick={self.props.onDescriptionItemClick( candidate )}
@@ -102,6 +105,9 @@ var CandidatesComponent = React.createClass( {
                             <th>VARDAS</th>
                             <th>PAVARDĖ</th>
                             <th>GIMIMO DATA</th>
+                            <th>APYGARDOS ID.</th>
+                            <th>PARTIJOS Nr.</th>                            
+                            <th>VIETA PARTIJOJE</th>
                             <th></th>
 
                         </tr>
