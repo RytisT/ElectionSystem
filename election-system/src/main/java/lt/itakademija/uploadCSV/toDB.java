@@ -11,11 +11,10 @@ public class toDB {
     private String user = "sa";
     private String pass = "";
 
-    public void CSVtoH2(String url, String table, Integer partyId) throws IOException, SQLException {
-        BufferedReader read = new BufferedReader(new FileReader(url));
+    public void CSVtoH2(String fileUrl, String table, Integer partyId) throws IOException, SQLException {
+        BufferedReader read = new BufferedReader(new FileReader(fileUrl));
 
-        try {
-            Connection conn = DriverManager.getConnection(this.url, user, pass);
+            Connection conn = DriverManager.getConnection(url, user, pass);
             String ln;
             String firstLine = read.readLine();
             while ((ln = read.readLine()) != null) {
@@ -29,10 +28,14 @@ public class toDB {
                                 + line[3] + "', '" + line[4] + "', '" + line[5] + "');"
                 );
                 stmt.executeUpdate();
+
+                PreparedStatement insertFileName = conn.prepareStatement(
+                        "UPDATE PARTIES SET candidates_file='" + fileUrl + "' WHERE id=" + partyId + ";"
+                );
+
+                System.out.println(insertFileName.executeUpdate());
             }
             conn.close();
-
-        } catch (SQLException e){}
 
     }
 }

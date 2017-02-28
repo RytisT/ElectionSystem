@@ -80,6 +80,15 @@ public class FileSystemStorageService implements StorageService {
     }
 
     @Override
+    public void deleteFile(String fileName) {
+        try {
+            Files.delete(load(fileName));
+        } catch (IOException e) {
+            throw new StorageException("Nepavyko ištrinti failo", e);
+        }
+    }
+
+    @Override
     public void init() {
         try {
             Files.createDirectory(rootLocation);

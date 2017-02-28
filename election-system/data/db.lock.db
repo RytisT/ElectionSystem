@@ -1,6 +1,14 @@
 #FileLock
+<<<<<<< HEAD
 #Tue Feb 28 12:51:39 EET 2017
 hostName=LAPTOP-J2JJOSIS
 id=15a8458ce0142fea6d588e31941083ca99e51950ad6
 method=file
 server=192.168.1.66\:61192
+=======
+#Tue Feb 28 13:14:12 EET 2017
+hostName=rytis-HP-EliteBook-8570w
+id=15a825004fffa0756a6923fd12f00d92ae79321e00e
+method=file
+server=127.0.1.1\:39069
+>>>>>>> 93da2f90db8d70f1a597acb6d8fe975c52313a33

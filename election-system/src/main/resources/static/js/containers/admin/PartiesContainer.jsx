@@ -42,7 +42,10 @@ var PartiesContainer = React.createClass({
 
     handleCandidates: function (party) {
         return function () {
-            this.context.router.push("/admin/party-candidates/" + party.id);
+            this.context.router.push({
+                pathname: "/admin/party-candidates/" + party.id,
+                query: {fileName: party.candidates_file}
+            });
         }.bind(this)
     },
 
