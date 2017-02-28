@@ -95,7 +95,11 @@ var CandidatesComponent = React.createClass( {
                 <h2 style={styles.blue}> Kandidatai </h2>
                 <div style={styles.line}></div>
                 <div> </div>                        
-          
+                <div className="panel-heading"><label htmlFor="basic-url">Ieškoti kandidato: </label></div>
+                    <div className=" panel-body input-group">
+                        <span className="input-group-addon" id="basic-addon3">Kandidato vardas: </span>
+                        <input type="text" className="form-control" id="SearchByTitle" onChange={this.props.onSearchQueryChange(this.props.searchQuery)}/>
+                    </div>
 
                 <div className="panel panel-default" style={styles.marginTop} id="Table">
                     <table className="table table-striped">

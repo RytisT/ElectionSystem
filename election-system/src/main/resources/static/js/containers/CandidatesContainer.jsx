@@ -1,6 +1,13 @@
 var CandidatesContainer = React.createClass({
     getInitialState: function () {
         return {
+            searchQuery: "",
+            candidate: {
+                name: '',
+                last_name: '',
+                date_of_birth: '',
+                description: ''
+            },
             candidates: []
         };
     },
@@ -13,6 +20,12 @@ var CandidatesContainer = React.createClass({
                     candidates: response.data
                 });
             });
+    },
+    
+    handleSearchQueryChange: function () {
+        return function (newQuery) {
+            this.setState({searchQuery: newQuery.target.value})
+        }.bind(this)
     },
 
     // Description 
@@ -64,7 +77,10 @@ var CandidatesContainer = React.createClass({
                                     onEditItem={this.handleCandidateEdit}
                                     onDescriptionItemClick={this.handleCandidateDescription}
                                     onRemoveItem={this.handleCandidateRemove}
-                                    onCancelClick={this.handleCancelClick}/>
+                                    onCancelClick={this.handleCancelClick}
+        searchQuery={this.state.searchQuery}
+        onSearchQueryChange={this.handleSearchQueryChange}
+        />
     }
 });
 
