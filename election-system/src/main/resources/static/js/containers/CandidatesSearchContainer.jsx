@@ -1,13 +1,14 @@
 var CandidatesSearchContainer = React.createClass( {
     getInitialState: function() {
         return {
+            searchQuery: "",
             candidates: []
         };
     },
 
     componentWillMount: function() {
         var self = this;
-        var candidateName = this.props.params.candidateName;
+        var candidateName = "Tomas";
         axios.get( '/api/candidates/search?name=' + candidateName )
             .then( function( response ) {
                 self.setState( {
@@ -16,6 +17,11 @@ var CandidatesSearchContainer = React.createClass( {
             });
     },
 
+    handleFieldChange: function(name){
+        return function(){
+            this.setState({searchQuery: name})
+        }.bind(this)
+    },
     // Description 
     handleCandidateDescription: function( candidate ) {
         var self = this;
@@ -24,48 +30,22 @@ var CandidatesSearchContainer = React.createClass( {
         }
     },
 
-    // Add 
-    handleAdd() {
-        this.context.router.push( '/admin/candidates/add-candidate' );
+    handleSearch: function( candidate ) {
+                
     },
-
-    // Main page 
-    //    handleMainPage() {
-    //        this.context.router.push( '/' );
-    //    },
 
     // Cancel 
     handleCancelClick() {
         this.context.router.push( '/' );
     },
-
-    // Edit candidate 
-    handleCandidateEdit: function( candidate ) {
-        var self = this;
-        return function() {
-            self.context.router.push( '/admin/candidates/edit/' + candidate.id );
-        }
-    },
-
-    // Remove candidate 
-    handleCandidateRemove: function( candidate ) {
-        var self = this;
-        return function() {
-            axios.delete( '/api/candidates/' + candidate.id ).then( function( response ) {
-                self.componentWillMount();
-            });
-        };
-    },
-
-
+   
     render: function() {
         return <CandidatesSearchComponent candidates={this.state.candidates}
-            onAddClick={this.handleAdd}
-            onMainPageClick={this.handleMainPage}
-            onEditItem={this.handleCandidateEdit}
+            onSearchItemClick={this.handleSearch}
             onDescriptionItemClick={this.handleCandidateDescription}
-            onRemoveItem={this.handleCandidateRemove}
-            onCancelClick={this.handleCancelClick} />
+            onCancelClick={this.handleCancelClick} 
+            onSearch={this.handleFieldChange}
+            searchQuery={this.state.searchQuery}/>
     }
 });
 
