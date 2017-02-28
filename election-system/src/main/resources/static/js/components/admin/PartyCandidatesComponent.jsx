@@ -32,11 +32,18 @@ var PartyCandidatesComponent = React.createClass({
         }.bind(this))
     },
 
+    handleFile:function () {
+        console.log(this.props.csvFile)
+        return (this.props.csvFile === null)
+            ? <input className="btn btn-block btn-primary btn-outline" onChange={this.handleFileChange()} ref="file" type="file"
+               name="file" id="file-select"/>
+            : <button className="btn btn-danger btn-outline" onChange={this.handleFileChange()} type="button"
+                     name="file" id="file-uploaded">{this.props.csvFile}</button>
+    },
+
     render: function () {
         return <div>
-            <input className="btn btn-block btn-primary btn-outline" onChange={this.handleFileChange()} ref="file" type="file"
-            name="file" id="file-select"/>
-
+            {this.handleFile()}
             <div className="">
                 <table className="table table-striped">
                     <thead>

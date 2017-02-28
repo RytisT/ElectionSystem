@@ -5,6 +5,7 @@ var DistrictContainer = React.createClass({
 
     getInitialState: function () {
         return {
+            searchQuery: "",
             district: {
                 constituency_id: "",
                 title: "",
@@ -47,6 +48,12 @@ var DistrictContainer = React.createClass({
         }.bind(this));
     },
 
+    handleSearchQueryChange: function () {
+        return function (newQuery) {
+            this.setState({searchQuery: newQuery.target.value})
+        }.bind(this)
+    },
+
     handleFieldChange: function (fieldName) {
         return function (district) {
             var tempDistrict = this.state.district;
@@ -64,7 +71,9 @@ var DistrictContainer = React.createClass({
                                       onSubmitDist={this.handleSubmitDist}
                 />
                 <DistrictsComponent districts={this.state.districts}
-                                    onDelete={this.handleDeleteDist}/>
+                                    onDelete={this.handleDeleteDist}
+                                    searchQuery={this.state.searchQuery}
+                                    onSearchQueryChange={this.handleSearchQueryChange}/>
             </div>
         )
     }

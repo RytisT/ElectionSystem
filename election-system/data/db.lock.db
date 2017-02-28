@@ -1,6 +1,6 @@
 #FileLock
-#Tue Feb 28 00:36:12 EET 2017
+#Tue Feb 28 03:22:46 EET 2017
 hostName=rytis-HP-EliteBook-8570w
-id=15a81b77d4521c0f546f4941c4b76cf127e302273d3
+id=15a825004fffa0756a6923fd12f00d92ae79321e00e
 method=file
-server=127.0.1.1\:33812
+server=127.0.1.1\:39069

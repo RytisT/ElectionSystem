@@ -2,7 +2,8 @@ var PartyCandidatesContainer = React.createClass({
 
     getInitialState: function () {
         return {
-            candidates: []
+            candidates: [],
+            csvFile: ""
         }
     },
 
@@ -12,10 +13,11 @@ var PartyCandidatesContainer = React.createClass({
             .then(function (response) {
                 console.log(response)
                 this.setState({
-                    candidates: response.data.candidates
+                    candidates: response.data.candidates,
+                    csvFile: response.data.candidates_file
                 });
             }.bind(this))
-
+        console.log(this.state.csvFile)
     },
 
     handleFileChange: function (file) {
@@ -33,9 +35,9 @@ var PartyCandidatesContainer = React.createClass({
                 var partyId = this.props.routeParams.partyId;
                 axios.get('/api/parties/' + partyId)
                     .then(function (response) {
-                        console.log(response)
                         this.setState({
-                            candidates: response.data.candidates
+                            candidates: response.data.candidates,
+                            csvFile: response.data.candidates_file
                         });
                     }.bind(this))
                 }.bind(this)
@@ -47,6 +49,7 @@ var PartyCandidatesContainer = React.createClass({
         return (
             <PartyCandidatesComponent onFileChange={this.handleFileChange}
                                       candidates={this.state.candidates}
+                                      csvFile={this.state.csvFile}
             />
         )
     }
