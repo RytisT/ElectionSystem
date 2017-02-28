@@ -1,3 +1,4 @@
+
 var styles = {
     menu: {
         margin: '20 0 0 5',
@@ -59,23 +60,6 @@ var CandidatesSearchComponent = React.createClass( {
             );
         });
 
-        /* Papildomai mygtukai
-         *
-         *
-         * <td style={styles.width}>
-         <button id="CandidateEdit" type="button" className="btn btn-default" onClick={self.props.onEditItem( candidate )}
-         data-toggle="tooltip" data-placement="top" title="Redaguoti kandidatą">
-         <span className="glyphicon glyphicon-pencil"></span></button>
-         </td>
-         <td style={styles.width}>
-         <button id="CandidateDelete" type="button" className="btn btn-default" onClick={self.props.onRemoveItem( candidate )}
-         data-toggle="tooltip" data-placement="top" title="Trinti kandidatą">
-         <span className="glyphicon glyphicon-remove"></span></button>
-         </td>
-         *
-         */
-
-
         return (
             <div className="">
                 <h2 style={styles.blue}> Kandidatai </h2>
@@ -83,18 +67,10 @@ var CandidatesSearchComponent = React.createClass( {
                 <div> </div>
 
                 <div className="input-group">
-                    <input id="SearchByName" type="text" className="form-control" placeholder="Įveskite kandidato vardą..." />
+                    <input id="SearchByName" type="text" className="form-control" onChange={this.props.onSearch(this.props.searchQuery)} placeholder="Įveskite kandidato vardą..." />
                     <span className="input-group-btn">
-                        <button id="candidateSearch" className="btn btn-default" type="button" 
-                                onClick={( event ) => { 
-                                
-//                                if ( $( '#FullList' ).is( ":hidden" ) ) {
-//                                    $( '#FullList' ).show();
-//                                } else {
-//                                    $( '#FullList' ).hide();
-//                                }
-                                }
-                                }
+                        <button id="candidateSearch" className="btn btn-default" type="button"  
+                                onClick= { this.props.onSearchItemClick }
                         >Ieškoti!</button>
                     </span>
 
@@ -128,16 +104,10 @@ var CandidatesSearchComponent = React.createClass( {
     }
 });
 
-/* papildomas add mygtukas i tuscia div 
- * 
- * <button id="CandidateAdd" className="btn btn-block btn-success" type="submit"
- onClick={this.props.onAddClick} >Prideti kandidatą</button>
- * 
- */
-
 
 CandidatesSearchComponent.propTypes = {
-    onDescriptionItemClick: React.PropTypes.func.isRequired
+    onDescriptionItemClick: React.PropTypes.func.isRequired,
+    onSearchItemClick: React.PropTypes.func.isRequired,
 };
 
 window.CandidatesSearchComponent = CandidatesSearchComponent;
