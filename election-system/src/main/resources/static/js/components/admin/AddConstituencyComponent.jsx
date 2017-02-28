@@ -23,21 +23,21 @@ var AddConstituencyComponent = React.createClass({
                             <tbody>
                             <tr>
                                 <td className="col-md-10">
-                                    <input className="form-control" placeholder="Apygardos Pavadinimas"
+                                    <input id="Constituency name" className="form-control" placeholder="Apygardos Pavadinimas"
                                            value={this.props.constituency.title}
                                            onChange={this.props.onFieldChange('title')} type="text"/>
                                 </td>
                                 <td className="col-md-2">
-                                    <button className="btn btn-block btn-success" type="submit"
+                                    <button id="Submit constituency" className="btn btn-block btn-success" type="submit"
                                             onClick={(event) => {
                                                 this.props.onSubmitConst(this.props.constituency);
                                                 this.changeAddingState();
-                                            }}>Continue
+                                            }}>Pridėti
                                     </button>
                                 </td>
                                 <td>
-                                    <button className="btn btn-block btn-danger" type="submit"
-                                            onClick={this.changeAddingState}>Cancel
+                                    <button id="Cancel submitting" className="btn btn-block btn-danger" type="submit"
+                                            onClick={this.changeAddingState}>Atšaukti
                                     </button>
                                 </td>
                             </tr>
@@ -49,8 +49,8 @@ var AddConstituencyComponent = React.createClass({
         } else {
             return (
                 <div>
-                    <button className="btn btn-block btn-success" type="submit"
-                            onClick={this.changeAddingState}>Prideti apygarda
+                    <button id="Add Constituency" className="btn btn-block btn-success" type="submit"
+                            onClick={this.changeAddingState}>Pridėti apygardą
                     </button>
                 </div>)
         }

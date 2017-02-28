@@ -23,26 +23,26 @@ var AddPartyComponent = React.createClass({
                         <tbody>
                         <tr>
                             <td className="col-md-10">
-                                <input className="form-control" placeholder="Partijos ID" value={this.props.party.Id}
+                                <input id="Party id" className="form-control" placeholder="Partijos ID" value={this.props.party.Id}
                                        onChange={this.props.onFieldChange('id')} type="number"/>
-                                <input className="form-control" placeholder="Partijos Pavadinimas"
+                                <input id="Party name" className="form-control" placeholder="Partijos Pavadinimas"
                                        value={this.props.party.title}
                                        onChange={this.props.onFieldChange('title')} type="text"/>
-                                <input className="form-control" placeholder="Partijos Kodas"
+                                <input id="Party code" className="form-control" placeholder="Partijos Kodas"
                                        value={this.props.party.party_Code}
                                        onChange={this.props.onFieldChange('party_Code')} type="text"/>
                             </td>
 
                             <td className="col-md-2">
-                                <button className="btn btn-block btn-success" type="submit"
+                                <button id="Submit party" className="btn btn-block btn-success" type="submit"
                                         onClick={() => {
                                             this.props.onSubmit(this.props.party)
-                                        }}>Continue
+                                        }}>Pridėti
                                 </button>
                             </td>
                             <td>
-                                <button className="btn btn-block btn-danger" type="submit"
-                                        onClick={this.changeAddingState}>Cancel
+                                <button id="Cancel adding" className="btn btn-block btn-danger" type="submit"
+                                        onClick={this.changeAddingState}>Atšaukti
                                 </button>
                             </td>
                         </tr>
@@ -51,8 +51,8 @@ var AddPartyComponent = React.createClass({
                 </form>
             </div>
             : <div>
-                <button className="btn btn-block btn-success" type="submit"
-                        onClick={this.changeAddingState}>Prideti Partija
+                <button id="Add party" className="btn btn-block btn-success" type="submit"
+                        onClick={this.changeAddingState}>Pridėti Partiją
                 </button>
             </div>
 

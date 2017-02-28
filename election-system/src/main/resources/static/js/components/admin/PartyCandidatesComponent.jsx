@@ -42,11 +42,11 @@ var PartyCandidatesComponent = React.createClass({
                     <thead>
                     <tr>
                         <th>Vardas</th>
-                        <th>Pavarde</th>
-                        <th>Gimimo Data</th>
-                        <th>Asmens Kodas</th>
-                        <th>Aprasymas</th>
-                        <th>Saraso Numeris</th>
+                        <th>Pavardė</th>
+                        <th>Gimimo data</th>
+                        <th>Asmens kodas</th>
+                        <th>Aprašymas</th>
+                        <th>Sąrašo numeris</th>
                     </tr>
                     </thead>
                     <tbody>

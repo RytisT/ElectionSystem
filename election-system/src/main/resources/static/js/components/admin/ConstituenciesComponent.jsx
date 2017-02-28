@@ -23,7 +23,8 @@ var ConstituenciesComponent = React.createClass({
                     <thead>
                     <tr>
                         <th>Apygarda</th>
-                        <th>Apylinkes</th>
+                        <th>Apylinkės</th>
+                        <th>Redaguoti</th>
                         <th>Trinti</th>
                     </tr>
                     </thead>
