@@ -32,10 +32,6 @@ ul.header li a {
     display: inline-block;
 }
 
-#menu tr:hover {
-    background-color: rgba(0, 128, 255, 0.2);
-}
-
 .content {
     background-color: #FFF;
     padding: 20px;
@@ -53,6 +49,23 @@ ul.header li a {
 .active {
     background-color: #0099FF;
 }
+
+/* Candidates */
+
+#menu tr {
+    cursor: pointer;
+}
+
+#menu tr:hover {
+    background-color: rgba(0, 128, 255, 0.2);
+}
+
+#menu .list1, .list2, .list3, .list4, .list5 {
+    cursor: pointer;
+    display: none;
+}
+
+
 
 /* Candidates Description */
 #description span {

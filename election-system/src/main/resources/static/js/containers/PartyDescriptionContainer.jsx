@@ -1,10 +1,18 @@
 var PartyDescriptionContainer = React.createClass( {
     getInitialState: function() {
-        return {
+        return {            
             party: {
                 id: this.props.params.id,
                 title: '',
                 party_Code: ''
+            },
+            candidate: {
+                id: '',
+                name: '',
+                last_name: '',
+                date_of_birth: '',
+                description: '',
+                party_id: ''
             },
             candidates: []
         };
@@ -36,6 +44,7 @@ var PartyDescriptionContainer = React.createClass( {
 
     render: function() {
         return <PartyDescriptionComponent
+            candidate={this.state.candidate}
             candidates={this.state.candidates}
             party={this.state.party}
             onCancelClick={this.handleCancelClick}

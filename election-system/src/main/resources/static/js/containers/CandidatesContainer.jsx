@@ -2,6 +2,12 @@ var CandidatesContainer = React.createClass({
     getInitialState: function () {
         return {
             searchQuery: "",
+            candidate: {
+                name: '',
+                last_name: '',
+                date_of_birth: '',
+                description: ''
+            },
             candidates: []
         };
     },
@@ -14,6 +20,12 @@ var CandidatesContainer = React.createClass({
                     candidates: response.data
                 });
             });
+    },
+    
+    handleSearchQueryChange: function () {
+        return function (newQuery) {
+            this.setState({searchQuery: newQuery.target.value})
+        }.bind(this)
     },
 
     // Description 
@@ -75,6 +87,7 @@ var CandidatesContainer = React.createClass({
                                     onSearchQueryChange={this.handleSearchQueryChange}
                                     onCancelClick={this.handleCancelClick}
                                     />
+
     }
 });
 

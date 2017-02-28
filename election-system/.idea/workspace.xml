@@ -37,11 +37,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DistrictsContainer.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DistrictsContainer.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/containers/admin/DistrictsContainer.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="414">
               <caret line="80" column="62" lean-forward="false" selection-start-line="80" selection-start-column="62" selection-end-line="80" selection-end-column="62" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CandidatesComponent.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/CandidatesComponent.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-203">
+              <caret line="109" column="0" lean-forward="false" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CandidatesContainer.jsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/containers/CandidatesContainer.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="553">
+              <caret line="94" column="46" lean-forward="true" selection-start-line="94" selection-start-column="46" selection-end-line="94" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -135,9 +155,9 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/js/containers/admin/DistrictsContainer.jsx" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/components/admin/PartyCandidatesComponent.jsx" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/containers/admin/PartyCandidatesContainer.jsx" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/containers/CandidatesContainer.jsx" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/components/CandidatesSearchComponent.jsx" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/components/CandidatesComponent.jsx" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/containers/CandidatesContainer.jsx" />
       </list>
     </option>
   </component>
@@ -979,12 +999,12 @@
       <workItem from="1487844163335" duration="515000" />
       <workItem from="1488146947234" duration="21829000" />
       <workItem from="1488234858899" duration="14239000" />
-      <workItem from="1488280606369" duration="4484000" />
+      <workItem from="1488280606369" duration="5432000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191556000" />
+    <option name="totallyTimeSpent" value="192504000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1473,22 +1493,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/CandidatesComponent.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="31" column="41" lean-forward="true" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/containers/CandidatesContainer.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1332">
-          <caret line="74" column="47" lean-forward="false" selection-start-line="74" selection-start-column="47" selection-end-line="74" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/CandidatesSearchComponent.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -1501,6 +1505,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
           <caret line="80" column="62" lean-forward="false" selection-start-line="80" selection-start-column="62" selection-end-line="80" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/CandidatesComponent.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-203">
+          <caret line="109" column="0" lean-forward="false" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/containers/CandidatesContainer.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="553">
+          <caret line="94" column="46" lean-forward="true" selection-start-line="94" selection-start-column="46" selection-end-line="94" selection-end-column="46" />
           <folding />
         </state>
       </provider>
