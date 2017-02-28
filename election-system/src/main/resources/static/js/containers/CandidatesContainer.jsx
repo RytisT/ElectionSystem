@@ -1,6 +1,7 @@
 var CandidatesContainer = React.createClass({
     getInitialState: function () {
         return {
+            searchQuery: "",
             candidates: []
         };
     },
@@ -56,6 +57,12 @@ var CandidatesContainer = React.createClass({
         };
     },
 
+    handleSearchQueryChange: function () {
+        return function (newQuery) {
+            this.setState({searchQuery: newQuery.target.value})
+        }.bind(this)
+    },
+
 
     render: function () {
         return <CandidatesComponent candidates={this.state.candidates}
@@ -64,7 +71,10 @@ var CandidatesContainer = React.createClass({
                                     onEditItem={this.handleCandidateEdit}
                                     onDescriptionItemClick={this.handleCandidateDescription}
                                     onRemoveItem={this.handleCandidateRemove}
-                                    onCancelClick={this.handleCancelClick}/>
+                                    searchQuery={this.state.searchQuery}
+                                    onSearchQueryChange={this.handleSearchQueryChange}
+                                    onCancelClick={this.handleCancelClick}
+                                    />
     }
 });
 

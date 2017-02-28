@@ -44,15 +44,23 @@ var PartyCandidatesContainer = React.createClass({
             )
     },
 
+    handleReturn: function () {
+        this.context.router.push('/admin/parties');
+    },
 
     render: function () {
         return (
             <PartyCandidatesComponent onFileChange={this.handleFileChange}
                                       candidates={this.state.candidates}
                                       csvFile={this.state.csvFile}
+                                      onReturn={this.handleReturn}
             />
         )
     }
 });
+
+PartyCandidatesContainer.contextTypes = {
+    router: React.PropTypes.object.isRequired,
+};
 
 window.PartyCandidatesContainer = PartyCandidatesContainer;

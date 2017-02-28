@@ -39,7 +39,7 @@ var CandidatesSearchComponent = React.createClass( {
             if ( month < 10 ) { month = '0' + month; }
             if ( date < 10 ) { date = '0' + date; }
             var fullDate = year + '-' + month + '-' + date;
-            
+
 
             return (
                 <tr id="candidatesList" key={index}>

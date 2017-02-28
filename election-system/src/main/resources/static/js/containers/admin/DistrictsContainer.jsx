@@ -54,6 +54,10 @@ var DistrictContainer = React.createClass({
         }.bind(this)
     },
 
+    handleReturn: function () {
+        this.context.router.push('/admin');
+    },
+
     handleFieldChange: function (fieldName) {
         return function (district) {
             var tempDistrict = this.state.district;
@@ -73,10 +77,17 @@ var DistrictContainer = React.createClass({
                 <DistrictsComponent districts={this.state.districts}
                                     onDelete={this.handleDeleteDist}
                                     searchQuery={this.state.searchQuery}
-                                    onSearchQueryChange={this.handleSearchQueryChange}/>
+                                    onSearchQueryChange={this.handleSearchQueryChange}
+                                    onReturn={this.handleReturn}/>
             </div>
         )
     }
 });
+
+
+
+DistrictContainer.contextTypes = {
+    router: React.PropTypes.object.isRequired,
+};
 
 window.DistrictContainer = DistrictContainer;

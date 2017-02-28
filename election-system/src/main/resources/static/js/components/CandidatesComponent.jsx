@@ -28,35 +28,43 @@ var CandidatesComponent = React.createClass( {
     render: function() {
         var self = this;
         var candidatesList = this.props.candidates.map( function( candidate, index ) {
+            var fullName = candidate.name + " " + candidate.last_name;
+            if(fullName.includes(self.props.searchQuery)) {
 
 
-            // date
-            var d = new Date( candidate.date_of_birth );
-            var year = d.getFullYear();
-            var month = d.getMonth() + 1;
-            var date = d.getDate();
-            if ( month < 10 ) { month = '0' + month; }
-            if ( date < 10 ) { date = '0' + date; }
-            var fullDate = year + '-' + month + '-' + date;
+                // date
+                var d = new Date(candidate.date_of_birth);
+                var year = d.getFullYear();
+                var month = d.getMonth() + 1;
+                var date = d.getDate();
+                if (month < 10) {
+                    month = '0' + month;
+                }
+                if (date < 10) {
+                    date = '0' + date;
+                }
+                var fullDate = year + '-' + month + '-' + date;
 
 
-            return (
-                <tr id="candidatesList" key={index}>
-                    <td></td>
-                    <td>{candidate.name}</td>
-                    <td>{candidate.last_name}</td>
-                    <td>{fullDate}</td>
-                    <td style={styles.width}>
-                        <button id={"CandidateInfo" + candidate.id} type="button" className="btn btn-default"
-                                onClick={self.props.onDescriptionItemClick( candidate )}
-                                data-toggle="tooltip" data-placement="top" title="Kandidato informacija"
-                                data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
-                                aria-controls="collapseOne">
-                            <span className="glyphicon glyphicon-info-sign"></span></button>
-                    </td>
+                return (
+                    <tr id="candidatesList" key={index}>
+                        <td></td>
+                        <td>{candidate.name}</td>
+                        <td>{candidate.last_name}</td>
+                        <td>{fullDate}</td>
+                        <td style={styles.width}>
+                            <button id={"CandidateInfo" + candidate.id} type="button" className="btn btn-default"
+                                    onClick={self.props.onDescriptionItemClick(candidate)}
+                                    data-toggle="tooltip" data-placement="top" title="Kandidato informacija"
+                                    data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+                                    aria-expanded="true"
+                                    aria-controls="collapseOne">
+                                <span className="glyphicon glyphicon-info-sign"></span></button>
+                        </td>
 
-                </tr>
-            );
+                    </tr>
+                );
+            }
         });
 
         /* Papildomai mygtukai
@@ -91,8 +99,15 @@ var CandidatesComponent = React.createClass( {
             <div className="">
                 <h2 style={styles.blue}> Kandidatai </h2>
                 <div style={styles.line}></div>
-                <div> </div>                        
-          
+                <div> </div>
+
+                <div className="panel panel-default">
+                    <div className="panel-heading"><label htmlFor="basic-url">Ieškoti kandidato: </label></div>
+                    <div className=" panel-body input-group">
+                        <span className="input-group-addon" id="basic-addon3">Kandidato vardas ar pavardė: </span>
+                        <input type="text" className="form-control" id="SearchByName" onChange={this.props.onSearchQueryChange(this.props.searchQuery)}/>
+                    </div>
+                </div>
 
                 <div className="panel panel-default" style={styles.marginTop} id="Table">
                     <table className="table table-striped">
