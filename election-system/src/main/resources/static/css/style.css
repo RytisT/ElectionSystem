@@ -66,6 +66,18 @@ ul.header li a {
 }
 
 
+#CandidateSearchValidation {
+	display: none;
+	background-color: #ff9999;
+	padding-left: 300px;
+	font-style: italic;
+}
+
+#temporary-representative {
+    cursor: pointer;
+}
+
+
 
 /* Candidates Description */
 #description span {

@@ -1,5 +1,5 @@
-var CandidatesContainer = React.createClass({
-    getInitialState: function () {
+var CandidatesContainer = React.createClass( {
+    getInitialState: function() {
         return {
             searchQuery: "",
             candidate: {
@@ -12,81 +12,88 @@ var CandidatesContainer = React.createClass({
         };
     },
 
-    componentWillMount: function () {
+    componentWillMount: function() {
         var self = this;
-        axios.get('/api/candidates')
-            .then(function (response) {
-                self.setState({
+        axios.get( '/api/candidates' )
+            .then( function( response ) {
+                self.setState( {
                     candidates: response.data
                 });
             });
     },
-    
-    handleSearchQueryChange: function () {
-        return function (newQuery) {
-            this.setState({searchQuery: newQuery.target.value})
-        }.bind(this)
-    },
+
+    //    handleSearchQueryChange: function () {
+    //        return function (newQuery) {
+    //            this.setState({searchQuery: newQuery.target.value})
+    //        }.bind(this)
+    //    },
 
     // Description 
-    handleCandidateDescription: function (candidate) {
+    handleCandidateDescription: function( candidate ) {
         var self = this;
-        return function () {
-            self.context.router.push('/candidate/description/' + candidate.id);
+        return function() {
+            self.context.router.push( '/candidate/description/' + candidate.id );
         }
     },
 
     // Add 
     handleAdd() {
-        this.context.router.push('/admin/candidates/add-candidate');
+        this.context.router.push( '/admin/candidates/add-candidate' );
     },
-
-    // Main page 
-//    handleMainPage() {
-//        this.context.router.push( '/' );
-//    },
 
     // Cancel 
     handleCancelClick() {
-        this.context.router.push('/');
+        this.context.router.push( '/' );
     },
 
     // Edit candidate 
-    handleCandidateEdit: function (candidate) {
+    handleCandidateEdit: function( candidate ) {
         var self = this;
-        return function () {
-            self.context.router.push('/admin/candidates/edit/' + candidate.id);
+        return function() {
+            self.context.router.push( '/admin/candidates/edit/' + candidate.id );
         }
     },
 
     // Remove candidate 
-    handleCandidateRemove: function (candidate) {
+    handleCandidateRemove: function( candidate ) {
         var self = this;
-        return function () {
-            axios.delete('/api/candidates/' + candidate.id).then(function (response) {
+        return function() {
+            axios.delete( '/api/candidates/' + candidate.id ).then( function( response ) {
                 self.componentWillMount();
             });
         };
     },
 
-    handleSearchQueryChange: function () {
-        return function (newQuery) {
-            this.setState({searchQuery: newQuery.target.value})
-        }.bind(this)
+    handleSearchQueryChange: function() {
+        return function( newQuery ) {
+
+            //valitanion
+            var val = $( "#SearchCandidate" ).val();
+            var matches = val.match( ".*([a-zA-ZąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)" );
+            if ( matches != null ) { $( "#CandidateSearchValidation" ).hide(); }
+            else { $( "#CandidateSearchValidation" ).show(); }
+
+            this.setState( { searchQuery: newQuery.target.value })
+
+        }.bind( this )
     },
 
+    //var value = $('#SearchCandidate').val();
+    //            if(parseInt(value)) {
+    //             alert(value+" is a number.");
+    //            }
 
-    render: function () {
+
+    render: function() {
         return <CandidatesComponent candidates={this.state.candidates}
-                                    onAddClick={this.handleAdd}
-                                    onMainPageClick={this.handleMainPage}
-                                    onEditItem={this.handleCandidateEdit}
-                                    onDescriptionItemClick={this.handleCandidateDescription}
-                                    onRemoveItem={this.handleCandidateRemove}
-                                    searchQuery={this.state.searchQuery}
-                                    onSearchQueryChange={this.handleSearchQueryChange}
-                                    onCancelClick={this.handleCancelClick}
-                                    />
+            onAddClick={this.handleAdd}
+            onEditItem={this.handleCandidateEdit}
+            onDescriptionItemClick={this.handleCandidateDescription}
+            onRemoveItem={this.handleCandidateRemove}
+            searchQuery={this.state.searchQuery}
+            onSearchQueryChange={this.handleSearchQueryChange}
+            onCancelClick={this.handleCancelClick}
+            />
 
     }
 });

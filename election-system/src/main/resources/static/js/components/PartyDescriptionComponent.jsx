@@ -59,7 +59,7 @@ var PartyDescriptionComponent = React.createClass( {
 
         return (
             <div className="">
-                <h2 style={styles.blue}> Partijos Nr:{this.props.candidate.name} nariai </h2>
+                <h2 style={styles.blue}> Partijos nariai </h2>
                 <div style={styles.line}></div>
                 <div> </div>
 
@@ -68,7 +68,7 @@ var PartyDescriptionComponent = React.createClass( {
                     <table className="table table-striped">
                         <thead>
                             <tr>
-                                <th>VIETA<br />PARTIJOJE</th>
+                                <th>VIETA<br/>SĄRAŠE</th>
                                 <th>VARDAS</th>
                                 <th>PAVARDĖ</th>
                                 <th>GIMIMO DATA</th>
