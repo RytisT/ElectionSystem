@@ -69,6 +69,13 @@ var ConstituenciesContainer = React.createClass({
         }.bind(this);
     },
 
+    handleCandidates: function (constituency) {
+        return function () {
+            this.context.router.push({
+                pathname: "/admin/const-candidates/" + constituency.id
+            });
+        }.bind(this)
+    },
 
     render: function () {
         return (
@@ -80,11 +87,15 @@ var ConstituenciesContainer = React.createClass({
                 <ConstituenciesComponent constituencies={this.state.constituencies}
                                          onEditDistrict={this.handleEditDistricts}
                                          onDeleteConst={this.handleDeleteConst}
+                                         onCandidates={this.handleCandidates}
                 />
             </div>
         )
     }
 });
 
+ConstituenciesContainer.contextTypes = {
+    router: React.PropTypes.object.isRequired,
+};
 
 window.ConstituenciesContainer = ConstituenciesContainer;

@@ -21,9 +21,14 @@ var SingleConstituencyComponent = React.createClass({
             </tr>
             : <tr>
                 <td className="col-md-5">{this.props.constituency.title}</td>
-                <td className="col-md-4">
+                <td className="col-md-2">
                     <button id="Edit Districts" type="button" className="btn btn-info"
                             onClick={this.props.onEditDistrict(this.props.constituency)}>Redaguoti apylinkes
+                    </button>
+                </td>
+                <td className="col-md-2">
+                    <button id="Candidates info" type="button" className="btn btn-info"
+                                onClick={this.props.onCandidates(this.props.constituency)}>Kandidatai
                     </button>
                 </td>
                 <td className="col-md-2">

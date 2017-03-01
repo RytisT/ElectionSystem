@@ -40,4 +40,9 @@ public class PartiesService {
         return repository.findOne(id);
     }
 
+    public Parties findByFileName(String fileName) {
+        return repository.findByFileName(fileName);
+    }
+
+
 }

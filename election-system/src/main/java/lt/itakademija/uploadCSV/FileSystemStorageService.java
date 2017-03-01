@@ -1,34 +1,117 @@
 package lt.itakademija.uploadCSV;
 
+import lt.itakademija.database.controllers.CandidatesController;
+import lt.itakademija.database.models.Candidates;
+import lt.itakademija.database.models.Parties;
+import lt.itakademija.database.services.CandidatesService;
+import lt.itakademija.database.services.PartiesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.stereotype.Service;
 import org.springframework.util.FileSystemUtils;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.stream.Stream;
-import java.sql.*;
 
 @Service
 public class FileSystemStorageService implements StorageService {
 
 
+    @Autowired
+    CandidatesService service;
+
+    @Autowired
+    PartiesService partiesService;
 
     private String url = "jdbc:h2:./data/db;";
     private String user = "sa";
     private String pass = "";
+    private int name,last_name,date_of_birth,description,personal_id,party_list_seat;
 
     private final Path rootLocation;
 
     @Autowired
     public FileSystemStorageService(StorageProperties properties) {
         this.rootLocation = Paths.get(properties.getLocation());
+    }
+
+    public void CSVtoH2(String fileName, Integer partyId) throws IOException, SQLException, ParseException {
+        String fileUrl = "./upload/" + fileName;
+        BufferedReader read = new BufferedReader(new FileReader(fileUrl));
+
+        String ln;
+        String firstLine = read.readLine();
+        String[] fieldNames = firstLine.split(",");
+
+
+        for (int i = 0; i < fieldNames.length; i++) {
+            if ("name".equals(fieldNames[i])) {
+                name = i;
+            }
+            if ("last_name".equals(fieldNames[i])) {
+                last_name = i;
+            }
+            if ("date_of_birth".equals(fieldNames[i])) date_of_birth = i;
+            if ("description".equals(fieldNames[i])) description = i;
+            if ("personal_id".equals(fieldNames[i])) personal_id = i;
+            if ("party_list_seat".equals(fieldNames[i])) party_list_seat = i;
+        }
+
+        while ((ln = read.readLine()) != null) {
+            Candidates candidate = new Candidates();
+            String[] line = ln.split(",");
+            DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            Date inputDate = dateFormat.parse(line[date_of_birth]);
+                if (service.checkIfExist(line[personal_id]) == null) {
+                    candidate.setParty_id(partyId);
+                    candidate.setName(line[name]);
+                    candidate.setLast_name(line[last_name]);
+                    candidate.setDate_of_birth(inputDate);
+                    candidate.setDescription(line[description]);
+                    candidate.setPersonal_id(line[personal_id]);
+                    candidate.setParty_list_seat(Integer.parseInt(line[party_list_seat]));
+
+                    service.saveOrUpdate(candidate);
+                } else {
+                    candidate = service.checkIfExist(line[personal_id]);
+
+                    candidate.setParty_id(partyId);
+                    candidate.setName(line[name]);
+                    candidate.setLast_name(line[last_name]);
+                    candidate.setDate_of_birth(inputDate);
+                    candidate.setDescription(line[description]);
+                    candidate.setParty_list_seat(Integer.parseInt(line[party_list_seat]));
+
+                    service.saveOrUpdate(candidate);
+                }
+        }
+
+        Parties party = partiesService.findById(partyId);
+        party.setCandidates_file(fileName);
+        partiesService.saveOrUpdate(party);
+
+         /* PreparedStatement insertFileName = conn.prepareStatement(
+                        "UPDATE PARTIES SET candidates_file='" + fileName + "' WHERE id=" + partyId + ";"
+                );
+
+                insertFileName.executeUpdate();*/
     }
 
     @Override
@@ -39,9 +122,11 @@ public class FileSystemStorageService implements StorageService {
             }
             String newFileName = partyCode + ".csv";
             Files.copy(file.getInputStream(), this.rootLocation.resolve(newFileName));
-            new toDB().CSVtoH2( newFileName, "CANDIDATES", partyId);
+            CSVtoH2(newFileName, partyId);
         } catch (IOException e) {
             throw new StorageException("Nepavyko ikelti sąrašo " + file.getOriginalFilename(), e);
+        } catch (ParseException e) {
+            e.printStackTrace();
         }
     }
 
@@ -85,18 +170,9 @@ public class FileSystemStorageService implements StorageService {
 
     @Override
     public void deleteFile(String fileName) {
-        try {
-            Connection conn = DriverManager.getConnection(url, user, pass);
-            PreparedStatement removeFileName = conn.prepareStatement(
-                    "UPDATE PARTIES SET candidates_file= NULL WHERE candidates_file='" + fileName + "';"
-            );
-
-            removeFileName.executeUpdate();
-            conn.close();
-
-        } catch (SQLException e) {
-        e.printStackTrace();
-        }
+        Parties party = partiesService.findByFileName(fileName);
+        party.setCandidates_file(null);
+        partiesService.saveOrUpdate(party);
 
         try {
             Files.delete(load(fileName));

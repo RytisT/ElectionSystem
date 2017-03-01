@@ -39,12 +39,22 @@ public class Constituency {
     @Length(min = 1, max = 30, message = "Constituency TITLE must not be empty and length can not be longer than {max} symbols. ")
     private String title;
 
+    @Column(name = "candidates_file", unique = true)
+    private String candidates_file;
+
 
 //	public Constituency(Integer id, String title) {
 //		this.id = id;
 //		this.title = title;
 //	}
 
+    public String getCandidates_file() {
+        return candidates_file;
+    }
+
+    public void setCandidates_file(String candidates_file) {
+        this.candidates_file = candidates_file;
+    }
 
     public Integer getId() {
         return id;

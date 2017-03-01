@@ -12,6 +12,7 @@ var routes = (
                     <IndexRoute component={ConstituenciesContainer} />
                     <Route path="/admin/parties" component={PartiesContainer} />
                     <Route path="/admin/party-candidates/:partyId" component={PartyCandidatesContainer} />
+                    <Route path="/admin/const-candidates/:constId" component={ConstituencyCandidatesContainer} />
                     <Route path="/admin/contacts" component={PartiesContainer} />
                     <Route path="/admin/district/:distId" component={DistrictContainer} />
                     <Route path="/admin/candidates" component={CandidatesContainer} />

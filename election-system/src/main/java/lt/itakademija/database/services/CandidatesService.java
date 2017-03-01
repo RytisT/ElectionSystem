@@ -40,6 +40,8 @@ public class CandidatesService {
         return repository.findOne(id);
     }
 
+    public Candidates checkIfExist(String personalId) { return repository.checkIfExist(personalId); }
+
     public List<Candidates> findByConstituency(Integer constId) {
         return repository.findByConstituencies(constId);
     }
@@ -66,8 +68,10 @@ public class CandidatesService {
             if(temp.getConstituency_id() == null) {
                 deleteById(temp.getId());
             } else {
-                repository.updateByPartyId(id);
-            }
+                temp.setParty_id(null);
+                temp.setParty_list_seat(null);
+                saveOrUpdate(temp);
+                }
         }
     }
 }

@@ -1,4 +1,4 @@
-var PartyCandidatesComponent = React.createClass({
+var ConstituencyCandidatesComponent = React.createClass({
 
     handleFileChange: function () {
         return function() {
@@ -54,7 +54,7 @@ var PartyCandidatesComponent = React.createClass({
                         <th>Gimimo data</th>
                         <th>Asmens kodas</th>
                         <th>Aprašymas</th>
-                        <th>Vieta Sąarše</th>
+                        <th>Sąrašo numeris</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -71,4 +71,4 @@ var PartyCandidatesComponent = React.createClass({
     }
 });
 
-window.PartyCandidatesComponent = PartyCandidatesComponent;
+window.ConstituencyCandidatesComponent = ConstituencyCandidatesComponent;

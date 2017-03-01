@@ -19,11 +19,8 @@ public interface CandidatesRepository extends JpaRepository<Candidates, Integer>
     @Query("SELECT c FROM Candidates c where c.party_id=:party_id")
     public List<Candidates> findByPartyId(@Param("party_id") Integer party_id);
 
-
-    @Modifying
-    @Query("UPDATE Candidates c SET c.party_id=null WHERE c.party_id=:party_id")
-    @Transactional
-    public List<Candidates> updateByPartyId(@Param("party_id") Integer party_id);
+    @Query("SELECT c FROM Candidates c where c.personal_id=:personal_id")
+    public Candidates checkIfExist(@Param("personal_id") String personal_id);
 
     public List<Candidates> findByName(@Param("name") String candidateName);
 

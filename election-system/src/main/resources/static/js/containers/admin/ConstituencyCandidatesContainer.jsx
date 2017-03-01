@@ -1,21 +1,21 @@
-var PartyCandidatesContainer = React.createClass({
+var ConstituencyCandidatesContainer = React.createClass({
 
     getInitialState: function () {
         return {
             candidates: [],
             csvFile: "",
-            partyCode: ""
+            constTitle: ""
         }
     },
 
     componentWillMount: function () {
-        var partyId = this.props.routeParams.partyId;
-        axios.get('/api/parties/' + partyId)
+        var constId = this.props.routeParams.constId;
+        axios.get('/api/constituencies/' + constId)
             .then(function (response) {
                 this.setState({
                     candidates: response.data.candidates,
                     csvFile: response.data.candidates_file,
-                    partyCode: response.data.party_Code
+                    constTitle: response.data.title
                 });
             }.bind(this))
     },
@@ -25,23 +25,22 @@ var PartyCandidatesContainer = React.createClass({
         var header = {
             headers: {
                 'Content-Type': 'multipart/form-data',
-                'partyId': this.props.routeParams.partyId,
-                'partyCode': this.state.partyCode
+                'constId': this.props.routeParams.constId,
+                'constTitle': this.state.constTitle
 
             }
         };
         data.append('file', file);
         axios.post("/uploadForm", data, header)
             .then(function (response) {
-                var partyId = this.props.routeParams.partyId;
-                axios.get('/api/parties/' + partyId)
+                var constId = this.props.routeParams.constId;
+                axios.get('/api/constituencies/' + constId)
                     .then(function (response) {
                         this.setState({
                             candidates: response.data.candidates,
                             csvFile: response.data.candidates_file,
-                            partyCode: response.data.party_Code
+                            constTitle: response.data.title
                         });
-
                     }.bind(this))
                 }.bind(this)
             )
@@ -49,19 +48,19 @@ var PartyCandidatesContainer = React.createClass({
 
     handleDeleteFile: function (filename) {
         return function () {
+            console.log(filename)
             axios.delete("/uploadForm/" + filename)
                 .then(function () {
-                    var partyId = this.props.routeParams.partyId;
-                    axios.delete("/api/candidates/party/" + partyId)
+                    var constId = this.props.routeParams.constId;
+                    axios.delete("/api/candidates/const/" + constId)
                         .then(function () {
-                            axios.get('/api/parties/' + partyId)
+                            axios.get('/api/constituencies/' + constId)
                                 .then(function (response) {
                                     this.setState({
                                         candidates: response.data.candidates,
                                         csvFile: response.data.candidates_file,
-                                        partyCode: response.data.party_Code
+                                        constTitle: response.data.title
                                     });
-
                                 }.bind(this))
                             }.bind(this)
                         )
@@ -70,7 +69,7 @@ var PartyCandidatesContainer = React.createClass({
     },
 
     handleReturn: function () {
-        this.context.router.push('/admin/parties');
+        this.context.router.push('/admin');
     },
 
     render: function () {
@@ -85,8 +84,8 @@ var PartyCandidatesContainer = React.createClass({
     }
 });
 
-PartyCandidatesContainer.contextTypes = {
+ConstituencyCandidatesContainer.contextTypes = {
     router: React.PropTypes.object.isRequired,
 };
 
-window.PartyCandidatesContainer = PartyCandidatesContainer;
+window.ConstituencyCandidatesContainer = ConstituencyCandidatesContainer;
