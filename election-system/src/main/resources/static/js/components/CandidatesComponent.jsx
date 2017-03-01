@@ -81,19 +81,7 @@ var CandidatesComponent = React.createClass( {
          </td>
          *
          */
-
-//             <span className="input-group-btn">
-//                        <button id="candidateSearch" className="btn btn-default" type="button"
-//                                onClick={( event ) => {
-////                                if ( $( '#FullList' ).is( ":hidden" ) ) {
-////                                    $( '#FullList' ).show();
-////                                } else {
-////                                    $( '#FullList' ).hide();
-////                                }
-//                                }
-//                                }
-//                        >Ieškoti!</button>
-//                    </span> 
+              
         return (
             <div className="">
                 <h2 style={styles.blue}> Kandidatai </h2>
@@ -104,8 +92,9 @@ var CandidatesComponent = React.createClass( {
                     <div className="panel-heading"><label htmlFor="basic-url">Ieškoti kandidato: </label></div>
                     <div className=" panel-body input-group">
                         <span className="input-group-addon" id="basic-addon3">Kandidato vardas ar pavardė: </span>
-                        <input type="text" className="form-control" id="SearchByName" onChange={this.props.onSearchQueryChange(this.props.searchQuery)}/>
+                        <input type="text" className="form-control" id="SearchCandidate" onChange={this.props.onSearchQueryChange(this.props.searchQuery)}/>
                     </div>
+                            <span id="CandidateSearchValidation">Dėmesio! naudojami netinkami simboliai.</span>
                 </div>
 
 
@@ -117,9 +106,9 @@ var CandidatesComponent = React.createClass( {
                             <th>VARDAS</th>
                             <th>PAVARDĖ</th>
                             <th>GIMIMO DATA</th>
-                            <th>APYGARDOS ID.</th>
-                            <th>PARTIJOS Nr.</th>                            
-                            <th>VIETA PARTIJOJE</th>
+                            <th>APYGARDA</th>
+                            <th>PARTIJOS<br/>NUMERIS</th>                            
+                            <th>VIETA<br/>SĄRAŠE</th>
                             <th></th>
 
                         </tr>
