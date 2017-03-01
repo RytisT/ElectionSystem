@@ -43,6 +43,11 @@ public class CandidatesController {
         service.deleteById(id);
     }
 
+    @DeleteMapping(value = "/party/{id}")
+    public void deletePartyCandidates(@PathVariable("id") Integer id) {
+        service.deletePartyCandidates(id);
+    }
+
     @GetMapping(value = "/{id}")
     public Candidates findCandidateById(@PathVariable("id") Integer id) {
         return service.findById(id);

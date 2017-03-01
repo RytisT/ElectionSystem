@@ -12,11 +12,17 @@ import java.net.MalformedURLException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.sql.SQLException;
 import java.util.stream.Stream;
+import java.sql.*;
 
 @Service
 public class FileSystemStorageService implements StorageService {
+
+
+
+    private String url = "jdbc:h2:./data/db;";
+    private String user = "sa";
+    private String pass = "";
 
     private final Path rootLocation;
 
@@ -26,16 +32,14 @@ public class FileSystemStorageService implements StorageService {
     }
 
     @Override
-    public void store(MultipartFile file, Integer partyId) throws SQLException {
+    public void store(MultipartFile file, Integer partyId, String partyCode) throws SQLException {
         try {
             if (file.isEmpty()) {
                 throw new StorageException("Sąrašas tuščias " + file.getOriginalFilename());
             }
-            if (file.isEmpty()) {
-                throw new StorageException("Partijos numeris nenurodytas");
-            }
-            Files.copy(file.getInputStream(), this.rootLocation.resolve(file.getOriginalFilename()));
-            new toDB().CSVtoH2("./upload/" + (file.getOriginalFilename()), "CANDIDATES", partyId);
+            String newFileName = partyCode + ".csv";
+            Files.copy(file.getInputStream(), this.rootLocation.resolve(newFileName));
+            new toDB().CSVtoH2( newFileName, "CANDIDATES", partyId);
         } catch (IOException e) {
             throw new StorageException("Nepavyko ikelti sąrašo " + file.getOriginalFilename(), e);
         }
@@ -82,9 +86,23 @@ public class FileSystemStorageService implements StorageService {
     @Override
     public void deleteFile(String fileName) {
         try {
+            Connection conn = DriverManager.getConnection(url, user, pass);
+            PreparedStatement removeFileName = conn.prepareStatement(
+                    "UPDATE PARTIES SET candidates_file= NULL WHERE candidates_file='" + fileName + "';"
+            );
+
+            removeFileName.executeUpdate();
+            conn.close();
+
+        } catch (SQLException e) {
+        e.printStackTrace();
+        }
+
+        try {
             Files.delete(load(fileName));
-        } catch (IOException e) {
-            throw new StorageException("Nepavyko ištrinti failo", e);
+
+        } catch (IOException em ) {
+            em.printStackTrace();
         }
     }
 

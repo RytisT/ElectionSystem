@@ -52,10 +52,19 @@ public class FileUploadController {
 
     @PostMapping("/uploadForm")
     public ResponseEntity<?> handleFileUpload(@RequestParam("file") MultipartFile file,
-                                              @RequestHeader Integer partyId
+                                              @RequestHeader Integer partyId,
+                                              @RequestHeader String partyCode
                                               ) throws SQLException {
 
-        storageService.store(file, partyId);
+        storageService.store(file, partyId, partyCode);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @DeleteMapping("/uploadForm/{filename}")
+    public ResponseEntity<?> handleFileDelete(@PathVariable String filename){
+        filename = filename + ".csv";
+        System.out.println(filename);
+        storageService.deleteFile(filename);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

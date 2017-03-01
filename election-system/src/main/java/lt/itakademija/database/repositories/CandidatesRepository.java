@@ -3,16 +3,27 @@ package lt.itakademija.database.repositories;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
 import lt.itakademija.database.models.Candidates;
-import lt.itakademija.database.models.Districts;
+
+import javax.transaction.Transactional;
 
 public interface CandidatesRepository extends JpaRepository<Candidates, Integer> {
 
     @Query("SELECT c FROM Candidates c where c.constituency_id=:constituency_id")
     public List<Candidates> findByConstituencies(@Param("constituency_id") Integer constituency_id);
+
+    @Query("SELECT c FROM Candidates c where c.party_id=:party_id")
+    public List<Candidates> findByPartyId(@Param("party_id") Integer party_id);
+
+
+    @Modifying
+    @Query("UPDATE Candidates c SET c.party_id=null WHERE c.party_id=:party_id")
+    @Transactional
+    public List<Candidates> updateByPartyId(@Param("party_id") Integer party_id);
 
     public List<Candidates> findByName(@Param("name") String candidateName);
 

@@ -3,7 +3,8 @@ var PartyCandidatesContainer = React.createClass({
     getInitialState: function () {
         return {
             candidates: [],
-            csvFile: ""
+            csvFile: "",
+            partyCode: ""
         }
     },
 
@@ -11,13 +12,12 @@ var PartyCandidatesContainer = React.createClass({
         var partyId = this.props.routeParams.partyId;
         axios.get('/api/parties/' + partyId)
             .then(function (response) {
-                console.log(response)
                 this.setState({
                     candidates: response.data.candidates,
-                    csvFile: response.data.candidates_file
+                    csvFile: response.data.candidates_file,
+                    partyCode: response.data.party_Code
                 });
             }.bind(this))
-        console.log(this.state.csvFile)
     },
 
     handleFileChange: function (file) {
@@ -25,11 +25,12 @@ var PartyCandidatesContainer = React.createClass({
         var header = {
             headers: {
                 'Content-Type': 'multipart/form-data',
-                'partyId': this.props.routeParams.partyId
+                'partyId': this.props.routeParams.partyId,
+                'partyCode': this.state.partyCode
+
             }
         };
         data.append('file', file);
-        console.log(file)
         axios.post("/uploadForm", data, header)
             .then(function (response) {
                 var partyId = this.props.routeParams.partyId;
@@ -37,11 +38,34 @@ var PartyCandidatesContainer = React.createClass({
                     .then(function (response) {
                         this.setState({
                             candidates: response.data.candidates,
-                            csvFile: response.data.candidates_file
+                            csvFile: response.data.candidates_file,
+                            partyCode: response.data.Party_Code
                         });
                     }.bind(this))
                 }.bind(this)
             )
+    },
+
+    handleDeleteFile: function (filename) {
+        return function () {
+            console.log(filename)
+            axios.delete("/uploadForm/" + filename)
+                .then(function () {
+                    var partyId = this.props.routeParams.partyId;
+                    axios.delete("/api/candidates/party/" + partyId)
+                        .then(function () {
+                            axios.get('/api/parties/' + partyId)
+                                .then(function (response) {
+                                    this.setState({
+                                        candidates: response.data.candidates,
+                                        csvFile: response.data.candidates_file,
+                                        partyCode: response.data.Party_Code
+                                    });
+                                }.bind(this))
+                            }.bind(this)
+                        )
+                }.bind(this))
+        }.bind(this)
     },
 
     handleReturn: function () {
@@ -54,6 +78,7 @@ var PartyCandidatesContainer = React.createClass({
                                       candidates={this.state.candidates}
                                       csvFile={this.state.csvFile}
                                       onReturn={this.handleReturn}
+                                      onFileDelete={this.handleDeleteFile}
             />
         )
     }

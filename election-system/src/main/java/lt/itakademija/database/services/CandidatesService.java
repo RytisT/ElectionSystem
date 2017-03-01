@@ -59,4 +59,15 @@ public class CandidatesService {
     public Candidates findByPartyAndSeat(Integer partyId, Integer partySeat) {
         return repository.findByPartyAndSeat(partyId, partySeat);
     }
+
+    public void deletePartyCandidates(Integer id) {
+        List<Candidates> partyCandidates = repository.findByPartyId(id);
+        for(Candidates temp: partyCandidates){
+            if(temp.getConstituency_id() == null) {
+                deleteById(temp.getId());
+            } else {
+                repository.updateByPartyId(id);
+            }
+        }
+    }
 }

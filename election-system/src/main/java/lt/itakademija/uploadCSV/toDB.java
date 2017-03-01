@@ -11,7 +11,8 @@ public class toDB {
     private String user = "sa";
     private String pass = "";
 
-    public void CSVtoH2(String fileUrl, String table, Integer partyId) throws IOException, SQLException {
+    public void CSVtoH2(String fileName, String table, Integer partyId) throws IOException, SQLException {
+        String fileUrl = "./upload/" + fileName;
         BufferedReader read = new BufferedReader(new FileReader(fileUrl));
 
             Connection conn = DriverManager.getConnection(url, user, pass);
@@ -30,10 +31,10 @@ public class toDB {
                 stmt.executeUpdate();
 
                 PreparedStatement insertFileName = conn.prepareStatement(
-                        "UPDATE PARTIES SET candidates_file='" + fileUrl + "' WHERE id=" + partyId + ";"
+                        "UPDATE PARTIES SET candidates_file='" + fileName + "' WHERE id=" + partyId + ";"
                 );
 
-                System.out.println(insertFileName.executeUpdate());
+                insertFileName.executeUpdate();
             }
             conn.close();
 
