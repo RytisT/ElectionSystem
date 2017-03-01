@@ -168,6 +168,14 @@ var MainPageComponent = React.createClass( {
                         </tr>
                     </tbody>
                 </table>
+                <div style={styles.line}></div>
+                <table className="table table-hover" id="temporary-representative">
+                    <tbody>
+                        <tr id="temporaty-MainPageRepresentatives" onClick={this.props.onRepresentativesClick} style={styles.rows}>
+                            <td>Rezultatų suvedimas</td>
+                        </tr>
+                    </tbody>
+                </table>
 
 
             </div>

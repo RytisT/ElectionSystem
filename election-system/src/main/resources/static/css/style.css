@@ -65,6 +65,10 @@ ul.header li a {
     display: none;
 }
 
+#temporary-representative {
+    cursor: pointer;
+}
+
 
 
 /* Candidates Description */
