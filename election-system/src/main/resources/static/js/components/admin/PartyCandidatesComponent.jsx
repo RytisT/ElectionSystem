@@ -37,7 +37,7 @@ var PartyCandidatesComponent = React.createClass({
             ? <input className="btn btn-block btn-primary btn-outline" onChange={this.handleFileChange()} ref="file" type="file"
                name="file" id="file-select"/>
             : <button className="btn btn-danger btn-outline" onClick={this.props.onFileDelete(this.props.csvFile)} type="button"
-                     name="file" id="file-uploaded">{this.props.csvFile}</button>
+                     name="file" id="file-uploaded">Pridėtas failas: {this.props.csvFile}</button>
     },
 
 

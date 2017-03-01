@@ -25,7 +25,7 @@ var ConstituencyCandidatesComponent = React.createClass({
                     <td className="col-md-2">{fullDate}</td>
                     <td className="col-md-2">{candidate.personal_id}</td>
                     <td className="col-md-4">{candidate.description}</td>
-                    <td className="col-md-1">{candidate.party_list_seat}</td>
+                    <td className="col-md-1">{candidate.party_id}</td>
 
                 </tr>
             )
@@ -54,7 +54,7 @@ var ConstituencyCandidatesComponent = React.createClass({
                         <th>Gimimo data</th>
                         <th>Asmens kodas</th>
                         <th>Aprašymas</th>
-                        <th>Sąrašo numeris</th>
+                        <th>Partijos numeris</th>
                     </tr>
                     </thead>
                     <tbody>

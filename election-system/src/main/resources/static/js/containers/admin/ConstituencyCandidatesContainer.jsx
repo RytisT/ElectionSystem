@@ -49,7 +49,7 @@ var ConstituencyCandidatesContainer = React.createClass({
     handleDeleteFile: function (filename) {
         return function () {
             console.log(filename)
-            axios.delete("/uploadForm/" + filename)
+            axios.delete("/uploadForm/const/" + filename)
                 .then(function () {
                     var constId = this.props.routeParams.constId;
                     axios.delete("/api/candidates/const/" + constId)
@@ -74,7 +74,7 @@ var ConstituencyCandidatesContainer = React.createClass({
 
     render: function () {
         return (
-            <PartyCandidatesComponent onFileChange={this.handleFileChange}
+            <ConstituencyCandidatesComponent onFileChange={this.handleFileChange}
                                       candidates={this.state.candidates}
                                       csvFile={this.state.csvFile}
                                       onReturn={this.handleReturn}

@@ -2,8 +2,10 @@ package lt.itakademija.uploadCSV;
 
 import lt.itakademija.database.controllers.CandidatesController;
 import lt.itakademija.database.models.Candidates;
+import lt.itakademija.database.models.Constituency;
 import lt.itakademija.database.models.Parties;
 import lt.itakademija.database.services.CandidatesService;
+import lt.itakademija.database.services.ConstituencyService;
 import lt.itakademija.database.services.PartiesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
@@ -40,6 +42,9 @@ public class FileSystemStorageService implements StorageService {
     @Autowired
     PartiesService partiesService;
 
+    @Autowired
+    ConstituencyService constituencyService;
+
     private String url = "jdbc:h2:./data/db;";
     private String user = "sa";
     private String pass = "";
@@ -52,7 +57,7 @@ public class FileSystemStorageService implements StorageService {
         this.rootLocation = Paths.get(properties.getLocation());
     }
 
-    public void CSVtoH2(String fileName, Integer partyId) throws IOException, SQLException, ParseException {
+    public void CSVtoH2(String fileName, Integer id, boolean partyCandidate) throws IOException, SQLException, ParseException {
         String fileUrl = "./upload/" + fileName;
         BufferedReader read = new BufferedReader(new FileReader(fileUrl));
 
@@ -62,73 +67,95 @@ public class FileSystemStorageService implements StorageService {
 
 
         for (int i = 0; i < fieldNames.length; i++) {
-            if ("name".equals(fieldNames[i])) {
-                name = i;
-            }
-            if ("last_name".equals(fieldNames[i])) {
-                last_name = i;
-            }
+            if ("name".equals(fieldNames[i])) name = i;
+            if ("last_name".equals(fieldNames[i])) last_name = i;
             if ("date_of_birth".equals(fieldNames[i])) date_of_birth = i;
             if ("description".equals(fieldNames[i])) description = i;
             if ("personal_id".equals(fieldNames[i])) personal_id = i;
             if ("party_list_seat".equals(fieldNames[i])) party_list_seat = i;
         }
+            if(partyCandidate){
 
         while ((ln = read.readLine()) != null) {
             Candidates candidate = new Candidates();
             String[] line = ln.split(",");
             DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             Date inputDate = dateFormat.parse(line[date_of_birth]);
-                if (service.checkIfExist(line[personal_id]) == null) {
-                    candidate.setParty_id(partyId);
-                    candidate.setName(line[name]);
-                    candidate.setLast_name(line[last_name]);
-                    candidate.setDate_of_birth(inputDate);
-                    candidate.setDescription(line[description]);
-                    candidate.setPersonal_id(line[personal_id]);
-                    candidate.setParty_list_seat(Integer.parseInt(line[party_list_seat]));
+            if (service.checkIfExist(line[personal_id]) == null) {
+                candidate.setParty_id(id);
+                candidate.setName(line[name]);
+                candidate.setLast_name(line[last_name]);
+                candidate.setDate_of_birth(inputDate);
+                candidate.setDescription(line[description]);
+                candidate.setPersonal_id(line[personal_id]);
+                candidate.setParty_list_seat(Integer.parseInt(line[party_list_seat]));
 
-                    service.saveOrUpdate(candidate);
-                } else {
-                    candidate = service.checkIfExist(line[personal_id]);
+                service.saveOrUpdate(candidate);
+            } else {
+                candidate = service.checkIfExist(line[personal_id]);
 
-                    candidate.setParty_id(partyId);
-                    candidate.setName(line[name]);
-                    candidate.setLast_name(line[last_name]);
-                    candidate.setDate_of_birth(inputDate);
-                    candidate.setDescription(line[description]);
-                    candidate.setParty_list_seat(Integer.parseInt(line[party_list_seat]));
+                candidate.setParty_id(id);
+                candidate.setName(line[name]);
+                candidate.setLast_name(line[last_name]);
+                candidate.setDate_of_birth(inputDate);
+                candidate.setDescription(line[description]);
+                candidate.setParty_list_seat(Integer.parseInt(line[party_list_seat]));
 
-                    service.saveOrUpdate(candidate);
+                service.saveOrUpdate(candidate);
+            }
+            }
+                Parties party = partiesService.findById(id);
+                party.setCandidates_file(fileName);
+                partiesService.saveOrUpdate(party);
+        } else {
+                while ((ln = read.readLine()) != null) {
+                    Candidates candidate = new Candidates();
+                    String[] line = ln.split(",");
+                    DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                    Date inputDate = dateFormat.parse(line[date_of_birth]);
+                    if (service.checkIfExist(line[personal_id]) == null) {
+                        candidate.setConstituency_id(id);
+                        candidate.setName(line[name]);
+                        candidate.setLast_name(line[last_name]);
+                        candidate.setDate_of_birth(inputDate);
+                        candidate.setDescription(line[description]);
+                        candidate.setPersonal_id(line[personal_id]);
+                        service.saveOrUpdate(candidate);
+                    } else {
+                        candidate = service.checkIfExist(line[personal_id]);
+
+                        candidate.setConstituency_id(id);
+                        candidate.setName(line[name]);
+                        candidate.setLast_name(line[last_name]);
+                        candidate.setDate_of_birth(inputDate);
+                        candidate.setDescription(line[description]);
+
+                        service.saveOrUpdate(candidate);
+                    }
                 }
-        }
 
-        Parties party = partiesService.findById(partyId);
-        party.setCandidates_file(fileName);
-        partiesService.saveOrUpdate(party);
-
-         /* PreparedStatement insertFileName = conn.prepareStatement(
-                        "UPDATE PARTIES SET candidates_file='" + fileName + "' WHERE id=" + partyId + ";"
-                );
-
-                insertFileName.executeUpdate();*/
+                Constituency constituency = constituencyService.findById(id);
+                constituency.setCandidates_file(fileName);
+                constituencyService.saveOrUpdate(constituency);
+            }
     }
 
     @Override
-    public void store(MultipartFile file, Integer partyId, String partyCode) throws SQLException {
+    public void store(MultipartFile file, Integer id, String fileName, boolean partyCandidate) throws SQLException {
         try {
             if (file.isEmpty()) {
                 throw new StorageException("Sąrašas tuščias " + file.getOriginalFilename());
             }
-            String newFileName = partyCode + ".csv";
+            String newFileName = fileName + ".csv";
             Files.copy(file.getInputStream(), this.rootLocation.resolve(newFileName));
-            CSVtoH2(newFileName, partyId);
+            CSVtoH2(newFileName, id, partyCandidate);
         } catch (IOException e) {
             throw new StorageException("Nepavyko ikelti sąrašo " + file.getOriginalFilename(), e);
         } catch (ParseException e) {
             e.printStackTrace();
         }
     }
+
 
     @Override
     public Stream<Path> loadAll() {
@@ -169,11 +196,16 @@ public class FileSystemStorageService implements StorageService {
     }
 
     @Override
-    public void deleteFile(String fileName) {
-        Parties party = partiesService.findByFileName(fileName);
-        party.setCandidates_file(null);
-        partiesService.saveOrUpdate(party);
-
+    public void deleteFile(String fileName, boolean partyCandidate) {
+        if (partyCandidate) {
+            Parties party = partiesService.findByFileName(fileName);
+            party.setCandidates_file(null);
+            partiesService.saveOrUpdate(party);
+        } else {
+            Constituency constituency = constituencyService.findByFileName(fileName);
+            constituency.setCandidates_file(null);
+            constituencyService.saveOrUpdate(constituency);
+        }
         try {
             Files.delete(load(fileName));
 

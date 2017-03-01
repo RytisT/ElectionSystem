@@ -49,7 +49,7 @@ var PartyCandidatesContainer = React.createClass({
 
     handleDeleteFile: function (filename) {
         return function () {
-            axios.delete("/uploadForm/" + filename)
+            axios.delete("/uploadForm/party/" + filename)
                 .then(function () {
                     var partyId = this.props.routeParams.partyId;
                     axios.delete("/api/candidates/party/" + partyId)

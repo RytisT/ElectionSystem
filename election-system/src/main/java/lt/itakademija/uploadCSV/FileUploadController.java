@@ -9,7 +9,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -52,19 +51,32 @@ public class FileUploadController {
 
     @PostMapping("/uploadForm")
     public ResponseEntity<?> handleFileUpload(@RequestParam("file") MultipartFile file,
-                                              @RequestHeader Integer partyId,
-                                              @RequestHeader String partyCode
+                                              @RequestHeader(required = false) Integer partyId,
+                                              @RequestHeader(required = false) String partyCode,
+                                              @RequestHeader(required = false) Integer constId,
+                                              @RequestHeader(required = false) String constTitle
                                               ) throws SQLException {
-
-        storageService.store(file, partyId, partyCode);
+        if (partyId != null) {
+            storageService.store(file, partyId, partyCode, true);
+        } else{
+            storageService.store(file, constId, constTitle, false);
+        }
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
-    @DeleteMapping("/uploadForm/{filename}")
-    public ResponseEntity<?> handleFileDelete(@PathVariable String filename){
+    @DeleteMapping("/uploadForm/party/{filename}")
+    public ResponseEntity<?> handlePartyFileDelete(@PathVariable String filename){
         filename = filename + ".csv";
         System.out.println(filename);
-        storageService.deleteFile(filename);
+        storageService.deleteFile(filename, true);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @DeleteMapping("/uploadForm/const/{filename}")
+    public ResponseEntity<?> handleConstFileDelete(@PathVariable String filename){
+        filename = filename + ".csv";
+        System.out.println(filename);
+        storageService.deleteFile(filename, false);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 

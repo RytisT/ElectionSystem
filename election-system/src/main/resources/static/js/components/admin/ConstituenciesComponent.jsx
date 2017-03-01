@@ -25,8 +25,8 @@ var ConstituenciesComponent = React.createClass({
                     <tr>
                         <th>Apygarda</th>
                         <th>Apylinkės</th>
-                        <th>Redaguoti</th>
                         <th>Kandidatai</th>
+                        <th>Redaguoti</th>
                         <th>Trinti</th>
                     </tr>
                     </thead>

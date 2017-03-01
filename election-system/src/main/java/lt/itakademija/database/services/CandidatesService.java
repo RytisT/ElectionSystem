@@ -74,4 +74,16 @@ public class CandidatesService {
                 }
         }
     }
+
+    public void deleteConstCandidates(Integer id) {
+        List<Candidates> partyCandidates = repository.findByConstituencies(id);
+        for(Candidates temp: partyCandidates){
+            if(temp.getParty_id() == null) {
+                deleteById(temp.getId());
+            } else {
+                temp.setConstituency_id(null);
+                saveOrUpdate(temp);
+            }
+        }
+    }
 }
