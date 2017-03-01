@@ -94,7 +94,7 @@ var CandidatesComponent = React.createClass( {
                         <span className="input-group-addon" id="basic-addon3">Kandidato vardas ar pavardė: </span>
                         <input type="text" className="form-control" id="SearchCandidate" onChange={this.props.onSearchQueryChange(this.props.searchQuery)}/>
                     </div>
-                            <span id="CandidateSearchValidation">Dėmesio! naudojami netinkami simboliai.</span>
+                            <div id="CandidateSearchValidation"><span>Dėmesio! naudojami netinkami simboliai.</span></div>
                 </div>
 
 

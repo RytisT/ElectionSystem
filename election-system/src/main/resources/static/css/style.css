@@ -68,7 +68,7 @@ ul.header li a {
 
 #CandidateSearchValidation {
 	display: none;
-	color: red;
+	background-color: #ff9999;
 	padding-left: 300px;
 	font-style: italic;
 }
