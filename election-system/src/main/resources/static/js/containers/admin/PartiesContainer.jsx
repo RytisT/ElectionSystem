@@ -52,7 +52,17 @@ var PartiesContainer = React.createClass({
     handleSubmitParty: function (party) {
         console.log(party);
         axios.post('/api/parties', party).then(function () {
-            this.componentWillMount();
+            axios.get('/api/parties')
+                .then(function (response) {
+                    var temp = this.state.party;
+                    temp.title = "";
+                    temp.id = "";
+                    temp.party_Code = "";
+                    this.setState({
+                        parties: response.data,
+                        party: temp
+                    });
+                }.bind(this));
         }.bind(this));
     },
 

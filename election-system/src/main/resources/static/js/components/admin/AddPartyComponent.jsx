@@ -36,7 +36,7 @@ var AddPartyComponent = React.createClass({
                             <td className="col-md-2">
                                 <button id="Submit party" className="btn btn-block btn-success" type="submit"
                                         onClick={() => {
-                                            this.props.onSubmit(this.props.party)
+                                            this.props.onSubmit(this.props.party), this.changeAddingState()
                                         }}>Pridėti
                                 </button>
                             </td>

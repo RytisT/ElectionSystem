@@ -20,8 +20,13 @@ var DistrictContainer = React.createClass({
         var distId = this.props.routeParams.distId;
         axios.get('/api/constituencies/' + distId)
             .then(function (response) {
+                var temp = this.state.district;
+                temp.title = "";
+                temp.number_of_voters = "";
+                temp.address = "";
                 this.setState({
-                    districts: response.data.districts
+                    districts: response.data.districts,
+                    district: temp
                 });
             }.bind(this))
 

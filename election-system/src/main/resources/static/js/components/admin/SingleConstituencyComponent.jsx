@@ -7,7 +7,8 @@ var SingleConstituencyComponent = React.createClass({
                                                 placeholder="Įveskite Apygardos pavadinimą"
                                                 value={this.props.constituency.title}
                                                 onChange={this.props.onFieldChange('title')} type="text"/></td>
-                <td className="col-md-4"></td>
+                <td className="col-md-2"></td>
+                <td className="col-md-2"></td>
                 <td className="col-md-2">
                     <button id="Update constituency" type="button" className="btn btn-success" onClick={this.props.onSaveConst}>Išsaugoti
                     </button>
