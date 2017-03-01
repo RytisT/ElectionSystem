@@ -65,16 +65,16 @@ ul.header li a {
     display: none;
 }
 
-<<<<<<< HEAD
+
 #CandidateSearchValidation {
 	display: none;
 	color: red;
 	padding-left: 300px;
 	font-style: italic;
-=======
+}
+
 #temporary-representative {
     cursor: pointer;
->>>>>>> 5465073c6c69e5d90c6571a4592a915d13a336a7
 }
 
 
