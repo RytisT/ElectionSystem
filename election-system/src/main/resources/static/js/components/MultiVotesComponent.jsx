@@ -65,8 +65,32 @@ var MultiVotesComponent = React.createClass({
                         {partiesList}
                         </tbody>
                     </table>
+                    <table className="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Suskaičiuota daugiamandatės biuletenių:</th>
+                            <th>
+                                <input
+                                    className="form-control"
+                                    placeholder="0"
+                                    type="text"
+                                />
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Sugadinta daugiamandatės biuletenių:</th>
+                            <th>
+                                <input
+                                    className="form-control"
+                                    placeholder="0"
+                                    type="text"
+                                />
+                            </th>
+                        </tr>
+                        </thead>
+                    </table>
                     <button className="btn btn-block btn-success" type="submit">
-                        Patvirtinti partijų surinktus balsus
+                        Patvirtinti partijų surinktus balsus ir biuletenių skaičių
                     </button>
                 </div>
                 <p>&nbsp;</p>
