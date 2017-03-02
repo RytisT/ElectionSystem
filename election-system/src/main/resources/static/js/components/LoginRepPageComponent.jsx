@@ -20,8 +20,8 @@ var LoginRepPageComponent = React.createClass( {
                 
                 
                 
-                <button id="onLogin" type="submit">Prisijungti</button>
-                <button id="onCancel" type="button" className="cancelbtn" onClick={this.props.onCancelClick} >Atšaukti</button>
+                <button id="onLogin2" type="submit">Prisijungti</button>
+                <button id="onCancel2" type="button" className="cancelbtn" onClick={this.props.onCancelClick} >Atšaukti</button>
 
             </form>
         )
