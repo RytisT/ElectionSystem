@@ -30,7 +30,7 @@ var CandidatesComponent = React.createClass( {
         var candidatesList = this.props.candidates.map( function( candidate, index ) {
             var fullName = candidate.name + " " + candidate.last_name;
 
-            if(fullName.includes(self.props.searchQuery)) {
+            if(fullName.toLowerCase().includes(self.props.searchQuery.toLowerCase())) {
 
 
                 // date
@@ -92,9 +92,10 @@ var CandidatesComponent = React.createClass( {
                     <div className="panel-heading"><label htmlFor="basic-url">Ieškoti kandidato: </label></div>
                     <div className=" panel-body input-group">
                         <span className="input-group-addon" id="basic-addon3">Kandidato vardas ar pavardė: </span>
-                        <input type="text" className="form-control" id="SearchCandidate" onChange={this.props.onSearchQueryChange(this.props.searchQuery)}/>
+                        <input type="text" className="form-control" id="SearchCandidate" maxLength="50"
+                            onChange={this.props.onSearchQueryChange(this.props.searchQuery)}/>
                     </div>
-                            <div id="CandidateSearchValidation"><span>Dėmesio! naudojami netinkami simboliai.</span></div>
+                            <div id="CandidateSearchValidation"><span>Naudojami netinkami simboliai.</span></div>
                 </div>
 
 

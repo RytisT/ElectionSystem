@@ -62,7 +62,7 @@ public class Candidates {
 
     @Column(name = "description")
     //@Pattern(regexp = ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)", message = "Candidates DESCRIPTION contains invalid characters. ")
-    @Length(min = 0, max = 300, message = "Candidates DESCRIPTION length can not be longer than {max} symbols. ")
+    @Length(min = 0, max = 255, message = "Candidates DESCRIPTION length can not be longer than {max} symbols. ")
     private String description;
 
     @Column(name = "party_list_seat")

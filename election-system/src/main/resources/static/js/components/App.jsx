@@ -11,7 +11,7 @@ var App = React.createClass({
                 <h1 className="text-center">Seimo Rinkimai</h1>
                 <ul className="header">
                     <li id="home"><IndexLink to="/" className="glyphicon glyphicon-home"></IndexLink></li>
-                    <li id="login"><Link to="/admin" activeClassName="active">Prisijungti</Link></li>
+                    <li id="login"><Link to="/login" activeClassName="active">Prisijungti</Link></li>
                 </ul>
                 <div className="content">
                     {this.props.children}

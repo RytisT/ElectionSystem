@@ -38,7 +38,7 @@ public class Parties {
     @Column(name = "title", unique = true)
     @NotNull(message = "PARTIES TITLE can not be empty")
     @Pattern(regexp = ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)", message = "PARTIES TITLE contains invalid characters. ")
-    @Length(min = 1, max = 100, message = "PARTIES TITLE must not be empty and length can not be longer than {max} symbols. ")
+    @Length(min = 1, max = 200, message = "PARTIES TITLE must not be empty and length can not be longer than {max} symbols. ")
     private String title;
 
     @Column(name = "PARTY_CODE", unique = true)
