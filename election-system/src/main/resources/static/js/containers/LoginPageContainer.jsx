@@ -1,14 +1,27 @@
-var LoginPageContainer = React.createClass({
+var LoginPageContainer = React.createClass( {
 
+    // Login validation
+    handleSubmitClick() {
+        var val = $( "#inputAdminName" ).val();
+        var matches = val.match( ".*([a-zA-ZąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)" );
+        if ( matches != null ) { $( '#AdminNameValidation' ).hide( "slow" ) }
+        else { $( '#AdminNameValidation' ).show( "slow" ) }
 
- // Cancel 
+        var valp = $( "#inputAdminPass" ).val();
+        var matchesp = valp.match( ".*([a-zA-ZąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)" );
+        if ( matchesp != null ) { $( '#AdminPassValidation' ).hide( "slow" ) }
+        else { $( '#AdminPassValidation' ).show( "slow" ) }
+
+        if ( matches != null && matchesp != null ) { this.context.router.push( '/admin' ) };
+    },
+
+    // Cancel 
     handleCancelClick() {
         this.context.router.push( '/' );
     },
 
-
-    render: function () {
-        return <LoginPageComponent  onCancelClick={this.handleCancelClick} />
+    render: function() {
+        return <LoginPageComponent onCancelClick={this.handleCancelClick} onSubmitClick={this.handleSubmitClick} />
     }
 });
 

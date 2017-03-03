@@ -8,19 +8,19 @@ var LoginRepPageComponent = React.createClass( {
     render: function() {
 
         return (
-            <form className="Login" action="/#/representatives">
+            <form className="Login">
                 <h2>Apylinkės atstovo prisijungimas</h2><br />
 
                 <label><b>Vartotojo vardas</b></label>
-                <input type="text" placeholder="Įveskit vartotojo vardą" required/>
-                
+                <input id="inputUserName" type="text" placeholder="Įveskit vartotojo vardą" maxLength="50" />
+                <div id="UserNameValidation" className="validationForm"><span>Prašom įvesti vartotoją.</span></div>
 
                 <label><b>Slaptažodis</b></label>
-                <input type="password" placeholder="Įveskit varototojo slaptažodį" required/>
+                <input id="inputUserPass" type="password" placeholder="Įveskit varototojo slaptažodį" maxLength="50"/>
+                <div id="UserPassValidation" className="validationForm"><span>Prašom įvesti slaptažodį.</span></div>
                 
                 
-                
-                <button id="onLogin2" type="submit">Prisijungti</button>
+                <button id="onLogin2" type="button" onClick={this.props.onSubmitClick}>Prisijungti</button>
                 <button id="onCancel2" type="button" className="cancelbtn" onClick={this.props.onCancelClick} >Atšaukti</button>
 
             </form>
@@ -28,7 +28,6 @@ var LoginRepPageComponent = React.createClass( {
     }
 });
 
-LoginRepPageComponent.propTypes = {
-};
+LoginRepPageComponent.propTypes = {   };
 
 window.LoginRepPageComponent = LoginRepPageComponent;

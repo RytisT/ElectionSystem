@@ -95,7 +95,7 @@ var CandidatesComponent = React.createClass( {
                         <input type="text" className="form-control" id="SearchCandidate" maxLength="50"
                             onChange={this.props.onSearchQueryChange(this.props.searchQuery)}/>
                     </div>
-                            <div id="CandidateSearchValidation"><span>Naudojami netinkami simboliai.</span></div>
+                            <div id="CandidateSearchValidation" className="validationForm"><span>Naudojami netinkami simboliai.</span></div>
                 </div>
 
 

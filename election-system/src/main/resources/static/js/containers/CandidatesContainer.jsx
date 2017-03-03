@@ -67,23 +67,18 @@ var CandidatesContainer = React.createClass( {
     handleSearchQueryChange: function() {
         return function( newQuery ) {
 
-            //valitanion
+            //validation
             var val = $( "#SearchCandidate" ).val();
             var matches = val.match( ".*([a-zA-ZąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)" );
-            if ( matches != null ) { $( "#CandidateSearchValidation" ).hide(); }
-            else { $( "#CandidateSearchValidation" ).show(); }
+            if ( matches != null ) { $( "#CandidateSearchValidation" ).hide("slow"); }
+            else { $( "#CandidateSearchValidation" ).show("slow"); }
 
             this.setState( { searchQuery: newQuery.target.value })
 
         }.bind( this )
     },
 
-    //var value = $('#SearchCandidate').val();
-    //            if(parseInt(value)) {
-    //             alert(value+" is a number.");
-    //            }
-
-
+    
     render: function() {
         return <CandidatesComponent candidates={this.state.candidates}
             onAddClick={this.handleAdd}

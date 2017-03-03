@@ -67,7 +67,10 @@ ul.header li a {
 
 
 #CandidateSearchValidation {
-	display: none;
+	display: none;	
+}
+
+.validationForm {
 	background-color: #ffe6e6;
 	color: #888888;
 	text-align: center;
@@ -134,7 +137,27 @@ ul.header li a {
     color: #fff;    
 }
 
+.Login #onLogin:active {
+    background-color: #009fff;
+    color: #fff;    
+}
+
 .Login #onCancel:hover {
+    background-color: #ff1a1a;
+    color: #fff;    
+}
+
+.Login #onLogin2:hover {
+    background-color: #009900;
+    color: #fff;    
+}
+
+.Login #onLogin2:active {
+    background-color: #009fff;
+    color: #fff;    
+}
+
+.Login #onCancel2:hover {
     background-color: #ff1a1a;
     color: #fff;    
 }
@@ -143,6 +166,10 @@ ul.header li a {
     width: auto;
     padding: 10px 18px;
     background-color: #f44336;
+}
+
+#UserPassValidation, #UserNameValidation, #AdminPassValidation, #AdminNameValidation {
+	display: none;	
 }
 
 
