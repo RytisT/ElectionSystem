@@ -169,7 +169,7 @@ ul.header li a {
 }
 
 #UserPassValidation, #UserNameValidation, #AdminPassValidation, #AdminNameValidation,
-#DistrictSearchValidation {
+#DistrictSearchValidation, #DistrictTitleValidation {
 	display: none;	
 }
 
