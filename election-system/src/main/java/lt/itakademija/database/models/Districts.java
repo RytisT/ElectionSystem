@@ -48,7 +48,7 @@ public class Districts {
 
     @Column(name = "address")
     //@Pattern(regexp = ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)", message = "DISTRICTS ADDRESS contains invalid characters. ")
-    @Length(min = 0, max = 100, message = "DISTRICTS ADDRESS must not be empty and length can not be longer than {max} symbols. ")
+    @Length(min = 0, max = 60, message = "DISTRICTS ADDRESS must not be empty and length can not be longer than {max} symbols. ")
     private String address;
 
     @Column(name = "VOTED_SINGLE")

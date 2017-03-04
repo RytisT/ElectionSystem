@@ -75,6 +75,7 @@ ul.header li a {
 	color: #666666;
 	text-align: center;
 	font-style: italic;
+	font-size: 15px;
 }
 
 #temporary-representative {
@@ -169,7 +170,7 @@ ul.header li a {
 }
 
 #UserPassValidation, #UserNameValidation, #AdminPassValidation, #AdminNameValidation,
-#DistrictSearchValidation, #DistrictTitleValidation {
+#DistrictSearchValidation, #ConstituencyTitleValidation, #DistrictTitleValidation {
 	display: none;	
 }
 

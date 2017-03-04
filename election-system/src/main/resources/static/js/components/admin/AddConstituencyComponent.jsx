@@ -34,13 +34,13 @@ var AddConstituencyComponent = React.createClass( {
                                                 var val = $( "#ConstituencyName" ).val();
                                                 var matches = val.match( ".*([a-zA-ZąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)" );
                                                 if ( matches != null ) {
-                                                    $( '#DistrictTitleValidation' ).hide( "slow" );
+                                                    $( '#ConstituencyTitleValidation' ).hide( "slow" );
                                                     this.props.onSubmitConst( this.props.constituency );
                                                     this.changeAddingState();
                                                 }
                                                 else {
-                                                    $( '#DistrictTitleValidation' ).hide( "slow" );
-                                                    $( '#DistrictTitleValidation' ).show( "slow" )
+                                                    $( '#ConstituencyTitleValidation' ).hide( "slow" );
+                                                    $( '#ConstituencyTitleValidation' ).show( "slow" )
                                                 }
 
                                             } }>Pridėti
@@ -55,7 +55,7 @@ var AddConstituencyComponent = React.createClass( {
                             </tbody>
                         </table>
                     </form>
-                     <div id="DistrictTitleValidation" className="validationForm">
+                     <div id="ConstituencyTitleValidation" className="validationForm">
                                     <span>Naudojami netinkami simboliai arba neužpildytas laukas.</span></div>               
                 </div>
             )
