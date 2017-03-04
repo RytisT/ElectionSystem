@@ -30,7 +30,7 @@ var CandidatesComponent = React.createClass( {
         var candidatesList = this.props.candidates.map( function( candidate, index ) {
             var fullName = candidate.name + " " + candidate.last_name;
 
-            if(fullName.toLowerCase().includes(self.props.searchQuery.toLowerCase())) {
+            if ( fullName.toLowerCase().includes( self.props.searchQuery.toLowerCase() ) ) {
 
 
                 // date
@@ -54,10 +54,10 @@ var CandidatesComponent = React.createClass( {
                         <td>{candidate.party_list_seat}</td>
                         <td style={styles.width}>
                             <button id={"CandidateInfo" + candidate.id} type="button" className="btn btn-default"
-                                    onClick={self.props.onDescriptionItemClick( candidate )}
-                                    data-toggle="tooltip" data-placement="top" title="Kandidato informacija"
-                                    data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
-                                    aria-controls="collapseOne">
+                                onClick={self.props.onDescriptionItemClick( candidate )}
+                                data-toggle="tooltip" data-placement="top" title="Kandidato informacija"
+                                data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
+                                aria-controls="collapseOne">
                                 <span className="glyphicon glyphicon-info-sign"></span></button>
                         </td>
 
@@ -81,7 +81,7 @@ var CandidatesComponent = React.createClass( {
          </td>
          *
          */
-              
+
         return (
             <div className="">
                 <h2 style={styles.blue}> Kandidatai </h2>
@@ -93,35 +93,35 @@ var CandidatesComponent = React.createClass( {
                     <div className=" panel-body input-group">
                         <span className="input-group-addon" id="basic-addon3">Kandidato vardas ar pavardė: </span>
                         <input type="text" className="form-control" id="SearchCandidate" maxLength="50"
-                            onChange={this.props.onSearchQueryChange(this.props.searchQuery)}/>
+                            onChange={this.props.onSearchQueryChange( this.props.searchQuery )} />
                     </div>
-                            <div id="CandidateSearchValidation" className="validationForm"><span>Naudojami netinkami simboliai.</span></div>
+                    <div id="CandidateSearchValidation" className="validationForm"><span>Naudojami netinkami simboliai.</span></div>
                 </div>
 
 
                 <div className="panel panel-default" style={styles.marginTop} id="Table">
                     <table className="table table-striped">
                         <thead>
-                        <tr>
-                            <th id="RowNumber">Eil.Nr.</th>
-                            <th>VARDAS</th>
-                            <th>PAVARDĖ</th>
-                            <th>GIMIMO DATA</th>
-                            <th>APYGARDA</th>
-                            <th>PARTIJOS<br/>NUMERIS</th>                            
-                            <th>VIETA<br/>SĄRAŠE</th>
-                            <th></th>
+                            <tr>
+                                <th id="RowNumber">Eil.Nr.</th>
+                                <th>VARDAS</th>
+                                <th>PAVARDĖ</th>
+                                <th>GIMIMO DATA</th>
+                                <th>APYGARDA</th>
+                                <th>PARTIJOS<br />NUMERIS</th>
+                                <th>VIETA<br />SĄRAŠE</th>
+                                <th></th>
 
-                        </tr>
+                            </tr>
                         </thead>
                         <tbody id="FullList">
-                        {candidatesList}
+                            {candidatesList}
                         </tbody>
                     </table>
                 </div>
                 <div>
                     <button id="CandidateReturn" className="btn btn-success" style={{ marginRight: '20px' }}
-                            onClick={this.props.onCancelClick}>Grįžti
+                        onClick={this.props.onCancelClick}>Grįžti
                     </button>
                 </div>
             </div>

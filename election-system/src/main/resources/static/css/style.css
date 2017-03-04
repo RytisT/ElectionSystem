@@ -71,8 +71,8 @@ ul.header li a {
 }
 
 .validationForm {
-	background-color: #ffe6e6;
-	color: #888888;
+	background-color: #ff9980;
+	color: #666666;
 	text-align: center;
 	font-style: italic;
 }
@@ -168,7 +168,8 @@ ul.header li a {
     background-color: #f44336;
 }
 
-#UserPassValidation, #UserNameValidation, #AdminPassValidation, #AdminNameValidation {
+#UserPassValidation, #UserNameValidation, #AdminPassValidation, #AdminNameValidation,
+#DistrictSearchValidation {
 	display: none;	
 }
 

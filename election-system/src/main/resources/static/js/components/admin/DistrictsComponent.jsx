@@ -24,6 +24,7 @@ var DistrictsComponent = React.createClass({
                     <span className="input-group-addon" id="basic-addon3">Apylinkės pavadinimas: </span>
                     <input type="text" className="form-control" id="SearchByTitle" onChange={this.props.onSearchQueryChange(this.props.searchQuery)}/>
                 </div>
+                        <div id="DistrictSearchValidation" className="validationForm"><span>Naudojami netinkami simboliai.</span></div>
                 </div>
                 <table className="table table-striped">
                     <thead>
