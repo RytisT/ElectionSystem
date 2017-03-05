@@ -1,10 +1,10 @@
-var DistrictRepresentativeComponent = React.createClass({
+var DistrictRepresentativeComponent = React.createClass( {
 
-    addNewRepresentative: function () {
+    addNewRepresentative: function() {
         return (
             <div>
                 <button id="Add District Rep" type="button" className="btn btn-success" data-toggle="modal"
-                        data-target={"#" + this.props.distId}>
+                    data-target={"#" + this.props.distId}>
                     Pridėti apylinkės atstovą
                 </button>
                 <div className="modal fade" id={"add" + this.props.distId} role="dialog">
@@ -18,19 +18,19 @@ var DistrictRepresentativeComponent = React.createClass({
                             <div className="modal-body">
                                 <form>
                                     <input id="Rep name" className="form-control" placeholder="Vardas" value={this.props.distRep.name}
-                                           onChange={this.props.onFieldChange('name')} type="text"/>
+                                        onChange={this.props.onFieldChange( 'name' )} type="text" />
                                     <input id="Rep surname" className="form-control" placeholder="Pavardė"
-                                           value={this.props.distRep.last_name}
-                                           onChange={this.props.onFieldChange('last_name')} type="text"/>
+                                        value={this.props.distRep.last_name}
+                                        onChange={this.props.onFieldChange( 'last_name' )} type="text" />
                                     <input id="Rep login name" className="form-control" placeholder="Prisijungimo vardas"
-                                           value={this.props.distRep.login}
-                                           onChange={this.props.onFieldChange('login')} type="text"/>
+                                        value={this.props.distRep.login}
+                                        onChange={this.props.onFieldChange( 'login' )} type="text" />
                                     <input id="Rep password" className="form-control" placeholder="Slaptažodis"
-                                           value={this.props.distRep.password}
-                                           onChange={this.props.onFieldChange('password')} type="password"/>
+                                        value={this.props.distRep.password}
+                                        onChange={this.props.onFieldChange( 'password' )} type="password" />
 
                                     <button id="Submit Rep" className="btn btn-block btn-success" type="submit"
-                                            onClick={() => this.props.onSubmit(this.props.distRep)}>Pridėti
+                                        onClick={() => this.props.onSubmit( this.props.distRep )}>Pridėti
                                     </button>
 
                                     <button id="Cancel" type="button" className="btn btn-block btn-danger" data-dismiss="modal">
@@ -49,23 +49,58 @@ var DistrictRepresentativeComponent = React.createClass({
         )
     },
 
-    editExistingRepresentative: function () {
-        if (this.props.editing) {
+    editExistingRepresentative: function() {
+        if ( this.props.editing ) {
             return (
                 <div className="modal-body">
                     <form>
-                        <input id="Rep name" className="form-control" placeholder="Vardas" value={this.props.distRep.name}
-                               onChange={this.props.onFieldChange('name')} type="text"/>
-                        <input id="Rep surname" className="form-control" placeholder="Pavardė" value={this.props.distRep.last_name}
-                               onChange={this.props.onFieldChange('last_name')} type="text"/>
-                        <input id="Rep login name" className="form-control" placeholder="Prisijungimo vardas"
-                               value={this.props.distRep.login}
-                               onChange={this.props.onFieldChange('login')} type="text"/>
-                        <input id="Rep password" className="form-control" placeholder="Slaptažodis" value={this.props.distRep.password}
-                               onChange={this.props.onFieldChange('password')} type="password"/>
+                        <input id="RepName" className="form-control" placeholder="Vardas" value={this.props.distRep.name}
+                            onChange={this.props.onFieldChange( 'name' )} type="text" />
+                        <input id="RepLastName" className="form-control" placeholder="Pavardė" value={this.props.distRep.last_name}
+                            onChange={this.props.onFieldChange( 'last_name' )} type="text" />
+                        <input id="RepLoginName" className="form-control" placeholder="Prisijungimo vardas"
+                            value={this.props.distRep.login}
+                            onChange={this.props.onFieldChange( 'login' )} type="text" />
+                        <input id="RepPassword" className="form-control" placeholder="Slaptažodis" value={this.props.distRep.password}
+                            onChange={this.props.onFieldChange( 'password' )} type="password" />
+
+                        <div id="RepNameValidation" className="validationForm">
+                            <span> Neįvestas vardas arba naudojami netinkami simboliai.</span></div>
+                        <div id="RepLastNameValidation" className="validationForm">
+                            <span> Neįvesta pavardė arba naudojami netinkami simboliai.</span></div>
+                        <div id="RepLoginNameValidation" className="validationForm">
+                            <span> Neįvestas prisijungimo vardas arba naudojami netinkami simboliai.</span></div>
+                        <div id="RepPassValidation" className="validationForm">
+                            <span> Neįvestas slaptažodis arba naudojami netinkami simboliai.</span></div>
 
                         <button id="Submit Rep" className="btn btn-block btn-success" type="submit"
-                                onClick={() => this.props.onSubmit(this.props.distRep)}>Pridėti
+                            onClick={() => {
+
+                                var name = $( "#RepName" ).val();
+                                var matches = name.match( ".*([a-zA-ZąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)" );
+                                if ( matches != null ) { $( '#RepNameValidation' ).hide( "slow" ) }
+                                else { $( '#RepNameValidation' ).hide( "slow" ); $( '#RepNameValidation' ).show( "slow" ) }
+                                
+                                var lastName = $( "#RepLastName" ).val();
+                                var matches2 = lastName.match( ".*([a-zA-ZąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)" );
+                                if ( matches2 != null ) { $( '#RepLastNameValidation' ).hide( "slow" ) }
+                                else { $( '#RepLastNameValidation' ).hide( "slow" ); $( '#RepLastNameValidation' ).show( "slow" ) }
+
+                                var login = $( "#RepLoginName" ).val();
+                                var matches3 = login.match( ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)" );
+                                if ( matches3 != null ) { $( '#RepLoginNameValidation' ).hide( "slow" ) }
+                                else { $( '#RepLoginNameValidation' ).hide( "slow" ); $( '#RepLoginNameValidation' ).show( "slow" ) }
+                                
+                                var pass = $( "#RepPassword" ).val();
+                                var matches4 = pass.match( ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)" );
+                                if ( matches4 != null ) { $( '#RepPassValidation' ).hide( "slow" ) }
+                                else { $( '#RepPassValidation' ).hide( "slow" ); $( '#RepPassValidation' ).show( "slow" ) }
+                                
+                                if ( matches != null && matches2 != null && matches3 != null && matches4 != null )
+                                {this.props.onSubmit( this.props.distRep ) };
+
+                            } }>Pridėti
+                    }
                         </button>
 
                         <button id="Cancel" type="button" className="btn btn-block btn-danger" data-dismiss="modal">Atšaukti</button>
@@ -75,25 +110,25 @@ var DistrictRepresentativeComponent = React.createClass({
         } else {
             return (
                 <div className="modal-body">
-                    {console.log(this.props.editing, this.props.existing)}
+                    {console.log( this.props.editing, this.props.existing )}
                     <table className="table">
                         <tbody>
-                        <tr>
-                            <td>Vardas:</td>
-                            <td>{this.props.distRep.name}</td>
-                        </tr>
-                        <tr>
-                            <td>Pavardė:</td>
-                            <td>{this.props.distRep.last_name}</td>
-                        </tr>
-                        <tr>
-                            <td>Prisijungimo vardas:</td>
-                            <td>{this.props.distRep.login}</td>
-                        </tr>
-                        <tr>
-                            <td>Slaptažodis:</td>
-                            <td>{this.props.distRep.password}</td>
-                        </tr>
+                            <tr>
+                                <td>Vardas:</td>
+                                <td>{this.props.distRep.name}</td>
+                            </tr>
+                            <tr>
+                                <td>Pavardė:</td>
+                                <td>{this.props.distRep.last_name}</td>
+                            </tr>
+                            <tr>
+                                <td>Prisijungimo vardas:</td>
+                                <td>{this.props.distRep.login}</td>
+                            </tr>
+                            <tr>
+                                <td>Slaptažodis:</td>
+                                <td>{this.props.distRep.password}</td>
+                            </tr>
                         </tbody>
                     </table>
                     <button className="btn btn-block btn-success" type="submit" onClick={this.props.onEdit}>Redaguoti
@@ -104,7 +139,7 @@ var DistrictRepresentativeComponent = React.createClass({
     },
 
 
-    representativeWrapper: function () {
+    representativeWrapper: function() {
         return (
             <div>
                 <div className="modal fade" id={this.props.distId} role="dialog">
@@ -126,16 +161,16 @@ var DistrictRepresentativeComponent = React.createClass({
             </div>
         )
     },
-    render: function () {
+    render: function() {
         return this.props.existing
             ? <div>
                 <button id="Rep information" type="button" className="btn btn-default" data-toggle="modal"
-                        data-target={"#" + this.props.distId}>{this.props.distRep.name} {this.props.distRep.last_name}</button>
+                    data-target={"#" + this.props.distId}>{this.props.distRep.name} {this.props.distRep.last_name}</button>
                 {this.representativeWrapper()}
             </div>
             : <div>
                 <button id="Add Rep" type="button" className="btn btn-success" data-toggle="modal"
-                        data-target={"#" + this.props.distId}>
+                    data-target={"#" + this.props.distId}>
                     Pridėti apylinkės atstovą
                 </button>
                 {this.representativeWrapper()}

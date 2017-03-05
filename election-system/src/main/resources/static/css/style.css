@@ -170,7 +170,8 @@ ul.header li a {
 }
 
 #UserPassValidation, #UserNameValidation, #AdminPassValidation, #AdminNameValidation,
-#DistrictSearchValidation, #ConstituencyTitleValidation, #DistrictTitleValidation {
+#DistrictSearchValidation, #ConstituencyTitleValidation, #DistrictTitleValidation,
+#RepNameValidation, #RepLastNameValidation, #RepLoginNameValidation, #RepPassValidation {
 	display: none;	
 }
 
