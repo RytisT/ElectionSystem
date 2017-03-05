@@ -55,14 +55,14 @@ var DistrictRepresentativeComponent = React.createClass( {
                 <div className="modal-body">
                     <form>
                         <input id="RepName" className="form-control" placeholder="Vardas" value={this.props.distRep.name}
-                            onChange={this.props.onFieldChange( 'name' )} type="text" />
+                            onChange={this.props.onFieldChange( 'name' )} type="text" maxLength="40" />
                         <input id="RepLastName" className="form-control" placeholder="Pavardė" value={this.props.distRep.last_name}
-                            onChange={this.props.onFieldChange( 'last_name' )} type="text" />
+                            onChange={this.props.onFieldChange( 'last_name' )} type="text" maxLength="40" />
                         <input id="RepLoginName" className="form-control" placeholder="Prisijungimo vardas"
                             value={this.props.distRep.login}
-                            onChange={this.props.onFieldChange( 'login' )} type="text" />
+                            onChange={this.props.onFieldChange( 'login' )} type="text" maxLength="40" />
                         <input id="RepPassword" className="form-control" placeholder="Slaptažodis" value={this.props.distRep.password}
-                            onChange={this.props.onFieldChange( 'password' )} type="password" />
+                            onChange={this.props.onFieldChange( 'password' )} type="password" maxLength="30" />
 
                         <div id="RepNameValidation" className="validationForm">
                             <span> Neįvestas vardas arba naudojami netinkami simboliai.</span></div>
