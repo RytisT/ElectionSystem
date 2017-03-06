@@ -58,7 +58,7 @@ var AddPartyComponent = React.createClass( {
                                 </button>
                                 </td>
                                 <td>
-                                    <button id="Cancel adding" className="btn btn-block btn-danger" type="submit"
+                                    <button id="Cancel_adding" className="btn btn-block btn-danger" type="submit"
                                         onClick={this.changeAddingState}>Atšaukti
                                 </button>
                                 </td>
@@ -74,7 +74,7 @@ var AddPartyComponent = React.createClass( {
                     <span>Partijos trumpinyje naudojami netinkami simboliai arba jis neįvestas.</span></div>
             </div>
             : <div>
-                <button id="Add party" className="btn btn-block btn-success" type="submit"
+                <button id="Add_party" className="btn btn-block btn-success" type="submit"
                     onClick={this.changeAddingState}>Pridėti Partiją
                 </button>
             </div>

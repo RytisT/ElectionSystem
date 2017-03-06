@@ -1,34 +1,45 @@
-var SingleDistrictComponent = React.createClass({
+var SingleDistrictComponent = React.createClass( {
 
 
-    render: function () {
+    render: function() {
 
         return this.props.isEditing
 
             ? <tr>
-                <td className="col-md-3"><input id="District name" className="form-control" size="3"
-                                                placeholder="Įveskite apylinkės pavadinimą"
-                                                value={this.props.district.title}
-                                                onChange={this.props.onFieldChange('title')} type="text"/></td>
-                <td className="col-md-1"><input id="Voters Count" className="form-control" size="3" placeholder="Įveskite rinkejų skaičių"
-                                                value={this.props.district.number_of_voters}
-                                                onChange={this.props.onFieldChange('number_of_voters')} type="number"/>
+                <td className="col-md-3"><input id="District_name" className="form-control" size="3"
+                    placeholder="Apylinkės pavadinimas"
+                    value={this.props.district.title} maxLength="30"
+                    onChange={this.props.onFieldChange( 'title' )} type="text" />
+                    <br />
+                    <div id="District_name_Validation" className="validationForm">
+                        <span>netinkami simboliai</span></div>
                 </td>
-                <td className="col-md-3"><input id="District id" className="form-control" size="3"
-                                                placeholder="Įveskite apylinkės adresą"
-                                                value={this.props.district.address}
-                                                onChange={this.props.onFieldChange('address')} type="text"/></td>
+                <td className="col-md-1"><input id="Voters_Count" className="form-control" size="3" placeholder="0"
+                    value={this.props.district.number_of_voters}
+                    onChange={this.props.onFieldChange( 'number_of_voters' )} type="number" />
+                    <br />
+                    <div id="Voters_Count_Validation" className="validationForm">
+                        <span>neįvesta </span></div>
+                </td>
+                <td className="col-md-3"><input id="District_address" className="form-control" size="3"
+                    placeholder="Apylinkės adresas"
+                    value={this.props.district.address} maxLength="150"
+                    onChange={this.props.onFieldChange( 'address' )} type="text" />
+                    <br />
+                    <div id="District_address_Validation" className="validationForm">
+                        <span>netinkami simboliai</span></div>
+                </td>
                 <td className="col-md-2">
                     <DistrictRepresentativeContainer distRep={this.props.district.district_representatives}
-                                                     distId={this.props.district.id}/>
+                        distId={this.props.district.id} />
                 </td>
 
                 <td className="col-md-2">
-                    <button id="update District " type="button" className="btn btn-success" onClick={this.props.onSaveDist}>Išsaugoti</button>
-                    <button id="Cancel Changes" type="button" className="btn btn-danger" onClick={this.props.onEditDist}>Atšaukti</button>
+                    <button id="update_District " type="button" className="btn btn-success" onClick={this.props.onSaveDist}>Išsaugoti</button>
+                    <button id="Cancel_Changes" type="button" className="btn btn-danger" onClick={this.props.onEditDist}>Atšaukti</button>
                 </td>
                 <td className="col-md-1">
-                    <button id="Delete district" type="button" className="btn btn-danger" onClick={this.props.onDelete(this.props.district)}>
+                    <button id="Delete_district" type="button" className="btn btn-danger" onClick={this.props.onDelete( this.props.district )}>
                         Trinti
                     </button>
                 </td>
@@ -38,14 +49,14 @@ var SingleDistrictComponent = React.createClass({
                 <td className="col-md-1">{this.props.district.number_of_voters}</td>
                 <td className="col-md-3">{this.props.district.address}</td>
                 <td className="col-md-2"><DistrictRepresentativeContainer
-                    distRep={this.props.district.district_representatives} distId={this.props.district.id}/>
+                    distRep={this.props.district.district_representatives} distId={this.props.district.id} />
                 </td>
 
                 <td className="col-md-2">
-                    <button id="Edit District" type="button" className="btn btn-info" onClick={this.props.onEditDist}>Redaguoti</button>
+                    <button id="Edit_District" type="button" className="btn btn-info" onClick={this.props.onEditDist}>Redaguoti</button>
                 </td>
                 <td className="col-md-1">
-                    <button id="Delete district" type="button" className="btn btn-danger" onClick={this.props.onDelete(this.props.district)}>
+                    <button id="Delete_district" type="button" className="btn btn-danger" onClick={this.props.onDelete( this.props.district )}>
                         Trinti
                     </button>
                 </td>

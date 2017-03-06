@@ -1,6 +1,8 @@
 package lt.itakademija.results;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -12,12 +14,12 @@ import lt.itakademija.database.models.Candidates;
 
 @RestController
 @CrossOrigin
-@RequestMapping(value = "/api/calculation")
+@RequestMapping(value = "/api/calculation1")
 public class ConsolidatedResultCalculationController {
 
     @Autowired
-    ConsolidatedResultCalculationService consolidateResult;
-
+    private ConsolidatedResultCalculationService consolidateResult; 
+    
     @GetMapping
     public List<Candidates> getResults() {
         return consolidateResult.consolidatedWinner();

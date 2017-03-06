@@ -1,8 +1,6 @@
 package lt.itakademija.results;
 
 import java.util.HashMap;
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,8 +23,8 @@ public class ResultSingleService {
      * Takes int constituency ID and returns map<candidate id, number of votes>
      * of all candidates in constituency
      */
-    public Map<Integer, Integer> votesCalculationByConstituencies(Integer id) {
-        Map<Integer, Integer> singleWinners = new HashMap<>();
+    public HashMap<Integer, Integer> votesCalculationByConstituencies(Integer id) {
+        HashMap<Integer, Integer> singleWinners = new HashMap<>();
         for (Districts districts : distrep.findByConstituencies(id)) {
             for (Single_Results results : districts.getSingle_results()) {
                 if (singleWinners.containsKey(results.getCandidates_id())) {
@@ -44,10 +42,10 @@ public class ResultSingleService {
      * Takes int constituency ID and returns map<candidate id, number of votes>
      * and returns winning candidate in specific constituency
      */
-    public Map<Integer, Integer> winnerCalculationByConstituency(Integer id) {
+    public HashMap<Integer, Integer> winnerCalculationByConstituency(Integer id) {
 
-        Map<Integer, Integer> singleWinnersList = new HashMap<>();
-        Map<Integer, Integer> otherMap = new HashMap<>();
+        HashMap<Integer, Integer> singleWinnersList = new HashMap<>();
+        HashMap<Integer, Integer> otherMap = new HashMap<>();
         int maxValue = 0;
         singleWinnersList = votesCalculationByConstituencies(id);
         for (Integer value : singleWinnersList.values()) {
@@ -69,8 +67,8 @@ public class ResultSingleService {
      * Returns map<candidate id, number of votes> of winners of single mandates
      * for all constituencies
      */
-    public Map<Integer, Integer> singleWinners() {
-        Map<Integer, Integer> singleWinnersList = new HashMap<>();
+    public HashMap<Integer, Integer> singleWinners() {
+        HashMap<Integer, Integer> singleWinnersList = new HashMap<>();
         for (Constituency constituency : constituenciesRep.findAll()) {
             singleWinnersList.putAll(winnerCalculationByConstituency(constituency.getId()));
         }
