@@ -46,6 +46,7 @@ var SingleConstituencyContainer = React.createClass({
                                          onDeleteConst={this.props.onDeleteConst}
                                          onSaveConst={this.handleSaveConst}
                                          isEditing={this.state.isEditing}
+                                         onCandidates={this.props.onCandidates}
                                          onFieldChange={this.handleFieldChange}/>
         );
 

@@ -12,7 +12,7 @@ public interface StorageService {
 
     void init();
 
-    void store(MultipartFile file) throws SQLException;
+    void store(MultipartFile file, Integer partyId, String partyCode, boolean partyCandidate) throws SQLException;
 
     Stream<Path> loadAll();
 
@@ -21,5 +21,7 @@ public interface StorageService {
     Resource loadAsResource(String filename) throws IOException, SQLException;
 
     void deleteAll();
+
+    void deleteFile(String fileName, boolean partyCandidate);
 
 }

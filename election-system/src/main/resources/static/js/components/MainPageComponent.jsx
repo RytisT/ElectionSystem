@@ -17,11 +17,13 @@ var styles = {
         padding: '20 0 20 0'
     },
     rows: {
-        cursor: 'pointer',
         fontSize: '20px'
     },
     blue: {
         color: '#0080ff'
+    },
+    subList: {
+        paddingLeft: '40px'
     }
 };
 
@@ -36,13 +38,142 @@ var MainPageComponent = React.createClass( {
                 <table className="table table-hover" id="menu">
 
                     <tbody>
-                        <tr style={styles.rows}><td>Rinkimų apylinkių rezultatai</td></tr>
-                        <tr style={styles.rows}><td>Rinkimų apygardų rezultatai</td></tr>
-                        <tr style={styles.rows}><td>Vienmandatės rinkimų apygardos rezultatai</td></tr>
-                        <tr style={styles.rows}><td>Daugiamandatės rinkimų apygardos rezultatai</td></tr>
-                        <tr style={styles.rows}><td>Konsoliduoti rinkimų apygardos rezultatai</td></tr>
-                        <tr id="MainPageCandidates" onClick={this.props.onCandidatesClick} style={styles.rows}><td>Kandidatų sąrašas</td></tr>
-                        <tr id="MainPageParties" onClick={this.props.onPartiesClick} style={styles.rows}><td>Partijų sąrašas</td></tr>
+                        <tr id="MainPageConstituencies" style={styles.rows} onClick={( event ) => {
+                            if ( $( '.list1' ).is( ":hidden" ) ) {
+                                $( '.list1' ).show("slow");
+                            } else {
+                                $( '.list1' ).hide("slow");
+                            }
+                        }
+                        }>
+                            <td>Rinkiminių apygardų rezultatai</td>
+                        </tr>
+                        <tr className="list1" >
+                            <td style={styles.subList}>Rinkėjų aktyvumas</td>
+                        </tr>
+                        <tr className="list1" >
+                            <td style={styles.subList}>Balsų skaičiai daugiamandatėse</td>
+                        </tr>
+                        <tr className="list1" >
+                            <td style={styles.subList}>Sugadinti daugiamandatės biuleteniai</td>
+                        </tr>
+                        <tr className="list1" >
+                            <td style={styles.subList}>Balsų skaičiai kiekvienam vienmandatės kandidatui</td>
+                        </tr>
+                        <tr className="list1" >
+                            <td style={styles.subList}>Sugadinti vienmandatės biuleteniai</td>
+                        </tr>
+                        <tr className="list1" >
+                            <td style={styles.subList}>Apylinkių balsų skaičiavimo progresas</td>
+                        </tr>
+                        <tr className="list1" >
+                            <td style={styles.subList}>Apylinkių sąrašas</td>
+                        </tr>
+
+
+                        <tr id="MainPageDistricts" style={styles.rows} onClick={( event ) => {
+                            if ( $( '.list2' ).is( ":hidden" ) ) {
+                                $( '.list2' ).show("slow");
+                            } else {
+                                $( '.list2' ).hide("slow");
+                            }
+                        }
+                        }>
+                            <td>Rinkiminių apylinkių rezultatai</td>
+                        </tr>
+                        <tr className="list2" >
+                            <td style={styles.subList}>Apylinkės balsų įregistravimo laikas</td>
+                        </tr>
+                        <tr className="list2" >
+                            <td style={styles.subList}>Rinkėjų aktyvumas</td>
+                        </tr>
+                        <tr className="list2" >
+                            <td style={styles.subList}>Balsų skaičiai daugiamandatėse</td>
+                        </tr>
+                        <tr className="list2" >
+                            <td style={styles.subList}>Sugadinti daugiamandatės biuleteniai</td>
+                        </tr>
+                        <tr className="list2" >
+                            <td style={styles.subList}>Balsų skaičiai kiekvienam vienmandatės kandidatui</td>
+                        </tr>
+                        <tr className="list2" >
+                            <td style={styles.subList}>Sugadinti vienmandatės biuleteniai</td>
+                        </tr>
+
+
+                        <tr id="MainPageSinglResults" style={styles.rows} onClick={( event ) => {
+                            if ( $( '.list3' ).is( ":hidden" ) ) {
+                                $( '.list3' ).show("slow");
+                            } else {
+                                $( '.list3' ).hide("slow");
+                            }
+                        }
+                        }>
+                            <td>Vienmandatės rinkimų apygardos rezultatai</td>
+                        </tr>
+                        <tr className="list3" >
+                            <td style={styles.subList}>Išrinktų seimo narių sąrašas</td>
+                        </tr>
+
+
+                        <tr id="MainPageMultiResults" style={styles.rows} onClick={( event ) => {
+                            if ( $( '.list4' ).is( ":hidden" ) ) {
+                                $( '.list4' ).show("slow");
+                            } else {
+                                $( '.list4' ).hide("slow");
+                            }
+                        }
+                        }>
+                            <td>Daugiamandatės rinkimų apygardos rezultatai</td>
+                        </tr>
+                        <tr className="list4" >
+                            <td style={styles.subList}>Laimėtų balsų skaičius</td>
+                        </tr>
+                        <tr className="list4" >
+                            <td style={styles.subList}>Laimėtų balsų procentas nuo visų biuletenių</td>
+                        </tr>
+                        <tr className="list4" >
+                            <td style={styles.subList}>Laimėtų mandatų skaičius</td>
+                        </tr>
+
+
+                        <tr id="MainPageConsolidatedResults" style={styles.rows} onClick={( event ) => {
+                            if ( $( '.list5' ).is( ":hidden" ) ) {
+                                $( '.list5' ).show("slow");
+                            } else {
+                                $( '.list5' ).hide("slow");
+                            }
+                        }
+                        }>
+                            <td>Konsoliduoti rinkimų rezultatai</td>
+                        </tr>
+                        <tr className="list5" >
+                            <td style={styles.subList}>Partijų sąrašas ir laimėti mandatai</td>
+                        </tr>
+                            <tr className="list5" >
+                            <td style={styles.subList}>Partijų laimėtų mandatų diagramos</td>
+                        </tr>
+                            <tr className="list5" >
+                            <td style={styles.subList}>Būsimų seimo narių sąrašas</td>
+                        </tr>
+
+
+                        <tr id="MainPageCandidates" onClick={this.props.onCandidatesClick} style={styles.rows}>
+                            <td>Kandidatų sąrašas</td>
+                        </tr>
+                            
+                            
+                        <tr id="MainPageParties" onClick={this.props.onPartiesClick} style={styles.rows}>
+                            <td>Partijų sąrašas</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div style={styles.line}></div>
+                <table className="table table-hover" id="temporary-representative">
+                    <tbody>
+                        <tr id="temporaty-MainPageRepresentatives" onClick={this.props.onRepresentativesClick} style={styles.rows}>
+                            <td>Rezultatų suvedimas</td>
+                        </tr>
                     </tbody>
                 </table>
 

@@ -1,0 +1,9 @@
+2017-02-27 10:36:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "CANDIDATES" not found; SQL statement:
+INSERT INTO CANDIDATES (party_id,name,last_name,date_of_birth,description,personal_id) VALUES ('1', 'Tomas', 'Tomauskas', '1962-10-10', 'Description', '36212103627'); [42102-193]
+2017-02-27 10:38:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "CANDIDATES" not found; SQL statement:
+INSERT INTO CANDIDATES (party_id,name,last_name,date_of_birth,description,personal_id) VALUES ('15', 'Tomas', 'Tomauskas', '1962-10-10', 'Description', '36212103627'); [42102-193]
+2017-02-27 10:42:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "CANDIDATES" not found; SQL statement:
+INSERT INTO CANDIDATES (party_id,name,last_name,date_of_birth,description,personal_id) VALUES ('15', 'Tomas', 'Tomauskas', '1962-10-10', 'Description', '36212103627'); [42102-193]

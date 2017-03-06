@@ -3,6 +3,7 @@
  */
 package lt.itakademija.database.models;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -47,7 +48,7 @@ public class Districts {
 
     @Column(name = "address")
     //@Pattern(regexp = ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)", message = "DISTRICTS ADDRESS contains invalid characters. ")
-    @Length(min = 0, max = 100, message = "DISTRICTS ADDRESS must not be empty and length can not be longer than {max} symbols. ")
+    @Length(min = 0, max = 60, message = "DISTRICTS ADDRESS must not be empty and length can not be longer than {max} symbols. ")
     private String address;
 
     @Column(name = "VOTED_SINGLE")
@@ -61,17 +62,17 @@ public class Districts {
 
     @Column(name = "VOTED_MULTI_CORRUPT")
     private Integer votedMultiCorrupt;
-    
+
     @Column(name = "VOTED_SINGLE_TIME")
-    private String votedSingleTime;
-    
+    private Date votedSingleTime;
+
     @Column(name = "VOTED_MULTI_TIME")
-    private String votedMultiTime;
+    private Date votedMultiTime;
 
 
     @OneToOne(cascade = CascadeType.ALL)
-	@PrimaryKeyJoinColumn
-	private District_Representatives district_representatives;
+    @PrimaryKeyJoinColumn
+    private District_Representatives district_representatives;
 
 //    @OneToMany(cascade = CascadeType.ALL)
 //    @JoinColumn(name = "DISTRICT_ID")
@@ -156,7 +157,7 @@ public class Districts {
     public void setVotedMultiCorrupt(Integer votedMultiCorrupt) {
         this.votedMultiCorrupt = votedMultiCorrupt;
     }
-   
+
     public List<Single_Results> getSingle_results() {
         return single_results;
     }
@@ -173,29 +174,29 @@ public class Districts {
         this.multi_results = multi_results;
     }
 
-	public String getVotedSingleTime() {
-		return votedSingleTime;
-	}
+    public Date getVotedSingleTime() {
+        return votedSingleTime;
+    }
 
-	public void setVotedSingleTime(String votedSingleTime) {
-		this.votedSingleTime = votedSingleTime;
-	}
+    public void setVotedSingleTime(Date votedSingleTime) {
+        this.votedSingleTime = votedSingleTime;
+    }
 
-	public String getVotedMultiTime() {
-		return votedMultiTime;
-	}
+    public Date getVotedMultiTime() {
+        return votedMultiTime;
+    }
 
-	public void setVotedMultiTime(String votedMultiTime) {
-		this.votedMultiTime = votedMultiTime;
-	}
+    public void setVotedMultiTime(Date votedMultiTime) {
+        this.votedMultiTime = votedMultiTime;
+    }
 
-	public District_Representatives getDistrict_representatives() {
-		return district_representatives;
-	}
+    public District_Representatives getDistrict_representatives() {
+        return district_representatives;
+    }
 
-	public void setDistrict_representatives(District_Representatives district_representatives) {
-		this.district_representatives = district_representatives;
-	}
+    public void setDistrict_representatives(District_Representatives district_representatives) {
+        this.district_representatives = district_representatives;
+    }
 
 
 }

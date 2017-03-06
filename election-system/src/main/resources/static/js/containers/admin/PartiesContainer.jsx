@@ -1,4 +1,9 @@
 var PartiesContainer = React.createClass({
+
+    contextTypes: {
+        router: React.PropTypes.object.isRequired
+    },
+
     getInitialState: function () {
         return {
             parties: [],
@@ -35,10 +40,29 @@ var PartiesContainer = React.createClass({
         }.bind(this);
     },
 
+    handleCandidates: function (party) {
+        return function () {
+            this.context.router.push({
+                pathname: "/admin/party-candidates/" + party.id,
+                query: {fileName: party.candidates_file}
+            });
+        }.bind(this)
+    },
+
     handleSubmitParty: function (party) {
         console.log(party);
         axios.post('/api/parties', party).then(function () {
-            this.componentWillMount();
+            axios.get('/api/parties')
+                .then(function (response) {
+                    var temp = this.state.party;
+                    temp.title = "";
+                    temp.id = "";
+                    temp.party_Code = "";
+                    this.setState({
+                        parties: response.data,
+                        party: temp
+                    });
+                }.bind(this));
         }.bind(this));
     },
 
@@ -52,15 +76,16 @@ var PartiesContainer = React.createClass({
 
 
     render: function () {
-        return(
+        return (
             <div>
-            <AddPartyComponent party={this.state.party}
-                               onSubmit={this.handleSubmitParty}
-                                onFieldChange={this.handleFieldChange}/>
-            <PartiesComponent parties={this.state.parties}
-                                onDeleteParty={this.handleDeleteParty}/>
+                <AddPartyComponent party={this.state.party}
+                                   onSubmit={this.handleSubmitParty}
+                                   onFieldChange={this.handleFieldChange}/>
+                <PartiesComponent parties={this.state.parties}
+                                  onCandidates={this.handleCandidates}
+                                  onDeleteParty={this.handleDeleteParty}/>
             </div>
-            )
+        )
     }
 });
 

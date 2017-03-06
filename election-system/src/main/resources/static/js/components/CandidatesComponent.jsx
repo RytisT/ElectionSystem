@@ -28,45 +28,47 @@ var CandidatesComponent = React.createClass( {
     render: function() {
         var self = this;
         var candidatesList = this.props.candidates.map( function( candidate, index ) {
+            var fullName = candidate.name + " " + candidate.last_name;
+
+            if ( fullName.toLowerCase().includes( self.props.searchQuery.toLowerCase() ) ) {
 
 
-            // date
-            var d = new Date( candidate.date_of_birth );
-            var year = d.getFullYear();
-            var month = d.getMonth() + 1;
-            var date = d.getDate();
-            // jei menuo vienzenklis sk tai prieki bus 0 pvz: 03
-            if ( month < 10 ) {
-                month = '0' + month;
+                // date
+                var d = new Date( candidate.date_of_birth );
+                var year = d.getFullYear();
+                var month = d.getMonth() + 1;
+                var date = d.getDate();
+                if ( month < 10 ) { month = '0' + month; }
+                if ( date < 10 ) { date = '0' + date; }
+                var fullDate = year + '-' + month + '-' + date;
+
+
+                return (
+                    <tr id="candidatesList" key={index}>
+                        <td></td>
+                        <td>{candidate.name}</td>
+                        <td>{candidate.last_name}</td>
+                        <td>{fullDate}</td>
+                        <td>{candidate.constituency_id}</td>
+                        <td>{candidate.party_id}</td>
+                        <td>{candidate.party_list_seat}</td>
+                        <td style={styles.width}>
+                            <button id={"CandidateInfo" + candidate.id} type="button" className="btn btn-default"
+                                onClick={self.props.onDescriptionItemClick( candidate )}
+                                data-toggle="tooltip" data-placement="top" title="Kandidato informacija"
+                                data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
+                                aria-controls="collapseOne">
+                                <span className="glyphicon glyphicon-info-sign"></span></button>
+                        </td>
+
+                    </tr>
+                );
             }
-            if ( date < 10 ) {
-                date = '0' + date;
-            }
-            var fullDate = year + '-' + month + '-' + date;
-
-
-            return (
-                <tr id="candidatesList" key={index}>
-                    <td></td>
-                    <td>{candidate.name}</td>
-                    <td>{candidate.last_name}</td>
-                    <td>{fullDate}</td>
-                    <td style={styles.width}>
-                        <button id="CandidateInfo" type="button" className="btn btn-default"
-                            onClick={self.props.onDescriptionItemClick( candidate )}
-                            data-toggle="tooltip" data-placement="top" title="Kandidato informacija"
-                            data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
-                            aria-controls="collapseOne">
-                            <span className="glyphicon glyphicon-info-sign"></span></button>
-                    </td>
-
-                </tr>
-            );
         });
 
         /* Papildomai mygtukai
-         * 
-         * 
+         *
+         *
          * <td style={styles.width}>
          <button id="CandidateEdit" type="button" className="btn btn-default" onClick={self.props.onEditItem( candidate )}
          data-toggle="tooltip" data-placement="top" title="Redaguoti kandidatą">
@@ -77,9 +79,8 @@ var CandidatesComponent = React.createClass( {
          data-toggle="tooltip" data-placement="top" title="Trinti kandidatą">
          <span className="glyphicon glyphicon-remove"></span></button>
          </td>
-         * 
+         *
          */
-
 
         return (
             <div className="">
@@ -87,22 +88,16 @@ var CandidatesComponent = React.createClass( {
                 <div style={styles.line}></div>
                 <div> </div>
 
-                <div className="input-group">
-                    <input type="text" className="form-control" placeholder="Search for..." />
-                    <span className="input-group-btn">
-                        <button id="candidateSearch" className="btn btn-default" type="button"
-                            onClick={( event ) => {
-//                                if ( $( '#FullList' ).is( ":hidden" ) ) {
-//                                    $( '#FullList' ).show();
-//                                } else {
-//                                    $( '#FullList' ).hide();
-//                                }
-                            }
-                            }
-                            >Ieškoti!</button>
-                    </span>
-
+                <div className="panel panel-default">
+                    <div className="panel-heading"><label htmlFor="basic-url">Ieškoti kandidato: </label></div>
+                    <div className=" panel-body input-group">
+                        <span className="input-group-addon" id="basic-addon3">Kandidato vardas ar pavardė: </span>
+                        <input type="text" className="form-control" id="SearchCandidate" maxLength="50"
+                            onChange={this.props.onSearchQueryChange( this.props.searchQuery )} />
+                    </div>
+                    <div id="CandidateSearchValidation" className="validationForm"><span>Naudojami netinkami simboliai.</span></div>
                 </div>
+
 
                 <div className="panel panel-default" style={styles.marginTop} id="Table">
                     <table className="table table-striped">
@@ -112,6 +107,9 @@ var CandidatesComponent = React.createClass( {
                                 <th>VARDAS</th>
                                 <th>PAVARDĖ</th>
                                 <th>GIMIMO DATA</th>
+                                <th>APYGARDA</th>
+                                <th>PARTIJOS<br />NUMERIS</th>
+                                <th>VIETA<br />SĄRAŠE</th>
                                 <th></th>
 
                             </tr>
@@ -141,7 +139,6 @@ var CandidatesComponent = React.createClass( {
 
 
 CandidatesComponent.propTypes = {
-    onAddClick: React.PropTypes.func.isRequired,
     onDescriptionItemClick: React.PropTypes.func.isRequired
 };
 

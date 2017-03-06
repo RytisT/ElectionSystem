@@ -1,70 +1,95 @@
-var CandidatesContainer = React.createClass({
-    getInitialState: function () {
+var CandidatesContainer = React.createClass( {
+    getInitialState: function() {
         return {
+            searchQuery: "",
+            candidate: {
+                name: '',
+                last_name: '',
+                date_of_birth: '',
+                description: ''
+            },
             candidates: []
         };
     },
 
-    componentWillMount: function () {
+    componentWillMount: function() {
         var self = this;
-        axios.get('/api/candidates')
-            .then(function (response) {
-                self.setState({
+        axios.get( '/api/candidates' )
+            .then( function( response ) {
+                self.setState( {
                     candidates: response.data
                 });
             });
     },
 
-    // Description mygtuko paspaudimo action
-    handleCandidateDescription: function (candidate) {
+    //    handleSearchQueryChange: function () {
+    //        return function (newQuery) {
+    //            this.setState({searchQuery: newQuery.target.value})
+    //        }.bind(this)
+    //    },
+
+    // Description 
+    handleCandidateDescription: function( candidate ) {
         var self = this;
-        return function () {
-            self.context.router.push('/candidate/description/' + candidate.id);
+        return function() {
+            self.context.router.push( '/candidate/description/' + candidate.id );
         }
     },
 
-    // Add mygtuko paspaudimo action
+    // Add 
     handleAdd() {
-        this.context.router.push('/admin/candidates/add-candidate');
+        this.context.router.push( '/admin/candidates/add-candidate' );
     },
 
-    // Main page mygtuko paspaudimo action
-//    handleMainPage() {
-//        this.context.router.push( '/' );
-//    },
-
-    // Cancel mygtuko paspaudimo action
+    // Cancel 
     handleCancelClick() {
-        this.context.router.push('/');
+        this.context.router.push( '/' );
     },
 
-    // Edit candidate mygtuko action
-    handleCandidateEdit: function (candidate) {
+    // Edit candidate 
+    handleCandidateEdit: function( candidate ) {
         var self = this;
-        return function () {
-            self.context.router.push('/admin/candidates/edit/' + candidate.id);
+        return function() {
+            self.context.router.push( '/admin/candidates/edit/' + candidate.id );
         }
     },
 
-    // Remove candidate mygtuko action
-    handleCandidateRemove: function (candidate) {
+    // Remove candidate 
+    handleCandidateRemove: function( candidate ) {
         var self = this;
-        return function () {
-            axios.delete('/api/candidates/' + candidate.id).then(function (response) {
+        return function() {
+            axios.delete( '/api/candidates/' + candidate.id ).then( function( response ) {
                 self.componentWillMount();
             });
         };
     },
 
+    handleSearchQueryChange: function() {
+        return function( newQuery ) {
 
-    render: function () {
+            //validation
+            var val = $( "#SearchCandidate" ).val();
+            var matches = val.match( ".*([a-zA-ZąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)" );
+            if ( matches != null ) { $( "#CandidateSearchValidation" ).hide("slow"); }
+            else { $( "#CandidateSearchValidation" ).show("slow"); }
+
+            this.setState( { searchQuery: newQuery.target.value })
+
+        }.bind( this )
+    },
+
+    
+    render: function() {
         return <CandidatesComponent candidates={this.state.candidates}
-                                    onAddClick={this.handleAdd}
-                                    onMainPageClick={this.handleMainPage}
-                                    onEditItem={this.handleCandidateEdit}
-                                    onDescriptionItemClick={this.handleCandidateDescription}
-                                    onRemoveItem={this.handleCandidateRemove}
-                                    onCancelClick={this.handleCancelClick}/>
+            onAddClick={this.handleAdd}
+            onEditItem={this.handleCandidateEdit}
+            onDescriptionItemClick={this.handleCandidateDescription}
+            onRemoveItem={this.handleCandidateRemove}
+            searchQuery={this.state.searchQuery}
+            onSearchQueryChange={this.handleSearchQueryChange}
+            onCancelClick={this.handleCancelClick}
+            />
+
     }
 });
 

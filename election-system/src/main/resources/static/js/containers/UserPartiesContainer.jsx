@@ -1,38 +1,38 @@
-var UserPartiesContainer = React.createClass( {
-    getInitialState: function() {
+var UserPartiesContainer = React.createClass({
+    getInitialState: function () {
         return {
             parties: []
         };
     },
 
-    componentWillMount: function() {
+    componentWillMount: function () {
         var self = this;
-        axios.get( '/api/parties' )
-            .then( function( response ) {
-                self.setState( {
+        axios.get('/api/parties')
+            .then(function (response) {
+                self.setState({
                     parties: response.data
                 });
             });
     },
 
-    handlePartyDescription: function( party ) {
+    handlePartyDescription: function (party) {
         var self = this;
-        return function() {
-            self.context.router.push( '/party/description/' + party.id );
+        return function () {
+            self.context.router.push('/party/description/' + party.id);
         }
     },
 
     handleCancelClick() {
-        this.context.router.push( '/' );
+        this.context.router.push('/');
     },
 
 
-    render: function() {
+    render: function () {
         return <UserPartiesComponent
             parties={this.state.parties}
             onCancelClick={this.handleCancelClick}
             onDescriptionItemClick={this.handlePartyDescription}
-            />
+        />
     }
 });
 

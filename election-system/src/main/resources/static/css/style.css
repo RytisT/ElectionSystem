@@ -32,10 +32,6 @@ ul.header li a {
     display: inline-block;
 }
 
-#menu tr:hover {
-    background-color: rgba(0, 128, 255, 0.2);
-}
-
 .content {
     background-color: #FFF;
     padding: 20px;
@@ -53,6 +49,40 @@ ul.header li a {
 .active {
     background-color: #0099FF;
 }
+
+/* Candidates */
+
+#menu tr {
+    cursor: pointer;
+}
+
+#menu tr:hover {
+    background-color: rgba(0, 128, 255, 0.2);
+}
+
+#menu .list1, .list2, .list3, .list4, .list5 {
+    cursor: pointer;
+    display: none;
+}
+
+
+#CandidateSearchValidation {
+	display: none;	
+}
+
+.validationForm {
+	background-color: #ff9980;
+	color: #666666;
+	text-align: center;
+	font-style: italic;
+	font-size: 15px;
+}
+
+#temporary-representative {
+    cursor: pointer;
+}
+
+
 
 /* Candidates Description */
 #description span {
@@ -74,4 +104,76 @@ ul.header li a {
     padding-right: 0.3em;
     padding-left: 15px;
 }
+
+/* Login Page */
+
+
+.Login {
+    border: 3px solid #4CAF50;
+    padding: 50 200 50 200;
+    background: url("../images/back1.jpg");
+}
+
+.Login input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.Login button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.Login #onLogin:hover {
+    background-color: #009900;
+    color: #fff;    
+}
+
+.Login #onLogin:active {
+    background-color: #009fff;
+    color: #fff;    
+}
+
+.Login #onCancel:hover {
+    background-color: #ff1a1a;
+    color: #fff;    
+}
+
+.Login #onLogin2:hover {
+    background-color: #009900;
+    color: #fff;    
+}
+
+.Login #onLogin2:active {
+    background-color: #009fff;
+    color: #fff;    
+}
+
+.Login #onCancel2:hover {
+    background-color: #ff1a1a;
+    color: #fff;    
+}
+
+.Login .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+
+#UserPassValidation, #UserNameValidation, #AdminPassValidation, #AdminNameValidation,
+#DistrictSearchValidation, #ConstituencyTitleValidation, #DistrictTitleValidation,
+#RepNameValidation, #RepLastNameValidation, #RepLoginNameValidation, #RepPassValidation {
+	display: none;	
+}
+
+
 

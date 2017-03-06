@@ -8,7 +8,7 @@ var AdminComponent = React.createClass({
 
             <div>
                 <ul className="header">
-                    <li><IndexLink to="/admin" activeClassName="active">Apygardos/Apylinkes</IndexLink></li>
+                    <li><IndexLink to="/admin" activeClassName="active">Apygardos/Apylinkės</IndexLink></li>
                     <li><Link to="/admin/parties" activeClassName="active">Partijos</Link></li>
                     <li><Link to="/admin/contacts" activeClassName="active">Balsavimu duomenys</Link></li>
                 </ul>

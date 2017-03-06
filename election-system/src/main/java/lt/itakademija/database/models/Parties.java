@@ -32,17 +32,20 @@ public class Parties {
     @Column(name = "id", unique = true)
     private Integer id;
 
+    @Column(name = "candidates_file", unique = true)
+    private String candidates_file;
+
     @Column(name = "title", unique = true)
     @NotNull(message = "PARTIES TITLE can not be empty")
-    @Pattern(regexp = ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)", message = "PARTIES TITLE contains invalid characters. ")
-    @Length(min = 1, max = 100, message = "PARTIES TITLE must not be empty and length can not be longer than {max} symbols. ")
+    @Pattern(regexp = ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“\"!,.:;-? ()]$)", message = "PARTIES TITLE contains invalid characters. ")
+    @Length(min = 1, max = 200, message = "PARTIES TITLE must not be empty and length can not be longer than {max} symbols. ")
     private String title;
 
     @Column(name = "PARTY_CODE", unique = true)
     @Pattern(regexp = ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)", message = "PARTIES PARTY_CODE contains invalid characters. ")
     @Length(min = 1, max = 6, message = "PARTIES PARTY_CODE must not be empty and length can not be longer than {max} symbols. ")
     private String Party_Code;
-    
+
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "PARTY_ID")
     private List<Candidates> candidates;
@@ -50,7 +53,7 @@ public class Parties {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "PARTY_ID")
     private List<Multi_Results> multi_results;
-    
+
 //    @OneToMany(mappedBy="partyDependencies", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 //    private List<Candidates> members;
 
@@ -58,6 +61,14 @@ public class Parties {
 //		this.id = id;
 //		this.title = title;
 //	}
+
+    public String getCandidates_file() {
+        return candidates_file;
+    }
+
+    public void setCandidates_file(String candidates_file) {
+        this.candidates_file = candidates_file;
+    }
 
     public Integer getId() {
         return id;
@@ -67,7 +78,7 @@ public class Parties {
         this.id = id;
     }
 
-	public String getTitle() {
+    public String getTitle() {
         return title;
     }
 
@@ -99,5 +110,5 @@ public class Parties {
         this.multi_results = multi_results;
     }
 
-	
+
 }

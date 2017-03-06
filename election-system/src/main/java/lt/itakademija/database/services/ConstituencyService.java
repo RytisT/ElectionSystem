@@ -39,4 +39,8 @@ public class ConstituencyService {
     public Constituency findById(Integer id) {
         return repository.findOne(id);
     }
+
+    public Constituency findByFileName(String fileName) {
+        return repository.findByFileName(fileName);
+    }
 }

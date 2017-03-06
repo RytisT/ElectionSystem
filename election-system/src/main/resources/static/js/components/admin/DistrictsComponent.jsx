@@ -6,9 +6,11 @@ var DistrictsComponent = React.createClass({
 
     districtList: function () {
         return this.props.districts.map(function (district, index) {
-            return (
-                <SingleDistrictContainer key={index} district={district} onDelete={this.props.onDelete}/>
-            )
+            if(district.title.includes(this.props.searchQuery)) {
+                return (
+                    <SingleDistrictContainer key={index} district={district} onDelete={this.props.onDelete}/>
+                )
+            }
         }.bind(this))
     },
 
@@ -16,13 +18,21 @@ var DistrictsComponent = React.createClass({
     render: function () {
         return (
             <div className="">
+                <div className="panel panel-default">
+                <div className="panel-heading"><label htmlFor="basic-url">Ieškoti apylinkės: </label></div>
+                <div className=" panel-body input-group">
+                    <span className="input-group-addon" id="basic-addon3">Apylinkės pavadinimas: </span>
+                    <input type="text" className="form-control" id="SearchByTitle" onChange={this.props.onSearchQueryChange(this.props.searchQuery)}/>
+                </div>
+                        <div id="DistrictSearchValidation" className="validationForm"><span>Naudojami netinkami simboliai.</span></div>
+                </div>
                 <table className="table table-striped">
                     <thead>
                     <tr>
-                        <th>Apylinke</th>
-                        <th>Rinkeju skaicius</th>
+                        <th>Apylinkė</th>
+                        <th>Rinkejų skaičius</th>
                         <th>Adresas</th>
-                        <th>Apylinkes atstovas</th>
+                        <th>Apylinkės atstovas</th>
                         <th>Redaguoti</th>
                         <th>Trinti</th>
                     </tr>
@@ -33,9 +43,13 @@ var DistrictsComponent = React.createClass({
                     </tbody>
 
                 </table>
+                <button id="Return" className="btn btn-success" style={{ marginRight: '20px' }}
+                        onClick={this.props.onReturn}>Grįžti
+                </button>
             </div>
         )
     }
 });
+
 
 window.DistrictsComponent = DistrictsComponent;

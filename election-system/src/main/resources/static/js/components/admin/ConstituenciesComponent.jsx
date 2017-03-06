@@ -12,7 +12,8 @@ var ConstituenciesComponent = React.createClass({
                                              key={index}
                                              onEditDistrict={this.props.onEditDistrict}
                                              onDeleteConst={this.props.onDeleteConst}
-                                             onFieldChange={this.props.onFieldChange}/>
+                                             onFieldChange={this.props.onFieldChange}
+                                             onCandidates={this.props.onCandidates} />
             );
         }.bind(this));
 
@@ -23,7 +24,9 @@ var ConstituenciesComponent = React.createClass({
                     <thead>
                     <tr>
                         <th>Apygarda</th>
-                        <th>Apylinkes</th>
+                        <th>Apylinkės</th>
+                        <th>Kandidatai</th>
+                        <th>Redaguoti</th>
                         <th>Trinti</th>
                     </tr>
                     </thead>

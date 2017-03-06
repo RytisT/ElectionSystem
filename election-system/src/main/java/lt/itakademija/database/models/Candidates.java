@@ -9,12 +9,10 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
@@ -64,13 +62,14 @@ public class Candidates {
 
     @Column(name = "description")
     //@Pattern(regexp = ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)", message = "Candidates DESCRIPTION contains invalid characters. ")
-    @Length(min = 0, max = 300, message = "Candidates DESCRIPTION length can not be longer than {max} symbols. ")
+    @Length(min = 0, max = 255, message = "Candidates DESCRIPTION length can not be longer than {max} symbols. ")
     private String description;
 
-    @Column(name = "party_list_seat", unique = true)
-    @Pattern(regexp = ".*([0-9]$)", message = "Candidates PARTY LIST SEAT contains invalid characters. Only numbers accepted. ")
-    @Length(min = 0, max = 3, message = "Candidates PARTY LIST SEAT length can not be longer than {max} symbols. ")
+    @Column(name = "party_list_seat")
+    //@Pattern(regexp = ".*([0-9]$)", message = "Candidates PARTY LIST SEAT contains invalid characters. Only numbers accepted. ")
+    //@Length(min = 0, max = 3, message = "Candidates PARTY LIST SEAT length can not be longer than {max} symbols. ")
     private Integer party_list_seat;
+
 
 //	public Candidates(Integer id, Integer constituency_id,Integer party_id, String name, String last_name, Date date_of_birth, String description) {
 //		this.id = id;
@@ -126,9 +125,9 @@ public class Candidates {
         return personal_id;
     }
 
-	public void setPersonal_id(String personal_id) {
-		this.personal_id = personal_id;
-	}
+    public void setPersonal_id(String personal_id) {
+        this.personal_id = personal_id;
+    }
 
     public Date getDate_of_birth() {
         return date_of_birth;
@@ -157,13 +156,12 @@ public class Candidates {
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "CANDIDATES_ID")
     private List<Single_Results> single_results;
-    
- 
+
+
 //    @ManyToOne
 //    @JoinColumn(nullable = true, name= "ID")
 //    private Parties partyDependencies;
 
-   
 
     public List<Single_Results> getSingle_results() {
         return single_results;
