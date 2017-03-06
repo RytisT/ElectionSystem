@@ -22,7 +22,7 @@ var SingleConstituencyContainer = React.createClass({
     },
 
     handleEditConst: function (constitut) {
-
+        console.log("keiciu redagavimo state'a")
         if (this.state.isEditing) {
             this.setState({isEditing: false})
             this.state.constituency.title = this.state.fieldContainer;
@@ -34,6 +34,7 @@ var SingleConstituencyContainer = React.createClass({
     },
 
     handleSaveConst: function () {
+        console.log("issaugau")
         axios.post('/api/constituencies', this.state.constituency)
             .then(this.setState({isEditing: false}))
     },

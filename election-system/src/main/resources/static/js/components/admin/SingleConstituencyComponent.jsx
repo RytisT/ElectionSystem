@@ -39,7 +39,10 @@ var SingleConstituencyComponent = React.createClass({
                 </td>
                 <td className="col-md-1">
                     <button id="Delete constituency" type="button" className="btn btn-danger"
-                            onClick={this.props.onDeleteConst(this.props.constituency)}>Trinti
+                            onClick={( _event ) => {
+                                event.preventDefault();
+                                this.props.onDeleteConst(this.props.constituency)
+                            }}>Trinti
                     </button>
                 </td>
             </tr>

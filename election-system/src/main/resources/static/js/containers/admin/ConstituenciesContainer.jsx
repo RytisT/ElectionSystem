@@ -25,7 +25,7 @@ var ConstituenciesContainer = React.createClass({
 
 
     handleDeleteConst: function (constituency) {
-        return function () {
+        console.log("Trinu")
             axios.delete('/api/constituencies/' + constituency.id)
                 .then(function (response) {
                     axios.get('/api/constituencies')
@@ -40,7 +40,6 @@ var ConstituenciesContainer = React.createClass({
                             }.bind(this)
                         )
                 }.bind(this));
-        }.bind(this);
     },
 
     handleEditDistricts: function (constituency) {
@@ -51,7 +50,7 @@ var ConstituenciesContainer = React.createClass({
 
     handleSubmitConst: function (constituency) {
         axios.post('/api/constituencies', constituency)
-            .then(function (response) {
+            .then(function () {
                 axios.get('/api/constituencies')
                     .then(function (response) {
                         var tempConstituency = this.state.constituency;
