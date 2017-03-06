@@ -49,7 +49,7 @@ public class ConsolidatedResultCalculationService {
         Map<Integer, Integer> partyResult = multiService.mandatesByParty();
         for (Entry<Integer, Integer> partyMandateCount : partyResult.entrySet()) {
             int numberMandates = partyMandateCount.getValue();
-<<<<<<< HEAD
+
 
             for (Candidates partyCandidates : candidateService.findByPartyId(partyMandateCount.getKey())) {
                 while (numberMandates >= 1) {
@@ -65,18 +65,8 @@ public class ConsolidatedResultCalculationService {
                         multiWinners.add(newAlsoPartyCandidate);
                         break;
                     }                   
-=======
-            while (numberMandates != 0) {
-                for (Candidates partyCandidates : candidateService.findByPartyId(partyMandateCount.getKey())) {
-                    if (multiWinners.contains(partyCandidates) || singleCandidates.contains(partyCandidates)) {
-                        Candidates newPartyCandidate = candidateService.findByPartyAndSeat(partyMandateCount.getKey(),
-                                partyCandidates.getParty_list_seat() + 1);
-                        multiWinners.add(newPartyCandidate);
-                    } else {
-                        multiWinners.add(partyCandidates);
-                    }
-                    numberMandates--;
->>>>>>> 5829c51f60fd07285bc9c8f2547047d3f62c1f01
+
+           
                 }
                 numberMandates--;
             }
@@ -84,22 +74,20 @@ public class ConsolidatedResultCalculationService {
         return multiWinners;
     }
 
-<<<<<<< HEAD
+
     /*
      * returns list of winning candidates from both single and multi mandate
      * systems
      */
-=======
->>>>>>> 5829c51f60fd07285bc9c8f2547047d3f62c1f01
+
+
     public List<Candidates> consolidatedWinner() {
         List<Candidates> winnersFinal = new ArrayList<>();
         winnersFinal.addAll(getWinningSingleCandidates());
         winnersFinal.addAll(getMultiWinnerCandidates());
         return winnersFinal;
     }
-<<<<<<< HEAD
-=======
 
->>>>>>> 5829c51f60fd07285bc9c8f2547047d3f62c1f01
+
 
 }
