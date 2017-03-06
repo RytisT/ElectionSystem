@@ -172,7 +172,8 @@ ul.header li a {
 #UserPassValidation, #UserNameValidation, #AdminPassValidation, #AdminNameValidation,
 #DistrictSearchValidation, #ConstituencyTitleValidation, #DistrictTitleValidation,
 #RepNameValidation, #RepLastNameValidation, #RepLoginNameValidation, #RepPassValidation,
-#PartyIdValidation, #PartyTitleValidation, #PartyCodeValidation, #ConstituencyNameValidation {
+#PartyIdValidation, #PartyTitleValidation, #PartyCodeValidation, #ConstituencyNameValidation,
+#DistrictVotersValidation, #DistrictAddressValidation {
 	display: none;	
 }
 
