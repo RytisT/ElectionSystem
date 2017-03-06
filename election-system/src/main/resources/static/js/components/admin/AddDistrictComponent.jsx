@@ -27,7 +27,7 @@ var AddDistrictComponent = React.createClass( {
                             <input id="VotersCount" className="form-control" placeholder="Rinkėjų skaičius"
                                 value={this.props.district.number_of_voters}
                                 onChange={this.props.onFieldChange( 'number_of_voters' )} type="number" />
-                            <input id="Address" className="form-control" placeholder="Adresas" value={this.props.district.address} maxLength="60"
+                            <input id="Address" className="form-control" placeholder="Adresas" value={this.props.district.address} maxLength="150"
                                 onChange={this.props.onFieldChange( 'address' )} type="text" />
                             <br />
                             <table><tbody>

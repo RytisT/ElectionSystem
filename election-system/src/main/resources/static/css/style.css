@@ -173,8 +173,9 @@ ul.header li a {
 #DistrictSearchValidation, #ConstituencyTitleValidation, #DistrictTitleValidation,
 #RepNameValidation, #RepLastNameValidation, #RepLoginNameValidation, #RepPassValidation,
 #PartyIdValidation, #PartyTitleValidation, #PartyCodeValidation, #ConstituencyNameValidation,
-#DistrictVotersValidation, #DistrictAddressValidation, #PartyNumber_Validation,
-#PartyCode_Validation, #PartyTitle_Validation {
+#DistrictVotersValidation, #DistrictAddressValidation,
+#PartyNumber_Validation, #PartyCode_Validation, #PartyTitle_Validation,
+#District_name_Validation, #Voters_Count_Validation, #District_address_Validation {
 	display: none;	
 }
 
