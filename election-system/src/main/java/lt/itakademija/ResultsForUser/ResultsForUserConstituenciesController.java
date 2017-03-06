@@ -1,7 +1,6 @@
-package lt.itakademija.results;
+package lt.itakademija.ResultsForUser;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,19 +9,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import lt.itakademija.database.models.Candidates;
+import lt.itakademija.database.models.Constituency;
 
 @RestController
 @CrossOrigin
-@RequestMapping(value = "/api/calculation1")
-public class ConsolidatedResultCalculationController {
-
+@RequestMapping(value = "/api/test1")
+public class ResultsForUserConstituenciesController {
+    
     @Autowired
-    private ConsolidatedResultCalculationService consolidateResult;
+    private ResultsForUserConstituenciesService service;
     
     @GetMapping
-    public List<Candidates> getResults(){
-        return consolidateResult.consolidatedWinner();
+    public HashMap<String, HashMap<String, Integer>> constituencyVoterActivity(){
+        return service.constitencyMultiActivity();
     }
-    
+
 }

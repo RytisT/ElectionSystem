@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import lt.itakademija.database.models.District_Representatives;
-import lt.itakademija.database.models.Districts;
 import lt.itakademija.database.services.District_Representatives_Service;
 
 /**

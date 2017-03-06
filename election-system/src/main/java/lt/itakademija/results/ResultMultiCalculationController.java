@@ -1,5 +1,6 @@
 package lt.itakademija.results;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,7 @@ public class ResultMultiCalculationController {
     
     @GetMapping(value="/multiResults")
     public Map<Integer, Integer> findByAll(){
-        return multiService.validParties();
+        return multiService.mandatesByParty();
     }
     
     @GetMapping(value="/percent")
