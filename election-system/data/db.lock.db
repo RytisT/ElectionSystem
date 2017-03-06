@@ -1,6 +1,6 @@
 #FileLock
-#Mon Mar 06 10:40:49 EET 2017
+#Mon Mar 06 11:36:08 EET 2017
 hostName=192.168.30.35
-id=15aa2c73681b931c27925b2791261afeeed659e5541
+id=15aa2f9d5aa07711a22443ba280f710906aca0c32eb
 method=file
-server=192.168.30.35\:62293
+server=192.168.30.35\:62636
