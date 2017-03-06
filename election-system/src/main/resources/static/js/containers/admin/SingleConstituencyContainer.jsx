@@ -34,8 +34,14 @@ var SingleConstituencyContainer = React.createClass({
     },
 
     handleSaveConst: function () {
-        axios.post('/api/constituencies', this.state.constituency)
-            .then(this.setState({isEditing: false}))
+        
+        var name = $( "#ConstituencyName" ).val();
+        var matches = name.match( ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)" );
+        if ( matches != null ) { $( '#ConstituencyNameValidation' ).hide( "slow" ) }
+        else { $( '#ConstituencyNameValidation' ).hide( "slow" ); $( '#ConstituencyNameValidation' ).show( "slow" ) }
+        
+//        axios.post('/api/constituencies', this.state.constituency)
+//            .then(this.setState({isEditing: false}))
     },
 
     render: function () {
