@@ -12,12 +12,12 @@ var SingleConstituencyComponent = React.createClass( {
                 <td className="col-md-2"></td>
                 <td className="col-md-2"></td>
                 <td className="col-md-2">
-                    <button id="Update constituency" type="button" className="btn btn-success" onClick={this.props.onSaveConst}>Išsaugoti
+                    <button id="Update_constituency" type="button" className="btn btn-success" onClick={this.props.onSaveConst}>Išsaugoti
                     </button>
-                    <button id="Cancel update" type="button" className="btn btn-danger" onClick={this.props.onEditConst}>Atšaukti</button>
+                    <button id="Cancel_update" type="button" className="btn btn-danger" onClick={this.props.onEditConst}>Atšaukti</button>
                 </td>
                 <td className="col-md-1">
-                    <button id="Delete Constituency" type="button" className="btn btn-danger"
+                    <button id="Delete_Constituency" type="button" className="btn btn-danger"
                         onClick={this.props.onDeleteConst( this.props.constituency )}>Trinti
                     </button>
                 </td>
@@ -25,22 +25,22 @@ var SingleConstituencyComponent = React.createClass( {
             : <tr>
                 <td className="col-md-5">{this.props.constituency.title}</td>
                 <td className="col-md-2">
-                    <button id="Edit Districts" type="button" className="btn btn-info"
+                    <button id="Edit_Districts" type="button" className="btn btn-info"
                         onClick={this.props.onEditDistrict( this.props.constituency )}>Redaguoti apylinkes
                     </button>
                 </td>
                 <td className="col-md-2">
-                    <button id="Candidates info" type="button" className="btn btn-info"
+                    <button id="Candidates_info" type="button" className="btn btn-info"
                         onClick={this.props.onCandidates( this.props.constituency )}>Kandidatai
                     </button>
                 </td>
                 <td className="col-md-2">
-                    <button id="Edit constituency" type="button" className="btn btn-warning" onClick={this.props.onEditConst}>Redaguoti
+                    <button id="Edit_constituency" type="button" className="btn btn-warning" onClick={this.props.onEditConst}>Redaguoti
                         apygardą
                     </button>
                 </td>
                 <td className="col-md-1">
-                    <button id="Delete constituency" type="button" className="btn btn-danger"
+                    <button id="Delete_constituency" type="button" className="btn btn-danger"
                         onClick={this.props.onDeleteConst( this.props.constituency )}>Trinti
                     </button>
                 </td>

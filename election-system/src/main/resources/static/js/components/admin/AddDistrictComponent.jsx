@@ -41,7 +41,7 @@ var AddDistrictComponent = React.createClass( {
                             </table>
                         </div>
                         <div className="col-md-2">
-                            <button id="Submit new district" className="btn btn-block btn-success" type="submit"
+                            <button id="Submit_new_district" className="btn btn-block btn-success" type="submit"
                                 onClick={( event ) => {
                                     var name = $( "#DistrictName" ).val();
                                     var matches1 = name.match( ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)" );
@@ -65,7 +65,7 @@ var AddDistrictComponent = React.createClass( {
 
                                 } }>Pridėti
                             </button>
-                            <button id="Cancel adding" className="btn btn-block btn-danger" type="submit"
+                            <button id="Cancel_Adding" className="btn btn-block btn-danger" type="submit"
                                 onClick={this.changeAddingState}>Atšaukti
                             </button>
                             <p></p>
@@ -76,7 +76,7 @@ var AddDistrictComponent = React.createClass( {
         } else {
             return (
                 <div>
-                    <button id="Add district" className="btn btn-block btn-success" type="submit"
+                    <button id="Add_District" className="btn btn-block btn-success" type="submit"
                         onClick={this.changeAddingState}>Pridėti apylinkę
                     </button>
                 </div> )
