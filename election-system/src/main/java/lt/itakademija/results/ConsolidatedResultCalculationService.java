@@ -16,11 +16,11 @@ import lt.itakademija.database.services.CandidatesService;
 public class ConsolidatedResultCalculationService {
 
     @Autowired
-    ResultMultiCalculationService multiService;
+    private ResultMultiCalculationService multiService;
     @Autowired
-    ResultSingleService singleService;
+    private ResultSingleService singleService;
     @Autowired
-    CandidatesService candidateService;
+    private CandidatesService candidateService;
 
     /*
      * returns List<Candidates> of single mandates winners
@@ -41,15 +41,31 @@ public class ConsolidatedResultCalculationService {
     }
 
     /*
-     * returns List of candidates which won mandates in proportional system 
+     * returns List of candidates that won mandates in proportional system
      */
     public List<Candidates> getMultiWinnerCandidates() {
         List<Candidates> singleCandidates = getWinningSingleCandidates();
         List<Candidates> multiWinners = new ArrayList<>();
         Map<Integer, Integer> partyResult = multiService.mandatesByParty();
         for (Entry<Integer, Integer> partyMandateCount : partyResult.entrySet()) {
-            // candidateService.findByPartyId(partyMandateCount.getKey());
             int numberMandates = partyMandateCount.getValue();
+<<<<<<< HEAD
+
+            for (Candidates partyCandidates : candidateService.findByPartyId(partyMandateCount.getKey())) {
+                while (numberMandates >= 1) {
+                    Candidates newAlsoPartyCandidate = candidateService.findByPartyAndSeat(partyMandateCount.getKey(),
+                            1);
+                    Candidates newPartyCandidate = candidateService.findByPartyAndSeat(partyMandateCount.getKey(),
+                            partyCandidates.getParty_list_seat() + 1);
+                    if (multiWinners.contains(partyCandidates) || singleCandidates.contains(partyCandidates)
+                            || multiWinners.contains(newAlsoPartyCandidate)) {
+                        multiWinners.add(newPartyCandidate);
+                        break;
+                    } else {
+                        multiWinners.add(newAlsoPartyCandidate);
+                        break;
+                    }                   
+=======
             while (numberMandates != 0) {
                 for (Candidates partyCandidates : candidateService.findByPartyId(partyMandateCount.getKey())) {
                     if (multiWinners.contains(partyCandidates) || singleCandidates.contains(partyCandidates)) {
@@ -60,18 +76,30 @@ public class ConsolidatedResultCalculationService {
                         multiWinners.add(partyCandidates);
                     }
                     numberMandates--;
+>>>>>>> 5829c51f60fd07285bc9c8f2547047d3f62c1f01
                 }
+                numberMandates--;
             }
         }
         return multiWinners;
     }
 
+<<<<<<< HEAD
+    /*
+     * returns list of winning candidates from both single and multi mandate
+     * systems
+     */
+=======
+>>>>>>> 5829c51f60fd07285bc9c8f2547047d3f62c1f01
     public List<Candidates> consolidatedWinner() {
         List<Candidates> winnersFinal = new ArrayList<>();
         winnersFinal.addAll(getWinningSingleCandidates());
         winnersFinal.addAll(getMultiWinnerCandidates());
         return winnersFinal;
     }
+<<<<<<< HEAD
+=======
 
+>>>>>>> 5829c51f60fd07285bc9c8f2547047d3f62c1f01
 
 }

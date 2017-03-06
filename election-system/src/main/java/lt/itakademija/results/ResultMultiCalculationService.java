@@ -61,6 +61,16 @@ public class ResultMultiCalculationService {
         return allResults;
     }
     /*
+     * returns integer - sum of all possible voters
+     */
+    public Integer allVotersPossible(){
+        long allPossible = 0;
+        for(Districts voters : distrep.findAll()){
+            allPossible += voters.getNumber_of_voters();
+        }
+        return (int) allPossible;
+    }
+    /*
      * returns map<party ID, percent of total votes cast>
      */
 
