@@ -54,7 +54,7 @@ var SinglePartyComponent = React.createClass( {
                     <button id="EditParty" type="button" className="btn btn-info" onClick={this.props.onEdit}>Redaguoti</button>
                 </td>
                 <td>
-                    <button id="DeleteParty" type="button" className="btn btn-danger"
+                    <button id="DeleteParty" type="button" className="btn btn-danger" data-toggle="confirmation"
                         onClick={this.props.onDeleteParty( this.props.party )}>Trinti
                     </button>
                 </td>
