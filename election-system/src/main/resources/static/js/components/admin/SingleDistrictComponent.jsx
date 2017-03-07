@@ -44,7 +44,7 @@ var SingleDistrictComponent = React.createClass( {
                     </button>
                 </td>
             </tr>
-            : <tr>
+            : <tr onMouseOver={this.props.onHover()} onMouseOut={this.props.onHover()} style={{backgroundColor: this.props.color}}>
                 <td className="col-md-3">{this.props.district.title}</td>
                 <td className="col-md-1">{this.props.district.number_of_voters}</td>
                 <td className="col-md-3">{this.props.district.address}</td>

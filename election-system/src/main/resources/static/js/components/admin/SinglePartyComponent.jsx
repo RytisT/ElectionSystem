@@ -42,7 +42,7 @@ var SinglePartyComponent = React.createClass( {
                     </button>
                 </td>
             </tr>
-            : <tr>
+            : <tr onMouseOver={this.props.onHover()} onMouseOut={this.props.onHover()} style={{backgroundColor: this.props.color}}>
                 <td>{this.props.party.id}</td>
                 <td>{this.props.party.party_Code}</td>
                 <td>{this.props.party.title}</td>

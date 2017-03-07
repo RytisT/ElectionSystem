@@ -27,11 +27,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SingleDistrictContainer.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/containers/admin/SingleDistrictContainer.jsx">
+      <file leaf-file-name="SingleConstituencyContainer.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/containers/admin/SingleConstituencyContainer.jsx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="370">
-              <caret line="42" column="40" lean-forward="false" selection-start-line="42" selection-start-column="40" selection-end-line="42" selection-end-column="40" />
+              <caret line="66" column="67" lean-forward="false" selection-start-line="66" selection-start-column="67" selection-end-line="66" selection-end-column="67" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SingleConstituencyComponent.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/admin/SingleConstituencyComponent.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="24" column="130" lean-forward="false" selection-start-line="24" selection-start-column="130" selection-end-line="24" selection-end-column="130" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SinglePartyComponent.jsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/admin/SinglePartyComponent.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="226">
+              <caret line="44" column="130" lean-forward="false" selection-start-line="44" selection-start-column="130" selection-end-line="44" selection-end-column="130" />
               <folding />
             </state>
           </provider>
@@ -40,18 +60,18 @@
       <file leaf-file-name="SinglePartyContainer.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/containers/admin/SinglePartyContainer.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="29" column="23" lean-forward="false" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
+            <state relative-caret-position="306">
+              <caret line="17" column="20" lean-forward="false" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SingleConstituencyContainer.jsx" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/containers/admin/SingleConstituencyContainer.jsx">
+      <file leaf-file-name="SingleDistrictContainer.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/containers/admin/SingleDistrictContainer.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="280">
-              <caret line="31" column="69" lean-forward="false" selection-start-line="31" selection-start-column="69" selection-end-line="31" selection-end-column="69" />
+            <state relative-caret-position="342">
+              <caret line="19" column="16" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="22" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -60,8 +80,8 @@
       <file leaf-file-name="SingleDistrictComponent.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/admin/SingleDistrictComponent.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="522">
-              <caret line="38" column="66" lean-forward="false" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="66" />
+            <state relative-caret-position="136">
+              <caret line="46" column="38" lean-forward="false" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="130" />
               <folding />
             </state>
           </provider>
@@ -129,7 +149,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/js/components/admin/AddDistrictComponent.jsx" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/components/admin/AdminComponent.jsx" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/components/admin/DistrictRepresentativeComponent.jsx" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/components/admin/SingleDistrictComponent.jsx" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/components/CandidatesSearchComponent.jsx" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/components/CandidatesComponent.jsx" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/containers/CandidatesContainer.jsx" />
@@ -151,16 +170,17 @@
         <option value="$PROJECT_DIR$/src/main/java/lt/itakademija/uploadCSV/FileSystemStorageService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/containers/admin/DistrictsContainer.jsx" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/components/admin/AddPartyComponent.jsx" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/components/admin/SingleConstituencyComponent.jsx" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/containers/admin/ConstituenciesContainer.jsx" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/components/admin/ConstituenciesComponent.jsx" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/components/admin/DistrictsComponent.jsx" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/containers/admin/SinglePartyContainer.jsx" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/components/admin/PartiesComponent.jsx" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/components/admin/SinglePartyComponent.jsx" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/containers/admin/PartiesContainer.jsx" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/components/admin/SingleDistrictComponent.jsx" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/containers/admin/SingleDistrictContainer.jsx" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/containers/admin/SingleConstituencyContainer.jsx" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/components/admin/SingleConstituencyComponent.jsx" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/containers/admin/SinglePartyContainer.jsx" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/components/admin/SinglePartyComponent.jsx" />
       </list>
     </option>
   </component>
@@ -1000,12 +1020,12 @@
       <workItem from="1488234858899" duration="14239000" />
       <workItem from="1488280606369" duration="43288000" />
       <workItem from="1488405105065" duration="1878000" />
-      <workItem from="1488836988540" duration="6861000" />
+      <workItem from="1488836988540" duration="9136000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="239099000" />
+    <option name="totallyTimeSpent" value="241374000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1018,7 +1038,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="25" width="1922" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1041,7 +1061,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3244397" sideWeight="0.49786553" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25667024" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25667024" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
@@ -1391,14 +1411,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/admin/SinglePartyComponent.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="57" column="57" lean-forward="false" selection-start-line="57" selection-start-column="57" selection-end-line="57" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/containers/admin/PartiesContainer.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -1423,42 +1435,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/containers/admin/SingleConstituencyContainer.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="66" column="67" lean-forward="false" selection-start-line="66" selection-start-column="67" selection-end-line="66" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/admin/SingleConstituencyComponent.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="51" column="65" lean-forward="false" selection-start-line="51" selection-start-column="65" selection-end-line="51" selection-end-column="65" />
+        <state relative-caret-position="432">
+          <caret line="24" column="130" lean-forward="false" selection-start-line="24" selection-start-column="130" selection-end-line="24" selection-end-column="130" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/containers/admin/SinglePartyContainer.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="29" column="23" lean-forward="false" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/admin/SingleDistrictComponent.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="38" column="66" lean-forward="false" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="66" />
+        <state relative-caret-position="306">
+          <caret line="17" column="20" lean-forward="false" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/containers/admin/SingleDistrictContainer.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="42" column="40" lean-forward="false" selection-start-line="42" selection-start-column="40" selection-end-line="42" selection-end-column="40" />
+        <state relative-caret-position="342">
+          <caret line="19" column="16" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="22" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/containers/admin/SingleConstituencyContainer.jsx">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/admin/SingleDistrictComponent.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="31" column="69" lean-forward="false" selection-start-line="31" selection-start-column="69" selection-end-line="31" selection-end-column="69" />
+        <state relative-caret-position="136">
+          <caret line="46" column="38" lean-forward="false" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="130" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/admin/SinglePartyComponent.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="44" column="130" lean-forward="false" selection-start-line="44" selection-start-column="130" selection-end-line="44" selection-end-column="130" />
           <folding />
         </state>
       </provider>

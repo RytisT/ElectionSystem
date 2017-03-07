@@ -2,6 +2,7 @@ var SingleConstituencyContainer = React.createClass( {
 
     getInitialState: function() {
         return {
+            bgColor: "white",
             isEditing: false,
             constituency: this.props.constituency,
             isChanged: false,
@@ -9,6 +10,14 @@ var SingleConstituencyContainer = React.createClass( {
         };
     },
 
+
+    handleHover: function () {
+        return function () {
+            this.state.bgColor == "white"
+                ? this.setState({bgColor: "#ffee91"})
+                : this.setState({bgColor: "white"})
+        }.bind(this)
+    },
 
     handleFieldChange: function( fieldName ) {
         return function( constituency ) {
@@ -54,6 +63,8 @@ var SingleConstituencyContainer = React.createClass( {
                                          onSaveConst={this.handleSaveConst}
                                          isEditing={this.state.isEditing}
                                          onCandidates={this.props.onCandidates}
+                                         color={this.state.bgColor}
+                                         onHover={this.handleHover}
                                          onFieldChange={this.handleFieldChange} />
         );
 
