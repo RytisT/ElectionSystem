@@ -6,11 +6,24 @@ var ConstituenciesContainer = React.createClass({
 
     getInitialState: function () {
         return {
+            searchQuery: "",
             constituency: {
                 title: ''
             },
             constituencies: []
         };
+    },
+
+    handleSearchQueryChange: function() {
+        return function( newQuery ) {
+            //validation
+            var val = $( "#SearchByTitle" ).val();
+            var matches = val.match( ".*([a-zA-ZąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)" );
+            if ( matches != null ) { $( "#DistrictSearchValidation" ).hide( "slow" ); }
+            else { $( "#DistrictSearchValidation" ).show( "slow" ); }
+
+            this.setState( { searchQuery: newQuery.target.value })
+        }.bind( this )
     },
 
     componentWillMount: function () {
@@ -25,13 +38,14 @@ var ConstituenciesContainer = React.createClass({
 
 
     handleDeleteConst: function (constituency) {
-        console.log("Trinu")
+        return function () {
+            console.log("Trinu")
             axios.delete('/api/constituencies/' + constituency.id)
                 .then(function (response) {
                     axios.get('/api/constituencies')
                         .then(function (response) {
-                            var tempConstituency = this.state.constituency;
-                            tempConstituency.title = "";
+                                var tempConstituency = this.state.constituency;
+                                tempConstituency.title = "";
                                 this.setState({
                                     constituencies: response.data,
                                     constituency: tempConstituency
@@ -40,6 +54,7 @@ var ConstituenciesContainer = React.createClass({
                             }.bind(this)
                         )
                 }.bind(this));
+        }.bind(this)
     },
 
     handleEditDistricts: function (constituency) {
@@ -93,6 +108,8 @@ var ConstituenciesContainer = React.createClass({
                                          onEditDistrict={this.handleEditDistricts}
                                          onDeleteConst={this.handleDeleteConst}
                                          onCandidates={this.handleCandidates}
+                                         onSearchQueryChange={this.handleSearchQueryChange}
+                                         searchQuery={this.state.searchQuery}
                 />
             </div>
         )

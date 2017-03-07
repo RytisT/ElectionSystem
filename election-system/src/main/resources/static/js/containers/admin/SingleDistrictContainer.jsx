@@ -33,12 +33,16 @@ var SingleDistrictContainer = React.createClass( {
 
         if ( this.state.isEditing ) {
             this.setState( { isEditing: false })
+            console.log(this.state.fieldContainer.title, this.state.fieldContainer.number_of_voters, this.state.fieldContainer.address)
             this.state.district.title = this.state.fieldContainer.title;
             this.state.district.number_of_voters = this.state.fieldContainer.number_of_voters;
             this.state.district.address = this.state.fieldContainer.address;
             this.forceUpdate()
         } else {
             this.setState( { isEditing: true })
+            this.state.fieldContainer.title = this.state.district.title;
+            this.state.fieldContainer.number_of_voters = this.state.district.number_of_voters;
+            this.state.fieldContainer.address = this.state.district.address;
         }
 
     },

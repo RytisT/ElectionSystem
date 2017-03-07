@@ -4,9 +4,9 @@ var SingleConstituencyComponent = React.createClass( {
         return this.props.isEditing
             ? <tr>
                 <td className="col-md-5"><input id="ConstituencyName" className="form-control" size="3"
-                    placeholder="Įveskite Apygardos pavadinimą"
-                    value={this.props.constituency.title}
-                    onChange={this.props.onFieldChange( 'title' )} type="text" /><br />
+                                                placeholder="Įveskite Apygardos pavadinimą"
+                                                value={this.props.constituency.title}
+                                                onChange={this.props.onFieldChange( 'title' )} type="text" /><br />
                     <div id="ConstituencyNameValidation" className="validationForm">
                         <span> naudojami netinkami simboliai. </span></div></td>
                 <td className="col-md-2"></td>
@@ -18,7 +18,7 @@ var SingleConstituencyComponent = React.createClass( {
                 </td>
                 <td className="col-md-1">
                     <button id="Delete_Constituency" type="button" className="btn btn-danger"
-                        onClick={this.props.onDeleteConst( this.props.constituency )}>Trinti
+                            onClick={this.props.onDeleteConst( this.props.constituency )}>Trinti
                     </button>
                 </td>
             </tr>
@@ -26,12 +26,12 @@ var SingleConstituencyComponent = React.createClass( {
                 <td className="col-md-5">{this.props.constituency.title}</td>
                 <td className="col-md-2">
                     <button id="Edit_Districts" type="button" className="btn btn-info"
-                        onClick={this.props.onEditDistrict( this.props.constituency )}>Redaguoti apylinkes
+                            onClick={this.props.onEditDistrict( this.props.constituency )}>Redaguoti apylinkes
                     </button>
                 </td>
                 <td className="col-md-2">
                     <button id="Candidates_info" type="button" className="btn btn-info"
-                        onClick={this.props.onCandidates( this.props.constituency )}>Kandidatai
+                            onClick={this.props.onCandidates( this.props.constituency )}>Kandidatai
                     </button>
                 </td>
                 <td className="col-md-2">
@@ -40,16 +40,8 @@ var SingleConstituencyComponent = React.createClass( {
                     </button>
                 </td>
                 <td className="col-md-1">
-<<<<<<< HEAD
-                    <button id="Delete constituency" type="button" className="btn btn-danger"
-                            onClick={( _event ) => {
-                                event.preventDefault();
-                                this.props.onDeleteConst(this.props.constituency)
-                            }}>Trinti
-=======
                     <button id="Delete_constituency" type="button" className="btn btn-danger"
-                        onClick={this.props.onDeleteConst( this.props.constituency )}>Trinti
->>>>>>> c2d08959b56577bf8ef28e706200aae820d652e9
+                            onClick={this.props.onDeleteConst( this.props.constituency )}>Trinti
                     </button>
                 </td>
             </tr>
