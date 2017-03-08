@@ -30,7 +30,7 @@ var AddConstituencyComponent = React.createClass( {
                                     <td className="col-md-2">
                                         <button id="SubmitConstituency" className="btn btn-block btn-success" type="submit"
                                             onClick={( event ) => {
-
+                                                event.preventDefault();
                                                 var val = $( "#ConstituencyName" ).val();
                                                 var matches = val.match( ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)" );
                                                 if ( matches != null ) {

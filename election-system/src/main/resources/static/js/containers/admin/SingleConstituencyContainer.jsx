@@ -29,6 +29,7 @@ var SingleConstituencyContainer = React.createClass( {
             this.forceUpdate()
         } else {
             this.setState( { isEditing: true })
+            this.state.fieldContainer = this.state.constituency.title;
         }
 
     },
@@ -41,19 +42,19 @@ var SingleConstituencyContainer = React.createClass( {
             axios.post( '/api/constituencies', this.state.constituency )
                 .then( this.setState( { isEditing: false }) )
         }
-        else { $( '#ConstituencyNameValidation' ).hide( "slow" ); $( '#ConstituencyNameValidation' ).show( "slow" ) }       
+        else { $( '#ConstituencyNameValidation' ).hide( "slow" ); $( '#ConstituencyNameValidation' ).show( "slow" ) }
     },
 
     render: function() {
         return (
             <SingleConstituencyComponent constituency={this.props.constituency}
-                onEditDistrict={this.props.onEditDistrict}
-                onEditConst={this.handleEditConst}
-                onDeleteConst={this.props.onDeleteConst}
-                onSaveConst={this.handleSaveConst}
-                isEditing={this.state.isEditing}
-                onCandidates={this.props.onCandidates}
-                onFieldChange={this.handleFieldChange} />
+                                         onEditDistrict={this.props.onEditDistrict}
+                                         onEditConst={this.handleEditConst}
+                                         onDeleteConst={this.props.onDeleteConst}
+                                         onSaveConst={this.handleSaveConst}
+                                         isEditing={this.state.isEditing}
+                                         onCandidates={this.props.onCandidates}
+                                         onFieldChange={this.handleFieldChange} />
         );
 
 
