@@ -28,7 +28,7 @@ var SingleVotesComponent = React.createClass({
 
     render: function () {
         var self = this;
-        var candidatesList = this.props.candidates.map(function (candidate, index) {
+        var candidatesList = this.props.constituency.map(function (candidate, index) {
 
             return (
 
@@ -71,6 +71,7 @@ var SingleVotesComponent = React.createClass({
                             <th>Suskaičiuota vienmandatės biuletenių:</th>
                             <th>
                                 <input
+                                    id="DistrictVotedSingle"
                                     className="form-control"
                                     placeholder="0"
                                     type="text"

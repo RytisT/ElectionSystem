@@ -27,12 +27,10 @@ var styles = {
 var MultiVotesComponent = React.createClass({
 
     render: function () {
-        var self = this;
         var partiesList = this.props.parties.map(function (party, index) {
 
             return (
-
-                <tr id="partiesList" key={index}>
+                 <tr id="partiesList" key={index}>
                     <td></td>
                     <td>{party.party_Code}</td>
                     <td>{party.title}</td>
