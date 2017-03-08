@@ -71,6 +71,20 @@ public class Districts {
     @Column(name = "VOTED_MULTI_TIME")
     private Date votedMultiTime;
 
+    @Column(name = "SINGLE_VOTE_ACTIVE")
+    private Boolean singleVoteActive;
+
+    public Boolean getMultiVoteActive() {
+        return multiVoteActive;
+    }
+
+    public void setMultiVoteActive(Boolean multiVoteActive) {
+        this.multiVoteActive = multiVoteActive;
+    }
+
+    @Column(name = "MULTI_VOTE_ACTIVE")
+    private Boolean multiVoteActive = true;
+
 
     @OneToOne(cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn

@@ -4,6 +4,11 @@ body {
     margin: 0;
 }
 
+#headerLogo {
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
 h1, h2, p, ul, li {
     font-family: Helvetica, Arial, sans-serif;
 }
@@ -30,6 +35,17 @@ ul.header li a {
     text-decoration: none;
     padding: 20px;
     display: inline-block;
+}
+
+.footer-bottom {
+    background-color: #111;
+    min-height: 30px;
+}
+.copyright {
+    color: #fff;
+    line-height: 30px;
+    min-height: 30px;
+    padding: 7px 0;
 }
 
 .content {
