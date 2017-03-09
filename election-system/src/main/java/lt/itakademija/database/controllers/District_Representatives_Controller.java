@@ -3,6 +3,7 @@
  */
 package lt.itakademija.database.controllers;
 
+import lt.itakademija.database.models.Districts;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -46,6 +47,11 @@ public class District_Representatives_Controller {
     @GetMapping(value = "/{id}")
     public District_Representatives findById(@PathVariable("id") Integer id) {
         return service.findById(id);
+    }
+
+    @GetMapping(value = "/login/{loginName}")
+    public Districts findByLogin(@PathVariable("loginName") String loginName) {
+        return service.findByLoginName(loginName);
     }
 
 

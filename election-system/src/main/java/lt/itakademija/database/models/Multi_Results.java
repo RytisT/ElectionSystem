@@ -12,7 +12,6 @@ import javax.persistence.Table;
 public class Multi_Results {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     private Integer id;
 

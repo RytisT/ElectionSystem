@@ -26,7 +26,7 @@ var routes = (
                 <Route path="/party/description/:partyId" component={PartyDescriptionContainer} />
                 <Route path="/partymember/description/:candidateId" component={MemberDescriptionContainer} />
                 <Route path="/candidate/description/:candidateId" component={CandidateDescriptionContainer} />
-                <Route path="/Representatives" component={SubmitVotesContainer} />
+                <Route path="/Representatives/:repLogin" component={SubmitVotesContainer} />
                 <Route path="/login" component={LoginPageContainer} />
                 <Route path="/replogin" component={LoginRepPageContainer} />
             </Route>

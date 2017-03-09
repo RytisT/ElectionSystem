@@ -6,6 +6,7 @@ package lt.itakademija.database.services;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import lt.itakademija.database.repositories.DistrictsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,6 +25,9 @@ public class District_Representatives_Service {
     @Autowired
     private District_Representatives_Repository repository;
 
+    @Autowired
+    private DistrictsRepository districtsRepository;
+
     public List<District_Representatives> findAll() {
         return repository.findAll();
     }
@@ -38,5 +42,9 @@ public class District_Representatives_Service {
 
     public District_Representatives findById(Integer id) {
         return repository.findOne(id);
+    }
+
+    public Districts findByLoginName(String loginName) {
+        return districtsRepository.findOne(repository.findByLoginName(loginName).getDistrict_id());
     }
 }

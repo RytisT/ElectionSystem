@@ -20,10 +20,16 @@ var ResultsComponent = React.createClass( {
                 var year = votedMultiDate.getFullYear();
                 var month = votedMultiDate.getMonth() + 1;
                 var date = votedMultiDate.getDate();
-                var hour = votedMultiDate.getHours();
+                if (votedMultiDate.getHours() < 10) {
+                    var hour = "0" + votedMultiDate.getHours();
+                } else {
+                    var hour = votedMultiDate.getHours();
+                }
+                var minutes = "0" + votedSingleDate.getMinutes();
+                var seconds = "0" + votedSingleDate.getSeconds();
                 if ( month < 10 ) { month = '0' + month; }
                 if ( date < 10 ) { date = '0' + date; }
-                var multiDate = year + '-' + month + '-' + date + '-' + hour;
+                var multiDate = year + '-' + month + '-' + date + " " + hour + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
 
                 console.log(index);
                 return (

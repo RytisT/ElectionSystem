@@ -26,29 +26,36 @@ var styles = {
 
 var MultiVotesComponent = React.createClass({
 
+    propTypes: {
+        parties: React.PropTypes.array.isRequired,
+        votes: React.PropTypes.array.isRequired
+    },
+
+
     render: function () {
-        var self = this;
         var partiesList = this.props.parties.map(function (party, index) {
 
-            return (
 
-                <tr id="partiesList" key={index}>
+            return (
+                 <tr id="partiesList" key={index}>
                     <td></td>
                     <td>{party.party_Code}</td>
                     <td>{party.title}</td>
                     <td>
                         <input
                             className="form-control"
-                            placeholder="0"
-                            type="text"
+                            placeholder="Įvesktie surinktų balsų skaičių"
+                            value={this.props.votes[party.id].m_votes}
+                              onChange={this.props.onVotesChange(party.id)}
+                            type="number"
                         />
                     </td>
                 </tr>
             );
-        });
+        }.bind(this));
 
-        return (
-            <div className="">
+        return !this.props.activeState
+            ?<div className="">
                 <h2 style={styles.blue}> Daugiamandatininkų rezultatų suvedimas </h2>
                 <div style={styles.line}></div>
                 <div className="panel panel-default" style={styles.marginTop} id="Table">
@@ -72,8 +79,10 @@ var MultiVotesComponent = React.createClass({
                             <th>
                                 <input
                                     className="form-control"
-                                    placeholder="0"
-                                    type="text"
+                                    placeholder="Įveskite biuletenių skaičių"
+                                    type="number"
+                                    value={this.props.district.votedMulti ? this.props.district.votedMulti : ""}
+                                    onChange={this.props.onTotalVotesChange("votedMulti")}
                                 />
                             </th>
                         </tr>
@@ -82,22 +91,25 @@ var MultiVotesComponent = React.createClass({
                             <th>
                                 <input
                                     className="form-control"
-                                    placeholder="0"
-                                    type="text"
+                                    placeholder="Įveskite sugadintų biuletenių skaičių"
+                                    type="number"
+                                    value={this.props.district.votedMultiCorrupt ? this.props.district.votedMultiCorrupt : ""}
+                                    onChange={this.props.onTotalVotesChange("votedMultiCorrupt")}
                                 />
                             </th>
                         </tr>
                         </thead>
                     </table>
-                    <button className="btn btn-block btn-success" type="submit">
+                    <button className="btn btn-block btn-success" type="submit" onClick={this.props.onSubmit(event)}>
                         Patvirtinti partijų surinktus balsus ir biuletenių skaičių
                     </button>
                 </div>
                 <p>&nbsp;</p>
                 <p>&nbsp;</p>
             </div>
-        )
+        : <div className="alert alert-success" role="alert">Daugiamandatininkų rezultatai užregistuoti sėkmingai!</div>
     }
 });
+
 
 window.MultiVotesComponent = MultiVotesComponent;

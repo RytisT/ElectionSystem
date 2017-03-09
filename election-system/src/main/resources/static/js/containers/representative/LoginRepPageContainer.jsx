@@ -12,7 +12,7 @@ var LoginRepPageContainer = React.createClass( {
         if ( matchesp != null ) { $( '#UserPassValidation' ).hide( "slow" ) }
         else { $( '#UserPassValidation' ).show( "slow" ) }
 
-        if ( matches != null && matchesp != null ) { this.context.router.push( '/representatives') };
+        if ( matches != null && matchesp != null ) { this.context.router.push( '/representatives/' + val) };
     },
 
     // Cancel 
