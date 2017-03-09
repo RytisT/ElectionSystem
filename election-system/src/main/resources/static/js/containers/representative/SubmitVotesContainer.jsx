@@ -22,7 +22,7 @@ var SubmitVotesContainer = React.createClass({
                 <div>
                     <DistrictInfoComponent district={this.state.district}/>
                     <MultiVotesContainer district={this.state.district}/>
-                    <SingleVotesContainer constId={this.state.district.constituency_id}/>
+                    <SingleVotesContainer district={this.state.district} constId={this.state.district.constituency_id}/>
                 </div>
             )
         } else {

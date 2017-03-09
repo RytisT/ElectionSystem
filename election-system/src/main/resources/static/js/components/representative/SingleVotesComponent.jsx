@@ -39,16 +39,18 @@ var SingleVotesComponent = React.createClass({
                     <td>
                         <input
                             className="form-control"
-                            placeholder="0"
-                            type="text"
+                            placeholder="Įvesktie surinktų balsų skaičių"
+                            value={this.props.votes[candidate.id].votes}
+                            onChange={this.props.onVotesChange(candidate.id)}
+                            type="number"
                         />
                     </td>
                 </tr>
             );
-        });
+        }.bind(this));
 
-        return (
-            <div className="">
+        return !this.props.activeState
+            ? <div className="">
                 <h2 style={styles.blue}> Vienmandatininkų rezultatų suvedimas </h2>
                 <div style={styles.line}></div>
                 <div className="panel panel-default" style={styles.marginTop} id="Table">
@@ -75,6 +77,8 @@ var SingleVotesComponent = React.createClass({
                                     className="form-control"
                                     placeholder="0"
                                     type="text"
+                                    value={this.props.district.votedSingle ? this.props.district.votedSingle : ""}
+                                    onChange={this.props.onTotalVotesChange("votedSingle")}
                                 />
                             </th>
                         </tr>
@@ -85,19 +89,21 @@ var SingleVotesComponent = React.createClass({
                                     className="form-control"
                                     placeholder="0"
                                     type="text"
+                                    value={this.props.district.votedSingleCorrupt ? this.props.district.votedSingleCorrupt : ""}
+                                    onChange={this.props.onTotalVotesChange("votedSingleCorrupt")}
                                 />
                             </th>
                         </tr>
                         </thead>
                     </table>
-                    <button className="btn btn-block btn-success" type="submit">
+                    <button className="btn btn-block btn-success" type="submit" onClick={this.props.onSubmit(event)}>
                         Patvirtinti kandidatų surinktus balsus ir biuletenių skaičių
                     </button>
                 </div>
                 <p>&nbsp;</p>
                 <p>&nbsp;</p>
             </div>
-        )
+            : <div className="alert alert-success" role="alert">Vienmandatininkų rezultatai užregistuoti sėkmingai!</div>
     }
 });
 

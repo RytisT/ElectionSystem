@@ -22,8 +22,8 @@
       <file leaf-file-name="SubmitVotesContainer.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/containers/representative/SubmitVotesContainer.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="31" lean-forward="false" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+            <state relative-caret-position="365">
+              <caret line="24" column="73" lean-forward="false" selection-start-line="24" selection-start-column="73" selection-end-line="24" selection-end-column="73" />
               <folding />
             </state>
           </provider>
@@ -32,28 +32,58 @@
       <file leaf-file-name="MultiVotesContainer.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/containers/representative/MultiVotesContainer.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="563">
-              <caret line="83" column="37" lean-forward="false" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="37" />
+            <state relative-caret-position="317">
+              <caret line="120" column="59" lean-forward="false" selection-start-line="114" selection-start-column="37" selection-end-line="120" selection-end-column="65" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MultiVotesComponent.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MultiVotesComponent.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/representative/MultiVotesComponent.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
-              <caret line="109" column="24" lean-forward="false" selection-start-line="109" selection-start-column="24" selection-end-line="109" selection-end-column="24" />
+            <state relative-caret-position="275">
+              <caret line="104" column="116" lean-forward="false" selection-start-line="104" selection-start-column="80" selection-end-line="104" selection-end-column="116" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Districts.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/lt/itakademija/database/models/Districts.java">
+      <file leaf-file-name="SingleVotesContainer.jsx" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/containers/representative/SingleVotesContainer.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="534">
-              <caret line="65" column="37" lean-forward="false" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="37" />
+            <state relative-caret-position="198">
+              <caret line="56" column="39" lean-forward="false" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SingleVotesComponent.jsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/representative/SingleVotesComponent.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="347">
+              <caret line="98" column="105" lean-forward="false" selection-start-line="98" selection-start-column="105" selection-end-line="98" selection-end-column="105" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Single_Results.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/lt/itakademija/database/models/Single_Results.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="22" column="28" lean-forward="true" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Constituency.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/lt/itakademija/database/models/Constituency.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="667">
+              <caret line="81" column="33" lean-forward="false" selection-start-line="81" selection-start-column="33" selection-end-line="81" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -91,8 +121,8 @@
       <find>console</find>
       <find>this.state</find>
       <find>getMultiV</find>
-      <find>cons</find>
       <find>consol</find>
+      <find>cons</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -144,19 +174,19 @@
         <option value="$PROJECT_DIR$/src/main/java/lt/itakademija/database/repositories/District_Representatives_Repository.java" />
         <option value="$PROJECT_DIR$/src/main/java/lt/itakademija/database/services/District_Representatives_Service.java" />
         <option value="$PROJECT_DIR$/src/main/java/lt/itakademija/database/controllers/District_Representatives_Controller.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/components/representative/DistrictInfoComponent.jsx" />
         <option value="$PROJECT_DIR$/src/main/resources/static/index.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/components/representative/SingleVotesComponent.jsx" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/containers/representative/SingleVotesContainer.jsx" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/containers/admin/DistrictsContainer.jsx" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/containers/representative/SubmitVotesContainer.jsx" />
         <option value="$PROJECT_DIR$/src/main/java/lt/itakademija/database/models/Districts.java" />
         <option value="$PROJECT_DIR$/src/main/java/lt/itakademija/database/models/Multi_Results.java" />
         <option value="$PROJECT_DIR$/src/main/java/lt/itakademija/database/services/Multi_Results_Service.java" />
         <option value="$PROJECT_DIR$/src/main/java/lt/itakademija/database/repositories/Multi_Results_Repository.java" />
         <option value="$PROJECT_DIR$/src/main/java/lt/itakademija/database/controllers/Multi_Results_Controller.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/containers/representative/MultiVotesContainer.jsx" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/components/representative/MultiVotesComponent.jsx" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/components/representative/DistrictInfoComponent.jsx" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/containers/representative/MultiVotesContainer.jsx" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/containers/representative/SubmitVotesContainer.jsx" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/containers/representative/SingleVotesContainer.jsx" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/components/representative/SingleVotesComponent.jsx" />
       </list>
     </option>
   </component>
@@ -167,8 +197,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="337" />
-    <option name="y" value="126" />
+    <option name="x" value="-20" />
+    <option name="y" value="29" />
     <option name="width" value="1914" />
     <option name="height" value="1051" />
   </component>
@@ -1173,15 +1203,15 @@
       <workItem from="1488280606369" duration="43288000" />
       <workItem from="1488405105065" duration="1878000" />
       <workItem from="1488836988540" duration="27547000" />
-      <workItem from="1489002096639" duration="49016000" />
+      <workItem from="1489002096639" duration="53780000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="308801000" />
+    <option name="totallyTimeSpent" value="313565000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="337" y="126" width="1914" height="1051" extended-state="0" />
+    <frame x="-20" y="29" width="1914" height="1051" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1232,22 +1262,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/containers/admin/SingleConstituencyContainer.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="66" column="67" lean-forward="false" selection-start-line="66" selection-start-column="67" selection-end-line="66" selection-end-column="67" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lt/itakademija/results/ResultSingleService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1116">
-          <caret line="70" column="15" lean-forward="true" selection-start-line="70" selection-start-column="15" selection-end-line="70" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/lt/itakademija/results/ResultsController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -1277,14 +1291,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/lt/itakademija/database/models/Results.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/lt/itakademija/database/models/Single_Results.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="10" column="21" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/images/back1.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -1430,14 +1436,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/representative/DistrictInfoComponent.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="38" column="141" lean-forward="false" selection-start-line="38" selection-start-column="141" selection-end-line="38" selection-end-column="141" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="324">
@@ -1450,22 +1448,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/containers/representative/SingleVotesContainer.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/representative/SingleVotesComponent.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="59" column="36" lean-forward="true" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -1603,26 +1585,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/representative/DistrictInfoComponent.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="30" column="28" lean-forward="false" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lt/itakademija/database/repositories/Constituencies.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lt/itakademija/database/models/Constituency.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="667">
+          <caret line="81" column="33" lean-forward="false" selection-start-line="81" selection-start-column="33" selection-end-line="81" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lt/itakademija/database/models/Single_Results.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="22" column="28" lean-forward="true" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/containers/representative/SubmitVotesContainer.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="31" lean-forward="false" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+        <state relative-caret-position="365">
+          <caret line="24" column="73" lean-forward="false" selection-start-line="24" selection-start-column="73" selection-end-line="24" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/containers/representative/SingleVotesContainer.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="56" column="39" lean-forward="false" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/containers/representative/MultiVotesContainer.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="563">
-          <caret line="83" column="37" lean-forward="false" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="37" />
+        <state relative-caret-position="317">
+          <caret line="120" column="59" lean-forward="false" selection-start-line="114" selection-start-column="37" selection-end-line="120" selection-end-column="65" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/representative/MultiVotesComponent.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
-          <caret line="109" column="24" lean-forward="false" selection-start-line="109" selection-start-column="24" selection-end-line="109" selection-end-column="24" />
+        <state relative-caret-position="275">
+          <caret line="104" column="116" lean-forward="false" selection-start-line="104" selection-start-column="80" selection-end-line="104" selection-end-column="116" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/representative/SingleVotesComponent.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="98" column="105" lean-forward="false" selection-start-line="98" selection-start-column="105" selection-end-line="98" selection-end-column="105" />
           <folding />
         </state>
       </provider>

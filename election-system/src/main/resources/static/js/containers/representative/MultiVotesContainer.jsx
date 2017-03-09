@@ -18,13 +18,18 @@ var MultiVotesContainer = React.createClass({
             var votesCount = votes.target.value;
             var tempVotes = this.state.votes;
 
-            tempVotes[partyId] = {districts_id: this.props.district.id,
-                party_id: partyId,
-                id: Number(this.props.district.id.toString() + partyId.toString()),
-                m_votes: votesCount
-            };
+            if(votesCount <= this.props.district.number_of_voters) {
+                tempVotes[partyId] = {
+                    districts_id: this.props.district.id,
+                    party_id: partyId,
+                    id: Number(this.props.district.id.toString() + partyId.toString()),
+                    m_votes: votesCount
+                };
 
-            this.setState({votes: tempVotes})
+                this.setState({votes: tempVotes})
+            } else {
+                console.log("klaida! klaida! klaida! per daug vedi!")
+            }
 
         }.bind( this );
     },
@@ -55,6 +60,7 @@ var MultiVotesContainer = React.createClass({
             if (this.props.district.votedMulti == votesEntered) {
 
                 this.state.district.multiVoteActive = true;
+                this.state.district.votedMultiTime = Date.now();
                 axios.post("api/districts", this.state.district);
                 this.state.votes.map(function (vote, index) {
                     axios.post("api/multi_results", vote)
@@ -105,7 +111,6 @@ var MultiVotesContainer = React.createClass({
     },
 
     render: function () {
-        console.log(this.state.votes)
         return (
                 <MultiVotesComponent parties={this.state.parties}
                                      onVotesChange={this.handleVotesChange}

@@ -27,7 +27,6 @@ var styles = {
 var DistrictInfoComponent = React.createClass({
 
     render: function () {
-        console.log(this.props.district.district_representatives)
         return (
             <div className="">
                 <h2 style={styles.blue}> Apylinkės informacija </h2>

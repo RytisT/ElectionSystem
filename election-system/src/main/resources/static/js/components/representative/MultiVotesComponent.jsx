@@ -26,6 +26,8 @@ var styles = {
 
 var MultiVotesComponent = React.createClass({
 
+
+
     propTypes: {
         parties: React.PropTypes.array.isRequired,
         votes: React.PropTypes.array.isRequired
