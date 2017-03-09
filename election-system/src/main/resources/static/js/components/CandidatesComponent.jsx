@@ -88,11 +88,11 @@ var CandidatesComponent = React.createClass( {
                 <div style={styles.line}></div>
                 <div> </div>
 
-                <div className="panel panel-default">
-                    <div className="panel-heading"><label htmlFor="basic-url">Ieškoti kandidato: </label></div>
+                <div className="panel panel-default">                   
                     <div className=" panel-body input-group">
-                        <span className="input-group-addon" id="basic-addon3">Kandidato vardas ar pavardė: </span>
-                        <input type="text" className="form-control" id="SearchCandidate" maxLength="50"
+                
+                        <span className="input-group-addon" id="basic-addon3">Kandidato paieška: </span>
+                        <input type="text" className="form-control" id="SearchCandidate" placeholder="Įveskite vardą / pavardę" maxLength="85"
                             onChange={this.props.onSearchQueryChange( this.props.searchQuery )} />
                     </div>
                     <div id="CandidateSearchValidation" className="validationForm"><span>Naudojami netinkami simboliai.</span></div>
@@ -130,6 +130,7 @@ var CandidatesComponent = React.createClass( {
     }
 });
 
+//<div className="panel-heading"><label htmlFor="basic-url">Ieškoti kandidato: </label></div>
 /* papildomas add mygtukas i tuscia div 
  * 
  * <button id="CandidateAdd" className="btn btn-block btn-success" type="submit"

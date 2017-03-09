@@ -1,6 +1,6 @@
 #FileLock
-#Wed Mar 08 11:36:39 EET 2017
-hostName=A2D2
-id=15aad46f460bc308589f4fd88c1b594eb0f11fab603
+#Thu Mar 09 17:21:14 EET 2017
+hostName=LAPTOP-J2JJOSIS
+id=15ab3a8e38f5520d938bcc7820ca9b25a7711f2a834
 method=file
-server=192.168.56.1\:63850
+server=192.168.1.66\:62820
