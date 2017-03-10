@@ -22,7 +22,7 @@ var SingleConstituencyComponent = React.createClass( {
                     </button>
                 </td>
             </tr>
-            : <tr>
+            : <tr onMouseOver={this.props.onHover()} onMouseOut={this.props.onHover()} style={{backgroundColor: this.props.color}}>
                 <td className="col-md-5">{this.props.constituency.title}</td>
                 <td className="col-md-2">
                     <button id="Edit_Districts" type="button" className="btn btn-info"

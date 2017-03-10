@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 import lt.itakademija.database.models.Multi_Results;
 import lt.itakademija.database.services.Multi_Results_Service;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin
 @RequestMapping(value = "/api/multi_results")
@@ -39,6 +41,11 @@ public class Multi_Results_Controller {
     @GetMapping(value = "/{id}")
     public Multi_Results findMulti_ResultsById(@PathVariable("id") Integer id) {
         return service.findById(id);
+    }
+
+    @GetMapping(value = "/district/{districts_id}")
+    public List<Multi_Results> findMulti_ResultsByDistrictId(@PathVariable("districts_id") Integer districts_id) {
+        return service.findByDistrictId(districts_id);
     }
 
 }

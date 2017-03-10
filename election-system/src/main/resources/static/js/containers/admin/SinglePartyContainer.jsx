@@ -2,6 +2,7 @@ var SinglePartyContainer = React.createClass( {
 
     getInitialState: function() {
         return {
+            bgColor: "white",
             isEditing: false,
             party: this.props.party,
             isChanged: false,
@@ -13,6 +14,13 @@ var SinglePartyContainer = React.createClass( {
         };
     },
 
+    handleHover: function () {
+        return function () {
+            this.state.bgColor == "white"
+                ? this.setState({bgColor: "#ffee91"})
+                : this.setState({bgColor: "white"})
+        }.bind(this)
+    },
 
     handleFieldChange: function( fieldName ) {
         return function( party ) {
@@ -74,6 +82,8 @@ var SinglePartyContainer = React.createClass( {
                 onFieldChange={this.handleFieldChange}
                 onDeleteParty={this.props.onDeleteParty}
                 onCandidates={this.props.onCandidates}
+                                  color={this.state.bgColor}
+                                  onHover={this.handleHover}
                 onEdit={this.handleEditParty} />
         )
     }

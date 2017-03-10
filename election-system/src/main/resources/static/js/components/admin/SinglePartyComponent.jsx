@@ -42,7 +42,7 @@ var SinglePartyComponent = React.createClass( {
                     </button>
                 </td>
             </tr>
-            : <tr>
+            : <tr onMouseOver={this.props.onHover()} onMouseOut={this.props.onHover()} style={{backgroundColor: this.props.color}}>
                 <td>{this.props.party.id}</td>
                 <td>{this.props.party.party_Code}</td>
                 <td>{this.props.party.title}</td>
@@ -54,7 +54,7 @@ var SinglePartyComponent = React.createClass( {
                     <button id="EditParty" type="button" className="btn btn-info" onClick={this.props.onEdit}>Redaguoti</button>
                 </td>
                 <td>
-                    <button id="DeleteParty" type="button" className="btn btn-danger"
+                    <button id="DeleteParty" type="button" className="btn btn-danger" data-toggle="confirmation"
                         onClick={this.props.onDeleteParty( this.props.party )}>Trinti
                     </button>
                 </td>

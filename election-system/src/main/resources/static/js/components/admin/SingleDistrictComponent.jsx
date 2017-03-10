@@ -5,7 +5,7 @@ var SingleDistrictComponent = React.createClass( {
 
         return this.props.isEditing
 
-            ? <tr>
+            ? <tr onMouseOver={this.props.onHover()} onMouseOut={this.props.onHover()} style={{backgroundColor: this.props.color}}>
                 <td className="col-md-3"><input id="District_name" className="form-control" size="3"
                     placeholder="Apylinkės pavadinimas"
                     value={this.props.district.title} maxLength="30"
@@ -44,7 +44,7 @@ var SingleDistrictComponent = React.createClass( {
                     </button>
                 </td>
             </tr>
-            : <tr>
+            : <tr onMouseOver={this.props.onHover()} onMouseOut={this.props.onHover()} style={{backgroundColor: this.props.color}}>
                 <td className="col-md-3">{this.props.district.title}</td>
                 <td className="col-md-1">{this.props.district.number_of_voters}</td>
                 <td className="col-md-3">{this.props.district.address}</td>

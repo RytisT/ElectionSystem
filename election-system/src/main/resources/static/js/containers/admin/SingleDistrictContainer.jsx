@@ -2,6 +2,7 @@ var SingleDistrictContainer = React.createClass( {
 
     getInitialState: function() {
         return {
+            bgColor: "white",
             isEditing: false,
             district: this.props.district,
             isChanged: false,
@@ -13,6 +14,13 @@ var SingleDistrictContainer = React.createClass( {
         };
     },
 
+    handleHover: function () {
+        return function () {
+            this.state.bgColor == "white"
+            ? this.setState({bgColor: "#ffee91"})
+                : this.setState({bgColor: "white"})
+        }.bind(this)
+    },
 
     handleFieldChange: function( fieldName ) {
         return function( district ) {
@@ -75,11 +83,13 @@ var SingleDistrictContainer = React.createClass( {
     render: function() {
         return (
             <SingleDistrictComponent district={this.props.district}
+                                     color={this.state.bgColor}
+                                     onHover={this.handleHover}
                 onDelete={this.props.onDelete}
                 onEditDist={this.handleEditDist}
                 onSaveDist={this.handleSaveDist}
                 isEditing={this.state.isEditing}
-                onFieldChange={this.handleFieldChange} />
+                onFieldChange={this.handleFieldChange}/>
         )
     }
 });
