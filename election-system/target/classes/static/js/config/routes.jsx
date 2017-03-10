@@ -29,10 +29,6 @@ var routes = (
                 <Route path="/Representatives/:repLogin" component={SubmitVotesContainer} />
                 <Route path="/login" component={LoginPageContainer} />
                 <Route path="/replogin" component={LoginRepPageContainer} />
-                <Route path="/results/constituencies" component={ResultsConstituenciesContainer} />
-                <Route path="/results/constituencies/info/:constituencyId" component={ResultsConstituenciesInfoContainer} />
-                <Route path="/results/districts/:constituencyId" component={ResultsDistrictsContainer} />
-
             </Route>
         </Router>
     </Router>

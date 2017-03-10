@@ -81,7 +81,7 @@ public class Districts {
     }
 
     @Column(name = "SINGLE_VOTE_ACTIVE")
-    private Boolean singleVoteActive = false;
+    private Boolean singleVoteActive;
 
 
     public Boolean getMultiVoteActive() {
