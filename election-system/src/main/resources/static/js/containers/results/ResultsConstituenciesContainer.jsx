@@ -29,7 +29,9 @@ var ResultsConstituenciesContainer = React.createClass({
 
     handleResultsDistricts: function (constituency) {
         return function () {
-            this.context.router.push("/results/districts/" + constituency.id);
+            this.context.router.push({
+                pathname: '/results/districts/' + constituency.id
+            });
         }.bind(this)
     },
 
