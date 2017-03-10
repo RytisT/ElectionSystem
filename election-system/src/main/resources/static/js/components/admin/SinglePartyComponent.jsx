@@ -20,7 +20,7 @@ var SinglePartyComponent = React.createClass( {
                     onChange={this.props.onFieldChange( 'title' )} type="text" />
                     <br />
                     <div id="PartyNumber_Validation" className="validationForm">
-                        <span>Neįvestas partijos numeris. </span></div>
+                        <span>Partijos numeris turi būti nuo 1 iki 99. </span></div>
                     <div id="PartyCode_Validation" className="validationForm">
                         <span> Trumpinyje naudojami netinkami simboliai. </span></div>
                     <div id="PartyTitle_Validation" className="validationForm">

@@ -19,7 +19,7 @@ var SingleDistrictComponent = React.createClass( {
                     onChange={this.props.onFieldChange( 'number_of_voters' )} type="number" />
                     <br />
                     <div id="Voters_Count_Validation" className="validationForm">
-                        <span>neįvesta </span></div>
+                        <span>1-10000</span></div>
                 </td>
                 <td className="col-md-3"><input id="District_address" className="form-control" size="3"
                     placeholder="Apylinkės adresas"

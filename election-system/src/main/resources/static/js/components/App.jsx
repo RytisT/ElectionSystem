@@ -3,7 +3,6 @@ var styles = {};
 var Link = ReactRouter.Link;
 var IndexLink = ReactRouter.IndexLink;
 
-
 var App = React.createClass( {
     render: function() {
         return (
