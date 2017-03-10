@@ -99,8 +99,8 @@ var DistrictRepresentativeComponent = React.createClass( {
                                 if ( matches != null && matches2 != null && matches3 != null && matches4 != null )
                                 {this.props.onSubmit( this.props.distRep ) };
 
-                            } }>Pridėti
-                    }
+                            } }>
+                            Pridėti
                         </button>
 
                         <button id="Cancel" type="button" className="btn btn-block btn-danger" data-dismiss="modal">Atšaukti</button>

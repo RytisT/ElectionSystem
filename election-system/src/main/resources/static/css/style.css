@@ -4,9 +4,21 @@ body {
     margin: 0;
 }
 
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 #headerLogo {
     margin-top: 0px;
     margin-bottom: 15px;
+}
+
+ol, ul {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 h1, h2, p, ul, li {
@@ -46,6 +58,7 @@ ul.header li a {
     line-height: 30px;
     min-height: 30px;
     padding: 7px 0;
+    text-align: center;
 }
 
 .content {

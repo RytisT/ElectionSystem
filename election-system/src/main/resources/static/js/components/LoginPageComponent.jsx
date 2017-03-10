@@ -4,7 +4,7 @@ var styles = {
     },
 };
 
-// action="/#/admin"
+// form action="/#/admin"
 var LoginPageComponent = React.createClass( {
     render: function() {
 
@@ -13,11 +13,11 @@ var LoginPageComponent = React.createClass( {
                 <h2>Prisijungimas</h2><br />
 
                 <label><b>Vartotojo vardas</b></label>
-                <input id="inputAdminName" type="text" placeholder="Įveskit vartotojo vardą" maxLength="50" />
+                <input id="inputAdminName" type="text" placeholder="Įveskite vartotojo vardą" maxLength="50" />
                 <div id="AdminNameValidation" className="validationForm"><span>Prašom įvesti vartotoją.</span></div>
 
                 <label><b>Slaptažodis</b></label>
-                <input id="inputAdminPass" type="password" placeholder="Įveskit varototojo slaptažodį" maxLength="50" />
+                <input id="inputAdminPass" type="password" placeholder="Įveskite varototojo slaptažodį" maxLength="50" />
                 <div id="AdminPassValidation" className="validationForm"><span>Prašom įvesti slaptažodį.</span></div>
                 
                 

@@ -20,10 +20,8 @@ var App = React.createClass({
                 <div className="footer-bottom">
                 	<div className="container">
                 		<div className="row">
-                			<div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                				<div className="copyright">
-                					© 2017, CodeCamp
-                				</div>
+                			<div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                				<div className="copyright">© 2017 CodeCamp MPTSP</div>
                 			</div>
                 		</div>
                 	</div>

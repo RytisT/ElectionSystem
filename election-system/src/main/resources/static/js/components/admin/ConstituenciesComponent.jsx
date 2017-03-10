@@ -22,10 +22,11 @@ var ConstituenciesComponent = React.createClass({
         return (
             <div className="">
                 <div className="panel panel-default">
-                    <div className="panel-heading"><label htmlFor="basic-url">Ieškoti apylinkės: </label></div>
+                    
                     <div className=" panel-body input-group">
-                        <span className="input-group-addon" id="basic-addon3">Apylinkės pavadinimas: </span>
-                        <input type="text" className="form-control" id="SearchByTitle" onChange={this.props.onSearchQueryChange(this.props.searchQuery)}/>
+                        <span className="input-group-addon" id="basic-addon3">Apygardos paieška: </span>
+                        <input type="text" className="form-control" id="SearchByTitle" placeholder="Įveskite apygardos pavadinimą" maxLength="35"
+                            onChange={this.props.onSearchQueryChange(this.props.searchQuery)}/>
                     </div>
                     <div id="DistrictSearchValidation" className="validationForm"><span>Naudojami netinkami simboliai.</span></div>
                 </div>
@@ -55,6 +56,8 @@ var ConstituenciesComponent = React.createClass({
         )
     }
 });
+
+//<div className="panel-heading"><label htmlFor="basic-url">Ieškoti apylinkės: </label></div>
 
 ConstituenciesComponent.propTypes = {
     constituencies: React.PropTypes.array.isRequired
