@@ -25,23 +25,25 @@ h1, h2, p, ul, li {
     font-family: Helvetica, Arial, sans-serif;
 }
 
-ul.header li {
+.header li {
     display: inline;
     list-style-type: none;
     margin: 0;
     padding: 20 0 20 0;
 }
 
-ul.header {
+.header {
     background-color: #111;
     padding: 0;
+    font-size: 20px;
+    height: 68px;
 }
 
-ul.header li:hover {
+.header li:hover {
     background-color: rgba(0, 128, 255, 0.4);
 }
 
-ul.header li a {
+.header li a {
     color: #FFF;
     font-weight: bold;
     text-decoration: none;
@@ -77,6 +79,23 @@ ul.header li a {
 
 .active {
     background-color: #0099FF;
+}
+
+.header #left {
+	width: 55%;				
+	float: left;
+	background-color: #111;	
+	padding-top: 3px;
+}
+
+.header #right {
+	width: 45%;				
+	float: right;	
+	background-color: #111;
+}
+
+.clear {
+	clear: both;
 }
 
 /* Candidates */
@@ -202,11 +221,13 @@ ul.header li a {
 #DistrictSearchValidation, #ConstituencyTitleValidation, #DistrictTitleValidation,
 #RepNameValidation, #RepLastNameValidation, #RepLoginNameValidation, #RepPassValidation,
 #PartyIdValidation, #PartyTitleValidation, #PartyCodeValidation, #ConstituencyNameValidation,
-#DistrictVotersValidation, #DistrictAddressValidation,
+#DistrictVotersNumberValidation, #DistrictAddressValidation,
 #PartyNumber_Validation, #PartyCode_Validation, #PartyTitle_Validation,
 #District_name_Validation, #Voters_Count_Validation, #District_address_Validation {
 	display: none;	
 }
+
+
 
 
 

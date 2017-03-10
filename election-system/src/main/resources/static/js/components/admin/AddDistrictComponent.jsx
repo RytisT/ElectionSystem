@@ -33,8 +33,8 @@ var AddDistrictComponent = React.createClass( {
                             <table><tbody>
                                 <tr><td><div id="DistrictTitleValidation" className="validationForm">
                                     <span>Neįvestas apylinkės pavadinimas arba naudojami netinkami simboliai.</span></div></td></tr>
-                                <tr><td><div id="DistrictVotersValidation" className="validationForm">
-                                    <span>Neįvestas rinkėjų skaičius arba naudojami netinkami simboliai.</span></div></td></tr>
+                                <tr><td><div id="DistrictVotersNumberValidation" className="validationForm">
+                                    <span>Rinkėjų skaičius turi būti nuo 1 iki 10000.</span></div></td></tr>
                                 <tr><td><div id="DistrictAddressValidation" className="validationForm">
                                     <span>Neįvestas apylinkės adresas arba naudojami netinkami simboliai.</span></div></td></tr>
                             </tbody>
@@ -49,16 +49,18 @@ var AddDistrictComponent = React.createClass( {
                                     else { $( '#DistrictTitleValidation' ).hide( "slow" ); $( '#DistrictTitleValidation' ).show( "slow" ) }
 
                                     var voters = $( "#VotersCount" ).val();
-                                    var matches2 = voters.match( /^\d+/ );
-                                    if ( matches2 != null ) { $( '#DistrictVotersValidation' ).hide( "slow" ); }
-                                    else { $( '#DistrictVotersValidation' ).hide( "slow" ); $( '#DistrictVotersValidation' ).show( "slow" ) }
+                                    if ( voters < 1 || voters > 10000 ) {
+                                        $( '#DistrictVotersNumberValidation' ).hide( "slow" );
+                                        $( '#DistrictVotersNumberValidation' ).show( "slow" );
+                                    }
+                                    else { $( '#DistrictVotersNumberValidation' ).hide( "slow" ) }
 
                                     var address = $( "#Address" ).val();
                                     var matches3 = address.match( ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“\"!,.:;-? ()]$)" );
                                     if ( matches3 != null ) { $( '#DistrictAddressValidation' ).hide( "slow" ); }
                                     else { $( '#DistrictAddressValidation' ).hide( "slow" ); $( '#DistrictAddressValidation' ).show( "slow" ) }
 
-                                    if ( matches1 != null && matches2 != null && matches3 != null ) {
+                                    if ( matches1 != null && matches3 != null && ( voters > 0 && voters <= 10000 ) ) {
                                         this.props.onSubmitDist( this.props.district );
                                         this.changeAddingState();
                                     };
