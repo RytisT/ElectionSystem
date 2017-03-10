@@ -11,7 +11,6 @@ var ResultsComponent = React.createClass( {
                 var minutes = "0" + votedSingleDate.getMinutes();
                 var seconds = "0" + votedSingleDate.getSeconds();
 
-// Will display time in 10:30:23 format
                 if ( month < 10 ) { month = '0' + month; }
                 if ( date < 10 ) { date = '0' + date; }
                 var singleDate = year + '-' + month + '-' + date +"    "+ hour + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
@@ -31,14 +30,24 @@ var ResultsComponent = React.createClass( {
                 if ( date < 10 ) { date = '0' + date; }
                 var multiDate = year + '-' + month + '-' + date + " " + hour + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
 
-                console.log(index);
                 return (
                     <tr key={index}>
                         <td className="col-md-3">{district.title}</td>
                         <td className="col-md-1">{district.district_representatives.name}</td>
                         <td className="col-md-3">{singleDate}</td>
+                        <td className="col-md-1">
+                            <button id="CancelSingleVote" type="button" className="btn btn-danger"
+                                   onClick={this.props.candelSingleVotes(district.id)} >
+                                Atmesti
+                            </button>
+                        </td>
                         <td className="col-md-3">{multiDate}</td>
-                        <td className="col-md-2"></td>
+                        <td className="col-md-1">
+                            <button id="CancelMultiVote" type="button" className="btn btn-danger"
+                                    onClick={this.props.cancelMultiVotes(district.id)}>
+                                Atmesti
+                            </button>
+                        </td>
                     </tr>
                 )
             } else {
@@ -70,8 +79,9 @@ var ResultsComponent = React.createClass( {
                         <th>Apylinkė</th>
                         <th>Apylinkės atstovas</th>
                         <th>Vienmandatės apygardos rezultatų registravimo laikas</th>
+                        <th></th>
                         <th>Daugiamandate apygardos rezultatų registravimo laikas</th>
-                        <th>Atmesti</th>
+                        <th></th>
                     </tr>
                     </thead>
                     <tbody>
