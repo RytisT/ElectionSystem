@@ -24,7 +24,7 @@ var AddPartyComponent = React.createClass( {
                             <tr>
                                 <td className="col-md-10">
                                     <input id="PartyId" className="form-control" placeholder="Partijos numeris" value={this.props.party.Id}
-                                        onChange={this.props.onFieldChange( 'id' )} type="number" />
+                                        onChange={this.props.onFieldChange( 'id' )} type="number" min="1" max="99" />
                                     <input id="PartyName" className="form-control" placeholder="Partijos Pavadinimas"
                                         value={this.props.party.title} maxLength="200"
                                         onChange={this.props.onFieldChange( 'title' )} type="text" />

@@ -109,7 +109,7 @@ var MultiVotesComponent = React.createClass({
                 <p>&nbsp;</p>
                 <p>&nbsp;</p>
             </div>
-        : <div className="alert alert-success" role="alert">Daugiamandatininkų rezultatai užregistuoti sėkmingai!</div>
+        : <div className="alert alert-success" role="alert">Daugiamandatininkų rezultatai užregistruoti sėkmingai!</div>
     }
 });
 

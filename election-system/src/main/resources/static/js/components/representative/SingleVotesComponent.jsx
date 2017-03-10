@@ -103,7 +103,7 @@ var SingleVotesComponent = React.createClass({
                 <p>&nbsp;</p>
                 <p>&nbsp;</p>
             </div>
-            : <div className="alert alert-success" role="alert">Vienmandatininkų rezultatai užregistuoti sėkmingai!</div>
+            : <div className="alert alert-success" role="alert">Vienmandatininkų rezultatai užregistruoti sėkmingai!</div>
     }
 });
 

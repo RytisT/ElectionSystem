@@ -8,7 +8,6 @@ var App = React.createClass({
     render: function () {
         return (
             <div>
-                <h1 className="text-center" id="headerLogo">Seimo Rinkimai</h1>
                 <ul className="header">
                     <li id="home"><IndexLink to="/" className="glyphicon glyphicon-home"></IndexLink></li>
                     <li id="login"><Link to="/login" activeClassName="active">Administratorius</Link></li>
