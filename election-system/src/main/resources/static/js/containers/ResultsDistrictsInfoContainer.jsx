@@ -1,8 +1,4 @@
-var ResultsConstituenciesContainer = React.createClass({
-
-    contextTypes: {
-        router: React.PropTypes.object.isRequired
-    },
+var ResultsDistrictsInfoContainer = React.createClass({
 
     getInitialState: function () {
         return {
@@ -21,15 +17,15 @@ var ResultsConstituenciesContainer = React.createClass({
     },
 
 
-    handleResultsConstituenciesInfo: function(constituency) {
-        return function() {
-            this.context.router.push( '/results/constituencies/info/' + constituency.id );
+    handleResultsDistricts: function (constituency) {
+        return function () {
+            this.context.router.push("/results/district/" + constituency.id);
         }.bind(this)
     },
 
-    handleResultsDistricts: function (constituency) {
-        return function () {
-            this.context.router.push("/results/districts/" + constituency.id);
+    handleResultsConstituenciesInfo: function( constituency ) {
+        return function() {
+            this.context.router.push( '/results/constituencies/info/' + candidate.id );
         }.bind(this)
     },
 
@@ -37,7 +33,7 @@ var ResultsConstituenciesContainer = React.createClass({
         return (
             <div>
                 <ResultsConstituenciesComponent constituencies={this.state.constituencies}
-                                                onResultsDistrictsClick={this.handleResultsDistricts}
+                                                onResultsDistrict={this.handleResultsDistricts}
                                                 onResultsConstituenciesInfoClick={this.handleResultsConstituenciesInfo}
                 />
             </div>
@@ -45,8 +41,8 @@ var ResultsConstituenciesContainer = React.createClass({
     }
 });
 
-ResultsConstituenciesContainer.contextTypes = {
+ResultsDistrictsInfoContainer.contextTypes = {
     router: React.PropTypes.object.isRequired,
 };
 
-window.ResultsConstituenciesContainer = ResultsConstituenciesContainer;
+window.ResultsDistrictsInfoContainer = ResultsConstituenciesInfoContainer;
