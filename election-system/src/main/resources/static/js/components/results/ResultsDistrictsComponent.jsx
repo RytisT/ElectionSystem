@@ -56,8 +56,8 @@ var ResultsDistrictsComponent = React.createClass({
     }
 });
 
-ResultsDistrictsComponent.propTypes = {
-    districts: React.PropTypes.array.isRequired
-};
+// ResultsDistrictsComponent.propTypes = {
+//     districts: React.PropTypes.array.isRequired
+// };
 
 window.ResultsDistrictsComponent = ResultsDistrictsComponent;

@@ -13,12 +13,14 @@ var ResultsDistrictsContainer = React.createClass( {
                 this.setState( {
                     districts: response.data.districts,
                 });
-            }.bind( this ) )
+            }.bind(this))
     },
 
     handleResultsDistrictsInfo: function(district) {
         return function() {
-            this.context.router.push( '/results/districts/info/' + district.id );
+            this.context.router.push({
+                pathname: '/results/districts/info/' + district.id
+            });
         }.bind(this)
     },
 
