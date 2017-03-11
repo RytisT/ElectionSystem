@@ -16,6 +16,10 @@ var ResultsDistrictsContainer = React.createClass( {
             }.bind(this))
     },
 
+    handleReturnConstituencies() {
+        this.context.router.push('/results/constituencies');
+    },
+
     handleResultsDistrictsInfo: function(district) {
         return function() {
             this.context.router.push({
@@ -24,15 +28,13 @@ var ResultsDistrictsContainer = React.createClass( {
         }.bind(this)
     },
 
-    // handleReturn: function() {
-    //     this.context.router.push( '/admin' );
-    // },
-
     render: function() {
         return (
             <div>
                 <ResultsDistrictsComponent districts={this.state.districts}
+                                           onReturnConstituenciesClick={this.handleReturnConstituencies}
                                            onResultsDistrictsInfoClick={this.handleResultsDistrictsInfo}
+
                 />
             </div>
         )

@@ -41,14 +41,14 @@ var ResultsDistrictsInfoContainer = React.createClass({
     },
 
 
-    // handleCancelClick() {
-    //     this.context.router.push('/candidates');
-    // },
+    handleReturnDistricts() {
+        this.context.router.push('/results/constituencies');
+    },
 
     render: function () {
         return (
             <ResultsDistrictsInfoComponent district={this.state.district}
-                /*onCancelClick={this.handleCancelClick}*/
+                                           onReturnDistrictsClick={this.state.handleReturnDistricts}
             />
         );
     }

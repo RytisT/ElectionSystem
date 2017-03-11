@@ -20,6 +20,9 @@ var ResultsConstituenciesContainer = React.createClass({
             }.bind(this))
     },
 
+    handleReturnHome() {
+        this.context.router.push('/');
+    },
 
     handleResultsConstituenciesInfo: function(constituency) {
         return function() {
@@ -41,6 +44,7 @@ var ResultsConstituenciesContainer = React.createClass({
                 <ResultsConstituenciesComponent constituencies={this.state.constituencies}
                                                 onResultsDistrictsClick={this.handleResultsDistricts}
                                                 onResultsConstituenciesInfoClick={this.handleResultsConstituenciesInfo}
+                                                onReturnHomeClick={this.handleReturnHome}
                 />
             </div>
         )

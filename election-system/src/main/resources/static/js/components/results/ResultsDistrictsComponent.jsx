@@ -1,8 +1,4 @@
-var Link = ReactRouter.Link;
-
-
 var ResultsDistrictsComponent = React.createClass({
-
 
     render: function () {
         var districtsList = this.props.districts.map(function (district, index) {
@@ -34,7 +30,6 @@ var ResultsDistrictsComponent = React.createClass({
             );
         }.bind(this));
 
-
         return (
             <div className="">
                 <table className="table table-striped">
@@ -51,13 +46,20 @@ var ResultsDistrictsComponent = React.createClass({
                     {districtsList}
                     </tbody>
                 </table>
+                <button id="ResultsDistrictsReturn"
+                        className="btn btn-success"
+                        style={{marginRight: '20px'}}
+                        onClick={this.props.onReturnConstituenciesClick}
+                >
+                    Grįžti
+                </button>
             </div>
         )
     }
 });
 
-// ResultsDistrictsComponent.propTypes = {
-//     districts: React.PropTypes.array.isRequired
-// };
+ResultsDistrictsComponent.propTypes = {
+    districts: React.PropTypes.object.isRequired
+};
 
 window.ResultsDistrictsComponent = ResultsDistrictsComponent;
