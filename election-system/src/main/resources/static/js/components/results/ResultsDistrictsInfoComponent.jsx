@@ -42,6 +42,15 @@ var ResultsDistrictsInfoComponent = React.createClass({
         if ( date < 10 ) { date = '0' + date; }
         var multiDate = year + '-' + month + '-' + date + " " + hour + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
 
+        var singlePercent = this.props.district.votedSingle / this.props.district.number_of_voters * 100;
+        var singlePercentRounded = Math.round(singlePercent*100)/100;
+        var singlePercentCorrupt = this.props.district.votedSingleCorrupt / (this.props.district.votedSingle + this.props.district.votedSingleCorrupt) * 100;
+        var singlePercentCorruptRounded = Math.round(singlePercentCorrupt*100)/100;
+        var multiPercent = this.props.district.votedMulti / this.props.district.number_of_voters * 100;
+        var multiPercentRounded = Math.round(multiPercent*100)/100;
+        var multiPercentCorrupt = this.props.district.votedMultiCorrupt / (this.props.district.votedMulti + this.props.district.votedMultiCorrupt) * 100;
+        var multiPercentCorruptRounded = Math.round(multiPercentCorrupt*100)/100;
+
         return (
             <div id="resultsDistrict">
                 <h2 style={styles.blue}>Apylinkė balsavimo informacija</h2>
@@ -60,17 +69,29 @@ var ResultsDistrictsInfoComponent = React.createClass({
                 <br/>
                 <span id="resultsDistrictInfo">Vienmandatės apylinkės balsų suvedimo laikas: </span><span>{singleDate}</span>
                 <br/>
+                <br/>
                 <span id="resultsDistrictInfo">Suskaičiuota galiojančių vienmandatės apylinkės biuletenių: </span><span>{this.props.district.votedSingle}</span>
                 <br/>
+                <span id="resultsDistrictInfo">Galiojančių vienmandatės apylinkės biuletenių dalis nuo visų apylinkės rinkėjų: </span><span>{singlePercentRounded}%</span>
+                <br/>
+                <br/>
                 <span id="resultsDistrictInfo">Suskaičiuota sugadintų vienmandatės apylinkės biuletenių: </span><span>{this.props.district.votedSingleCorrupt}</span>
+                <br/>
+                <span id="resultsDistrictInfo">Sugadintų vienmandatės apylinkės biuletenių dalis nuo suskaičiuotų biuletenių: </span><span>{singlePercentCorruptRounded}%</span>
                 <br/>
                 <br/>
                 <br/>
                 <span id="resultsDistrictInfo">Daugiamandatės apylinkės balsų suvedimo laikas: </span><span>{multiDate}</span>
                 <br/>
+                <br/>
                 <span id="resultsDistrictInfo">Suskaičiuota galiojančių daugiamandatės apylinkės biuletenių: </span><span>{this.props.district.votedMulti}</span>
                 <br/>
+                <span id="resultsDistrictInfo">Galiojančių daugiamandatės apylinkės biuletenių dalis nuo visų apylinkės rinkėjų: </span><span>{multiPercentRounded}%</span>
+                <br/>
+                <br/>
                 <span id="resultsDistrictInfo">Suskaičiuota sugadintų daugiamandatės apylinkės biuletenių: </span><span>{this.props.district.votedMultiCorrupt}</span>
+                <br/>
+                <span id="resultsDistrictInfo">Sugadintų daugiamandatės apylinkės biuletenių dalis nuo suskaičiuotų biuletenių: </span><span>{multiPercentCorruptRounded}%</span>
                 <br/>
             </div>
         )
