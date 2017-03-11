@@ -9,7 +9,7 @@ var SinglePartyComponent = React.createClass( {
                 <td><input id="Party_Number" className="form-control"
                     placeholder="Nr."
                     value={this.props.party.id}
-                    onChange={this.props.onFieldChange( 'id' )} type="number" /></td>
+                    onChange={this.props.onFieldChange( 'id' )} type="number" min="1" max="99" /></td>
                 <td><input id="Party_Code" className="form-control" placeholder="Trump."
                     value={this.props.party.party_Code} maxLength="6"
                     onChange={this.props.onFieldChange( 'party_Code' )} type="text" />
@@ -20,7 +20,7 @@ var SinglePartyComponent = React.createClass( {
                     onChange={this.props.onFieldChange( 'title' )} type="text" />
                     <br />
                     <div id="PartyNumber_Validation" className="validationForm">
-                        <span>Neįvestas partijos numeris. </span></div>
+                        <span>Partijos numeris turi būti nuo 1 iki 99. </span></div>
                     <div id="PartyCode_Validation" className="validationForm">
                         <span> Trumpinyje naudojami netinkami simboliai. </span></div>
                     <div id="PartyTitle_Validation" className="validationForm">

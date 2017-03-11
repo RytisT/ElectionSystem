@@ -152,7 +152,7 @@ var DistrictRepresentativeComponent = React.createClass( {
                             </div>
                             {this.editExistingRepresentative()}
                             <div className="modal-footer">
-                                <button type="button" className="btn btn-default" data-dismiss="modal">Uždaryti</button>
+                                <button id="Rep_Edit_Close" type="button" className="btn btn-default" data-dismiss="modal">Uždaryti</button>
                             </div>
                         </div>
 

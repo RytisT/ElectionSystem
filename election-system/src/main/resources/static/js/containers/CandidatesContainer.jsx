@@ -22,12 +22,6 @@ var CandidatesContainer = React.createClass( {
             });
     },
 
-    //    handleSearchQueryChange: function () {
-    //        return function (newQuery) {
-    //            this.setState({searchQuery: newQuery.target.value})
-    //        }.bind(this)
-    //    },
-
     // Description 
     handleCandidateDescription: function( candidate ) {
         var self = this;

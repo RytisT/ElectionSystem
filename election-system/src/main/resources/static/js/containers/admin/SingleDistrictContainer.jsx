@@ -63,16 +63,18 @@ var SingleDistrictContainer = React.createClass( {
         else { $( '#District_name_Validation' ).hide( "slow" ); $( '#District_name_Validation' ).show( "slow" ) }
 
         var voters = $( "#Voters_Count" ).val();
-        var matches2 = voters.match( /^\d+/ );
-        if ( matches2 != null ) { $( '#Voters_Count_Validation' ).hide( "slow" ); }
-        else { $( '#Voters_Count_Validation' ).hide( "slow" ); $( '#Voters_Count_Validation' ).show( "slow" ) }
-
+        if ( voters < 1 || voters > 10000 ) {
+            $( '#Voters_Count_Validation' ).hide( "slow" );
+            $( '#Voters_Count_Validation' ).show( "slow" );
+        }
+        else { $( '#Voters_Count_Validation' ).hide( "slow" ) }
+        
         var address = $( "#District_address" ).val();
         var matches3 = address.match( ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“\"!,.:;-? ()]$)" );
         if ( matches3 != null ) { $( '#District_address_Validation' ).hide( "slow" ); }
         else { $( '#District_address_Validation' ).hide( "slow" ); $( '#District_address_Validation' ).show( "slow" ) }
 
-        if ( matches1 != null && matches2 != null && matches3 != null ) {
+        if ( matches1 != null && matches3 != null  && ( voters > 0 && voters <= 10000 ) ) {
             axios.post( '/api/districts', this.state.district )
                 .then( this.setState( { isEditing: false }) )
         };

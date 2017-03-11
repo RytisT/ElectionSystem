@@ -32,6 +32,7 @@ var routes = (
                 <Route path="/results/constituencies" component={ResultsConstituenciesContainer} />
                 <Route path="/results/constituencies/info/:constituencyId" component={ResultsConstituenciesInfoContainer} />
                 <Route path="/results/districts/:constituencyId" component={ResultsDistrictsContainer} />
+                <Route path="/results/districts/info/:districtId" component={ResultsDistrictsInfoContainer} />
 
             </Route>
         </Router>

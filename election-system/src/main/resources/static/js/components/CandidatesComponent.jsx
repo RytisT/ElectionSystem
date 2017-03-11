@@ -32,7 +32,6 @@ var CandidatesComponent = React.createClass( {
 
             if ( fullName.toLowerCase().includes( self.props.searchQuery.toLowerCase() ) ) {
 
-
                 // date
                 var d = new Date( candidate.date_of_birth );
                 var year = d.getFullYear();
@@ -41,7 +40,6 @@ var CandidatesComponent = React.createClass( {
                 if ( month < 10 ) { month = '0' + month; }
                 if ( date < 10 ) { date = '0' + date; }
                 var fullDate = year + '-' + month + '-' + date;
-
 
                 return (
                     <tr id="candidatesList" key={index}>

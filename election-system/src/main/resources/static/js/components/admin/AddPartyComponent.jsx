@@ -24,7 +24,7 @@ var AddPartyComponent = React.createClass( {
                             <tr>
                                 <td className="col-md-10">
                                     <input id="PartyId" className="form-control" placeholder="Partijos numeris" value={this.props.party.Id}
-                                        onChange={this.props.onFieldChange( 'id' )} type="number" />
+                                        onChange={this.props.onFieldChange( 'id' )} type="number" min="1" max="99" />
                                     <input id="PartyName" className="form-control" placeholder="Partijos Pavadinimas"
                                         value={this.props.party.title} maxLength="200"
                                         onChange={this.props.onFieldChange( 'title' )} type="text" />
@@ -36,24 +36,27 @@ var AddPartyComponent = React.createClass( {
                                 <td className="col-md-2">
                                     <button id="Submit party" className="btn btn-block btn-success" type="submit"
                                         onClick={() => {
-            var val = $( "#PartyId" ).val();
-            var matches = val.match( /^\d+/ );
-            if ( matches != null ) { $( '#PartyIdValidation' ).hide( "slow" ) }
-            else { $( '#PartyIdValidation' ).hide( "slow" ); $( '#PartyIdValidation' ).show( "slow" ) }
-            
-            var valn = $( "#PartyName" ).val();
-            var matchesn = valn.match( ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“\"!,.:;-? ()]$)" );
-            if ( matchesn != null ) { $( '#PartyTitleValidation' ).hide( "slow" ) }
-            else { $( '#PartyTitleValidation' ).hide( "slow" ); $( '#PartyTitleValidation' ).show( "slow" ) }
-            
-            var valc = $( "#PartyCode" ).val();
-            var matchesc = valc.match( ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)" );
-            if ( matchesc != null ) { $( '#PartyCodeValidation' ).hide( "slow" ) }
-            else { $( '#PartyCodeValidation' ).hide( "slow" ); $( '#PartyCodeValidation' ).show( "slow" ) }
+                                            var partyNumb = $( "#PartyId" ).val();
+                                            if ( partyNumb < 1 || partyNumb > 99 ) {
+                                                $( '#PartyIdValidation' ).hide( "slow" );
+                                                $( '#PartyIdValidation' ).show( "slow" );
+                                            }
+                                            else { $( '#PartyIdValidation' ).hide( "slow" ) }
 
-            if ( matches != null && matchesn != null && matchesc != null ) { this.props.onSubmit( this.props.party ), this.changeAddingState() };
-            
-                                            
+                                            var name = $( "#PartyName" ).val();
+                                            var matchesn = name.match( ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“\"!,.:;-? ()]$)" );
+                                            if ( matchesn != null ) { $( '#PartyTitleValidation' ).hide( "slow" ) }
+                                            else { $( '#PartyTitleValidation' ).hide( "slow" ); $( '#PartyTitleValidation' ).show( "slow" ) }
+
+                                            var code = $( "#PartyCode" ).val();
+                                            var matchesc = code.match( ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)" );
+                                            if ( matchesc != null ) { $( '#PartyCodeValidation' ).hide( "slow" ) }
+                                            else { $( '#PartyCodeValidation' ).hide( "slow" ); $( '#PartyCodeValidation' ).show( "slow" ) }
+
+                                            if ( matchesn != null && matchesc != null && ( partyNumb > 0 && partyNumb <= 99 ) ) {
+                                                this.props.onSubmit( this.props.party ), this.changeAddingState()
+                                            };
+
                                         } }>Pridėti
                                 </button>
                                 </td>
@@ -67,7 +70,7 @@ var AddPartyComponent = React.createClass( {
                     </table>
                 </form>
                 <div id="PartyIdValidation" className="validationForm">
-                    <span>Neįvestas partijos numeris.</span></div>
+                    <span>Partijos numeris turi būti nuo 1 iki 99.</span></div>
                 <div id="PartyTitleValidation" className="validationForm">
                     <span>Partijos pavadinime naudojami netinkami simboliai arba jis neįvestas.</span></div>
                 <div id="PartyCodeValidation" className="validationForm">

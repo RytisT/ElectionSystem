@@ -14,12 +14,12 @@ var SinglePartyContainer = React.createClass( {
         };
     },
 
-    handleHover: function () {
-        return function () {
+    handleHover: function() {
+        return function() {
             this.state.bgColor == "white"
-                ? this.setState({bgColor: "#ffee91"})
-                : this.setState({bgColor: "white"})
-        }.bind(this)
+                ? this.setState( { bgColor: "#ffee91" })
+                : this.setState( { bgColor: "white" })
+        }.bind( this )
     },
 
     handleFieldChange: function( fieldName ) {
@@ -50,10 +50,12 @@ var SinglePartyContainer = React.createClass( {
 
     handleSaveParty: function() {
 
-        var pnumber = $( "#Party_Number" ).val();
-        var matches1 = pnumber.match( /^\d+/ );
-        if ( matches1 != null ) { $( '#PartyNumber_Validation' ).hide( "slow" ); }
-        else { $( '#PartyNumber_Validation' ).hide( "slow" ); $( '#PartyNumber_Validation' ).show( "slow" ) }
+        var partyNumb = $( "#Party_Number" ).val();
+        if ( partyNumb < 1 || partyNumb > 99 ) {
+            $( '#PartyNumber_Validation' ).hide( "slow" );
+            $( '#PartyNumber_Validation' ).show( "slow" );
+        }
+        else { $( '#PartyNumber_Validation' ).hide( "slow" ) }
 
         var code = $( "#Party_Code" ).val();
         var matches2 = code.match( ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)" );
@@ -65,7 +67,7 @@ var SinglePartyContainer = React.createClass( {
         if ( matches3 != null ) { $( '#PartyTitle_Validation' ).hide( "slow" ); }
         else { $( '#PartyTitle_Validation' ).hide( "slow" ); $( '#PartyTitle_Validation' ).show( "slow" ) }
 
-        if ( matches1 != null && matches2 != null && matches3 != null ) {
+        if ( matches2 != null && matches3 != null && ( partyNumb > 0 && partyNumb <= 99 ) ) {
             axios.post( '/api/parties', this.state.party )
                 .then( this.setState( { isEditing: false }) )
         };
@@ -82,8 +84,8 @@ var SinglePartyContainer = React.createClass( {
                 onFieldChange={this.handleFieldChange}
                 onDeleteParty={this.props.onDeleteParty}
                 onCandidates={this.props.onCandidates}
-                                  color={this.state.bgColor}
-                                  onHover={this.handleHover}
+                color={this.state.bgColor}
+                onHover={this.handleHover}
                 onEdit={this.handleEditParty} />
         )
     }

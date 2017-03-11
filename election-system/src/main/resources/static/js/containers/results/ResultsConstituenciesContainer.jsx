@@ -21,15 +21,17 @@ var ResultsConstituenciesContainer = React.createClass({
     },
 
 
-    handleResultsDistricts: function (constituency) {
-        return function () {
-            this.context.router.push("/results/districts/" + constituency.id);
-        }.bind(this)
-    },
-
     handleResultsConstituenciesInfo: function(constituency) {
         return function() {
             this.context.router.push( '/results/constituencies/info/' + constituency.id );
+        }.bind(this)
+    },
+
+    handleResultsDistricts: function (constituency) {
+        return function () {
+            this.context.router.push({
+                pathname: '/results/districts/' + constituency.id
+            });
         }.bind(this)
     },
 
