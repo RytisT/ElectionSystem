@@ -97,6 +97,16 @@ h1, h2, p, ul, li {
 .clear {
 	clear: both;
 }
+/* Results */
+
+#resultsDistrict span {
+    font-size: 20px;
+}
+
+#resultsDistrictInfo {
+    color: #008000;
+}
+
 
 /* Candidates */
 

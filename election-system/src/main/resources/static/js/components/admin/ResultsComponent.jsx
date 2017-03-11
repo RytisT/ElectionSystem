@@ -7,7 +7,11 @@ var ResultsComponent = React.createClass( {
                 var year = votedSingleDate.getFullYear();
                 var month = votedSingleDate.getMonth() + 1;
                 var date = votedSingleDate.getDate();
-                var hour = votedSingleDate.getHours();
+                if (votedSingleDate.getHours() < 10) {
+                    var hour = "0" + votedSingleDate.getHours();
+                } else {
+                    var hour = votedSingleDate.getHours();
+                }
                 var minutes = "0" + votedSingleDate.getMinutes();
                 var seconds = "0" + votedSingleDate.getSeconds();
 
@@ -24,8 +28,8 @@ var ResultsComponent = React.createClass( {
                 } else {
                     var hour = votedMultiDate.getHours();
                 }
-                var minutes = "0" + votedSingleDate.getMinutes();
-                var seconds = "0" + votedSingleDate.getSeconds();
+                var minutes = "0" + votedMultiDate.getMinutes();
+                var seconds = "0" + votedMultiDate.getSeconds();
                 if ( month < 10 ) { month = '0' + month; }
                 if ( date < 10 ) { date = '0' + date; }
                 var multiDate = year + '-' + month + '-' + date + " " + hour + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
