@@ -38,6 +38,9 @@ var MainPageComponent = React.createClass( {
                 <table className="table table-hover" id="menu">
 
                     <tbody>
+                        <tr id="MainPageResultsConstituencies" onClick={this.props.onResultsConstituenciesClick} style={styles.rows}>
+                            <td>Apygardų / Apylinkių rezultatai</td>
+                        </tr>
                         <tr id="MainPageConstituencies" style={styles.rows} onClick={( event ) => {
                             if ( $( '.list1' ).is( ":hidden" ) ) {
                                 $( '.list1' ).show("slow");

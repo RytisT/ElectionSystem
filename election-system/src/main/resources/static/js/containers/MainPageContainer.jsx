@@ -11,6 +11,11 @@ var MainPageContainer = React.createClass({
         this.context.router.push('/Representatives');
     },
 
+    // Apylinkių/apygardų rezultatų nuorodos paspaudimo action
+    handleResultsConstituencies() {
+        this.context.router.push('Results/constituencies')
+    },
+
     // Kandidatu nuorodos paspaudimo action
     handleCandidates() {
         this.context.router.push('/Candidates');
@@ -23,8 +28,12 @@ var MainPageContainer = React.createClass({
 
 
     render: function () {
-        return <MainPageComponent onAdminClick={this.handleAdmin} onRepresentativesClick={this.handleRepresentatives}
-                                  onCandidatesClick={this.handleCandidates} onPartiesClick={this.handleParties}/>
+        return <MainPageComponent onAdminClick={this.handleAdmin}
+                                  onRepresentativesClick={this.handleRepresentatives}
+                                  onCandidatesClick={this.handleCandidates}
+                                  onPartiesClick={this.handleParties}
+                                  onResultsConstituenciesClick={this.handleResultsConstituencies}
+        />
     }
 });
 
