@@ -25,10 +25,9 @@ var MultiVotesContainer = React.createClass({
                     id: Number(this.props.district.id.toString() + partyId.toString()),
                     m_votes: votesCount
                 };
-
                 this.setState({votes: tempVotes})
             } else {
-                console.log("klaida! klaida! klaida! per daug vedi!")
+                console.log("klaida! klaida! klaida! per daug vedi!")                
             }
 
         }.bind( this );
@@ -58,7 +57,7 @@ var MultiVotesContainer = React.createClass({
             votesEntered += Number(this.props.district.votedMultiCorrupt);
 
             if (this.props.district.votedMulti == votesEntered) {
-
+                $( '#SinglResultValidation' ).hide( "slow" );
                 this.state.district.multiVoteActive = true;
                 this.state.district.votedMultiTime = Date.now();
                 axios.post("api/districts", this.state.district);
@@ -68,6 +67,8 @@ var MultiVotesContainer = React.createClass({
                 this.setState({active: true})
             } else {
                 console.log("klaida! klaida! klaida! ne tiek balsu!")
+                $( '#MultiResultValidation' ).hide( "slow" );
+                $( '#MultiResultValidation' ).show( "slow" );
             }
         }.bind(this)
   },
@@ -75,8 +76,6 @@ var MultiVotesContainer = React.createClass({
 
   loadVotesData: function (parties) {
       var tempVotes = this.state.votes;
-
-
       parties.map(function (party, index) {
           tempVotes[party.id] = {
               districts_id: this.props.district.id,
@@ -93,12 +92,7 @@ var MultiVotesContainer = React.createClass({
 
               }.bind(this))
           }
-
-
-
       return tempVotes;
-
-
   },
 
     componentWillMount: function() {
@@ -107,7 +101,6 @@ var MultiVotesContainer = React.createClass({
                 var tempVotes = this.loadVotesData(res.data);
                 this.setState({parties: res.data, votes: tempVotes, district: this.props.district, active: this.props.district.multiVoteActive});
             });
-
     },
 
     render: function () {

@@ -8,7 +8,6 @@ var SingleVotesContainer = React.createClass({
             },
             SingleCandidates: [],
             votes: []
-
         };
     },
 
@@ -55,6 +54,7 @@ var SingleVotesContainer = React.createClass({
 
             if (this.props.district.votedSingle == votesEntered) {
                 console.log("postinu");
+                $( '#SinglResultValidation' ).hide( "slow" );
                 this.state.district.SingleVoteActive = true;
                 this.state.district.votedSingleTime = Date.now();
                 axios.post("api/districts", this.state.district);
@@ -64,6 +64,8 @@ var SingleVotesContainer = React.createClass({
                 this.setState({active: true})
             } else {
                 console.log("klaida! klaida! klaida! ne tiek balsu!")
+                $( '#SinglResultValidation' ).hide( "slow" );
+                $( '#SinglResultValidation' ).show( "slow" );
             }
         }.bind(this)
     },
@@ -84,12 +86,9 @@ var SingleVotesContainer = React.createClass({
             this.props.district.single_results.map(function (result, index) {
                 tempVotes[result.candidates_id].votes = result.votes;
                 console.log(tempVotes)
-
             }.bind(this))
         }
         return tempVotes;
-
-
     },
 
 
