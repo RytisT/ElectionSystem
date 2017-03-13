@@ -97,6 +97,15 @@ h1, h2, p, ul, li {
 .clear {
 	clear: both;
 }
+
+/* MainPage */
+
+
+
+#main h1 {
+	text-align: center;
+}
+
 /* Results */
 
 #resultsDistrict span, #resultsConstituency span {

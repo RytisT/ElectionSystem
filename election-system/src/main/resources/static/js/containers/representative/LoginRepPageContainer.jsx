@@ -17,7 +17,7 @@ var LoginRepPageContainer = React.createClass( {
 
     // Cancel 
     handleCancelClick() {
-        this.context.router.push( '/' );
+        this.context.router.push( '/main' );
     },
 
     render: function() {

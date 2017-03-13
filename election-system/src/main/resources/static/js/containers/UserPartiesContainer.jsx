@@ -23,7 +23,7 @@ var UserPartiesContainer = React.createClass({
     },
 
     handleCancelClick() {
-        this.context.router.push('/');
+        this.context.router.push('/main');
     },
 
 
