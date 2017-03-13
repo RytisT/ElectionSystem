@@ -1,4 +1,4 @@
-2017-03-11 13:05:13 jdbc[12]: exception
+2017-03-12 22:47:50 jdbc[11]: exception
 org.h2.jdbc.JdbcSQLException: Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-193]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
 	at org.h2.message.DbException.get(DbException.java:179)

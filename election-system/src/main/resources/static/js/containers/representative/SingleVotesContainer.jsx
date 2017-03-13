@@ -2,7 +2,6 @@ var SingleVotesContainer = React.createClass({
 
     getInitialState: function () {
         return {
-            active: "",
             district: {
                 votedMulti : ""
             },
@@ -22,7 +21,6 @@ var SingleVotesContainer = React.createClass({
                 tempVotes[candidateId].votes = votesCount
 
                 this.setState({votes: tempVotes})
-                console.log(this.state.votes)
             } else {
                 console.log("klaida! klaida! klaida! per daug vedi!")
             }
@@ -54,14 +52,9 @@ var SingleVotesContainer = React.createClass({
             votesEntered += Number(this.props.district.votedSingleCorrupt);
 
             if (this.props.district.votedSingle == votesEntered) {
-                console.log("postinu");
-                this.state.district.SingleVoteActive = true;
+                this.state.district.singleVoteActive = true;
                 this.state.district.votedSingleTime = Date.now();
-                axios.post("api/districts", this.state.district);
-                this.state.votes.map(function (vote, index) {
-                    axios.post("api/single_results", vote)
-                })
-                this.setState({active: true})
+                this.props.onSaveVotes(this.state.district, this.state.votes);
             } else {
                 console.log("klaida! klaida! klaida! ne tiek balsu!")
             }
@@ -71,6 +64,7 @@ var SingleVotesContainer = React.createClass({
 
     loadVotesData: function (candidates) {
         var tempVotes = this.state.votes;
+
         candidates.map(function (candidate, index) {
             tempVotes[candidate.id] = {
                 districts_id: this.props.district.id,
@@ -82,8 +76,7 @@ var SingleVotesContainer = React.createClass({
 
         if(this.props.district.singleVoteActive == false){
             this.props.district.single_results.map(function (result, index) {
-                tempVotes[result.candidates_id].votes = result.votes;
-                console.log(tempVotes)
+                tempVotes[result.candidates_id].votes = result.vote;
 
             }.bind(this))
         }

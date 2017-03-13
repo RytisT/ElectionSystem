@@ -48,8 +48,8 @@ var SingleVotesComponent = React.createClass({
                 </tr>
             );
         }.bind(this));
-
-        return !this.props.activeState
+        {console.log(this.props.district.singleVoteActive)}
+        return !this.props.district.singleVoteActive
             ? <div className="">
                 <h2 style={styles.blue}> Vienmandatininkų rezultatų suvedimas </h2>
                 <div style={styles.line}></div>

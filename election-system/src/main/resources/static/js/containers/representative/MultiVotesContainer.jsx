@@ -61,11 +61,7 @@ var MultiVotesContainer = React.createClass({
 
                 this.state.district.multiVoteActive = true;
                 this.state.district.votedMultiTime = Date.now();
-                axios.post("api/districts", this.state.district);
-                this.state.votes.map(function (vote, index) {
-                    axios.post("api/multi_results", vote)
-                })
-                this.setState({active: true})
+                this.props.onSaveVotes(this.state.district, this.state.votes);
             } else {
                 console.log("klaida! klaida! klaida! ne tiek balsu!")
             }

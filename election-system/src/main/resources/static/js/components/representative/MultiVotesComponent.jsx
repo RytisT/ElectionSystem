@@ -55,8 +55,7 @@ var MultiVotesComponent = React.createClass({
                 </tr>
             );
         }.bind(this));
-
-        return !this.props.activeState
+        return !this.props.district.multiVoteActive
             ?<div className="">
                 <h2 style={styles.blue}> Daugiamandatininkų rezultatų suvedimas </h2>
                 <div style={styles.line}></div>
