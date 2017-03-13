@@ -3,7 +3,7 @@ var DistrictRepresentativeComponent = React.createClass( {
     addNewRepresentative: function() {
         return (
             <div>
-                <button id="Add District Rep" type="button" className="btn btn-success" data-toggle="modal"
+                <button id="Add_District_Rep" type="button" className="btn btn-success" data-toggle="modal"
                     data-target={"#" + this.props.distId}>
                     Pridėti apylinkės atstovą
                 </button>
@@ -17,19 +17,19 @@ var DistrictRepresentativeComponent = React.createClass( {
                             </div>
                             <div className="modal-body">
                                 <form>
-                                    <input id="Rep name" className="form-control" placeholder="Vardas" value={this.props.distRep.name}
+                                    <input id="Rep_name" className="form-control" placeholder="Vardas" value={this.props.distRep.name}
                                         onChange={this.props.onFieldChange( 'name' )} type="text" />
-                                    <input id="Rep surname" className="form-control" placeholder="Pavardė"
+                                    <input id="Rep_surname" className="form-control" placeholder="Pavardė"
                                         value={this.props.distRep.last_name}
                                         onChange={this.props.onFieldChange( 'last_name' )} type="text" />
-                                    <input id="Rep login name" className="form-control" placeholder="Prisijungimo vardas"
+                                    <input id="Rep_login_name" className="form-control" placeholder="Prisijungimo vardas"
                                         value={this.props.distRep.login}
                                         onChange={this.props.onFieldChange( 'login' )} type="text" />
-                                    <input id="Rep password" className="form-control" placeholder="Slaptažodis"
+                                    <input id="Rep_password" className="form-control" placeholder="Slaptažodis"
                                         value={this.props.distRep.password}
                                         onChange={this.props.onFieldChange( 'password' )} type="password" />
 
-                                    <button id="Submit Rep" className="btn btn-block btn-success" type="submit"
+                                    <button id="Submit_Rep" className="btn btn-block btn-success" type="submit"
                                         onClick={() => this.props.onSubmit( this.props.distRep )}>Pridėti
                                     </button>
 
@@ -73,7 +73,7 @@ var DistrictRepresentativeComponent = React.createClass( {
                         <div id="RepPassValidation" className="validationForm">
                             <span> Neįvestas slaptažodis arba naudojami netinkami simboliai.</span></div>
 
-                        <button id="Submit Rep" className="btn btn-block btn-success" type="submit"
+                        <button id="Submit_Rep" className="btn btn-block btn-success" type="submit"
                             onClick={() => {
 
                                 var name = $( "#RepName" ).val();
@@ -99,8 +99,8 @@ var DistrictRepresentativeComponent = React.createClass( {
                                 if ( matches != null && matches2 != null && matches3 != null && matches4 != null )
                                 {this.props.onSubmit( this.props.distRep ) };
 
-                            } }>Pridėti
-                    }
+                            } }>
+                            Pridėti
                         </button>
 
                         <button id="Cancel" type="button" className="btn btn-block btn-danger" data-dismiss="modal">Atšaukti</button>
@@ -152,7 +152,7 @@ var DistrictRepresentativeComponent = React.createClass( {
                             </div>
                             {this.editExistingRepresentative()}
                             <div className="modal-footer">
-                                <button type="button" className="btn btn-default" data-dismiss="modal">Uždaryti</button>
+                                <button id="Rep_Edit_Close" type="button" className="btn btn-default" data-dismiss="modal">Uždaryti</button>
                             </div>
                         </div>
 
@@ -164,12 +164,12 @@ var DistrictRepresentativeComponent = React.createClass( {
     render: function() {
         return this.props.existing
             ? <div>
-                <button id="Rep information" type="button" className="btn btn-default" data-toggle="modal"
+                <button id="Rep_information" type="button" className="btn btn-default" data-toggle="modal"
                     data-target={"#" + this.props.distId}>{this.props.distRep.name} {this.props.distRep.last_name}</button>
                 {this.representativeWrapper()}
             </div>
             : <div>
-                <button id="Add Rep" type="button" className="btn btn-success" data-toggle="modal"
+                <button id="Add_Rep" type="button" className="btn btn-success" data-toggle="modal"
                     data-target={"#" + this.props.distId}>
                     Pridėti apylinkės atstovą
                 </button>

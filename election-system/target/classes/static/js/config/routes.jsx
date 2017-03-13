@@ -13,11 +13,12 @@ var routes = (
                     <Route path="/admin/parties" component={PartiesContainer} />
                     <Route path="/admin/party-candidates/:partyId" component={PartyCandidatesContainer} />
                     <Route path="/admin/const-candidates/:constId" component={ConstituencyCandidatesContainer} />
-                    <Route path="/admin/contacts" component={PartiesContainer} />
                     <Route path="/admin/district/:distId" component={DistrictContainer} />
                     <Route path="/admin/candidates" component={CandidatesContainer} />
                     <Route path="/admin/candidates/add-candidate" component={AddCandidateContainer} />
                     <Route path="/admin/candidates/edit/:candidateId" component={EditCandidateContainer} />
+                    <Route path="/admin/results" component={ResultsContainer} />
+
                 </Route>
                 <Route path="/candidates" component={CandidatesContainer} />
                 <Route path="/candidates/search" component={CandidatesSearchContainer} />
@@ -25,9 +26,19 @@ var routes = (
                 <Route path="/party/description/:partyId" component={PartyDescriptionContainer} />
                 <Route path="/partymember/description/:candidateId" component={MemberDescriptionContainer} />
                 <Route path="/candidate/description/:candidateId" component={CandidateDescriptionContainer} />
-                <Route path="/Representatives" component={SubmitVotesContainer} />
+                <Route path="/Representatives/:repLogin" component={SubmitVotesContainer} />
                 <Route path="/login" component={LoginPageContainer} />
                 <Route path="/replogin" component={LoginRepPageContainer} />
+                <Route path="/results/constituencies" component={ResultsConstituenciesContainer} />
+                <Route path="/results/constituencies/info/:constituencyId" component={ResultsConstituenciesInfoContainer} />
+                <Route path="/results/constituencies/multi/:constituencyId" component={ResultsConstituenciesMultiContainer} />
+                <Route path="/results/constituencies/single/:constituencyId" component={ResultsConstituenciesSingleContainer} />
+                <Route path="/results/districts/:constituencyId" component={ResultsDistrictsContainer} />
+                <Route path="/results/districts/info/:districtId" component={ResultsDistrictsInfoContainer} />
+                <Route path="/results/districts/multi/:districtId" component={ResultsDistrictsMultiContainer} />
+                <Route path="/results/districts/single/:districtId" component={ResultsDistrictsSingleContainer} />
+
+
             </Route>
         </Router>
     </Router>

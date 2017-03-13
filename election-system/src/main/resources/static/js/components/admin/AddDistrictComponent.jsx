@@ -24,33 +24,50 @@ var AddDistrictComponent = React.createClass( {
                         <div className="col-md-10"><input id="DistrictName" className="form-control" placeholder="Apylinkės pavadinimas"
                             value={this.props.district.title} maxLength="30"
                             onChange={this.props.onFieldChange( 'title' )} type="text" />
-                            <input id="Voters count" className="form-control" placeholder="Rinkėjų skaičius"
-                                value={this.props.district.number_of_voters}
+                            <input id="VotersCount" className="form-control" placeholder="Rinkėjų skaičius" min="1" max="10000"
+                                value={this.props.district.number_of_voters} 
                                 onChange={this.props.onFieldChange( 'number_of_voters' )} type="number" />
-                            <input id="Address" className="form-control" placeholder="Adresas" value={this.props.district.address}
-                                maxLength="60"
+                            <input id="Address" className="form-control" placeholder="Adresas" value={this.props.district.address} maxLength="150"
                                 onChange={this.props.onFieldChange( 'address' )} type="text" />
                             <br />
-                            <table><tbody><tr><td><div id="DistrictTitleValidation" className="validationForm">
-                                <span>Apylinkės pavadinime naudojami netinkami simboliai arba neužpildytas laukas.</span></div></td></tr></tbody></table>
+                            <table><tbody>
+                                <tr><td><div id="DistrictTitleValidation" className="validationForm">
+                                    <span>Neįvestas apylinkės pavadinimas arba naudojami netinkami simboliai.</span></div></td></tr>
+                                <tr><td><div id="DistrictVotersNumberValidation" className="validationForm">
+                                    <span>Rinkėjų skaičius turi būti nuo 1 iki 10000.</span></div></td></tr>
+                                <tr><td><div id="DistrictAddressValidation" className="validationForm">
+                                    <span>Neįvestas apylinkės adresas arba naudojami netinkami simboliai.</span></div></td></tr>
+                            </tbody>
+                            </table>
                         </div>
                         <div className="col-md-2">
-                            <button id="Submit new district" className="btn btn-block btn-success" type="submit"
+                            <button id="Submit_new_district" className="btn btn-block btn-success" type="submit"
                                 onClick={( event ) => {
-                                    var val = $( "#DistrictName" ).val();
-                                    var matches = val.match( ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)" );
-                                    if ( matches != null ) {
-                                        $( '#DistrictTitleValidation' ).hide( "slow" );
+                                    var name = $( "#DistrictName" ).val();
+                                    var matches1 = name.match( ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)" );
+                                    if ( matches1 != null ) { $( '#DistrictTitleValidation' ).hide( "slow" ); }
+                                    else { $( '#DistrictTitleValidation' ).hide( "slow" ); $( '#DistrictTitleValidation' ).show( "slow" ) }
+
+                                    var voters = $( "#VotersCount" ).val();
+                                    if ( voters < 1 || voters > 10000 ) {
+                                        $( '#DistrictVotersNumberValidation' ).hide( "slow" );
+                                        $( '#DistrictVotersNumberValidation' ).show( "slow" );
+                                    }
+                                    else { $( '#DistrictVotersNumberValidation' ).hide( "slow" ) }
+
+                                    var address = $( "#Address" ).val();
+                                    var matches3 = address.match( ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“\"!,.:;-? ()]$)" );
+                                    if ( matches3 != null ) { $( '#DistrictAddressValidation' ).hide( "slow" ); }
+                                    else { $( '#DistrictAddressValidation' ).hide( "slow" ); $( '#DistrictAddressValidation' ).show( "slow" ) }
+
+                                    if ( matches1 != null && matches3 != null && ( voters > 0 && voters <= 10000 ) ) {
                                         this.props.onSubmitDist( this.props.district );
                                         this.changeAddingState();
-                                    }
-                                    else {
-                                        $( '#DistrictTitleValidation' ).hide( "slow" );
-                                        $( '#DistrictTitleValidation' ).show( "slow" )
-                                    }
+                                    };
+
                                 } }>Pridėti
                             </button>
-                            <button id="Cancel adding" className="btn btn-block btn-danger" type="submit"
+                            <button id="Cancel_Adding" className="btn btn-block btn-danger" type="submit"
                                 onClick={this.changeAddingState}>Atšaukti
                             </button>
                             <p></p>
@@ -61,7 +78,7 @@ var AddDistrictComponent = React.createClass( {
         } else {
             return (
                 <div>
-                    <button id="Add district" className="btn btn-block btn-success" type="submit"
+                    <button id="Add_District" className="btn btn-block btn-success" type="submit"
                         onClick={this.changeAddingState}>Pridėti apylinkę
                     </button>
                 </div> )

@@ -3,12 +3,12 @@ var LoginPageContainer = React.createClass( {
     // Login validation
     handleSubmitClick() {
         var val = $( "#inputAdminName" ).val();
-        var matches = val.match( ".*([a-zA-ZąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)" );
+        var matches = val.match( ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)" );
         if ( matches != null ) { $( '#AdminNameValidation' ).hide( "slow" ) }
         else { $( '#AdminNameValidation' ).show( "slow" ) }
 
         var valp = $( "#inputAdminPass" ).val();
-        var matchesp = valp.match( ".*([a-zA-ZąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)" );
+        var matchesp = valp.match( ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)" );
         if ( matchesp != null ) { $( '#AdminPassValidation' ).hide( "slow" ) }
         else { $( '#AdminPassValidation' ).show( "slow" ) }
 

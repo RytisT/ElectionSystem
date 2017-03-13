@@ -37,18 +37,20 @@ public class Districts {
     @Column(name = "constituency_id")
     private Integer constituency_id;
 
-    @Column(name = "title", unique = true)
+    @Column(name = "title")
     @NotNull(message = "DISTRICTS TITLE can not be empty")
     @Pattern(regexp = ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)", message = "DISTRICTS TITLE contains invalid characters. ")
     @Length(min = 1, max = 30, message = "DISTRICTS TITLE must not be empty and length can not be longer than {max} symbols. ")
     private String title;
 
     @Column(name = "number_of_voters")
+    @NotNull(message = "NUMBER OF VOTERS can not be empty")
     private Long number_of_voters;
 
     @Column(name = "address")
-    //@Pattern(regexp = ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)", message = "DISTRICTS ADDRESS contains invalid characters. ")
-    @Length(min = 0, max = 60, message = "DISTRICTS ADDRESS must not be empty and length can not be longer than {max} symbols. ")
+    @NotNull(message = "ADDRESS can not be empty")
+    @Pattern(regexp = ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“\"!,.:;-? ()]$)", message = "DISTRICTS ADDRESS contains invalid characters. ")
+    @Length(min = 1, max = 150, message = "DISTRICTS ADDRESS must not be empty and length can not be longer than {max} symbols. ")
     private String address;
 
     @Column(name = "VOTED_SINGLE")
@@ -68,6 +70,30 @@ public class Districts {
 
     @Column(name = "VOTED_MULTI_TIME")
     private Date votedMultiTime;
+
+
+    public Boolean getSingleVoteActive() {
+        return singleVoteActive;
+    }
+
+    public void setSingleVoteActive(Boolean singleVoteActive) {
+        this.singleVoteActive = singleVoteActive;
+    }
+
+    @Column(name = "SINGLE_VOTE_ACTIVE")
+    private Boolean singleVoteActive;
+
+
+    public Boolean getMultiVoteActive() {
+        return multiVoteActive;
+    }
+
+    public void setMultiVoteActive(Boolean multiVoteActive) {
+        this.multiVoteActive = multiVoteActive;
+    }
+
+    @Column(name = "MULTI_VOTE_ACTIVE")
+    private Boolean multiVoteActive;
 
 
     @OneToOne(cascade = CascadeType.ALL)

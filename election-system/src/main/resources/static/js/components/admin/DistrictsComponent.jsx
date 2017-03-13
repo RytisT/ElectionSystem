@@ -6,7 +6,7 @@ var DistrictsComponent = React.createClass({
 
     districtList: function () {
         return this.props.districts.map(function (district, index) {
-            if(district.title.includes(this.props.searchQuery)) {
+            if(district.title.toLowerCase().includes(this.props.searchQuery.toLowerCase()) || district.address.toLowerCase().includes(this.props.searchQuery.toLowerCase())) {
                 return (
                     <SingleDistrictContainer key={index} district={district} onDelete={this.props.onDelete}/>
                 )
@@ -19,10 +19,11 @@ var DistrictsComponent = React.createClass({
         return (
             <div className="">
                 <div className="panel panel-default">
-                <div className="panel-heading"><label htmlFor="basic-url">Ieškoti apylinkės: </label></div>
+                
                 <div className=" panel-body input-group">
-                    <span className="input-group-addon" id="basic-addon3">Apylinkės pavadinimas: </span>
-                    <input type="text" className="form-control" id="SearchByTitle" onChange={this.props.onSearchQueryChange(this.props.searchQuery)}/>
+                    <span className="input-group-addon" id="basic-addon3">Apylinkės paieška: </span>
+                    <input type="text" className="form-control" id="SearchByTitle" placeholder="Įveskite apylinkės pavadinimą / adresą" maxLength="35" 
+                        onChange={this.props.onSearchQueryChange(this.props.searchQuery)}/>
                 </div>
                         <div id="DistrictSearchValidation" className="validationForm"><span>Naudojami netinkami simboliai.</span></div>
                 </div>
@@ -51,5 +52,6 @@ var DistrictsComponent = React.createClass({
     }
 });
 
+// <div className="panel-heading"><label htmlFor="basic-url">Ieškoti apylinkės: </label></div>
 
 window.DistrictsComponent = DistrictsComponent;

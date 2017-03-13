@@ -57,7 +57,7 @@ var DistrictContainer = React.createClass( {
         return function( newQuery ) {
             //validation
             var val = $( "#SearchByTitle" ).val();
-            var matches = val.match( ".*([a-zA-ZąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)" );
+            var matches = val.match( ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“\"!,.:;-? ()]$)" );
             if ( matches != null ) { $( "#DistrictSearchValidation" ).hide( "slow" ); }
             else { $( "#DistrictSearchValidation" ).show( "slow" ); }
 

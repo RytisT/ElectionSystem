@@ -32,4 +32,6 @@ public class Multi_Results_Service {
         return repository.findOne(id);
     }
 
+    public List<Multi_Results> findByDistrictId(Integer districts_id) { return repository.findByDistrictId(districts_id);
+    }
 }
