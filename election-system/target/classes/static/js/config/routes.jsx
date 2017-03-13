@@ -8,7 +8,7 @@ var routes = (
         <Router>
             <Route path='/' component={App}>
                 <IndexRoute component={MainPageContainer} />
-                <Route path="/admin" component={AdminComponent}>
+                <Route path="a/admin" component={AdminComponent}>
                     <IndexRoute component={ConstituenciesContainer} />
                     <Route path="/admin/parties" component={PartiesContainer} />
                     <Route path="/admin/party-candidates/:partyId" component={PartyCandidatesContainer} />

@@ -20,8 +20,8 @@ public class ResultsForUserConstituenciesController {
     private ResultsForUserConstituenciesService service;
     
     @GetMapping
-    public HashMap<String, HashMap<String, Integer>> constituencyVoterActivity(){
-        return service.constitencyMultiActivity();
+    public Map<String, Integer> constituencyVoterActivity(){
+        return service.constituencyVoterActivity();
     }
 
 }

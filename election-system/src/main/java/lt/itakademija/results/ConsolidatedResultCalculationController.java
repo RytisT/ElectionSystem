@@ -18,13 +18,8 @@ import lt.itakademija.database.models.Candidates;
 public class ConsolidatedResultCalculationController {
 
     @Autowired
-<<<<<<< HEAD
     private ConsolidatedResultCalculationService consolidateResult;
     
-=======
-    ConsolidatedResultCalculationService consolidateResult;
-
->>>>>>> 5829c51f60fd07285bc9c8f2547047d3f62c1f01
     @GetMapping
     public List<Candidates> getResults() {
         return consolidateResult.consolidatedWinner();

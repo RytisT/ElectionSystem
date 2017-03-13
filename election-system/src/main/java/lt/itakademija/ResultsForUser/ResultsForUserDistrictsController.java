@@ -1,5 +1,6 @@
 package lt.itakademija.ResultsForUser;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -26,7 +27,7 @@ public class ResultsForUserDistrictsController {
      * returns Map<Title, single vote time>
      */
     @GetMapping(value="/single/time")
-    public Map<String, String> districtsSingleVoteTime(){
+    public Map<String, Date> districtsSingleVoteTime(){
         return userResultsDistrictService.districtsSingleVoteTime();
     }
     
@@ -36,7 +37,7 @@ public class ResultsForUserDistrictsController {
      * returns Map<Title, multi vote time>
      */
     @GetMapping(value="/multi/time")
-    public HashMap<String, String> districtsMultiVoteTime(){
+    public HashMap<String, Date> districtsMultiVoteTime(){
         return userResultsDistrictService.districtsMultiVoteTime();
     }
     

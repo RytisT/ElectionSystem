@@ -1,5 +1,6 @@
 package lt.itakademija.ResultsForUser;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,8 +32,8 @@ public class ResultsForUserDistrictsService {
      * Vienamandatės apygardos
      * returns Map<Title, single vote time>
      */
-    public HashMap<String, String> districtsSingleVoteTime(){
-        HashMap<String, String> votesSingleTime= new HashMap<>();
+    public HashMap<String, Date> districtsSingleVoteTime(){
+        HashMap<String, Date> votesSingleTime= new HashMap<>();
         for(Districts districts: districtsService.findAll()){
             votesSingleTime.put(districts.getTitle(), districts.getVotedSingleTime());
         }
@@ -44,8 +45,8 @@ public class ResultsForUserDistrictsService {
      * Daugiamandatės apygardos
      * returns Map<Title, multi vote time>
      */
-    public HashMap<String, String> districtsMultiVoteTime(){
-        HashMap<String, String> votesMultiTime= new HashMap<>();
+    public HashMap<String, Date> districtsMultiVoteTime(){
+        HashMap<String, Date> votesMultiTime= new HashMap<>();
         for(Districts districts: districtsService.findAll()){
             votesMultiTime.put(districts.getTitle(), districts.getVotedMultiTime());
         }
@@ -73,7 +74,7 @@ public class ResultsForUserDistrictsService {
         HashMap<String, Float> votersPercentMap = new HashMap<>();
         for(Districts districts: districtsService.findAll()){
             votersPercentMap.put(districts.getTitle(), 
-                    (float) ((districts.getVotedMultiCorrupt()+districts.getVotedMulti())/districts.getNumber_of_voters()*100));
+                     ((float)(districts.getVotedMultiCorrupt()+districts.getVotedMulti())/(float)districts.getNumber_of_voters()*100));
         }
         return votersPercentMap;
     }

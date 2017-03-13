@@ -170,5 +170,10 @@ public class Candidates {
     public void setSingle_results(List<Single_Results> single_results) {
         this.single_results = single_results;
     }
+    
+    
+    public String informationForDistricts(){
+        return getName() + " " + getLast_name() + " " + getParty_id();
+    }
 
 }

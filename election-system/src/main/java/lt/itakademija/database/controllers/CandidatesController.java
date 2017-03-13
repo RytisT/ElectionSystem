@@ -2,6 +2,8 @@ package lt.itakademija.database.controllers;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -34,7 +36,7 @@ public class CandidatesController {
     }
 
     @PostMapping
-    public Candidates createOrUpdateCandidates(@RequestBody Candidates c) {
+    public Candidates createOrUpdateCandidates(@RequestBody @Valid Candidates c) {
         return service.saveOrUpdate(c);
     }
 
@@ -76,6 +78,10 @@ public class CandidatesController {
         return null;
     }
 
-
+    @GetMapping(value = "/search/test")
+    public Candidates getByIdPartyId(@RequestParam(value = "party_id", required = false) Integer partyId,
+            @RequestParam(value = "party_list_seat", required = false) Integer partySeat){
+        return service.findByPartyAndSeat(partyId, partySeat);
+    }
 }
 
