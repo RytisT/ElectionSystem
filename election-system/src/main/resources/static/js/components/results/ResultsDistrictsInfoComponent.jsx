@@ -30,7 +30,7 @@ var ResultsDistrictsInfoComponent = React.createClass({
             }
             var singleDate = year + '-' + month + '-' + date + "    " + hour + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
 
-            var singleActive = this.props.district.votedSingle + this.props.district.votedSingleCorrupt + ' (' + Math.round((this.props.district.votedSingle + this.props.district.votedSingleCorrupt) / this.props.district.number_of_voters * 10000) / 100 + '%)';
+            var singleActive = this.props.district.votedSingle  + ' (' + Math.round(this.props.district.votedSingle / this.props.district.number_of_voters * 10000) / 100 + '%)';
             var singleCorrupt = this.props.district.votedSingleCorrupt;
         } else {
             var singleDate = 'Duomenys nepateikti';
@@ -58,7 +58,7 @@ var ResultsDistrictsInfoComponent = React.createClass({
             }
             var multiDate = year + '-' + month + '-' + date + " " + hour + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
 
-            var multiActive = this.props.district.votedMulti + this.props.district.votedMultiCorrupt + ' (' + Math.round((this.props.district.votedMulti + this.props.district.votedMultiCorrupt) / this.props.district.number_of_voters * 10000) / 100 + '%)';
+            var multiActive = this.props.district.votedMulti  + ' (' + Math.round(this.props.district.votedMulti / this.props.district.number_of_voters * 10000) / 100 + '%)';
             var multiCorrupt = this.props.district.votedMultiCorrupt;
         } else {
             var multiDate = 'Duomenys nepateikti';
