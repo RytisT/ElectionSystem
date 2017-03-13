@@ -12,7 +12,11 @@ var LoginPageContainer = React.createClass( {
         if ( matchesp != null ) { $( '#AdminPassValidation' ).hide( "slow" ) }
         else { $( '#AdminPassValidation' ).show( "slow" ) }
 
-        if ( matches != null && matchesp != null ) { this.context.router.push( '/admin' ) };
+        if ( matches != null && matchesp != null ) {
+            this.context.router.push( '/admin' );
+            $( '#loginMenu' ).hide( "slow" );
+            $( '#logOut' ).show( "slow" )
+        };
     },
 
     // Cancel 
