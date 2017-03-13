@@ -1,4 +1,4 @@
-var ResultsDistrictsInfoContainer = React.createClass({
+var ResultsDistrictsMultiContainer = React.createClass({
 
     getInitialState: function() {
         return {
@@ -25,7 +25,8 @@ var ResultsDistrictsInfoContainer = React.createClass({
                 },
                 single_results: [],
                 multi_results: []
-            }
+            },
+            partiesList: []
         }
     },
 
@@ -37,25 +38,32 @@ var ResultsDistrictsInfoContainer = React.createClass({
                 this.setState({
                     district: response.data,
                 });
-            }.bind(this))
+            }.bind(this));
+        axios.get('/user/resultsdistricts/multi/partylist/' + districtId)
+            .then(function (response) {
+                this.setState({
+                    partyList: response.data,
+                });
+            }.bind(this));
     },
 
 
     handleReturnDistricts() {
-        this.context.router.push('/results/districts/'+this.state.district.constituency_id);
+        this.context.router.push('/results/districts/' + this.state.district.constituency_id);
     },
 
     render: function () {
         return (
-            <ResultsDistrictsInfoComponent district={this.state.district}
-                                           onReturnDistrictsClick={this.handleReturnDistricts}
+            <ResultsDistrictsMultiComponent district={this.state.district}
+                                            partiesList={this.state.partiesList}
+                                            onReturnDistrictsClick={this.handleReturnDistricts}
             />
         );
     }
 });
 
-ResultsDistrictsInfoContainer.contextTypes = {
+ResultsDistrictsMultiContainer.contextTypes = {
     router: React.PropTypes.object.isRequired,
 };
 
-window.ResultsDistrictsInfoContainer = ResultsDistrictsInfoContainer;
+window.ResultsDistrictsMultiContainer = ResultsDistrictsMultiContainer;

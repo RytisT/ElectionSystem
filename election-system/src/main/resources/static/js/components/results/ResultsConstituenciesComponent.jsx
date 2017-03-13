@@ -1,6 +1,3 @@
-var Link = ReactRouter.Link;
-
-
 var ResultsConstituenciesComponent = React.createClass({
 
 
@@ -11,7 +8,7 @@ var ResultsConstituenciesComponent = React.createClass({
                     <td className="col-md-1">{constituency.id}</td>
                     <td className="col-md-3">{constituency.title}</td>
                     <td className="col-md-2">
-                        <button id={"ResultsConstituencyInfo"+constituency.id} type="button" className="btn btn-info"
+                        <button id={"ResultsConstituenciesInfo"+constituency.id} type="button" className="btn btn-info"
                                 onClick={this.props.onResultsConstituenciesInfoClick(constituency)}
                                 data-toggle="tooltip" data-placement="top" title="Apygardos rezultatai"
                                 data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
@@ -31,12 +28,22 @@ var ResultsConstituenciesComponent = React.createClass({
                         </button>
                     </td>
                     <td className="col-md-2">
-                        <button id="ResultsConstituencyMultiple" type="button" className="btn btn-warning">
+                        <button id={"ResultsConstituenciesMulti"+constituency.id} type="button" className="btn btn-warning"
+                                onClick={this.props.onResultsConstituenciesMultiClick(constituency)}
+                                data-toggle="tooltip" data-placement="top" title="Daugiamandatės rezultatai"
+                                data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
+                                aria-controls="collapseOne"
+                        >
                             Partijų rezultatai
                         </button>
                     </td>
                     <td className="col-md-2">
-                        <button id="ResultsConstituencySingle" type="button" className="btn btn-danger">
+                        <button id={"ResultsConstituenciesSingle"+constituency.id} type="button" className="btn btn-danger"
+                                onClick={this.props.onResultsConstituenciesSingleClick(constituency)}
+                                data-toggle="tooltip" data-placement="top" title="Vienmandatės rezultatai"
+                                data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
+                                aria-controls="collapseOne"
+                        >
                             Kandidatų rezultatai
                         </button>
                     </td>

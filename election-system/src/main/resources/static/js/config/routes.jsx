@@ -31,8 +31,13 @@ var routes = (
                 <Route path="/replogin" component={LoginRepPageContainer} />
                 <Route path="/results/constituencies" component={ResultsConstituenciesContainer} />
                 <Route path="/results/constituencies/info/:constituencyId" component={ResultsConstituenciesInfoContainer} />
+                <Route path="/results/constituencies/multi/:constituencyId" component={ResultsConstituenciesMultiContainer} />
+                <Route path="/results/constituencies/single/:constituencyId" component={ResultsConstituenciesSingleContainer} />
                 <Route path="/results/districts/:constituencyId" component={ResultsDistrictsContainer} />
                 <Route path="/results/districts/info/:districtId" component={ResultsDistrictsInfoContainer} />
+                <Route path="/results/districts/multi/:districtId" component={ResultsDistrictsMultiContainer} />
+                <Route path="/results/districts/single/:districtId" component={ResultsDistrictsSingleContainer} />
+
 
             </Route>
         </Router>

@@ -68,7 +68,7 @@ var ResultsDistrictsInfoComponent = React.createClass({
 
         return (
             <div id="resultsDistrict">
-                <h2 style={styles.blue}>Apylinkė balsavimo informacija</h2>
+                <h2 style={styles.blue}>Apylinkės balsavimo informacija</h2>
                 <div style={styles.line}></div>
                 <span id="resultsDistrictInfo">Apylinkė: </span><span>{this.props.district.title}</span>
                 <br/>

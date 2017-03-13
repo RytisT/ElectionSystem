@@ -1,4 +1,4 @@
-var ResultsConstituenciesInfoContainer = React.createClass({
+var ResultsConstituenciesMultiContainer = React.createClass({
 
     getInitialState: function() {
         return {
@@ -10,7 +10,8 @@ var ResultsConstituenciesInfoContainer = React.createClass({
                 votedSingleCorrupt: '',
                 votedMulti: '',
                 votedMultiCorrupt: ''
-            }
+            },
+            partiesList: []
         }
     },
 
@@ -22,7 +23,13 @@ var ResultsConstituenciesInfoContainer = React.createClass({
                 this.setState({
                     constituency: response.data,
                 });
-            }.bind(this))
+            }.bind(this));
+        axios.get('/user/resultsconstituencies/multi/partylist/' + constituencyId)
+            .then(function (response) {
+                this.setState({
+                    partyList: response.data,
+                });
+            }.bind(this));
     },
 
 
@@ -32,15 +39,16 @@ var ResultsConstituenciesInfoContainer = React.createClass({
 
     render: function () {
         return (
-            <ResultsConstituenciesInfoComponent constituency={this.state.constituency}
-                                                onReturnConstituenciesClick={this.handleReturnConstituencies}
+            <ResultsConstituenciesMultiComponent constituency={this.state.constituency}
+                                                 partiesList={this.state.partiesList}
+                                                 onReturnConstituenciesClick={this.handleReturnConstituencies}
             />
         );
     }
 });
 
-ResultsConstituenciesInfoContainer.contextTypes = {
+ResultsConstituenciesMultiContainer.contextTypes = {
     router: React.PropTypes.object.isRequired,
 };
 
-window.ResultsConstituenciesInfoContainer = ResultsConstituenciesInfoContainer;
+window.ResultsConstituenciesMultiContainer = ResultsConstituenciesMultiContainer;

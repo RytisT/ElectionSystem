@@ -28,12 +28,30 @@ var ResultsDistrictsContainer = React.createClass( {
         }.bind(this)
     },
 
+    handleResultsDistrictsMulti: function(district) {
+        return function() {
+            this.context.router.push({
+                pathname: '/results/districts/multi/' + district.id
+            });
+        }.bind(this)
+    },
+
+    handleResultsDistrictsSingle: function(district) {
+        return function() {
+            this.context.router.push({
+                pathname: '/results/districts/single/' + district.id
+            });
+        }.bind(this)
+    },
+
     render: function() {
         return (
             <div>
                 <ResultsDistrictsComponent districts={this.state.districts}
                                            onReturnConstituenciesClick={this.handleReturnConstituencies}
                                            onResultsDistrictsInfoClick={this.handleResultsDistrictsInfo}
+                                           onResultsDistrictsMultiClick={this.handleResultsDistrictsMulti}
+                                           onResultsDistrictsSingleClick={this.handleResultsDistrictsSingle}
 
                 />
             </div>
