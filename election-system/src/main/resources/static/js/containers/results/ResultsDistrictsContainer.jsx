@@ -16,6 +16,10 @@ var ResultsDistrictsContainer = React.createClass( {
             }.bind(this))
     },
 
+    handleReturnConstituencies() {
+        this.context.router.push('/results/constituencies');
+    },
+
     handleResultsDistrictsInfo: function(district) {
         return function() {
             this.context.router.push({
@@ -24,15 +28,31 @@ var ResultsDistrictsContainer = React.createClass( {
         }.bind(this)
     },
 
-    // handleReturn: function() {
-    //     this.context.router.push( '/admin' );
-    // },
+    handleResultsDistrictsMulti: function(district) {
+        return function() {
+            this.context.router.push({
+                pathname: '/results/districts/multi/' + district.id
+            });
+        }.bind(this)
+    },
+
+    handleResultsDistrictsSingle: function(district) {
+        return function() {
+            this.context.router.push({
+                pathname: '/results/districts/single/' + district.id
+            });
+        }.bind(this)
+    },
 
     render: function() {
         return (
             <div>
                 <ResultsDistrictsComponent districts={this.state.districts}
+                                           onReturnConstituenciesClick={this.handleReturnConstituencies}
                                            onResultsDistrictsInfoClick={this.handleResultsDistrictsInfo}
+                                           onResultsDistrictsMultiClick={this.handleResultsDistrictsMulti}
+                                           onResultsDistrictsSingleClick={this.handleResultsDistrictsSingle}
+
                 />
             </div>
         )

@@ -1,8 +1,4 @@
-var Link = ReactRouter.Link;
-
-
 var ResultsDistrictsComponent = React.createClass({
-
 
     render: function () {
         var districtsList = this.props.districts.map(function (district, index) {
@@ -11,7 +7,7 @@ var ResultsDistrictsComponent = React.createClass({
                     <td className="col-md-1">{district.id}</td>
                     <td className="col-md-3">{district.title}</td>
                     <td className="col-md-2">
-                        <button id={"ResultsDistrictInfo"+district.id} type="button" className="btn btn-info"
+                        <button id={"ResultsDistrictsInfo"+district.id} type="button" className="btn btn-info"
                                 onClick={this.props.onResultsDistrictsInfoClick(district)}
                                 data-toggle="tooltip" data-placement="top" title="Apylinkės rezultatai"
                                 data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
@@ -21,19 +17,28 @@ var ResultsDistrictsComponent = React.createClass({
                         </button>
                     </td>
                     <td className="col-md-2">
-                        <button id="ResultsDistrictMultiple" type="button" className="btn btn-warning">
+                        <button id={"ResultsDistrictsMulti"+district.id} type="button" className="btn btn-warning"
+                                onClick={this.props.onResultsDistrictsMultiClick(district)}
+                                data-toggle="tooltip" data-placement="top" title="Daugiamandatės rezultatai"
+                                data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
+                                aria-controls="collapseOne"
+                        >
                             Partijų rezultatai
                         </button>
                     </td>
                     <td className="col-md-2">
-                        <button id="ResultsDistrictSingle" type="button" className="btn btn-danger">
+                        <button id={"ResultsDistrictsSingle"+district.id} type="button" className="btn btn-danger"
+                                onClick={this.props.onResultsDistrictsSingleClick(district)}
+                                data-toggle="tooltip" data-placement="top" title="Vienmandatės rezultatai"
+                                data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
+                                aria-controls="collapseOne"
+                        >
                             Kandidatų rezultatai
                         </button>
                     </td>
                 </tr>
             );
         }.bind(this));
-
 
         return (
             <div className="">
@@ -51,13 +56,20 @@ var ResultsDistrictsComponent = React.createClass({
                     {districtsList}
                     </tbody>
                 </table>
+                <button id="ResultsDistrictsReturn"
+                        className="btn btn-success"
+                        style={{marginRight: '20px'}}
+                        onClick={this.props.onReturnConstituenciesClick}
+                >
+                    Grįžti
+                </button>
             </div>
         )
     }
 });
 
-// ResultsDistrictsComponent.propTypes = {
-//     districts: React.PropTypes.array.isRequired
-// };
+ResultsDistrictsComponent.propTypes = {
+    districts: React.PropTypes.object.isRequired
+};
 
 window.ResultsDistrictsComponent = ResultsDistrictsComponent;

@@ -20,10 +20,25 @@ var ResultsConstituenciesContainer = React.createClass({
             }.bind(this))
     },
 
+    handleReturnHome() {
+        this.context.router.push('/');
+    },
 
     handleResultsConstituenciesInfo: function(constituency) {
         return function() {
             this.context.router.push( '/results/constituencies/info/' + constituency.id );
+        }.bind(this)
+    },
+
+    handleResultsConstituenciesMulti: function(constituency) {
+        return function() {
+            this.context.router.push( '/results/constituencies/multi/' + constituency.id );
+        }.bind(this)
+    },
+
+    handleResultsConstituenciesSingle: function(constituency) {
+        return function() {
+            this.context.router.push( '/results/constituencies/single/' + constituency.id );
         }.bind(this)
     },
 
@@ -41,6 +56,9 @@ var ResultsConstituenciesContainer = React.createClass({
                 <ResultsConstituenciesComponent constituencies={this.state.constituencies}
                                                 onResultsDistrictsClick={this.handleResultsDistricts}
                                                 onResultsConstituenciesInfoClick={this.handleResultsConstituenciesInfo}
+                                                onResultsConstituenciesMultiClick={this.handleResultsConstituenciesMulti}
+                                                onResultsConstituenciesSingleClick={this.handleResultsConstituenciesSingle}
+                                                onReturnHomeClick={this.handleReturnHome}
                 />
             </div>
         )

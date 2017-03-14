@@ -24,9 +24,7 @@ var styles = {
     }
 };
 
-var MultiVotesComponent = React.createClass({
-
-
+var MultiVotesComponent = React.createClass( {
 
     propTypes: {
         parties: React.PropTypes.array.isRequired,
@@ -34,12 +32,12 @@ var MultiVotesComponent = React.createClass({
     },
 
 
-    render: function () {
-        var partiesList = this.props.parties.map(function (party, index) {
+    render: function() {
+        var partiesList = this.props.parties.map( function( party, index ) {
 
 
             return (
-                 <tr id="partiesList" key={index}>
+                <tr id="partiesList" key={index}>
                     <td></td>
                     <td>{party.party_Code}</td>
                     <td>{party.title}</td>
@@ -48,9 +46,9 @@ var MultiVotesComponent = React.createClass({
                             className="form-control"
                             placeholder="Įvesktie surinktų balsų skaičių"
                             value={this.props.votes[party.id].m_votes}
-                              onChange={this.props.onVotesChange(party.id)}
+                            onChange={this.props.onVotesChange( party.id )}
                             type="number"
-                        />
+                            />
                     </td>
                 </tr>
             );
@@ -62,53 +60,54 @@ var MultiVotesComponent = React.createClass({
                 <div className="panel panel-default" style={styles.marginTop} id="Table">
                     <table className="table table-striped">
                         <thead>
-                        <tr>
-                            <th id="RowNumber">Eil.Nr.</th>
-                            <th>TRUMPINYS</th>
-                            <th>PARTIJA</th>
-                            <th>SURINKTI BALSAI</th>
-                        </tr>
+                            <tr>
+                                <th id="RowNumber">Eil.Nr.</th>
+                                <th>TRUMPINYS</th>
+                                <th>PARTIJA</th>
+                                <th>SURINKTI BALSAI</th>
+                            </tr>
                         </thead>
                         <tbody>
-                        {partiesList}
+                            {partiesList}
                         </tbody>
                     </table>
                     <table className="table table-striped">
                         <thead>
-                        <tr>
-                            <th>Suskaičiuota daugiamandatės biuletenių:</th>
-                            <th>
-                                <input
-                                    className="form-control"
-                                    placeholder="Įveskite biuletenių skaičių"
-                                    type="number"
-                                    value={this.props.district.votedMulti ? this.props.district.votedMulti : ""}
-                                    onChange={this.props.onTotalVotesChange("votedMulti")}
-                                />
-                            </th>
-                        </tr>
-                        <tr>
-                            <th>Sugadinta daugiamandatės biuletenių:</th>
-                            <th>
-                                <input
-                                    className="form-control"
-                                    placeholder="Įveskite sugadintų biuletenių skaičių"
-                                    type="number"
-                                    value={this.props.district.votedMultiCorrupt ? this.props.district.votedMultiCorrupt : ""}
-                                    onChange={this.props.onTotalVotesChange("votedMultiCorrupt")}
-                                />
-                            </th>
-                        </tr>
+                            <tr>
+                                <th>Suskaičiuota daugiamandatės biuletenių:</th>
+                                <th>
+                                    <input
+                                        className="form-control"
+                                        placeholder="Įveskite biuletenių skaičių"
+                                        type="number"
+                                        value={this.props.district.votedMulti ? this.props.district.votedMulti : ""}
+                                        onChange={this.props.onTotalVotesChange( "votedMulti" )}
+                                        />
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>Sugadinta daugiamandatės biuletenių:</th>
+                                <th>
+                                    <input
+                                        className="form-control"
+                                        placeholder="Įveskite sugadintų biuletenių skaičių"
+                                        type="number"
+                                        value={this.props.district.votedMultiCorrupt ? this.props.district.votedMultiCorrupt : ""}
+                                        onChange={this.props.onTotalVotesChange( "votedMultiCorrupt" )}
+                                        />
+                                </th>
+                            </tr>
                         </thead>
                     </table>
-                    <button className="btn btn-block btn-success" type="submit" onClick={this.props.onSubmit(event)}>
+                    <div id="MultiResultValidation" className="validationForm"><span>Neteisingai suvesti balsai.</span></div>
+                    <button className="btn btn-block btn-success" type="submit" onClick={this.props.onSubmit( event )}>
                         Patvirtinti partijų surinktus balsus ir biuletenių skaičių
                     </button>
                 </div>
                 <p>&nbsp;</p>
                 <p>&nbsp;</p>
             </div>
-        : <div className="alert alert-success" role="alert">Daugiamandatininkų rezultatai užregistruoti sėkmingai!</div>
+            : <div className="alert alert-success" role="alert">Daugiamandatininkų rezultatai užregistruoti sėkmingai!</div>
     }
 });
 

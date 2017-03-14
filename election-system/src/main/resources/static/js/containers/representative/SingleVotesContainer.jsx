@@ -7,7 +7,6 @@ var SingleVotesContainer = React.createClass({
             },
             SingleCandidates: [],
             votes: []
-
         };
     },
 
@@ -18,7 +17,7 @@ var SingleVotesContainer = React.createClass({
             var tempVotes = this.state.votes;
 
             if(votesCount <= this.props.district.number_of_voters) {
-                tempVotes[candidateId].votes = votesCount
+                tempVotes[candidateId].vote = votesCount
 
                 this.setState({votes: tempVotes})
             } else {
@@ -41,22 +40,39 @@ var SingleVotesContainer = React.createClass({
     },
 
 
+
     handleSubmit: function (event) {
         return function () {
             event.preventDefault();
             var votesEntered = 0;
             this.state.votes.map(function (vote, index) {
-                votesEntered += Number(vote.votes);
+                votesEntered += Number(vote.vote);
             }.bind(this))
 
-            votesEntered += Number(this.props.district.votedSingleCorrupt);
+            votesEntered += Number(this.state.district.votedSingleCorrupt);
+            if (this.state.district.votedSingle == votesEntered) {
+                $( '#SinglResultValidation' ).hide( "slow" );
 
-            if (this.props.district.votedSingle == votesEntered) {
-                this.state.district.singleVoteActive = true;
-                this.state.district.votedSingleTime = Date.now();
-                this.props.onSaveVotes(this.state.district, this.state.votes);
+                this.state.votes.map(function (vote, index) {
+                        axios.post("api/single_results", vote)
+                });
+
+                axios.get("api/districts/" + this.props.district.id)
+                    .then(function(response){
+                        var thisDistrict = response.data;
+                        thisDistrict.singleVoteActive = true;
+                        thisDistrict.votedSingleTime = Date.now();
+                        thisDistrict.votedSingle = this.state.district.votedSingle;
+                        thisDistrict.votedSingleCorrupt = this.state.district.votedSingleCorrupt;
+
+                        this.props.onSaveVotes(thisDistrict);
+                        this.setState({district: thisDistrict})
+
+                    }.bind(this))
             } else {
                 console.log("klaida! klaida! klaida! ne tiek balsu!")
+                $( '#SinglResultValidation' ).hide( "slow" );
+                $( '#SinglResultValidation' ).show( "slow" );
             }
         }.bind(this)
     },
@@ -69,20 +85,17 @@ var SingleVotesContainer = React.createClass({
             tempVotes[candidate.id] = {
                 districts_id: this.props.district.id,
                 candidates_id: candidate.id,
-                id: Number(this.props.district.id.toString() + candidate.id.toString()),
-                votes: ""
+                vote: ""
             }
         }.bind(this));
 
         if(this.props.district.singleVoteActive == false){
             this.props.district.single_results.map(function (result, index) {
-                tempVotes[result.candidates_id].votes = result.vote;
-
+                tempVotes[result.candidates_id].vote = result.vote;
+                tempVotes[result.candidates_id].id = result.id;
             }.bind(this))
         }
         return tempVotes;
-
-
     },
 
 
@@ -95,7 +108,6 @@ var SingleVotesContainer = React.createClass({
                     SingleCandidates: res.data,
                     votes: tempVotes,
                     district: this.props.district,
-                    active: this.props.district.singleVoteActive
                 });
 
             })
