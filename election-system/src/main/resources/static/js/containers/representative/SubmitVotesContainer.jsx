@@ -6,12 +6,6 @@ var SubmitVotesContainer = React.createClass({
     },
 
 
-    handleSaveVotes: function (district) {
-
-        axios.post("api/districts", district)
-        this.setState({district: district});
-},
-
     componentWillMount: function() {
         var repLogin = this.props.routeParams.repLogin;
             axios.get('api/representatives/login/' + repLogin)
@@ -27,10 +21,8 @@ var SubmitVotesContainer = React.createClass({
             return (
                 <div>
                     <DistrictInfoComponent district={this.state.district}/>
-                    <MultiVotesContainer district={this.state.district} onSaveVotes = {this.handleSaveVotes}/>
-                    <SingleVotesContainer district={this.state.district}
-                                          onSaveVotes = {this.handleSaveVotes}
-                                          constId={this.state.district.constituency_id}/>
+                    <MultiVotesContainer district={this.state.district}/>
+                    <SingleVotesContainer district={this.state.district} constId={this.state.district.constituency_id}/>
                 </div>
             )
         } else {

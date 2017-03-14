@@ -2,6 +2,7 @@ var SingleVotesContainer = React.createClass({
 
     getInitialState: function () {
         return {
+            active: "",
             district: {
                 votedMulti : ""
             },
@@ -17,9 +18,10 @@ var SingleVotesContainer = React.createClass({
             var tempVotes = this.state.votes;
 
             if(votesCount <= this.props.district.number_of_voters) {
-                tempVotes[candidateId].vote = votesCount
+                tempVotes[candidateId].votes = votesCount
 
                 this.setState({votes: tempVotes})
+                console.log(this.state.votes)
             } else {
                 console.log("klaida! klaida! klaida! per daug vedi!")
             }
@@ -40,35 +42,26 @@ var SingleVotesContainer = React.createClass({
     },
 
 
-
     handleSubmit: function (event) {
         return function () {
             event.preventDefault();
             var votesEntered = 0;
             this.state.votes.map(function (vote, index) {
-                votesEntered += Number(vote.vote);
+                votesEntered += Number(vote.votes);
             }.bind(this))
 
-            votesEntered += Number(this.state.district.votedSingleCorrupt);
-            if (this.state.district.votedSingle == votesEntered) {
+            votesEntered += Number(this.props.district.votedSingleCorrupt);
+
+            if (this.props.district.votedSingle == votesEntered) {
+                console.log("postinu");
                 $( '#SinglResultValidation' ).hide( "slow" );
-
+                this.state.district.SingleVoteActive = true;
+                this.state.district.votedSingleTime = Date.now();
+                axios.post("api/districts", this.state.district);
                 this.state.votes.map(function (vote, index) {
-                        axios.post("api/single_results", vote)
-                });
-
-                axios.get("api/districts/" + this.props.district.id)
-                    .then(function(response){
-                        var thisDistrict = response.data;
-                        thisDistrict.singleVoteActive = true;
-                        thisDistrict.votedSingleTime = Date.now();
-                        thisDistrict.votedSingle = this.state.district.votedSingle;
-                        thisDistrict.votedSingleCorrupt = this.state.district.votedSingleCorrupt;
-
-                        this.props.onSaveVotes(thisDistrict);
-                        this.setState({district: thisDistrict})
-
-                    }.bind(this))
+                    axios.post("api/single_results", vote)
+                })
+                this.setState({active: true})
             } else {
                 console.log("klaida! klaida! klaida! ne tiek balsu!")
                 $( '#SinglResultValidation' ).hide( "slow" );
@@ -80,19 +73,19 @@ var SingleVotesContainer = React.createClass({
 
     loadVotesData: function (candidates) {
         var tempVotes = this.state.votes;
-
         candidates.map(function (candidate, index) {
             tempVotes[candidate.id] = {
                 districts_id: this.props.district.id,
                 candidates_id: candidate.id,
-                vote: ""
+                id: Number(this.props.district.id.toString() + candidate.id.toString()),
+                votes: ""
             }
         }.bind(this));
 
         if(this.props.district.singleVoteActive == false){
             this.props.district.single_results.map(function (result, index) {
-                tempVotes[result.candidates_id].vote = result.vote;
-                tempVotes[result.candidates_id].id = result.id;
+                tempVotes[result.candidates_id].votes = result.votes;
+                console.log(tempVotes)
             }.bind(this))
         }
         return tempVotes;
@@ -108,6 +101,7 @@ var SingleVotesContainer = React.createClass({
                     SingleCandidates: res.data,
                     votes: tempVotes,
                     district: this.props.district,
+                    active: this.props.district.singleVoteActive
                 });
 
             })

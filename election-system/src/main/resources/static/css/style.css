@@ -32,11 +32,14 @@ h1, h2, p, ul, li {
     padding: 20 0 20 0;
 }
 
+.header2 #home {
+	color: #fff;
+}
+
 .header {
     background-color: #111;
     padding: 0;
-    font-size: 20px;
-    height: 68px;
+    font-size: 20px;    
 }
 
 .header li:hover {
@@ -45,6 +48,32 @@ h1, h2, p, ul, li {
 
 .header li a {
     color: #FFF;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 20px;
+    display: inline-block;
+}
+
+.header2 li {
+    display: inline;
+    list-style-type: none;
+    margin: 0;
+    padding: 20 0 20 0;
+}
+
+.header2 {
+    background-color: #111;
+    padding: 0;
+    font-size: 20px;    
+}
+
+.header2 li:hover {
+    background-color: rgba(0, 128, 255, 0.4);
+}
+
+
+.header2 li a {
+    color: #111;
     font-weight: bold;
     text-decoration: none;
     padding: 20px;
@@ -82,14 +111,14 @@ h1, h2, p, ul, li {
 }
 
 .header #left {
-	width: 55%;				
+	width: 45%;				
 	float: left;
 	background-color: #111;	
 	padding-top: 3px;
 }
 
 .header #right {
-	width: 45%;				
+	width: 55%;				
 	float: right;	
 	background-color: #111;
 }
@@ -97,6 +126,27 @@ h1, h2, p, ul, li {
 .clear {
 	clear: both;
 }
+
+/* App */
+
+#loginMenu {
+	float: right;
+	padding-right: 50px;
+	padding-top: 14px;
+}
+
+#logOut {
+	float: right;
+	display: none;
+}
+
+
+/* MainPage */
+
+#main h1 {
+	text-align: center;
+}
+
 /* Results */
 
 #resultsDistrict span, #resultsConstituency span {

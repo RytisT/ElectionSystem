@@ -27,6 +27,7 @@ var styles = {
 var SingleVotesComponent = React.createClass( {
 
     render: function() {
+        var self = this;
         var candidatesList = this.props.SingleCandidates.map( function( candidate, index ) {
 
             return (
@@ -38,16 +39,16 @@ var SingleVotesComponent = React.createClass( {
                         <input
                             className="form-control"
                             placeholder="Įvesktie surinktų balsų skaičių"
-                            value={this.props.votes[candidate.id].vote}
+                            value={this.props.votes[candidate.id].votes}
                             onChange={this.props.onVotesChange( candidate.id )}
                             type="number"
                             />
                     </td>
                 </tr>
             );
-        }.bind(this));
+        }.bind( this ) );
 
-        return !this.props.district.singleVoteActive
+        return !this.props.activeState
             ? <div className="">
                 <h2 style={styles.blue}> Vienmandatininkų rezultatų suvedimas </h2>
                 <div style={styles.line}></div>

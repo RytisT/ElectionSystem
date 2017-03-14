@@ -12,16 +12,20 @@ var LoginRepPageContainer = React.createClass( {
         if ( matchesp != null ) { $( '#UserPassValidation' ).hide( "slow" ) }
         else { $( '#UserPassValidation' ).show( "slow" ) }
 
-        if ( matches != null && matchesp != null ) { this.context.router.push( '/representatives/' + val) };
+        if ( matches != null && matchesp != null ) {
+            this.context.router.push( '/representatives/' + val )
+            $( '#loginMenu' ).hide( "slow" );
+            $( '#logOut' ).show( "slow" )
+        };
     },
 
     // Cancel 
     handleCancelClick() {
-        this.context.router.push( '/' );
+        this.context.router.push( '/main' );
     },
 
     render: function() {
-        return <LoginRepPageComponent onCancelClick={this.handleCancelClick}  onSubmitClick={this.handleSubmitClick} />
+        return <LoginRepPageComponent onCancelClick={this.handleCancelClick} onSubmitClick={this.handleSubmitClick} />
     }
 });
 

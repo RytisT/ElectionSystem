@@ -39,7 +39,7 @@ public class Districts {
 
     @Column(name = "title")
     @NotNull(message = "DISTRICTS TITLE can not be empty")
-    @Pattern(regexp = ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)", message = "DISTRICTS TITLE contains invalid characters. ")
+    @Pattern(regexp = ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“\"!,.:;-? ()]$)", message = "DISTRICTS TITLE contains invalid characters. ")
     @Length(min = 1, max = 30, message = "DISTRICTS TITLE must not be empty and length can not be longer than {max} symbols. ")
     private String title;
 
