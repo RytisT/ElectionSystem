@@ -46,12 +46,6 @@ var ResultsDistrictsMultiContainer = React.createClass({
                     parties: response.data,
                 });
             }.bind(this));
-        axios.get('/user/resultsdistricts/multi/partylist/')
-            .then(function (response) {
-                this.setState({
-                    votesList: response.data,
-                });
-            }.bind(this));
     },
 
 
@@ -63,7 +57,6 @@ var ResultsDistrictsMultiContainer = React.createClass({
         return (
             <ResultsDistrictsMultiComponent district={this.state.district}
                                             parties={this.state.parties}
-                                            votesList={this.state.votesList}
                                             votesCount = {this.state.partiesList}
                                             onReturnDistrictsClick={this.handleReturnDistricts}
             />

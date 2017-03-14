@@ -2,60 +2,60 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e482d54-926f-4a34-b935-bdbc0546e727" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/results/ResultsDistrictsComponent.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/results/ResultsDistrictsInfoComponent.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/results/ResultsDistrictsInfoContainer.jsx" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/results/ResultsDistrictsContainer.jsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/results/ResultsDistrictsInfoContainer.jsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/results/ResultsDistrictsInfoComponent.jsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/results/ResultsDistrictsComponent.jsx" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/ResultsDistrictsComponent.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/ResultsDistrictsContainer.jsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/election-system/data/db.lock.db" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/election-system/data/db.trace.db" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/CandidatesComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/CandidatesComponent.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/repositories/PartiesRepository.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/repositories/PartiesRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/admin/DistrictRepresentativeComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/admin/DistrictRepresentativeComponent.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/css/style.css" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/java/lt/itakademija/database/models/Districts.java" afterPath="$PROJECT_DIR$/election-system/src/main/java/lt/itakademija/database/models/Districts.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/static/index.html" afterPath="$PROJECT_DIR$/election-system/target/classes/static/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/representative/SingleVotesComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/representative/SingleVotesComponent.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/controllers/ConstituencyController.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/controllers/ConstituencyController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/services/DistrictsService.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/services/DistrictsService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/MainPageComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/MainPageComponent.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/admin/AddPartyComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/admin/AddPartyComponent.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/services/ConstituencyService.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/services/ConstituencyService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/models/Parties.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/models/Parties.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/admin/SingleDistrictContainer.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/admin/SingleDistrictContainer.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/repositories/CandidatesRepository.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/repositories/CandidatesRepository.class" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/ResultsConstituenciesContainer.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/results/ResultsConstituenciesContainer.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/models/District_Representatives.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/models/District_Representatives.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/models/Districts.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/models/Districts.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/admin/SinglePartyComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/admin/SinglePartyComponent.jsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/ResultsConstituenciesComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/results/ResultsConstituenciesComponent.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/static/js/components/App.jsx" afterPath="$PROJECT_DIR$/election-system/target/classes/static/js/components/App.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/.settings/org.eclipse.core.resources.prefs" afterPath="$PROJECT_DIR$/election-system/.settings/org.eclipse.core.resources.prefs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/.idea/misc.xml" afterPath="$PROJECT_DIR$/election-system/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/.idea/workspace.xml" afterPath="$PROJECT_DIR$/election-system/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/election-system/data/db.lock.db" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/ResultsDistrictsContainer.jsx" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/repositories/DistrictsRepository.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/repositories/DistrictsRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/controllers/DistrictsController.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/controllers/DistrictsController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/Application.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/Application.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/repositories/Constituencies.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/repositories/Constituencies.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/representative/MultiVotesComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/representative/MultiVotesComponent.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/CandidatesContainer.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/CandidatesContainer.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/CandidatesComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/CandidatesComponent.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/representative/SingleVotesComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/representative/SingleVotesComponent.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/.idea/workspace.xml" afterPath="$PROJECT_DIR$/election-system/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/admin/AddPartyComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/admin/AddPartyComponent.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/data/db.mv.db" afterPath="$PROJECT_DIR$/election-system/data/db.mv.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/admin/DistrictRepresentativeComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/admin/DistrictRepresentativeComponent.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/models/Parties.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/models/Parties.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/MainPageComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/MainPageComponent.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/css/style.css" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/models/District_Representatives.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/models/District_Representatives.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/admin/SinglePartyComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/admin/SinglePartyComponent.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/admin/AddDistrictComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/admin/AddDistrictComponent.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/Application.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/Application.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/ResultsConstituenciesContainer.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/results/ResultsConstituenciesContainer.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/controllers/CandidatesController.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/controllers/CandidatesController.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/ResultsConstituenciesComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/results/ResultsConstituenciesComponent.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/representative/MultiVotesComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/representative/MultiVotesComponent.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/admin/SingleDistrictContainer.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/admin/SingleDistrictContainer.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/java/lt/itakademija/database/models/Districts.java" afterPath="$PROJECT_DIR$/election-system/src/main/java/lt/itakademija/database/models/Districts.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/admin/SingleDistrictComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/admin/SingleDistrictComponent.jsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/ResultsConstituenciesInfoComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/results/ResultsConstituenciesInfoComponent.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/models/Constituency.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/models/Constituency.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/services/CandidatesService.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/services/CandidatesService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/controllers/PartiesController.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/controllers/PartiesController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/static/js/config/routes.jsx" afterPath="$PROJECT_DIR$/election-system/target/classes/static/js/config/routes.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/admin/SinglePartyContainer.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/admin/SinglePartyContainer.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/repositories/PartiesRepository.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/repositories/PartiesRepository.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/models/Constituency.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/models/Constituency.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/repositories/Constituencies.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/repositories/Constituencies.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/static/js/config/routes.jsx" afterPath="$PROJECT_DIR$/election-system/target/classes/static/js/config/routes.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/models/Districts.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/models/Districts.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/index.html" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/controllers/District_Representatives_Controller.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/controllers/District_Representatives_Controller.class" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/ResultsConstituenciesInfoContainer.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/results/ResultsConstituenciesInfoContainer.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/repositories/CandidatesRepository.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/repositories/CandidatesRepository.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/config/routes.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/config/routes.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/controllers/PartiesController.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/controllers/PartiesController.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/ResultsConstituenciesInfoComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/results/ResultsConstituenciesInfoComponent.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/services/DistrictsService.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/services/DistrictsService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/services/CandidatesService.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/services/CandidatesService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/static/js/components/App.jsx" afterPath="$PROJECT_DIR$/election-system/target/classes/static/js/components/App.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/controllers/DistrictsController.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/controllers/DistrictsController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/services/ConstituencyService.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/services/ConstituencyService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/CandidatesContainer.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/CandidatesContainer.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/controllers/ConstituencyController.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/controllers/ConstituencyController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/.idea/misc.xml" afterPath="$PROJECT_DIR$/election-system/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/App.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/App.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/static/index.html" afterPath="$PROJECT_DIR$/election-system/target/classes/static/index.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/ResultsConstituenciesInfoContainer.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/results/ResultsConstituenciesInfoContainer.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/controllers/District_Representatives_Controller.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/controllers/District_Representatives_Controller.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/services/PartiesService.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/services/PartiesService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/.settings/org.eclipse.core.resources.prefs" afterPath="$PROJECT_DIR$/election-system/.settings/org.eclipse.core.resources.prefs" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -79,67 +79,27 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
-              <caret line="37" column="82" selection-start-line="37" selection-start-column="82" selection-end-line="37" selection-end-column="82" />
+              <caret line="37" column="82" lean-forward="false" selection-start-line="37" selection-start-column="82" selection-end-line="37" selection-end-column="82" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="routes.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="routes.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/config/routes.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="53" column="23" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
+            <state relative-caret-position="450">
+              <caret line="37" column="97" lean-forward="false" selection-start-line="37" selection-start-column="97" selection-end-line="37" selection-end-column="97" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ResultsForUserDistrictsController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/lt/itakademija/ResultsForUser/ResultsForUserDistrictsController.java">
+      <file leaf-file-name="ResultsDistrictsMultiComponent.jsx" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/results/ResultsDistrictsMultiComponent.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="952">
-              <caret line="67" column="49" selection-start-line="67" selection-start-column="42" selection-end-line="67" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResultsForUserConsolidatedResultsContoller.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/lt/itakademija/ResultsForUser/ResultsForUserConsolidatedResultsContoller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="25" column="34" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResultsForUserMultiResultsController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/lt/itakademija/ResultsForUser/ResultsForUserMultiResultsController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResultsForUserConsolidatedResultsService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/lt/itakademija/ResultsForUser/ResultsForUserConsolidatedResultsService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResultMultiCalculationService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/lt/itakademija/results/ResultMultiCalculationService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="30" column="34" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
+            <state relative-caret-position="252">
+              <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -148,28 +108,8 @@
       <file leaf-file-name="ResultsDistrictsMultiContainer.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/containers/results/ResultsDistrictsMultiContainer.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="61" column="25" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResultsDistrictsMultiComponent.jsx" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/results/ResultsDistrictsMultiComponent.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResultsForUserDistrictsService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/lt/itakademija/ResultsForUser/ResultsForUserDistrictsService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="92" column="87" selection-start-line="92" selection-start-column="87" selection-end-line="92" selection-end-column="92" />
+            <state relative-caret-position="450">
+              <caret line="58" column="58" lean-forward="false" selection-start-line="58" selection-start-column="58" selection-end-line="58" selection-end-column="58" />
               <folding />
             </state>
           </provider>
@@ -192,11 +132,11 @@
         <option value="$PROJECT_DIR$/election-system/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/static/index.html" />
         <option value="$PROJECT_DIR$/src/main/java/lt/itakademija/ResultsForUser/ResultsForUserDistrictsService.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/containers/results/ResultsDistrictsMultiContainer.jsx" />
         <option value="$PROJECT_DIR$/src/main/java/lt/itakademija/ResultsForUser/ResultsForUserDistrictsController.java" />
         <option value="$PROJECT_DIR$/src/main/java/lt/itakademija/results/ResultMultiCalculationService.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/js/components/results/ResultsDistrictsMultiComponent.jsx" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/config/routes.jsx" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/containers/results/ResultsDistrictsMultiContainer.jsx" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/js/components/results/ResultsDistrictsMultiComponent.jsx" />
       </list>
     </option>
   </component>
@@ -206,28 +146,11 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="Bundled (Maven 3)" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1616" />
-    <option name="height" value="876" />
-  </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
-    <OptionsSetting value="true" id="Add" />
-    <OptionsSetting value="true" id="Remove" />
-    <OptionsSetting value="true" id="Checkout" />
-    <OptionsSetting value="true" id="Update" />
-    <OptionsSetting value="true" id="Status" />
-    <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
-    <ConfirmationsSetting value="0" id="Remove" />
+    <option name="x" value="-2" />
+    <option name="y" value="25" />
+    <option name="width" value="1922" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -244,15 +167,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="election-system" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="election-system" />
@@ -410,44 +328,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="results" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="election-system" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="election-system" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="containers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -645,7 +525,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -674,6 +553,34 @@
       <predefined_log_file id="idea.log" enabled="true" />
       <method />
     </configuration>
+    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="" />
+      <option name="DEPLOY" value="true" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="DEBUGGER_TYPE" value="Java" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="PREFERRED_AVD" value="" />
+      <Java />
+      <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="GAPID_ENABLED" value="false" />
+        <option name="GAPID_DISABLE_PCS" value="false" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method />
+    </configuration>
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
       <option name="TESTING_TYPE" value="0" />
@@ -693,7 +600,11 @@
       <option name="PREFERRED_AVD" value="" />
       <Java />
       <Profilers>
+        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
+        <option name="GAPID_ENABLED" value="false" />
         <option name="GAPID_DISABLE_PCS" value="false" />
+        <option name="SUPPORT_LIB_ENABLED" value="true" />
+        <option name="INSTRUMENTATION_ENABLED" value="true" />
       </Profilers>
       <method>
         <option name="Make" enabled="true" />
@@ -874,6 +785,7 @@
       <setting name="cmdLine" value="run-app" />
       <setting name="passParentEnv" value="true" />
       <setting name="launchBrowser" value="true" />
+      <setting name="launchBrowserUrl" value="" />
       <setting name="depsClasspath" value="false" />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <method />
@@ -917,6 +829,12 @@
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
       <envs />
       <method />
     </configuration>
@@ -1000,7 +918,7 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
-      <command value="run-script" />
+      <command value="run" />
       <scripts />
       <node-interpreter value="project" />
       <envs />
@@ -1022,34 +940,6 @@
     <list size="1">
       <item index="0" class="java.lang.String" itemvalue="Spring Boot.Application" />
     </list>
-    <configuration default="true" type="AndroidRunConfigurationType" factoryName="Android App">
-      <module name="" />
-      <option name="DEPLOY" value="true" />
-      <option name="ARTIFACT_NAME" value="" />
-      <option name="PM_INSTALL_OPTIONS" value="" />
-      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
-      <option name="MODE" value="default_activity" />
-      <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="PREFERRED_AVD" value="" />
-      <option name="CLEAR_LOGCAT" value="false" />
-      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
-      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
-      <option name="FORCE_STOP_RUNNING_APP" value="true" />
-      <option name="DEBUGGER_TYPE" value="Java" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
-      <option name="PREFERRED_AVD" value="" />
-      <Java />
-      <Profilers>
-        <option name="ENABLE_ADVANCED_PROFILING" value="true" />
-        <option name="GAPID_ENABLED" value="false" />
-        <option name="GAPID_DISABLE_PCS" value="false" />
-        <option name="SUPPORT_LIB_ENABLED" value="true" />
-        <option name="INSTRUMENTATION_ENABLED" value="true" />
-      </Profilers>
-      <option name="DEEP_LINK" value="" />
-      <option name="ACTIVITY_CLASS" value="" />
-      <method />
-    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -1067,47 +957,48 @@
       <workItem from="1489231515247" duration="287000" />
       <workItem from="1489455746045" duration="1190000" />
       <workItem from="1489482343910" duration="7086000" />
+      <workItem from="1489492117811" duration="1883000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9236000" />
+    <option name="totallyTimeSpent" value="11119000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <frame x="-2" y="25" width="1922" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839838" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32839838" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25578406" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839838" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3276414" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2588047" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1133,10 +1024,18 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="666">
+          <caret line="37" column="82" lean-forward="false" selection-start-line="37" selection-start-column="82" selection-end-line="37" selection-end-column="82" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/admin/AdminComponent.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1144,7 +1043,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/containers/admin/PartiesContainer.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1152,7 +1051,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1170,7 +1069,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/containers/representative/LoginRepPageContainer.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1178,29 +1077,28 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/representative/DistrictInfoComponent.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/containers/representative/SubmitVotesContainer.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-          <folding />
+          <caret line="10" column="25" lean-forward="false" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/admin/AddConstituencyComponent.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/containers/admin/ConstituenciesContainer.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1208,14 +1106,14 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/admin/ResultsComponent.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
-          <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
+          <caret line="6" column="31" lean-forward="false" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/admin/AdminComponent.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1223,7 +1121,39 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/containers/admin/PartiesContainer.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lt/itakademija/ResultsForUser/ResultsForUserMultiResultsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="26" column="5" lean-forward="false" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lt/itakademija/ResultsForUser/ResultsForUserConsolidatedResultsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lt/itakademija/results/ResultMultiCalculationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="30" column="34" lean-forward="false" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lt/itakademija/ResultsForUser/ResultsForUserDistrictsService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1440">
+          <caret line="92" column="87" lean-forward="false" selection-start-line="92" selection-start-column="87" selection-end-line="92" selection-end-column="92" />
           <folding />
         </state>
       </provider>
@@ -1231,79 +1161,47 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
-          <caret line="37" column="82" selection-start-line="37" selection-start-column="82" selection-end-line="37" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lt/itakademija/ResultsForUser/ResultsForUserDistrictsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="92" column="87" selection-start-line="92" selection-start-column="87" selection-end-line="92" selection-end-column="92" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lt/itakademija/results/ResultMultiCalculationService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="30" column="34" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lt/itakademija/ResultsForUser/ResultsForUserConsolidatedResultsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/containers/results/ResultsDistrictsMultiContainer.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="61" column="25" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/results/ResultsDistrictsMultiComponent.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/lt/itakademija/ResultsForUser/ResultsForUserMultiResultsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="26" column="5" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+          <caret line="37" column="82" lean-forward="false" selection-start-line="37" selection-start-column="82" selection-end-line="37" selection-end-column="82" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/lt/itakademija/ResultsForUser/ResultsForUserConsolidatedResultsContoller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="25" column="34" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="34" />
+        <state relative-caret-position="286">
+          <caret line="25" column="34" lean-forward="false" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/lt/itakademija/ResultsForUser/ResultsForUserDistrictsController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="952">
-          <caret line="67" column="49" selection-start-line="67" selection-start-column="42" selection-end-line="67" selection-end-column="49" />
+        <state relative-caret-position="538">
+          <caret line="67" column="49" lean-forward="false" selection-start-line="67" selection-start-column="42" selection-end-line="67" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/config/routes.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="53" column="23" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
+        <state relative-caret-position="450">
+          <caret line="37" column="97" lean-forward="false" selection-start-line="37" selection-start-column="97" selection-end-line="37" selection-end-column="97" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/containers/results/ResultsDistrictsMultiContainer.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="58" column="58" lean-forward="false" selection-start-line="58" selection-start-column="58" selection-end-line="58" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/results/ResultsDistrictsMultiComponent.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
           <folding />
         </state>
       </provider>
