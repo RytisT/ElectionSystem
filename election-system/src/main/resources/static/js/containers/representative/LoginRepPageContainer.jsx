@@ -12,7 +12,11 @@ var LoginRepPageContainer = React.createClass( {
         if ( matchesp != null ) { $( '#UserPassValidation' ).hide( "slow" ) }
         else { $( '#UserPassValidation' ).show( "slow" ) }
 
-        if ( matches != null && matchesp != null ) { this.context.router.push( '/representatives/' + val) };
+        if ( matches != null && matchesp != null ) {
+            this.context.router.push( '/representatives/' + val )
+            $( '#loginMenu' ).hide( "slow" );
+            $( '#logOut' ).show( "slow" )
+        };
     },
 
     // Cancel 
@@ -21,7 +25,7 @@ var LoginRepPageContainer = React.createClass( {
     },
 
     render: function() {
-        return <LoginRepPageComponent onCancelClick={this.handleCancelClick}  onSubmitClick={this.handleSubmitClick} />
+        return <LoginRepPageComponent onCancelClick={this.handleCancelClick} onSubmitClick={this.handleSubmitClick} />
     }
 });
 

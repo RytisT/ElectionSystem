@@ -47,14 +47,14 @@ var MultiVotesComponent = React.createClass( {
                             placeholder="Įveskite surinktų balsų skaičių"
                             value={this.props.votes[party.id].m_votes}
                             onChange={this.props.onVotesChange( party.id )}
-                            type="number"
+                            type="number" min="0"
                             />
                     </td>
                 </tr>
             );
-        }.bind(this));
+        }.bind( this ) );
         return !this.props.district.multiVoteActive
-            ?<div className="">
+            ? <div className="">
                 <h2 style={styles.blue}> Daugiamandatininkų rezultatų suvedimas </h2>
                 <div style={styles.line}></div>
                 <div className="panel panel-default" style={styles.marginTop} id="Table">
@@ -75,27 +75,27 @@ var MultiVotesComponent = React.createClass( {
                         <thead>
                             <tr>
                                 <th>Išduota daugiamandatės biuletenių:</th>
-                                <th>
+                                <td>
                                     <input
                                         className="form-control"
                                         placeholder="Įveskite atėjusių balsuoti rinkėjų skaičių"
-                                        type="number" min="0"
+                                        type="text"
                                         value={this.props.district.votedMulti ? this.props.district.votedMulti : ""}
                                         onChange={this.props.onTotalVotesChange( "votedMulti" )}
                                         />
-                                </th>
+                                </td>
                             </tr>
                             <tr>
                                 <th>Sugadinta daugiamandatės biuletenių:</th>
-                                <th>
+                                <td>
                                     <input
                                         className="form-control"
                                         placeholder="Įveskite sugadintų biuletenių skaičių"
-                                        type="number" min="0"
+                                        type="text"
                                         value={this.props.district.votedMultiCorrupt ? this.props.district.votedMultiCorrupt : ""}
                                         onChange={this.props.onTotalVotesChange( "votedMultiCorrupt" )}
                                         />
-                                </th>
+                                </td>
                             </tr>
                         </thead>
                     </table>

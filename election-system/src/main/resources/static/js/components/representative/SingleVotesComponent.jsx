@@ -40,7 +40,7 @@ var SingleVotesComponent = React.createClass( {
                             placeholder="Įveskite surinktų balsų skaičių"
                             value={this.props.votes[candidate.id].vote}
                             onChange={this.props.onVotesChange( candidate.id )}
-                            type="number"
+                            type="number" min="0"
                             />
                     </td>
                 </tr>
@@ -69,7 +69,7 @@ var SingleVotesComponent = React.createClass( {
                         <thead>
                             <tr>
                                 <th>Išduota vienmandatės biuletenių:</th>
-                                <th>
+                                <td>
                                     <input
                                         id="DistrictVotedSingle"
                                         className="form-control"
@@ -78,11 +78,11 @@ var SingleVotesComponent = React.createClass( {
                                         value={this.props.district.votedSingle ? this.props.district.votedSingle : ""}
                                         onChange={this.props.onTotalVotesChange( "votedSingle" )}
                                         />
-                                </th>
+                                </td>
                             </tr>
                             <tr>
                                 <th>Sugadinta vienmandatės biuletenių:</th>
-                                <th>
+                                <td>
                                     <input
                                         className="form-control"
                                         placeholder="Įveskite sugadintų biuletenių skaičių"
@@ -90,7 +90,7 @@ var SingleVotesComponent = React.createClass( {
                                         value={this.props.district.votedSingleCorrupt ? this.props.district.votedSingleCorrupt : ""}
                                         onChange={this.props.onTotalVotesChange( "votedSingleCorrupt" )}
                                         />
-                                </th>
+                                </td>
                             </tr>
                         </thead>
                     </table>
