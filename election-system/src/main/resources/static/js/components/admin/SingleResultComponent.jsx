@@ -3,12 +3,6 @@ var styles = {
         display: 'none',
         float: 'right'
     },
-    width: {
-        width: '100px'
-    },
-    space: {
-        marginLeft: '2px'
-    },
 };
 
 var SingleResultComponent = React.createClass( {

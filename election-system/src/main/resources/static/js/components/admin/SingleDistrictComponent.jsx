@@ -2,12 +2,6 @@ var styles = {
     hidden: {
         display: 'none'
     },
-    width: {
-        width: '100px'
-    },
-    space: {
-        marginLeft: '2px'
-    },
 };
 
 var SingleDistrictComponent = React.createClass( {
