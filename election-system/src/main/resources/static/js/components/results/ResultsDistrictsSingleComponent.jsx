@@ -5,7 +5,7 @@ var ResultsDistrictsSingleComponent = React.createClass({
             return (
                 <tr key={index}>
                     <td className="col-md-5">{candidate.name + ' ' + candidate.last_name}</td>
-                    <td className="col-md-1">{this.props.parties[candidate.party_id].party_Code}</td>
+                    <td className="col-md-1">{candidate.party_id != null ? this.props.parties[candidate.party_id].party_Code : "Išsikėlęs pats"}</td>
                     <td className="col-md-2">{this.props.district.single_results[index].vote}</td>
                     <td className="col-md-2">{Math.round((this.props.district.single_results[index].vote / this.props.district.votedSingle * 100) * 100) / 100}</td>
                     <td className="col-md-2">{Math.round((this.props.district.single_results[index].vote / (this.props.district.votedSingle - this.props.district.votedSingleCorrupt) * 100) * 100) / 100}</td>

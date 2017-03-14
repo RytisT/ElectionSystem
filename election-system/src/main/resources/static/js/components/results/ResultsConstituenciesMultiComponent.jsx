@@ -1,14 +1,34 @@
 var ResultsConstituenciesMultiComponent = React.createClass({
 
     render: function () {
+
+        var votesCount = function(party){
+            var votesCount = 0;
+            var totalVotes = 0;
+            var corruptedVotes = 0;
+            this.props.constituency.districts.map(function(district, distIndex){
+                district.multi_results.map(function (vote, index) {
+                    if (vote.party_id == party.id){
+                        votesCount += vote.m_votes;
+                    }
+                }.bind(this))
+
+                totalVotes += district.votedMulti;
+                corruptedVotes += district.votedMultiCorrupt;
+            }.bind(this))
+            return {"votesCount": votesCount, "totalVotes": totalVotes, "corruptedVotes": corruptedVotes};
+        }.bind(this);
+
         var partiesList = this.props.partiesList.map(function (party, index) {
+            var votesCounter = votesCount(party);
+            console.log(votesCounter);
             return (
                 <tr key={index}>
                     <td className="col-md-1">{party.id}</td>
                     <td className="col-md-5">{party.title}</td>
-                    <td className="col-md-2">{party.numberOfVotes}</td>
-                    <td className="col-md-2">{Math.round(party.numberOfVotes / (this.props.constituency.votedMulti + this.props.constituency.votedMultiCorrupt) * 10000) / 100 + '%'}</td>
-                    <td className="col-md-2">{Math.round(party.numberOfVotes / this.props.constituency.votedMulti * 10000) / 100 + '%'}</td>
+                    <td className="col-md-2">{votesCounter.votesCount}</td>
+                    <td className="col-md-2">{Math.round((votesCounter.votesCount / votesCounter.totalVotes * 100) * 100) / 100}%</td>
+                    <td className="col-md-2">{Math.round((votesCounter.votesCount / (votesCounter.totalVotes - votesCounter.corruptedVotes) * 100) * 100) / 100}%</td>
                 </tr>
             );
         }.bind(this));
@@ -43,7 +63,6 @@ var ResultsConstituenciesMultiComponent = React.createClass({
 
 ResultsConstituenciesMultiComponent.propTypes = {
     constituency: React.PropTypes.object.isRequired,
-    partiesList: React.PropTypes.object.isRequired
 };
 
 window.ResultsConstituenciesMultiComponent = ResultsConstituenciesMultiComponent;
