@@ -1,6 +1,6 @@
 #FileLock
-#Tue Mar 14 11:12:19 EET 2017
+#Tue Mar 14 12:03:02 EET 2017
 hostName=A2D2
-id=15acc16d4a78f51a139c3b09c745d1f690b8f617c67
+id=15acc45418bec0cfa057d38d048216099e80a2a5219
 method=file
-server=192.168.56.1\:56713
+server=192.168.56.1\:58247
