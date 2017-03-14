@@ -37,7 +37,7 @@ var SingleVotesComponent = React.createClass( {
                     <td>
                         <input
                             className="form-control"
-                            placeholder="Įvesktie surinktų balsų skaičių"
+                            placeholder="Įveskite surinktų balsų skaičių"
                             value={this.props.votes[candidate.id].vote}
                             onChange={this.props.onVotesChange( candidate.id )}
                             type="number"
@@ -68,12 +68,12 @@ var SingleVotesComponent = React.createClass( {
                     <table className="table table-striped">
                         <thead>
                             <tr>
-                                <th>Suskaičiuota vienmandatės biuletenių:</th>
+                                <th>Išduota vienmandatės biuletenių:</th>
                                 <th>
                                     <input
                                         id="DistrictVotedSingle"
                                         className="form-control"
-                                        placeholder="0"
+                                        placeholder="Įveskite atėjusių balsuoti rinkėjų skaičių"
                                         type="text"
                                         value={this.props.district.votedSingle ? this.props.district.votedSingle : ""}
                                         onChange={this.props.onTotalVotesChange( "votedSingle" )}
@@ -85,7 +85,7 @@ var SingleVotesComponent = React.createClass( {
                                 <th>
                                     <input
                                         className="form-control"
-                                        placeholder="0"
+                                        placeholder="Įveskite sugadintų biuletenių skaičių"
                                         type="text"
                                         value={this.props.district.votedSingleCorrupt ? this.props.district.votedSingleCorrupt : ""}
                                         onChange={this.props.onTotalVotesChange( "votedSingleCorrupt" )}
