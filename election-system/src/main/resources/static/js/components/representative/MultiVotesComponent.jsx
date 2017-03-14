@@ -44,7 +44,7 @@ var MultiVotesComponent = React.createClass( {
                     <td>
                         <input
                             className="form-control"
-                            placeholder="Įvesktie surinktų balsų skaičių"
+                            placeholder="Įveskite surinktų balsų skaičių"
                             value={this.props.votes[party.id].m_votes}
                             onChange={this.props.onVotesChange( party.id )}
                             type="number"
@@ -63,7 +63,7 @@ var MultiVotesComponent = React.createClass( {
                             <tr>
                                 <th id="RowNumber">Eil.Nr.</th>
                                 <th>TRUMPINYS</th>
-                                <th>PARTIJA</th>
+                                <th >PARTIJA</th>
                                 <th>SURINKTI BALSAI</th>
                             </tr>
                         </thead>
@@ -74,12 +74,12 @@ var MultiVotesComponent = React.createClass( {
                     <table className="table table-striped">
                         <thead>
                             <tr>
-                                <th>Suskaičiuota daugiamandatės biuletenių:</th>
+                                <th>Išduota daugiamandatės biuletenių:</th>
                                 <th>
                                     <input
                                         className="form-control"
-                                        placeholder="Įveskite biuletenių skaičių"
-                                        type="number"
+                                        placeholder="Įveskite atėjusių balsuoti rinkėjų skaičių"
+                                        type="number" min="0"
                                         value={this.props.district.votedMulti ? this.props.district.votedMulti : ""}
                                         onChange={this.props.onTotalVotesChange( "votedMulti" )}
                                         />
@@ -91,7 +91,7 @@ var MultiVotesComponent = React.createClass( {
                                     <input
                                         className="form-control"
                                         placeholder="Įveskite sugadintų biuletenių skaičių"
-                                        type="number"
+                                        type="number" min="0"
                                         value={this.props.district.votedMultiCorrupt ? this.props.district.votedMultiCorrupt : ""}
                                         onChange={this.props.onTotalVotesChange( "votedMultiCorrupt" )}
                                         />

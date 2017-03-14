@@ -54,7 +54,7 @@ var PartyCandidatesComponent = React.createClass({
                         <th>Gimimo data</th>
                         <th>Asmens kodas</th>
                         <th>Aprašymas</th>
-                        <th>Vieta Sąraše</th>
+                        <th>Vieta sąraše</th>
                     </tr>
                     </thead>
                     <tbody>
