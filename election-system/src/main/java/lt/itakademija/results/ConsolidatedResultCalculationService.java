@@ -1,7 +1,6 @@
 package lt.itakademija.results;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -50,11 +49,6 @@ public class ConsolidatedResultCalculationService {
         Map<Integer, Integer> partyResult = multiService.mandatesByParty();
         for (Entry<Integer, Integer> partyMandateCount : partyResult.entrySet()) {
             int numberMandates = partyMandateCount.getValue();
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 5a3f71afbdd742baa436a160f090306c3d73d2ca
             for (Candidates partyCandidates : candidateService.findByPartyId(partyMandateCount.getKey())) {
                 
                 while (numberMandates >= 1) {
@@ -71,11 +65,7 @@ public class ConsolidatedResultCalculationService {
                         multiWinners.add(newAlsoPartyCandidate);
                         break;
                     }                   
-<<<<<<< HEAD
-=======
 
-           
->>>>>>> 5a3f71afbdd742baa436a160f090306c3d73d2ca
                 }
                 numberMandates--;
                 
@@ -84,29 +74,19 @@ public class ConsolidatedResultCalculationService {
         return multiWinners;
     }
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 5a3f71afbdd742baa436a160f090306c3d73d2ca
     /*
      * returns list of winning candidates from both single and multi mandate
      * systems
      */
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 5a3f71afbdd742baa436a160f090306c3d73d2ca
     public List<Candidates> consolidatedWinner() {
         List<Candidates> winnersFinal = new ArrayList<>();
         winnersFinal.addAll(getWinningSingleCandidates());
         winnersFinal.addAll(getMultiWinnerCandidates());
         return winnersFinal;
     }
-<<<<<<< HEAD
-=======
 
-
->>>>>>> 5a3f71afbdd742baa436a160f090306c3d73d2ca
 
 }

@@ -27,7 +27,7 @@ public class ResultsForUserDistrictsController {
      * returns Map<Title, single vote time>
      */
     @GetMapping(value="/single/time")
-    public Map<String, Date> districtsSingleVoteTime(){
+    public HashMap<Integer, Date> districtsSingleVoteTime(){
         return userResultsDistrictService.districtsSingleVoteTime();
     }
     
@@ -37,7 +37,7 @@ public class ResultsForUserDistrictsController {
      * returns Map<Title, multi vote time>
      */
     @GetMapping(value="/multi/time")
-    public HashMap<String, Date> districtsMultiVoteTime(){
+    public HashMap<Integer,Date> districtsMultiVoteTime(){
         return userResultsDistrictService.districtsMultiVoteTime();
     }
     
@@ -46,7 +46,7 @@ public class ResultsForUserDistrictsController {
      *  returns Map<Title, multi cast votes + multi corrupt votes>
      */
     @GetMapping(value="/participation/count")
-    public HashMap<String, Integer> votersParticipationCount(){
+    public HashMap<Integer, Integer> votersParticipationCount(){
         return userResultsDistrictService.votersParticipationCount();
     }
     
@@ -55,7 +55,7 @@ public class ResultsForUserDistrictsController {
      * returns Map<Title, procentai balsavusiu>
      */
     @GetMapping(value="/participation/percent")
-    public HashMap<String, Float> votersParticipationPercent(){
+    public HashMap<Integer,Float> votersParticipationPercent(){
         return userResultsDistrictService.votersParticipationPercent();
     }
     
@@ -65,7 +65,7 @@ public class ResultsForUserDistrictsController {
      * returns Map<districts title ,Map<party.title, votes for party>>
      */
     @GetMapping(value="/multi/partylist")
-    public HashMap<String, HashMap<String, Integer>> districtPartyList(){
+    public HashMap<Integer,HashMap<String,Integer>> districtPartyList(){
         return userResultsDistrictService.districtPartyList();
     }
     /*
@@ -73,7 +73,7 @@ public class ResultsForUserDistrictsController {
      * returns Map<districts title ,Map<party.title, votes for party percent>>
      */
     @GetMapping(value="/multi/partypercentlist")
-    public HashMap<String, HashMap<String, Float>> districtPartyPercentList(){
+    public HashMap<Integer,HashMap<String,Float>> districtPartyPercentList(){
         return userResultsDistrictService.districtPartyPercentList();
     }
     /*
@@ -81,7 +81,7 @@ public class ResultsForUserDistrictsController {
      * returns Map<districts title ,Map<party.title, votes for party percent>>
      */
     @GetMapping(value="/multi/partypercentlistvalid")
-    public HashMap<String, HashMap<String, Float>> districtPartyPercentListValid(){
+    public HashMap<Integer,HashMap<String,Float>> districtPartyPercentListValid(){
         return userResultsDistrictService.districtPartyPercentListValid();
     }
     /*
@@ -89,14 +89,14 @@ public class ResultsForUserDistrictsController {
      * returns Map<district title, number of corrupt multi votes>
      */
     @GetMapping(value="/multi/corrupt")
-    public HashMap<String, Integer> corruptMultiVotesDistrict(){
+    public HashMap<Integer,Integer> corruptMultiVotesDistrict(){
         return userResultsDistrictService.corruptMultiVotesDistrict();
     }
     /*
      * Kiekvienam vienmandatės kandidatui Balsų skaičių
      */
     @GetMapping(value="/single/candidatelist")
-    public HashMap<String, HashMap<String, Integer>> districtSingleCandidateList(){
+    public HashMap<Integer,HashMap<String,Integer>> districtSingleCandidateList(){
         return userResultsDistrictService.districtSingleCandidateList();
     }
     
@@ -104,7 +104,7 @@ public class ResultsForUserDistrictsController {
      * Kiekvienam vienmandatės kandidatui Balsų skaičių procentais nuo visų biuletenių
      */
     @GetMapping(value="/single/candidatepercentlist")
-    public HashMap<String, HashMap<String, Float>> districtSingleCandidateListPercent(){
+    public HashMap<Integer,HashMap<String,Float>> districtSingleCandidateListPercent(){
         return userResultsDistrictService.districtSingleCandidateListPercent();
     }
     /*
@@ -112,7 +112,7 @@ public class ResultsForUserDistrictsController {
      * returns Map<district title, number of corrupt multi votes>
      */
     @GetMapping(value="/single/corrupt")
-    public HashMap<String, Integer> corruptSingleVotesDistrict(){
+    public HashMap<Integer,Integer> corruptSingleVotesDistrict(){
         return userResultsDistrictService.corruptSingleVotesDistrict();
     }
 }

@@ -37,7 +37,6 @@ public class ResultsForUserConsolidatedResultsService {
         List<Integer> fullMandateCount = new ArrayList<Integer>();
         Map<String, Long> finalCount = new HashMap<>();
         for(Candidates candidate: consolidatedService.consolidatedWinner()){
-            Integer counter = 0;
             fullMandateCount.add(candidate.getParty_id());            
         }
         Map<Integer, Long> counts = fullMandateCount.stream().collect(Collectors.groupingBy(e -> e, Collectors.counting()));

@@ -1,8 +1,6 @@
 package lt.itakademija.results;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -18,12 +16,8 @@ import lt.itakademija.database.models.Candidates;
 public class ConsolidatedResultCalculationController {
 
     @Autowired
-<<<<<<< HEAD
     private ConsolidatedResultCalculationService consolidateResult;
-=======
-    private ConsolidatedResultCalculationService consolidateResult; 
->>>>>>> 5a3f71afbdd742baa436a160f090306c3d73d2ca
-    
+  
     @GetMapping
     public List<Candidates> getResults() {
         return consolidateResult.consolidatedWinner();

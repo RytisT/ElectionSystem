@@ -32,10 +32,10 @@ public class ResultsForUserDistrictsService {
      * Vienamandatės apygardos
      * returns Map<Title, single vote time>
      */
-    public HashMap<String, Date> districtsSingleVoteTime(){
-        HashMap<String, Date> votesSingleTime= new HashMap<>();
+    public HashMap<Integer, Date> districtsSingleVoteTime(){
+        HashMap<Integer, Date> votesSingleTime= new HashMap<>();
         for(Districts districts: districtsService.findAll()){
-            votesSingleTime.put(districts.getTitle(), districts.getVotedSingleTime());
+            votesSingleTime.put(districts.getId(), districts.getVotedSingleTime());
         }
         return votesSingleTime;
     }
@@ -45,10 +45,10 @@ public class ResultsForUserDistrictsService {
      * Daugiamandatės apygardos
      * returns Map<Title, multi vote time>
      */
-    public HashMap<String, Date> districtsMultiVoteTime(){
-        HashMap<String, Date> votesMultiTime= new HashMap<>();
+    public HashMap<Integer, Date> districtsMultiVoteTime(){
+        HashMap<Integer, Date> votesMultiTime= new HashMap<>();
         for(Districts districts: districtsService.findAll()){
-            votesMultiTime.put(districts.getTitle(), districts.getVotedMultiTime());
+            votesMultiTime.put(districts.getId(), districts.getVotedMultiTime());
         }
         return votesMultiTime;
     }
@@ -58,10 +58,10 @@ public class ResultsForUserDistrictsService {
      *  returns Map<Title, multi cast votes + multi corrupt votes>
      */
    
-    public HashMap<String, Integer> votersParticipationCount(){
-        HashMap<String, Integer> votersParticipationMap = new HashMap<>();
+    public HashMap<Integer, Integer> votersParticipationCount(){
+        HashMap<Integer, Integer> votersParticipationMap = new HashMap<>();
         for(Districts districts: districtsService.findAll()){
-            votersParticipationMap.put(districts.getTitle(), districts.getVotedMultiCorrupt()+districts.getVotedMulti());
+            votersParticipationMap.put(districts.getId(), districts.getVotedMultiCorrupt()+districts.getVotedMulti());
         }
         return votersParticipationMap;
     }
@@ -70,10 +70,10 @@ public class ResultsForUserDistrictsService {
      * Procentais nuo visų rinkėjų
      * returns Map<Title, procentai balsavusiu>
      */
-    public HashMap<String, Float> votersParticipationPercent(){
-        HashMap<String, Float> votersPercentMap = new HashMap<>();
+    public HashMap<Integer, Float> votersParticipationPercent(){
+        HashMap<Integer, Float> votersPercentMap = new HashMap<>();
         for(Districts districts: districtsService.findAll()){
-            votersPercentMap.put(districts.getTitle(), 
+            votersPercentMap.put(districts.getId(), 
                      ((float)(districts.getVotedMultiCorrupt()+districts.getVotedMulti())/(float)districts.getNumber_of_voters()*100));
         }
         return votersPercentMap;
@@ -84,11 +84,11 @@ public class ResultsForUserDistrictsService {
      * Balsų skaičių už kiekvieną sąrašą
      * returns Map<districts title ,Map<party.title, votes for party>>
      */
-    public HashMap<String, HashMap<String, Integer>> districtPartyList(){
-        HashMap<String, HashMap<String, Integer>> votesForPartiesMap = new HashMap<>();
+    public HashMap<Integer, HashMap<String, Integer>> districtPartyList(){
+        HashMap<Integer, HashMap<String, Integer>> votesForPartiesMap = new HashMap<>();
         for(Districts district: districtsService.findAll()){
             HashMap<String, Integer> votesForOneParty = new HashMap<>();
-            votesForPartiesMap.put(districtsService.findById(district.getId()).getTitle(), votesForOneParty); 
+            votesForPartiesMap.put(districtsService.findById(district.getId()).getId(), votesForOneParty); 
             for(Multi_Results results: district.getMulti_results()){
                 votesForOneParty.put(partiesService.findById(results.getParty_id()).getTitle(), results.getM_votes());                
             }
@@ -99,11 +99,11 @@ public class ResultsForUserDistrictsService {
      * Balsų skaičių daugiamandatėje procentais nuo visų biuletenių
      * returns Map<districts title ,Map<party.title, votes for party percent>>
      */
-    public HashMap<String, HashMap<String, Float>> districtPartyPercentList(){
-        HashMap<String, HashMap<String, Float>> votesForPartiesPercentMap = new HashMap<>();
+    public HashMap<Integer, HashMap<String, Float>> districtPartyPercentList(){
+        HashMap<Integer, HashMap<String, Float>> votesForPartiesPercentMap = new HashMap<>();
         for(Districts district: districtsService.findAll()){
             HashMap<String, Float> votesForOneParty = new HashMap<>();
-            votesForPartiesPercentMap.put(districtsService.findById(district.getId()).getTitle(), votesForOneParty); 
+            votesForPartiesPercentMap.put(districtsService.findById(district.getId()).getId(), votesForOneParty); 
             float percentPlaceholder = districtsService.findById(district.getId()).getNumber_of_voters();
             for(Multi_Results results: district.getMulti_results()){
                 votesForOneParty.put(partiesService.findById(results.getParty_id()).getTitle(), 
@@ -116,11 +116,11 @@ public class ResultsForUserDistrictsService {
      * Balsų skaičių daugiamandatėje procentais galiojančių biuletenių
      * returns Map<districts title ,Map<party.title, votes for party percent>>
      */
-    public HashMap<String, HashMap<String, Float>> districtPartyPercentListValid(){
-        HashMap<String, HashMap<String, Float>> votesForPartiesPercentMap = new HashMap<>();
+    public HashMap<Integer, HashMap<String, Float>> districtPartyPercentListValid(){
+        HashMap<Integer, HashMap<String, Float>> votesForPartiesPercentMap = new HashMap<>();
         for(Districts district: districtsService.findAll()){
             HashMap<String, Float> votesForOneParty = new HashMap<>();
-            votesForPartiesPercentMap.put(districtsService.findById(district.getId()).getTitle(), votesForOneParty); 
+            votesForPartiesPercentMap.put(districtsService.findById(district.getId()).getId(), votesForOneParty); 
             float percentPlaceholder = districtsService.findById(district.getId()).getNumber_of_voters()
                     -districtsService.findById(district.getId()).getVotedMultiCorrupt();
             for(Multi_Results results: district.getMulti_results()){
@@ -134,10 +134,10 @@ public class ResultsForUserDistrictsService {
      * Sugadintų daugiamandatės biuletenių skaičių
      * returns Map<district title, number of corrupt multi votes>
      */
-    public HashMap<String, Integer> corruptMultiVotesDistrict(){
-        HashMap<String, Integer> corruptVotesList = new HashMap<>();
+    public HashMap<Integer, Integer> corruptMultiVotesDistrict(){
+        HashMap<Integer, Integer> corruptVotesList = new HashMap<>();
         for(Districts district: districtsService.findAll()){
-            corruptVotesList.put(districtsService.findById(district.getId()).getTitle(), 
+            corruptVotesList.put(districtsService.findById(district.getId()).getId(), 
                     districtsService.findById(district.getId()).getVotedMultiCorrupt());
         }
         return corruptVotesList;
@@ -145,11 +145,11 @@ public class ResultsForUserDistrictsService {
     /*
      * Kiekvienam vienmandatės kandidatui Balsų skaičių
      */
-    public HashMap<String, HashMap<String, Integer>> districtSingleCandidateList(){
-        HashMap<String, HashMap<String, Integer>> votesForCandidatesMap = new HashMap<>();
+    public HashMap<Integer, HashMap<String, Integer>> districtSingleCandidateList(){
+        HashMap<Integer, HashMap<String, Integer>> votesForCandidatesMap = new HashMap<>();
         for(Districts district: districtsService.findAll()){
             HashMap<String, Integer> votesForOneCandidate = new HashMap<>();
-            votesForCandidatesMap.put(districtsService.findById(district.getId()).getTitle(), votesForOneCandidate); 
+            votesForCandidatesMap.put(districtsService.findById(district.getId()).getId(), votesForOneCandidate); 
             for(Single_Results results: district.getSingle_results()){
                 votesForOneCandidate.put(candidatesService.findById(results.getCandidates_id()).getName() + " " +
                         candidatesService.findById(results.getCandidates_id()).getLast_name()
@@ -161,11 +161,11 @@ public class ResultsForUserDistrictsService {
     /*
      * Kiekvienam vienmandatės kandidatui Balsų skaičių procentais nuo visų biuletenių
      */
-    public HashMap<String, HashMap<String, Float>> districtSingleCandidateListPercent(){
-        HashMap<String, HashMap<String, Float>> votesForCandidatesMap = new HashMap<>();
+    public HashMap<Integer, HashMap<String, Float>> districtSingleCandidateListPercent(){
+        HashMap<Integer, HashMap<String, Float>> votesForCandidatesMap = new HashMap<>();
         for(Districts district: districtsService.findAll()){
             HashMap<String, Float> votesForOneCandidate = new HashMap<>();
-            votesForCandidatesMap.put(districtsService.findById(district.getId()).getTitle(), votesForOneCandidate); 
+            votesForCandidatesMap.put(districtsService.findById(district.getId()).getId(), votesForOneCandidate); 
             float percentPlaceholder = districtsService.findById(district.getId()).getNumber_of_voters();
             for(Single_Results results: district.getSingle_results()){
                 votesForOneCandidate.put(candidatesService.findById(results.getCandidates_id()).getName() + " " +
@@ -180,10 +180,10 @@ public class ResultsForUserDistrictsService {
      * Sugadintų daugiamandatės biuletenių skaičių
      * returns Map<district title, number of corrupt multi votes>
      */
-    public HashMap<String, Integer> corruptSingleVotesDistrict(){
-        HashMap<String, Integer> corruptVotesList = new HashMap<>();
+    public HashMap<Integer, Integer> corruptSingleVotesDistrict(){
+        HashMap<Integer, Integer> corruptVotesList = new HashMap<>();
         for(Districts district: districtsService.findAll()){
-            corruptVotesList.put(districtsService.findById(district.getId()).getTitle(), 
+            corruptVotesList.put(districtsService.findById(district.getId()).getId(), 
                     districtsService.findById(district.getId()).getVotedSingleCorrupt());
         }
         return corruptVotesList;
