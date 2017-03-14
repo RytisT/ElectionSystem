@@ -52,10 +52,9 @@ var MultiVotesComponent = React.createClass( {
                     </td>
                 </tr>
             );
-        }.bind( this ) );
-
-        return !this.props.activeState
-            ? <div className="">
+        }.bind(this));
+        return !this.props.district.multiVoteActive
+            ?<div className="">
                 <h2 style={styles.blue}> Daugiamandatininkų rezultatų suvedimas </h2>
                 <div style={styles.line}></div>
                 <div className="panel panel-default" style={styles.marginTop} id="Table">
