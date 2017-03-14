@@ -26,25 +26,41 @@ var ResultsDistrictsSingleContainer = React.createClass({
                 single_results: [],
                 multi_results: []
             },
-            candidatesList: []
+            candidatesList: [],
+            parties: {}
         }
     },
 
 
     componentWillMount: function () {
         var districtId = this.props.routeParams.districtId;
+        var constId;
         axios.get('/api/districts/' + districtId)
             .then(function (response) {
+                constId = response.data.constituency_id;
+                axios.get('api/candidates/search?constituency_id=' + constId)
+                    .then(function (response) {
+                        this.setState({
+                            candidatesList: response.data,
+                        });
+                    }.bind(this));
                 this.setState({
                     district: response.data,
                 });
             }.bind(this));
-        axios.get('/user/resultsdistricts/single/candidatelist/' + districtId)
+
+        axios.get('/api/parties/')
             .then(function (response) {
+                var partyList = {};
+                response.data.map(function (party, index) {
+                    partyList[party.id] = party;
+                }.bind(this))
                 this.setState({
-                    candidatesList: response.data,
+                    parties: partyList,
                 });
             }.bind(this));
+
+
     },
 
 
@@ -56,6 +72,7 @@ var ResultsDistrictsSingleContainer = React.createClass({
         return (
             <ResultsDistrictsSingleComponent district={this.state.district}
                                             candidatesList={this.state.candidatesList}
+                                             parties = {this.state.parties}
                                             onReturnDistrictsClick={this.handleReturnDistricts}
             />
         );

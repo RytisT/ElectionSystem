@@ -7,9 +7,8 @@ var ResultsDistrictsMultiComponent = React.createClass({
                     <td className="col-md-1">{party.id}</td>
                     <td className="col-md-5">{party.title}</td>
                     <td className="col-md-2">{this.props.district.multi_results[index].m_votes}</td>
-                    <td className="col-md-2">{Math.round((this.props.district.multi_results[index].m_votes / this.props.district.votedMulti * 100) * 100) / 100}</td>
-                    <td className="col-md-2">{Math.round((this.props.district.multi_results[index].m_votes / (this.props.district.votedMulti - this.props.district.votedMultiCorrupt) * 100) * 100) / 100}</td>
-                    <td className="col-md-2"></td>
+                    <td className="col-md-2">{Math.round((this.props.district.multi_results[index].m_votes / this.props.district.votedMulti * 100) * 100) / 100}%</td>
+                    <td className="col-md-2">{Math.round((this.props.district.multi_results[index].m_votes / (this.props.district.votedMulti - this.props.district.votedMultiCorrupt) * 100) * 100) / 100}%</td>
 
                 </tr>
             );
