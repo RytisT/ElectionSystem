@@ -1,6 +1,6 @@
 #FileLock
-#Tue Mar 14 15:31:57 EET 2017
-hostName=LAPTOP-J2JJOSIS
-id=15acd0499ad456ef1d1073398dbaa70835e47ca19e8
+#Tue Mar 14 16:46:36 EET 2017
+hostName=rytis-HP-EliteBook-8570w
+id=15acd48f9d2f89a72132772dee67757100029c4bd36
 method=file
-server=192.168.1.66\:52725
+server=127.0.1.1\:41049

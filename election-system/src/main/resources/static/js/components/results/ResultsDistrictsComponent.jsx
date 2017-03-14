@@ -1,6 +1,16 @@
 var ResultsDistrictsComponent = React.createClass({
 
     render: function () {
+        var progress = function () {
+            var submittedDistrict = 0;
+            this.props.districts.map(function (district, index){
+                if(district.multiVoteActive && district.singleVoteActive){
+                    submittedDistrict += 1;
+                }
+            }.bind(this))
+            return submittedDistrict;
+        }.bind(this);
+
         var districtsList = this.props.districts.map(function (district, index) {
             return (
                 <tr key={index}>
@@ -40,8 +50,21 @@ var ResultsDistrictsComponent = React.createClass({
             );
         }.bind(this));
 
+        var districtSubmitted = progress();
+        var submittedPercentage = Math.round(districtSubmitted / this.props.districts.length * 100) + "%";
         return (
             <div className="">
+                <div className="panel panel-default">
+                    <div className="panel-heading"> <h4>Jau užregistruotos apylinkės: {districtSubmitted} / {this.props.districts.length}</h4></div>
+                    <div className="panel-body ">
+                    <div className="progress">
+                    <div className="progress-bar progress-bar-striped active" role="progressbar"
+                         aria-valuenow={districtSubmitted} aria-valuemin="0" aria-valuemax="100" style={{ width: submittedPercentage }}>
+                         {submittedPercentage}
+                    </div>
+                    </div>
+                </div>
+                </div>
                 <table className="table table-striped">
                     <thead>
                     <tr>
@@ -69,7 +92,7 @@ var ResultsDistrictsComponent = React.createClass({
 });
 
 ResultsDistrictsComponent.propTypes = {
-    districts: React.PropTypes.object.isRequired
+    districts: React.PropTypes.array.isRequired
 };
 
 window.ResultsDistrictsComponent = ResultsDistrictsComponent;

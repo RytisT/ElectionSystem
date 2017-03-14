@@ -1,6 +1,7 @@
 var ResultsDistrictsMultiComponent = React.createClass({
 
     render: function () {
+
         var partiesList = this.props.parties.map(function (party, index) {
             return (
                 <tr key={index}>
