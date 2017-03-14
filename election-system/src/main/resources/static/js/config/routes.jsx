@@ -21,7 +21,6 @@ var routes = (
                 </Route>
 
                 <Route path="/candidates" component={CandidatesContainer} />
-                <Route path="/candidates/search" component={CandidatesSearchContainer} />
                 <Route path="/parties" component={UserPartiesContainer} />
                 <Route path="/party/description/:partyId" component={PartyDescriptionContainer} />
                 <Route path="/partymember/description/:candidateId" component={MemberDescriptionContainer} />
