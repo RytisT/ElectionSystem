@@ -56,9 +56,9 @@ var UserPartiesComponent = React.createClass({
                     <table className="table table-striped">
                         <thead>
                         <tr>
-                            <th>PARTIJOS NR.</th>
-                            <th>PARTIJOS PAVADINIMAS</th>
-                            <th>TRUMPINYS</th>
+                            <th>Partijos Nr.</th>
+                            <th>Partijos Pavadinimas</th>
+                            <th>Trumpinys</th>
                             <th></th>
 
                         </tr>
@@ -67,17 +67,18 @@ var UserPartiesComponent = React.createClass({
                         {partiesList}
                         </tbody>
                     </table>
-                </div>
-                <div>
-                    <button id="PartiesReturn" className="btn btn-success" style={{marginRight: '20px'}}
-                            onClick={this.props.onCancelClick}>Grįžti
-                    </button>
-                </div>
+                </div>                
             </div>
 
         )
     }
 });
+
+//<div>
+//    <button id="PartiesReturn" className="btn btn-success" style={{ marginRight: '20px' }}
+//        onClick={this.props.onCancelClick}>Grįžti
+//                    </button>
+//</div>
 
 
 UserPartiesComponent.propTypes = {onDescriptionItemClick: React.PropTypes.func.isRequired};

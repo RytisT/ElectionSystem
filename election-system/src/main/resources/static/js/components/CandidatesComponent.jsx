@@ -86,9 +86,9 @@ var CandidatesComponent = React.createClass( {
                 <div style={styles.line}></div>
                 <div> </div>
 
-                <div className="panel panel-default">                   
+                <div className="panel panel-default">
                     <div className=" panel-body input-group">
-                
+
                         <span className="input-group-addon" id="basic-addon3">Kandidato paieška: </span>
                         <input type="text" className="form-control" id="SearchCandidate" placeholder="Įveskite vardą / pavardę" maxLength="85"
                             onChange={this.props.onSearchQueryChange( this.props.searchQuery )} />
@@ -96,18 +96,17 @@ var CandidatesComponent = React.createClass( {
                     <div id="CandidateSearchValidation" className="validationForm"><span>Naudojami netinkami simboliai.</span></div>
                 </div>
 
-
                 <div className="panel panel-default" style={styles.marginTop} id="Table">
                     <table className="table table-striped">
                         <thead>
                             <tr>
                                 <th id="RowNumber">Eil.Nr.</th>
-                                <th>VARDAS</th>
-                                <th>PAVARDĖ</th>
-                                <th>GIMIMO DATA</th>
-                                <th>APYGARDA</th>
-                                <th>PARTIJOS<br />NUMERIS</th>
-                                <th>VIETA<br />SĄRAŠE</th>
+                                <th>Vardas</th>
+                                <th>Pavardė</th>
+                                <th>Gimimo data</th>
+                                <th>Apygarda</th>
+                                <th>Partijos<br />numeris</th>
+                                <th>Vieta<br />sąraše</th>
                                 <th></th>
 
                             </tr>
@@ -117,18 +116,17 @@ var CandidatesComponent = React.createClass( {
                         </tbody>
                     </table>
                 </div>
-                <div>
-                    <button id="CandidateReturn" className="btn btn-success" style={{ marginRight: '20px' }}
-                        onClick={this.props.onCancelClick}>Grįžti
-                    </button>
-                </div>
             </div>
-
         )
     }
 });
 
-//<div className="panel-heading"><label htmlFor="basic-url">Ieškoti kandidato: </label></div>
+//<div>
+//    <button id="CandidateReturn" className="btn btn-success" style={{ marginRight: '20px' }}
+//        onClick={this.props.onCancelClick}>Į viršų
+//                    </button>
+//</div>
+
 /* papildomas add mygtukas i tuscia div 
  * 
  * <button id="CandidateAdd" className="btn btn-block btn-success" type="submit"
