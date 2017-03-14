@@ -1,3 +1,15 @@
+var styles = {
+    hidden: {
+        display: 'none'
+    },
+    width: {
+        width: '100px'
+    },
+    space: {
+        marginLeft: '2px'
+    },
+};
+
 var SinglePartyComponent = React.createClass( {
 
 
@@ -42,7 +54,7 @@ var SinglePartyComponent = React.createClass( {
                     </button>
                 </td>
             </tr>
-            : <tr onMouseOver={this.props.onHover()} onMouseOut={this.props.onHover()} style={{backgroundColor: this.props.color}}>
+            : <tr onMouseOver={this.props.onHover()} onMouseOut={this.props.onHover()} style={{ backgroundColor: this.props.color }}>
                 <td>{this.props.party.id}</td>
                 <td>{this.props.party.party_Code}</td>
                 <td>{this.props.party.title}</td>
@@ -54,8 +66,17 @@ var SinglePartyComponent = React.createClass( {
                     <button id="EditParty" type="button" className="btn btn-info" onClick={this.props.onEdit}>Redaguoti</button>
                 </td>
                 <td>
-                    <button id="DeleteParty" type="button" className="btn btn-danger" data-toggle="confirmation"
-                        onClick={this.props.onDeleteParty( this.props.party )}>Trinti
+                    <button id={"x_party" + this.props.party.id} type="button" className="btn btn-danger"
+                        onClick={( event ) => {
+                            var x = this.props.party.id;
+                            var y = "#DeleteParty" + x;
+                            var z = "#x_party" + x
+                            if ( $( y ).is( ":hidden" ) ) { $( y ).show(); $( z ).html( "Atšaukti" ) }
+                            else { $( y ).hide(); $( z ).html( "Trinti" ); }
+                        } }>Trinti
+                </button>
+                    <button id={"DeleteParty" + this.props.party.id} style={styles.hidden} type="button" className="btn btn-danger" data-toggle="confirmation"
+                        onClick={this.props.onDeleteParty( this.props.party )}>Patvirtinti
                     </button>
                 </td>
 
