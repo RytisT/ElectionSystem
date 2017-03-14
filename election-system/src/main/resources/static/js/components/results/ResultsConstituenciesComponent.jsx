@@ -51,9 +51,37 @@ var ResultsConstituenciesComponent = React.createClass({
             );
         }.bind(this));
 
+        var progress = function () {
+            var submittedDistricts = 0;
+            var totalDistricts = 0;
+            this.props.constituencies.map(function (constituency, index) {
+                constituency.districts.map(function (district, index) {
+                    if (district.multiVoteActive && district.singleVoteActive) {
+                        submittedDistricts += 1;
+                    }
+                }.bind(this))
+                totalDistricts += constituency.districts.length;
+            }.bind(this))
+            return {"submittedDistricts": submittedDistricts, "totalDistricts": totalDistricts};
+        }.bind(this);
+
+
+        var districtSubmitted = progress();
+        var submittedPercentage = Math.floor(districtSubmitted["submittedDistricts"] / districtSubmitted["totalDistricts"] * 100) + "%";
 
         return (
             <div className="">
+                <div className="panel panel-default">
+                    <div className="panel-heading"> <h4>Jau užregistruotos apylinkės: {districtSubmitted["submittedDistricts"]} / {districtSubmitted["totalDistricts"]}</h4></div>
+                    <div className="panel-body ">
+                        <div className="progress">
+                            <div className="progress-bar progress-bar-striped active" role="progressbar"
+                                 aria-valuenow={districtSubmitted} aria-valuemin="0" aria-valuemax="100" style={{ width: submittedPercentage }}>
+                                {submittedPercentage}
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <table className="table table-striped">
                     <thead>
                     <tr>
