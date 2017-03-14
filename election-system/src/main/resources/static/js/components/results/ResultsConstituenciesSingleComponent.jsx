@@ -1,14 +1,32 @@
 var ResultsConstituenciesSingleComponent = React.createClass({
 
     render: function () {
+        var votesCount = function(candidate){
+            var votesCount = 0;
+            var totalVotes = 0;
+            var corruptedVotes = 0;
+            this.props.constituency.districts.map(function(district, distIndex){
+                district.single_results.map(function (vote, index) {
+                    if (vote.candidates_id == candidate.id){
+                        votesCount += vote.vote;
+                    }
+                }.bind(this))
+
+                totalVotes += district.votedSingle;
+                corruptedVotes += district.votedSingleCorrupt;
+            }.bind(this))
+            return {"votesCount": votesCount, "totalVotes": totalVotes, "corruptedVotes": corruptedVotes};
+        }.bind(this);
+
         var candidatesList = this.props.candidatesList.map(function (candidate, index) {
+            var votesCounter = votesCount(candidate);
             return (
                 <tr key={index}>
                     <td className="col-md-5">{candidate.name + ' ' + candidate.last_name}</td>
-                    <td className="col-md-1">{candidate.party}</td>
-                    <td className="col-md-2">{candidate.numberOfVotes}</td>
-                    <td className="col-md-2">{Math.round(candidate.numberOfVotes / (this.props.constituency.votedSingle + this.props.constituency.votedSingleCorrupt) * 10000) / 100 + '%'}</td>
-                    <td className="col-md-2">{Math.round(candidate.numberOfVotes / this.props.constituency.votedSingle * 10000) / 100 + '%'}</td>
+                    <td className="col-md-1">{candidate.party_id != null ? this.props.parties[candidate.party_id].party_Code : "Išsikėlęs pats"}</td>
+                    <td className="col-md-2">{votesCounter["votesCount"]}</td>
+                    <td className="col-md-2">{Math.round((votesCounter.votesCount / votesCounter.totalVotes * 100) * 100) / 100}%</td>
+                    <td className="col-md-2">{Math.round((votesCounter.votesCount / (votesCounter.totalVotes - votesCounter.corruptedVotes) * 100) * 100) / 100}%</td>
                 </tr>
             );
         }.bind(this));
@@ -43,7 +61,7 @@ var ResultsConstituenciesSingleComponent = React.createClass({
 
 ResultsConstituenciesSingleComponent.propTypes = {
     constituency: React.PropTypes.object.isRequired,
-    candidatesList: React.PropTypes.object.isRequired
+    candidatesList: React.PropTypes.array.isRequired
 };
 
 window.ResultsConstituenciesSingleComponent = ResultsConstituenciesSingleComponent;
