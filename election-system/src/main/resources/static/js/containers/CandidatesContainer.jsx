@@ -37,7 +37,7 @@ var CandidatesContainer = React.createClass( {
 
     // Cancel 
     handleCancelClick() {
-        this.context.router.push( '/' );
+        this.context.router.push( '/main' );
     },
 
     // Edit candidate 
@@ -83,7 +83,6 @@ var CandidatesContainer = React.createClass( {
             onSearchQueryChange={this.handleSearchQueryChange}
             onCancelClick={this.handleCancelClick}
             />
-
     }
 });
 

@@ -21,7 +21,7 @@ var ResultsConstituenciesContainer = React.createClass({
     },
 
     handleReturnHome() {
-        this.context.router.push('/');
+        this.context.router.push('/main');
     },
 
     handleResultsConstituenciesInfo: function(constituency) {

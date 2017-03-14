@@ -44,7 +44,7 @@ var AddDistrictComponent = React.createClass( {
                             <button id="Submit_new_district" className="btn btn-block btn-success" type="submit"
                                 onClick={( event ) => {
                                     var name = $( "#DistrictName" ).val();
-                                    var matches1 = name.match( ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)" );
+                                    var matches1 = name.match( ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“\"!,.:;-? ()]$)" );
                                     if ( matches1 != null ) { $( '#DistrictTitleValidation' ).hide( "slow" ); }
                                     else { $( '#DistrictTitleValidation' ).hide( "slow" ); $( '#DistrictTitleValidation' ).show( "slow" ) }
 
