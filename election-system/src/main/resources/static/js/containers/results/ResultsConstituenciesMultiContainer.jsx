@@ -18,16 +18,16 @@ var ResultsConstituenciesMultiContainer = React.createClass({
 
     componentWillMount: function () {
         var constituencyId = this.props.routeParams.constituencyId;
-        axios.get('/user/resultsconstituencies/' + constituencyId)
+        axios.get('/api/constituencies/' + constituencyId)
             .then(function (response) {
                 this.setState({
                     constituency: response.data,
                 });
             }.bind(this));
-        axios.get('/user/resultsconstituencies/multi/partylist/' + constituencyId)
+        axios.get('/api/parties/')
             .then(function (response) {
                 this.setState({
-                    partyList: response.data,
+                    partiesList: response.data,
                 });
             }.bind(this));
     },
