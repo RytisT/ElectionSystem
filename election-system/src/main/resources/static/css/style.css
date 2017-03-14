@@ -131,8 +131,7 @@ h1, h2, p, ul, li {
 
 #loginMenu {
 	float: right;
-	padding-right: 50px;
-	padding-top: 14px;
+	padding-right: 5px;	
 }
 
 #logOut {

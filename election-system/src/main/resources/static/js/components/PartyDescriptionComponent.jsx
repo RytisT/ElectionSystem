@@ -55,23 +55,21 @@ var PartyDescriptionComponent = React.createClass( {
                 </tr>
             );
         });
-      
 
         return (
             <div className="">
                 <h2 style={styles.blue}> Partijos nariai </h2>
                 <div style={styles.line}></div>
-                <div> </div>
-
+                <div></div>
 
                 <div className="panel panel-default" style={styles.marginTop}>
                     <table className="table table-striped">
                         <thead>
                             <tr>
-                                <th>VIETA<br/>SĄRAŠE</th>
-                                <th>VARDAS</th>
-                                <th>PAVARDĖ</th>
-                                <th>GIMIMO DATA</th>
+                                <th>Vieta<br />Sąraše</th>
+                                <th>Vardas</th>
+                                <th>Pavardė</th>
+                                <th>Gimimo data</th>
                                 <th></th>
 
                             </tr>
@@ -92,6 +90,9 @@ var PartyDescriptionComponent = React.createClass( {
     }
 });
 
-PartyDescriptionComponent.propTypes = { candidate: React.PropTypes.object.isRequired, onDescriptionItemClick: React.PropTypes.func.isRequired };
+PartyDescriptionComponent.propTypes = { 
+        candidate: React.PropTypes.object.isRequired, 
+        onDescriptionItemClick: React.PropTypes.func.isRequired
+}
 
 window.PartyDescriptionComponent = PartyDescriptionComponent;
