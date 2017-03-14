@@ -19,12 +19,7 @@ var MultiVotesContainer = React.createClass({
             var tempVotes = this.state.votes;
 
             if(votesCount <= this.props.district.number_of_voters) {
-                tempVotes[partyId] = {
-                    districts_id: this.props.district.id,
-                    party_id: partyId,
-                    id: Number(this.props.district.id.toString() + partyId.toString()),
-                    m_votes: votesCount
-                };
+                tempVotes[partyId].m_votes = votesCount
                 this.setState({votes: tempVotes})
             } else {
                 console.log("klaida! klaida! klaida! per daug vedi!")                
@@ -46,6 +41,11 @@ var MultiVotesContainer = React.createClass({
     },
 
 
+
+
+
+
+
   handleSubmit: function (event) {
         return function () {
             event.preventDefault();
@@ -54,17 +54,25 @@ var MultiVotesContainer = React.createClass({
                 votesEntered += Number(vote.m_votes);
             }.bind(this))
 
-            votesEntered += Number(this.props.district.votedMultiCorrupt);
-
-            if (this.props.district.votedMulti == votesEntered) {
+            votesEntered += Number(this.state.district.votedMultiCorrupt);
+            if (this.state.district.votedMulti == votesEntered) {
                 $( '#SinglResultValidation' ).hide( "slow" );
-                this.state.district.multiVoteActive = true;
-                this.state.district.votedMultiTime = Date.now();
-                axios.post("api/districts", this.state.district);
+
                 this.state.votes.map(function (vote, index) {
                     axios.post("api/multi_results", vote)
-                })
-                this.setState({active: true})
+                });
+
+                axios.get("api/districts/" + this.props.district.id)
+                    .then(function(response){
+                        var thisDistrict = response.data;
+                        thisDistrict.multiVoteActive = true;
+                        thisDistrict.votedMultiTime = Date.now();
+                        thisDistrict.votedMulti = this.state.district.votedMulti;
+                        thisDistrict.votedMultiCorrupt = this.state.district.votedMultiCorrupt;
+
+                        this.props.onSaveVotes(thisDistrict);
+                        this.setState({district: thisDistrict})
+                    }.bind(this))
             } else {
                 console.log("klaida! klaida! klaida! ne tiek balsu!")
                 $( '#MultiResultValidation' ).hide( "slow" );
@@ -80,7 +88,6 @@ var MultiVotesContainer = React.createClass({
           tempVotes[party.id] = {
               districts_id: this.props.district.id,
               party_id: party.id,
-              id: Number(this.props.district.id.toString() + party.id.toString()),
               m_votes: ""
           }
       }.bind(this));
@@ -88,8 +95,7 @@ var MultiVotesContainer = React.createClass({
           if(this.props.district.multiVoteActive == false){
               this.props.district.multi_results.map(function (result, index) {
                 tempVotes[result.party_id].m_votes = result.m_votes;
-                console.log(tempVotes)
-
+                tempVotes[result.party_id].id = result.id;
               }.bind(this))
           }
       return tempVotes;
