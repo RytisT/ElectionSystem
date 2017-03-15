@@ -61,7 +61,7 @@ var PartyDescriptionComponent = React.createClass( {
                 <h2 style={styles.blue}> Partijos nariai </h2>
                 <div style={styles.line}></div>
                 <div></div>
-                
+
                 <button id="export_members" className="btn btn-info" data-export="export" onClick={( event ) => {
                     $( "#Members_Lits" ).tableToCSV();
                 } }>Atsisiųsti kandidatų sąraša</button>
@@ -69,7 +69,9 @@ var PartyDescriptionComponent = React.createClass( {
                 <div className="panel panel-default" style={styles.marginTop}>
                     <table id="Members_Lits" className="table table-striped">
                         <thead>
-                            <tr>
+                            <tr style={styles.cursor} onClick={( event ) => {
+                                $( "#Members_Lits" ).tablesorter( { sortList: [[0, 0], [1, 0]] });
+                            } }>
                                 <th>Vieta<br />Sąraše</th>
                                 <th>Vardas</th>
                                 <th>Pavardė</th>
@@ -94,9 +96,9 @@ var PartyDescriptionComponent = React.createClass( {
     }
 });
 
-PartyDescriptionComponent.propTypes = { 
-        candidate: React.PropTypes.object.isRequired, 
-        onDescriptionItemClick: React.PropTypes.func.isRequired
+PartyDescriptionComponent.propTypes = {
+    candidate: React.PropTypes.object.isRequired,
+    onDescriptionItemClick: React.PropTypes.func.isRequired
 }
 
 window.PartyDescriptionComponent = PartyDescriptionComponent;
