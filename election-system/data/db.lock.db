@@ -1,6 +1,14 @@
 #FileLock
+<<<<<<< HEAD
+#Wed Mar 15 09:56:38 EET 2017
+hostName=Odinas
+id=15ad0f7da23dbde80d08054a64a428be9c91a8e036f
+method=file
+server=192.168.56.1\:50517
+=======
 #Wed Mar 15 10:27:10 EET 2017
 hostName=A2D2
 id=15ad113c641d0b5bc4147bfa69981a6b3993ce1e183
 method=file
 server=192.168.56.1\:58771
+>>>>>>> 3c90b8d28129e821d9b229c60cbfe69704e2be18
