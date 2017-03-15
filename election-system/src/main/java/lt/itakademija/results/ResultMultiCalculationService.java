@@ -28,11 +28,7 @@ public class ResultMultiCalculationService {
     private DistrictsRepository distrep;
 
     private Float validThreshold = 5f;
-<<<<<<< HEAD
     private int numberOfSeats =70;
-=======
-    private int numberOfSeats = 70;
->>>>>>> 3c90b8d28129e821d9b229c60cbfe69704e2be18
 
     /*
      * Returns map<party id, number of votes for party> for all constituencies
