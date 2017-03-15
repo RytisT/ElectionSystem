@@ -2,60 +2,60 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e482d54-926f-4a34-b935-bdbc0546e727" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/results/ResultsDistrictsComponent.jsx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/results/ResultsDistrictsContainer.jsx" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/results/ResultsDistrictsInfoContainer.jsx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/results/ResultsDistrictsContainer.jsx" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/results/ResultsDistrictsInfoComponent.jsx" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/election-system/data/db.lock.db" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/results/ResultsDistrictsComponent.jsx" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/election-system/data/db.trace.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/ResultsDistrictsContainer.jsx" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/election-system/data/db.lock.db" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/ResultsDistrictsComponent.jsx" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/admin/SingleDistrictContainer.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/admin/SingleDistrictContainer.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/repositories/DistrictsRepository.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/repositories/DistrictsRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/admin/DistrictRepresentativeComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/admin/DistrictRepresentativeComponent.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/index.html" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/static/js/components/App.jsx" afterPath="$PROJECT_DIR$/election-system/target/classes/static/js/components/App.jsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/ResultsConstituenciesComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/results/ResultsConstituenciesComponent.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/config/routes.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/config/routes.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/static/js/config/routes.jsx" afterPath="$PROJECT_DIR$/election-system/target/classes/static/js/config/routes.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/controllers/PartiesController.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/controllers/PartiesController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/.idea/misc.xml" afterPath="$PROJECT_DIR$/election-system/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/representative/SingleVotesComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/representative/SingleVotesComponent.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/controllers/District_Representatives_Controller.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/controllers/District_Representatives_Controller.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/services/ConstituencyService.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/services/ConstituencyService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/MainPageComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/MainPageComponent.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/css/style.css" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/models/Districts.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/models/Districts.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/java/lt/itakademija/database/models/Districts.java" afterPath="$PROJECT_DIR$/election-system/src/main/java/lt/itakademija/database/models/Districts.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/representative/MultiVotesComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/representative/MultiVotesComponent.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/static/index.html" afterPath="$PROJECT_DIR$/election-system/target/classes/static/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/controllers/CandidatesController.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/controllers/CandidatesController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/.settings/org.eclipse.core.resources.prefs" afterPath="$PROJECT_DIR$/election-system/.settings/org.eclipse.core.resources.prefs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/controllers/ConstituencyController.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/controllers/ConstituencyController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/CandidatesComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/CandidatesComponent.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/controllers/DistrictsController.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/controllers/DistrictsController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/admin/SingleDistrictComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/admin/SingleDistrictComponent.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/admin/SinglePartyContainer.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/admin/SinglePartyContainer.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/models/Parties.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/models/Parties.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/repositories/CandidatesRepository.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/repositories/CandidatesRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/CandidatesContainer.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/CandidatesContainer.jsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/ResultsConstituenciesInfoContainer.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/results/ResultsConstituenciesInfoContainer.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/Application.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/Application.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/models/District_Representatives.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/models/District_Representatives.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/repositories/Constituencies.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/repositories/Constituencies.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/repositories/PartiesRepository.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/repositories/PartiesRepository.class" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/ResultsConstituenciesInfoComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/results/ResultsConstituenciesInfoComponent.jsx" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/ResultsConstituenciesContainer.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/results/ResultsConstituenciesContainer.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/services/PartiesService.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/services/PartiesService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/models/Constituency.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/models/Constituency.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/admin/SinglePartyComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/admin/SinglePartyComponent.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/services/DistrictsService.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/services/DistrictsService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/admin/AddPartyComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/admin/AddPartyComponent.jsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/admin/AddDistrictComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/admin/AddDistrictComponent.jsx" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/ResultsDistrictsContainer.jsx" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/services/CandidatesService.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/services/CandidatesService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/CandidatesContainer.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/CandidatesContainer.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/admin/AddPartyComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/admin/AddPartyComponent.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/controllers/DistrictsController.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/controllers/DistrictsController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/static/index.html" afterPath="$PROJECT_DIR$/election-system/target/classes/static/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/controllers/PartiesController.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/controllers/PartiesController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/models/Districts.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/models/Districts.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/controllers/ConstituencyController.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/controllers/ConstituencyController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/repositories/CandidatesRepository.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/repositories/CandidatesRepository.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/static/js/config/routes.jsx" afterPath="$PROJECT_DIR$/election-system/target/classes/static/js/config/routes.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/config/routes.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/config/routes.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/repositories/Constituencies.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/repositories/Constituencies.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/admin/AddDistrictComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/admin/AddDistrictComponent.jsx" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/ResultsConstituenciesInfoComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/results/ResultsConstituenciesInfoComponent.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/.idea/misc.xml" afterPath="$PROJECT_DIR$/election-system/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/admin/SingleDistrictComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/admin/SingleDistrictComponent.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/java/lt/itakademija/database/models/Districts.java" afterPath="$PROJECT_DIR$/election-system/src/main/java/lt/itakademija/database/models/Districts.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/static/js/components/App.jsx" afterPath="$PROJECT_DIR$/election-system/target/classes/static/js/components/App.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/controllers/District_Representatives_Controller.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/controllers/District_Representatives_Controller.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/services/PartiesService.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/services/PartiesService.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/MainPageComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/MainPageComponent.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/controllers/CandidatesController.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/controllers/CandidatesController.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/repositories/PartiesRepository.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/repositories/PartiesRepository.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/admin/SinglePartyComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/admin/SinglePartyComponent.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/models/District_Representatives.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/models/District_Representatives.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/ResultsConstituenciesComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/results/ResultsConstituenciesComponent.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/representative/SingleVotesComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/representative/SingleVotesComponent.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/css/style.css" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/models/Constituency.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/models/Constituency.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/ResultsConstituenciesInfoContainer.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/results/ResultsConstituenciesInfoContainer.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/index.html" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/admin/SinglePartyContainer.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/admin/SinglePartyContainer.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/CandidatesComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/CandidatesComponent.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/.settings/org.eclipse.core.resources.prefs" afterPath="$PROJECT_DIR$/election-system/.settings/org.eclipse.core.resources.prefs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/admin/DistrictRepresentativeComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/admin/DistrictRepresentativeComponent.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/data/db.mv.db" afterPath="$PROJECT_DIR$/election-system/data/db.mv.db" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/repositories/DistrictsRepository.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/repositories/DistrictsRepository.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/models/Parties.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/models/Parties.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/representative/MultiVotesComponent.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/representative/MultiVotesComponent.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/services/DistrictsService.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/services/DistrictsService.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/App.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/components/App.jsx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/.idea/workspace.xml" afterPath="$PROJECT_DIR$/election-system/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/Application.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/Application.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/admin/SingleDistrictContainer.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/admin/SingleDistrictContainer.jsx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/services/ConstituencyService.class" afterPath="$PROJECT_DIR$/election-system/target/classes/lt/itakademija/database/services/ConstituencyService.class" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/ResultsConstituenciesContainer.jsx" afterPath="$PROJECT_DIR$/election-system/src/main/resources/static/js/containers/results/ResultsConstituenciesContainer.jsx" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -78,7 +78,7 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
+            <state relative-caret-position="0">
               <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
               <folding />
             </state>
@@ -105,11 +105,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ResultsDistrictsComponent.jsx" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ResultsDistrictsComponent.jsx" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/results/ResultsDistrictsComponent.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="704">
+            <state relative-caret-position="2329">
               <caret line="137" column="3" selection-start-line="137" selection-start-column="3" selection-end-line="137" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SecurityWebAppInitializer.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/lt/itakademija/security/SecurityWebAppInitializer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#227#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SecurityConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/lt/itakademija/security/SecurityConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-184">
+              <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -176,6 +198,8 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/js/components/results/ResultsConstituenciesComponent.jsx" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/containers/results/ResultsConstituenciesContainer.jsx" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/components/results/ResultsDistrictsComponent.jsx" />
+        <option value="$PROJECT_DIR$/src/main/java/lt/itakademija/security/SecurityConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/lt/itakademija/security/SecurityWebAppInitializer.java" />
       </list>
     </option>
   </component>
@@ -224,6 +248,8 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -588,6 +614,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="security" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="election-system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="election-system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="itakademija" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="ResultsForUser" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -638,8 +694,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1151,30 +1205,33 @@
       <workItem from="1489482343910" duration="7086000" />
       <workItem from="1489492117811" duration="1883000" />
       <workItem from="1489521951433" duration="10147000" />
-      <workItem from="1489571443628" duration="161000" />
+      <workItem from="1489571443628" duration="536000" />
+      <workItem from="1489572004455" duration="876000" />
+      <workItem from="1489572947058" duration="935000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38756000" />
+    <option name="totallyTimeSpent" value="40942000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839838" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3257066" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32637075" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22236504" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22236504" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32977587" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1188,7 +1245,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32839838" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1218,27 +1274,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/containers/results/ResultsConstituenciesSingleContainer.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="969">
-          <caret line="57" column="93" selection-start-line="57" selection-start-column="93" selection-end-line="57" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/results/ResultsConstituenciesSingleComponent.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/results/ResultsDistrictsSingleComponent.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="144" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="144" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="666">
@@ -1408,7 +1443,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1477,7 +1511,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
+        <state relative-caret-position="0">
           <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
           <folding />
         </state>
@@ -1524,9 +1558,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/components/results/ResultsDistrictsComponent.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="704">
+        <state relative-caret-position="2329">
           <caret line="137" column="3" selection-start-line="137" selection-start-column="3" selection-end-line="137" selection-end-column="3" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lt/itakademija/security/SecurityConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-184">
+          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1046">
+          <caret line="87" column="10" selection-start-line="87" selection-start-column="10" selection-end-line="87" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/lt/itakademija/security/SecurityWebAppInitializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#227#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
