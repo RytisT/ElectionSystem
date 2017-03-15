@@ -1,3 +1,9 @@
+var styles = {
+    hidden: {
+        display: 'none'
+    },
+};
+
 var SingleDistrictComponent = React.createClass( {
 
 
@@ -5,7 +11,7 @@ var SingleDistrictComponent = React.createClass( {
 
         return this.props.isEditing
 
-            ? <tr onMouseOver={this.props.onHover()} onMouseOut={this.props.onHover()} style={{backgroundColor: this.props.color}}>
+            ? <tr onMouseOver={this.props.onHover()} onMouseOut={this.props.onHover()} style={{ backgroundColor: this.props.color }}>
                 <td className="col-md-3"><input id="District_name" className="form-control" size="3"
                     placeholder="Apylinkės pavadinimas"
                     value={this.props.district.title} maxLength="30"
@@ -39,12 +45,12 @@ var SingleDistrictComponent = React.createClass( {
                     <button id="Cancel_Changes" type="button" className="btn btn-danger" onClick={this.props.onEditDist}>Atšaukti</button>
                 </td>
                 <td className="col-md-1">
-                    <button id="Delete_district" type="button" className="btn btn-danger" onClick={this.props.onDelete( this.props.district )}>
+                    <button id={"Delete_district" + this.props.district.id} type="button" className="btn btn-danger" onClick={this.props.onDelete( this.props.district )}>
                         Trinti
                     </button>
                 </td>
             </tr>
-            : <tr onMouseOver={this.props.onHover()} onMouseOut={this.props.onHover()} style={{backgroundColor: this.props.color}}>
+            : <tr onMouseOver={this.props.onHover()} onMouseOut={this.props.onHover()} style={{ backgroundColor: this.props.color }}>
                 <td className="col-md-3">{this.props.district.title}</td>
                 <td className="col-md-1">{this.props.district.number_of_voters}</td>
                 <td className="col-md-3">{this.props.district.address}</td>
@@ -56,8 +62,19 @@ var SingleDistrictComponent = React.createClass( {
                     <button id="Edit_District" type="button" className="btn btn-info" onClick={this.props.onEditDist}>Redaguoti</button>
                 </td>
                 <td className="col-md-1">
-                    <button id="Delete_district" type="button" className="btn btn-danger" onClick={this.props.onDelete( this.props.district )}>
-                        Trinti
+                    <button id={"x_district" + this.props.district.id} type="button" className="btn btn-danger"
+                        onClick={( event ) => {
+                            var x = this.props.district.id;
+                            var y = "#Delete_district" + x;
+                            var z = "#x_district" + x
+                            if ( $( y ).is( ":hidden" ) ) {
+                                $( y ).show(); $( z ).html( "Atšaukti" );
+                            } else { $( y ).hide(); $( z ).html( "Trinti" ); }
+                        } }>Trinti
+                </button>
+                    <button id={"Delete_district" + this.props.district.id} style={styles.hidden} type="button" className="btn btn-danger"
+                        onClick={this.props.onDelete( this.props.district )} >
+                        Patvirtinti
                     </button>
                 </td>
             </tr>

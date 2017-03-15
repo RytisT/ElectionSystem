@@ -8,14 +8,30 @@ var styles = {
     }
 };
 
+
+
 var ResultsConstituenciesInfoComponent = React.createClass({
     render: function () {
-        var singleActive = this.props.constituency.votedSingle + this.props.constituency.votedSingleCorrupt + ' (' + Math.round((this.props.constituency.votedSingle + this.props.constituency.votedSingleCorrupt) / this.props.constituency.number_of_voters * 10000) / 100 + '%)';
-        var singleCorrupt = this.props.constituency.votedSingleCorrupt;
 
-        var multiActive = this.props.constituency.votedMulti + this.props.constituency.votedMultiCorrupt + ' (' + Math.round((this.props.constituency.votedMulti + this.props.constituency.votedMultiCorrupt) / this.props.constituency.number_of_voters * 10000) / 100 + '%)';
-        var multiCorrupt = this.props.constituency.votedMultiCorrupt;
+        var votesCounter = function(){
+            var totalVotes = 0;
+            var singleVotes = 0;
+            var singleCorrupt = 0;
+            var multiVotes = 0;
+            var multiCorrupt = 0;
+            this.props.constituency.districts.map(function(district){
+                totalVotes += district.number_of_voters;
+                singleVotes += district.votedSingle;
+                singleCorrupt += district.votedSingleCorrupt;
+                multiVotes += district.votedMulti;
+                multiCorrupt += district.votedMultiCorrupt;
+            }.bind(this));
+            return {"totalVotes": totalVotes, "singleVotes": singleVotes, "singleCorrupt": singleCorrupt, "multiVotes": multiVotes, "multiCorrupt": multiCorrupt};
+        }.bind(this);
 
+        console.log(votesCounter);
+        var votesCount = votesCounter;
+        console.log(votesCounter);
         return (
             <div id="resultsConstituency">
                 <h2 style={styles.blue}>Apygardos balsavimo informacija</h2>
@@ -23,19 +39,19 @@ var ResultsConstituenciesInfoComponent = React.createClass({
                 <span id="resultsConstituencyInfo">Apygarda: </span><span>{this.props.constituency.title}</span>
                 <br/>
                 <br/>
-                <span id="resultsConstituencyInfo">Rinkėjų skaičius apygardoje: </span><span>{this.props.constituency.number_of_voters}</span>
+                <span id="resultsConstituencyInfo">Rinkėjų skaičius apygardoje: </span><span>{votesCounter.totalVotes}</span>
                 <br/>
                 <br/>
                 <br/>
-                <span id="resultsConstituencyInfo">Rinkėjų aktyvumas vienmandatėje: </span><span>{singleActive}</span>
+                <span id="resultsConstituencyInfo">Rinkėjų aktyvumas vienmandatėje: </span><span>{votesCounter.singleVotes + ' (' + Math.round(votesCounter.singleVotes / votesCounter.totalVotes * 10000) / 100 + '%)'}</span>
                 <br/>
-                <span id="resultsConstituencyInfo">Sugadinti vienmandatės biuleteniai: </span><span>{singleCorrupt}</span>
+                <span id="resultsConstituencyInfo">Sugadinti vienmandatės biuleteniai: </span><span>{votesCounter.singleCorrupt}</span>
                 <br/>
                 <br/>
                 <br/>
-                <span id="resultsConstituencyInfo">Rinkėjų aktyvumas daugiamandatėje: </span><span>{multiActive}</span>
+                <span id="resultsConstituencyInfo">Rinkėjų aktyvumas daugiamandatėje: </span><span>{votesCounter.multiVotes + ' (' + Math.round(votesCounter.multiVotes / votesCounter.totalVotes * 10000) / 100 + '%)'}</span>
                 <br/>
-                <span id="resultsConstituencyInfo">Sugadinti daugiamandatės biuleteniai: </span><span>{multiCorrupt}</span>
+                <span id="resultsConstituencyInfo">Sugadinti daugiamandatės biuleteniai: </span><span>{votesCounter.multiCorrupt}</span>
                 <br/>
                 <br/>
                 <br/>

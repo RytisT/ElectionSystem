@@ -4,11 +4,11 @@ var ResultsDistrictsSingleComponent = React.createClass({
         var candidatesList = this.props.candidatesList.map(function (candidate, index) {
             return (
                 <tr key={index}>
-                    <td className="col-md-5">{candidate.name + ' ' + candidate.last_name}</td>
-                    <td className="col-md-1">{candidate.party}</td>
-                    <td className="col-md-2">{candidate.numberOfVotes}</td>
-                    <td className="col-md-2">{Math.round(candidate.numberOfVotes / (this.props.district.votedSingle + this.props.district.votedSingleCorrupt) * 10000) / 100 + '%'}</td>
-                    <td className="col-md-2">{Math.round(candidate.numberOfVotes / this.props.district.votedSingle * 10000) / 100 + '%'}</td>
+                    <td className="col-md-4">{candidate.name + ' ' + candidate.last_name}</td>
+                    <td className="col-md-2">{candidate.party_id != null ? this.props.parties[candidate.party_id].party_Code : "Išsikėlęs pats"}</td>
+                    <td className="col-md-2">{this.props.district.single_results[index].vote}</td>
+                    <td className="col-md-2">{Math.round((this.props.district.single_results[index].vote / this.props.district.votedSingle * 100) * 100) / 100}</td>
+                    <td className="col-md-2">{Math.round((this.props.district.single_results[index].vote / (this.props.district.votedSingle - this.props.district.votedSingleCorrupt) * 100) * 100) / 100}</td>
                 </tr>
             );
         }.bind(this));
@@ -43,7 +43,6 @@ var ResultsDistrictsSingleComponent = React.createClass({
 
 ResultsDistrictsSingleComponent.propTypes = {
     district: React.PropTypes.object.isRequired,
-    candidatesList: React.PropTypes.object.isRequired
 };
 
 window.ResultsDistrictsSingleComponent = ResultsDistrictsSingleComponent;

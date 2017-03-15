@@ -11,23 +11,36 @@ var ResultsConstituenciesSingleContainer = React.createClass({
                 votedMulti: '',
                 votedMultiCorrupt: ''
             },
-            candidatesList: []
+            candidatesList: [],
+            parties: []
         }
     },
 
 
     componentWillMount: function () {
         var constituencyId = this.props.routeParams.constituencyId;
-        axios.get('/user/resultsconstituencies/' + constituencyId)
+        axios.get('/api/constituencies/' + constituencyId)
             .then(function (response) {
                 this.setState({
                     constituency: response.data,
                 });
             }.bind(this));
-        axios.get('/user/resultsconstituencies/single/candidatelist/' + constituencyId)
+
+        axios.get('api/candidates/search?constituency_id=' + constituencyId)
             .then(function (response) {
                 this.setState({
                     candidatesList: response.data,
+                });
+            }.bind(this));
+
+        axios.get('/api/parties/')
+            .then(function (response) {
+                var partyList = {};
+                response.data.map(function (party, index) {
+                    partyList[party.id] = party;
+                }.bind(this))
+                this.setState({
+                    parties: partyList,
                 });
             }.bind(this));
     },
@@ -41,6 +54,7 @@ var ResultsConstituenciesSingleContainer = React.createClass({
         return (
             <ResultsConstituenciesSingleComponent constituency={this.state.constituency}
                                                   candidatesList={this.state.candidatesList}
+                                                  parties = {this.state.parties}
                                                   onReturnConstituenciesClick={this.handleReturnConstituencies}
             />
         );

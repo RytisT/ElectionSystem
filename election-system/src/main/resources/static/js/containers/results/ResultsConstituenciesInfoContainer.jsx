@@ -17,7 +17,7 @@ var ResultsConstituenciesInfoContainer = React.createClass({
 
     componentWillMount: function () {
         var constituencyId = this.props.routeParams.constituencyId;
-        axios.get('/user/resultsconstituencies/' + constituencyId)
+        axios.get('/api/constituencies/' + constituencyId)
             .then(function (response) {
                 this.setState({
                     constituency: response.data,

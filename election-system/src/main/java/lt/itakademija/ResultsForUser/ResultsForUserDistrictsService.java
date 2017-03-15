@@ -90,7 +90,7 @@ public class ResultsForUserDistrictsService {
             HashMap<String, Integer> votesForOneParty = new HashMap<>();
             votesForPartiesMap.put(districtsService.findById(district.getId()).getId(), votesForOneParty); 
             for(Multi_Results results: district.getMulti_results()){
-                votesForOneParty.put(partiesService.findById(results.getParty_id()).getTitle(), results.getM_votes());                
+                votesForOneParty.put(partiesService.findById(results.getParty_id()).getTitle(), results.getM_votes());
             }
         }
         return votesForPartiesMap;

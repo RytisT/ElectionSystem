@@ -13,11 +13,11 @@ var routes = (
                     <Route path="/admin/parties" component={PartiesContainer} />
                     <Route path="/admin/party-candidates/:partyId" component={PartyCandidatesContainer} />
                     <Route path="/admin/const-candidates/:constId" component={ConstituencyCandidatesContainer} />
-                    <Route path="/admin/contacts" component={PartiesContainer} />
                     <Route path="/admin/district/:distId" component={DistrictContainer} />
                     <Route path="/admin/candidates" component={CandidatesContainer} />
                     <Route path="/admin/candidates/add-candidate" component={AddCandidateContainer} />
                     <Route path="/admin/candidates/edit/:candidateId" component={EditCandidateContainer} />
+<<<<<<< HEAD
                 </Route>
 
                 <Route path="/candidates" component={CandidatesContainer} />
@@ -29,6 +29,12 @@ var routes = (
                 <Route path="/login" component={LoginPageContainer} />
                 <Route path="/replogin" component={LoginRepPageContainer} />
 
+=======
+                    <Route path="/admin/results" component={ResultsContainer} />
+
+                </Route>
+
+>>>>>>> 3c90b8d28129e821d9b229c60cbfe69704e2be18
                 <Route path="/" component={MainPageComponent}>
                     <IndexRoute component={MainPageComponent} />
                     <Route path="/main" component={FirstComponent} />
@@ -51,7 +57,6 @@ var routes = (
                 <Route path="/Representatives/:repLogin" component={SubmitVotesContainer} />
                 <Route path="/login" component={LoginPageContainer} />
                 <Route path="/replogin" component={LoginRepPageContainer} />
-
 
 
 

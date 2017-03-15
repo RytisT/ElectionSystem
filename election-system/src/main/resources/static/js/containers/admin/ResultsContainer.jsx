@@ -8,8 +8,6 @@ var ResultsContainer = React.createClass( {
         }
     },
 
-
-
     componentWillMount: function() {
         axios.get( '/api/districts/')
             .then( function( response ) {
@@ -17,16 +15,15 @@ var ResultsContainer = React.createClass( {
                     districts: response.data,
                 });
             }.bind( this ) )
-
     },
 
     handleSearchQueryChange: function() {
         return function( newQuery ) {
             //validation
-            var val = $( "#SearchByTitle" ).val();
-            var matches = val.match( ".*([a-zA-ZąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)" );
-            if ( matches != null ) { $( "#DistrictSearchValidation" ).hide( "slow" ); }
-            else { $( "#DistrictSearchValidation" ).show( "slow" ); }
+            var val = $( "#Search_District" ).val();
+            var matches = val.match( ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“\"!,.:;-? ()]$)" );
+            if ( matches != null ) { $( "#ResultsSearchValidation" ).hide( "slow" ); }
+            else { $( "#ResultsSearchValidation" ).show( "slow" ); }
 
             this.setState( { searchQuery: newQuery.target.value })
         }.bind( this )

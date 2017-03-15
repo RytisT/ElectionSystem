@@ -131,8 +131,7 @@ h1, h2, p, ul, li {
 
 #loginMenu {
 	float: right;
-	padding-right: 50px;
-	padding-top: 14px;
+	padding-right: 5px;	
 }
 
 #logOut {
@@ -284,7 +283,7 @@ h1, h2, p, ul, li {
 #DistrictVotersNumberValidation, #DistrictAddressValidation,
 #PartyNumber_Validation, #PartyCode_Validation, #PartyTitle_Validation,
 #District_name_Validation, #Voters_Count_Validation, #District_address_Validation,
-#MultiResultValidation, #SinglResultValidation {
+#MultiResultValidation, #SinglResultValidation, #ResultsSearchValidation {
 	display: none;	
 }
 
