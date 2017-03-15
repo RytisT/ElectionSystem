@@ -1,6 +1,6 @@
 #FileLock
-#Tue Mar 14 03:43:19 EET 2017
-hostName=rytis-HP-EliteBook-8570w
-id=15aca7bd5382f85a94ccc74558d097fdf487d5ae307
+#Wed Mar 15 09:56:38 EET 2017
+hostName=Odinas
+id=15ad0f7da23dbde80d08054a64a428be9c91a8e036f
 method=file
-server=127.0.1.1\:45351
+server=192.168.56.1\:50517

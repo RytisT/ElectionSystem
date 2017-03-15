@@ -43,29 +43,30 @@ public class ConsolidatedResultCalculationService {
      * returns List of candidates that won mandates in proportional system
      */
     public List<Candidates> getMultiWinnerCandidates() {
-        int counter=0;
         List<Candidates> singleCandidates = getWinningSingleCandidates();
         List<Candidates> multiWinners = new ArrayList<>();
         Map<Integer, Integer> partyResult = multiService.mandatesByParty();
         for (Entry<Integer, Integer> partyMandateCount : partyResult.entrySet()) {
             int numberMandates = partyMandateCount.getValue();
-            for (Candidates partyCandidates : candidateService.findByPartyId(partyMandateCount.getKey())) {
-                
-                while (numberMandates >= 1) {
-                    counter++;
-                    Candidates newAlsoPartyCandidate = candidateService.findByPartyAndSeat(partyMandateCount.getKey(),
-                            1+counter);
+            int counter=0;
+            for (Candidates partyCandidates : candidateService.findByPartyId(partyMandateCount.getKey())) {                
+                while (numberMandates >= 1) {                 
                     Candidates newPartyCandidate = candidateService.findByPartyAndSeat(partyMandateCount.getKey(),
-                            partyCandidates.getParty_list_seat() + 1);
-                    if (multiWinners.contains(partyCandidates) || singleCandidates.contains(partyCandidates)
-                            || multiWinners.contains(newAlsoPartyCandidate)) {
+                            counter + 1);
+//                    Candidates newAlsoPartyCandidate = candidateService.findByPartyAndSeat(partyMandateCount.getKey(),
+//                            counter+2);
+                            counter++;                                              
+                    if (singleCandidates.contains(newPartyCandidate)) {
+                        while(singleCandidates.contains(newPartyCandidate)==false){
+                        multiWinners.add(newPartyCandidate);
+                        counter++;
+                        break;
+                        }
+                    } else {
                         multiWinners.add(newPartyCandidate);
                         break;
-                    } else {
-                        multiWinners.add(newAlsoPartyCandidate);
-                        break;
                     }                   
-
+                        
                 }
                 numberMandates--;
                 
