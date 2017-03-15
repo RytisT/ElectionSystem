@@ -91,9 +91,13 @@ var CandidatesComponent = React.createClass( {
                     </div>
                     <div id="CandidateSearchValidation" className="validationForm"><span>Naudojami netinkami simboliai.</span></div>
                 </div>
+                    
+                    <button id="export_candidates" className="btn btn-info" data-export="export" onClick={( event ) => {
+                            $("#Candidates_Lits").tableToCSV();
+                    } }>Atsisiūsti kandidatų sąraša</button>
 
                 <div className="panel panel-default" style={styles.marginTop} id="Table">
-                    <table className="table table-striped">
+                    <table id="Candidates_Lits" className="table table-striped">
                         <thead>
                             <tr>
                                 <th id="RowNumber">Eil.Nr.</th>
@@ -119,11 +123,11 @@ var CandidatesComponent = React.createClass( {
 
 //<div>
 //    <button id="CandidateReturn" className="btn btn-success" style={{ marginRight: '20px' }}
-//        onClick={this.props.onCancelClick}>Į viršų
+//        onClick={this.props.onCancelClick}>grižti
 //                    </button>
 //</div>
 
-/* papildomas add mygtukas i tuscia div 
+/* papildomas add mygtukas
  * 
  * <button id="CandidateAdd" className="btn btn-block btn-success" type="submit"
  onClick={this.props.onAddClick} >Prideti kandidatą</button>
