@@ -1,39 +1,47 @@
-var ResultsDistrictsSingleComponent = React.createClass({
+var styles = {
+    marginTop: {
+        marginTop: '20px'
+    },
+};
 
-    render: function () {
-        var candidatesList = this.props.candidatesList.map(function (candidate, index) {
+var ResultsDistrictsSingleComponent = React.createClass( {
+
+    render: function() {
+        var candidatesList = this.props.candidatesList.map( function( candidate, index ) {
             return (
                 <tr key={index}>
                     <td className="col-md-4">{candidate.name + ' ' + candidate.last_name}</td>
                     <td className="col-md-2">{candidate.party_id != null ? this.props.parties[candidate.party_id].party_Code : "Išsikėlęs pats"}</td>
                     <td className="col-md-2">{this.props.district.single_results[index].vote}</td>
-                    <td className="col-md-2">{Math.round((this.props.district.single_results[index].vote / this.props.district.votedSingle * 100) * 100) / 100}</td>
-                    <td className="col-md-2">{Math.round((this.props.district.single_results[index].vote / (this.props.district.votedSingle - this.props.district.votedSingleCorrupt) * 100) * 100) / 100}</td>
+                    <td className="col-md-2">{Math.round(( this.props.district.single_results[index].vote / this.props.district.votedSingle * 100 ) * 100 ) / 100}</td>
+                    <td className="col-md-2">{Math.round(( this.props.district.single_results[index].vote / ( this.props.district.votedSingle - this.props.district.votedSingleCorrupt ) * 100 ) * 100 ) / 100}</td>
                 </tr>
             );
-        }.bind(this));
+        }.bind( this ) );
 
         return (
             <div className="">
-                <table className="table table-striped">
-                    <thead>
-                    <tr>
-                        <th>Kandidatas</th>
-                        <th>Partija</th>
-                        <th>Surinkta balsų</th>
-                        <th>% nuo visų balsų</th>
-                        <th>% nuo galiojančių</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {candidatesList}
-                    </tbody>
-                </table>
+                <div className="panel panel-default" style={styles.marginTop}>
+                    <table className="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Kandidatas</th>
+                                <th>Partija</th>
+                                <th>Surinkta balsų</th>
+                                <th>% nuo visų balsų</th>
+                                <th>% nuo galiojančių</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {candidatesList}
+                        </tbody>
+                    </table>
+                </div>
                 <button id="ResultsDistrictsSingleReturn"
-                        className="btn btn-success"
-                        style={{marginRight: '20px'}}
-                        onClick={this.props.onReturnDistrictsClick}
-                >
+                    className="btn btn-success"
+                    style={{ marginRight: '20px' }}
+                    onClick={this.props.onReturnDistrictsClick}
+                    >
                     Grįžti
                 </button>
             </div>

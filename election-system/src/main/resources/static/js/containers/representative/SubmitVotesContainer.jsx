@@ -34,7 +34,7 @@ var SubmitVotesContainer = React.createClass({
                 </div>
             )
         } else {
-            return <div>Kraunama</div>
+            return <div>Daumenų nerasta</div>
         }
     }
 });
