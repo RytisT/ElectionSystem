@@ -24,21 +24,21 @@ var styles = {
     }
 };
 
-var UserPartiesComponent = React.createClass({
-    render: function () {
+var UserPartiesComponent = React.createClass( {
+    render: function() {
         var self = this;
-        var partiesList = this.props.parties.map(function (party, index) {
+        var partiesList = this.props.parties.map( function( party, index ) {
             return (
                 <tr id="partiesList" key={index}>
                     <td>{party.id}</td>
                     <td>{party.title}</td>
                     <td>{party.party_Code}</td>
                     <td style={styles.width}>
-                        <button id={"PartyInfo" + party.id}  type="button" className="btn btn-default"
-                                onClick={self.props.onDescriptionItemClick(party)}
-                                data-toggle="tooltip" data-placement="top" title="Partijos narių sąrašas"
-                                data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
-                                aria-controls="collapseOne">
+                        <button id={"PartyInfo" + party.id} type="button" className="btn btn-default"
+                            onClick={self.props.onDescriptionItemClick( party )}
+                            data-toggle="tooltip" data-placement="top" title="Partijos narių sąrašas"
+                            data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
+                            aria-controls="collapseOne">
                             <span className="glyphicon glyphicon-info-sign"></span></button>
                     </td>
                 </tr>
@@ -46,23 +46,27 @@ var UserPartiesComponent = React.createClass({
         });
 
         return (
-            <div className="">                
-                <div className="panel panel-default" style={styles.marginTop}>
-                    <table className="table table-striped">
-                        <thead>
-                        <tr>
-                            <th>Partijos Nr.</th>
-                            <th>Partijos Pavadinimas</th>
-                            <th>Trumpinys</th>
-                            <th></th>
+            <div className="">
+                <button id="export_parties" className="btn btn-info" data-export="export" onClick={( event ) => {
+                    $( "#Parties_Lits" ).tableToCSV();
+                } }>Atsisiųsti partijų sąraša</button>
 
-                        </tr>
+                <div className="panel panel-default" style={styles.marginTop}>
+                    <table id="Parties_Lits" className="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Partijos Nr.</th>
+                                <th>Partijos Pavadinimas</th>
+                                <th>Trumpinys</th>
+                                <th></th>
+
+                            </tr>
                         </thead>
                         <tbody>
-                        {partiesList}
+                            {partiesList}
                         </tbody>
                     </table>
-                </div>                
+                </div>
             </div>
 
         )
@@ -76,6 +80,6 @@ var UserPartiesComponent = React.createClass({
 //</div>
 
 
-UserPartiesComponent.propTypes = {onDescriptionItemClick: React.PropTypes.func.isRequired};
+UserPartiesComponent.propTypes = { onDescriptionItemClick: React.PropTypes.func.isRequired };
 
 window.UserPartiesComponent = UserPartiesComponent;

@@ -41,8 +41,13 @@ var ResultsConstituenciesMultiComponent = React.createClass( {
 
         return (
             <div className="">
+                
+                <button id="export_ConsMulti" className="btn btn-info" data-export="export" onClick={( event ) => {
+                    $( "#ResultsConsMulti" ).tableToCSV();
+                } }>Atsisiųsti CSV failą</button>
+                
                 <div className="panel panel-default" style={styles.marginTop}>
-                    <table className="table table-striped">
+                    <table id="ResultsConsMulti" className="table table-striped">
                         <thead>
                             <tr>
                                 <th>Nr.</th>

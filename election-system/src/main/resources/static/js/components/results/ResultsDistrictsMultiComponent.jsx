@@ -23,8 +23,13 @@ var ResultsDistrictsMultiComponent = React.createClass( {
 
         return (
             <div className="">
+
+                <button id="export_ResultsDistrictMulti" className="btn btn-info" data-export="export" onClick={( event ) => {
+                    $( "#ResultsDistrictMulti" ).tableToCSV();
+                } }>Atsisiųsti CSV failą</button>
+
                 <div className="panel panel-default" style={styles.marginTop}>
-                    <table className="table table-striped">
+                    <table id="ResultsDistrictMulti" className="table table-striped">
                         <thead>
                             <tr>
                                 <th>Nr.</th>
@@ -38,14 +43,14 @@ var ResultsDistrictsMultiComponent = React.createClass( {
                             {partiesList}
                         </tbody>
                     </table>
-                                </div>
-                    <button id="ResultsDistrictsMultiReturn"
-                        className="btn btn-success"
-                        style={{ marginRight: '20px' }}
-                        onClick={this.props.onReturnDistrictsClick}
-                        >
-                        Grįžti
-                </button>                
+                </div>
+                <button id="ResultsDistrictsMultiReturn"
+                    className="btn btn-success"
+                    style={{ marginRight: '20px' }}
+                    onClick={this.props.onReturnDistrictsClick}
+                    >
+                    Grįžti
+                </button>
             </div>
         )
     }

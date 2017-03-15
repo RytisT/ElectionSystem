@@ -91,10 +91,10 @@ var CandidatesComponent = React.createClass( {
                     </div>
                     <div id="CandidateSearchValidation" className="validationForm"><span>Naudojami netinkami simboliai.</span></div>
                 </div>
-                    
-                    <button id="export_candidates" className="btn btn-info" data-export="export" onClick={( event ) => {
-                            $("#Candidates_Lits").tableToCSV();
-                    } }>Atsisiūsti kandidatų sąraša</button>
+
+                <button id="export_candidates" className="btn btn-info" data-export="export" onClick={( event ) => {
+                    $( "#Candidates_Lits" ).tableToCSV();
+                } }>Atsisiųsti kandidatų sąraša</button>
 
                 <div className="panel panel-default" style={styles.marginTop} id="Table">
                     <table id="Candidates_Lits" className="table table-striped">
