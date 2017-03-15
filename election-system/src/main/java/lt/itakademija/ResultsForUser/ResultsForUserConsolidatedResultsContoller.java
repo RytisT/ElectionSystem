@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import lt.itakademija.database.models.Candidates;
+import lt.itakademija.results.ConsolidatedResultCalculationService;
 
 @RestController
 @CrossOrigin
@@ -18,6 +19,9 @@ public class ResultsForUserConsolidatedResultsContoller {
     
     @Autowired
     private ResultsForUserConsolidatedResultsService service;
+    
+    @Autowired
+    private ConsolidatedResultCalculationService serviceConsolidated;
     
     /*
      * Visų būsimų Seimo narių sąrašas
@@ -32,8 +36,24 @@ public class ResultsForUserConsolidatedResultsContoller {
      * Partijų sąrašas kartu su kiekvienos partijos laimėtų mandatų skaičiumi 
      * returns Map<Party title, numbers of mandates won>
      */
+    @GetMapping(value="/mandates")
     public Map<String, Long> mandateCountFull(){
         return service.mandateCountFull();
-    } 
-
+    }
+    
+    /*
+     * Daugiamandates laimeje kandidatai
+     */
+    @GetMapping(value="/multi")
+    public  List<Candidates> getMultiWinnerCandidates(){
+        return serviceConsolidated.getMultiWinnerCandidates();
+    }
+    
+    /*
+     * Vienmandates laimeje kandidatai
+     */
+    @GetMapping(value="/single")
+    public  List<Candidates> getWinningSingleCandidates(){
+        return serviceConsolidated.getWinningSingleCandidates();
+    }
 }

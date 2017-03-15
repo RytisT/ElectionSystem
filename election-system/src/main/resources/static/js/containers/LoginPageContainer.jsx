@@ -2,6 +2,8 @@ var LoginPageContainer = React.createClass( {
 
     // Login validation
     handleSubmitClick() {
+        var self = this;
+
         var val = $( "#inputAdminName" ).val();
         var matches = val.match( ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)" );
         if ( matches != null ) { $( '#AdminNameValidation' ).hide( "slow" ) }
@@ -13,13 +15,15 @@ var LoginPageContainer = React.createClass( {
         else { $( '#AdminPassValidation' ).show( "slow" ) }
 
         if ( matches != null && matchesp != null ) {
-            this.context.router.push( '/admin' );
+          axios.post('/post',val , valp).then(function (){
+            self.context.router.push( '/#/admin' );
+          });
             $( '#loginMenu' ).hide( "slow" );
             $( '#logOut' ).show( "slow" )
         };
     },
 
-    // Cancel 
+    // Cancel
     handleCancelClick() {
         this.context.router.push( '/main' );
     },

@@ -33,18 +33,18 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
     
     protected void configure(HttpSecurity http) throws Exception{
 
-        http.cors().and().
+        http.//cors().and().
         authorizeRequests().antMatchers("/","/js/**", "/css/**","/images/**","/api/**").permitAll().
         /*, "/js/config/**","js/index.jsx"
                , /#/login","/js/js.js","/js/index.jsx","/js/config/routes.jsx"
                ,"/js/components/App.jsx","/js/components/WelcomeComponent.jsx").permitAll().*/
-        antMatchers("/js/containers/admin/**").hasRole("ADMIN").
-        antMatchers("/js/components/representatives/**","js/containers/representatives/").hasRole("USER").      
+        antMatchers("/#/admin").hasRole("admin").
+        antMatchers("/js/components/representatives/**","js/containers/representatives/").hasRole("user").      
         anyRequest().authenticated().
-        and().formLogin().//loginPage("/#/login").permitAll().
+        and().formLogin().permitAll().//loginProcessingUrl("/post").permitAll().//loginPage("/#/login").
         and().httpBasic();
         
-        http.csrf();
+        http.csrf();//disable();
         //http.headers().frameOptions().disable();
     }
 

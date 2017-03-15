@@ -6,6 +6,7 @@ package lt.itakademija.database.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,6 +33,7 @@ public class ConstituencyController {
     private ConstituencyService service;
 
     @GetMapping
+    //@PreAuthorize("hasRole('admin')")
     public List<Constituency> findAll() {
         return service.findAll();
     }
