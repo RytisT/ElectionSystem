@@ -85,7 +85,7 @@ public class ConsolidatedResultCalculationService {
     public List<Candidates> consolidatedWinner() {
         List<Candidates> winnersFinal = new ArrayList<>();
         winnersFinal.addAll(getWinningSingleCandidates());
-        //winnersFinal.addAll(getMultiWinnerCandidates());
+        winnersFinal.addAll(getMultiWinnerCandidates());
         return winnersFinal;
     }
 
