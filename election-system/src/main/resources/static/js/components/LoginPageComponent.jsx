@@ -20,6 +20,9 @@ var LoginPageComponent = React.createClass( {
                 <input id="inputAdminPass" type="password" placeholder="Įveskite varototojo slaptažodį" maxLength="50" />
                 <div id="AdminPassValidation" className="validationForm"><span>Prašom įvesti slaptažodį.</span></div>
                 
+                <br/>
+                <div id="WronLoginValidation" className="validationForm"><span>Neteisingai suvestas vartotojo vardas arba slaptažodis.</span></div>
+                
                 
                 <button id="onLogin" type="button" onClick={this.props.onSubmitClick}>Prisijungti</button>
                 <button id="onCancel" type="button" className="cancelbtn" onClick={this.props.onCancelClick} >Atšaukti</button>

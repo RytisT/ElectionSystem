@@ -37,6 +37,8 @@ var routes = (
                     <Route path="/results/districts/info/:districtId" component={ResultsDistrictsInfoContainer} />
                     <Route path="/results/districts/multi/:districtId" component={ResultsDistrictsMultiContainer} />
                     <Route path="/results/districts/single/:districtId" component={ResultsDistrictsSingleContainer} />
+                    <Route path="/results/consolidatedSingle" component={ConsolidatedSingleResultsContainer} />
+
 
                 </Route>
 

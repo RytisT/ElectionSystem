@@ -31,9 +31,39 @@ var ResultsConstituenciesInfoComponent = React.createClass({
         console.log(this.props.constituency)
         var votesCount = votesCounter();
         console.log(votesCount);
+
+
+        var progress = function() {
+            var submittedDistricts = 0;
+            var totalDistricts = 0;
+
+                this.props.constituency.districts.map( function( district, index ) {
+                    if ( district.multiVoteActive && district.singleVoteActive ) {
+                        submittedDistricts += 1;
+                    }
+                }.bind( this ) )
+                totalDistricts += this.props.constituency.districts.length;
+            return { "submittedDistricts": submittedDistricts, "totalDistricts": totalDistricts };
+        }.bind( this );
+
+        var districtSubmitted = progress();
+        var submittedPercentage = Math.floor( districtSubmitted["submittedDistricts"] / districtSubmitted["totalDistricts"] * 100 ) + "%";
+
         return (
             <div id="resultsConstituency">
-                <h2 style={styles.blue}>Apygardos balsavimo informacija</h2>
+                <h2 style={styles.blue}>{this.props.constituency.title} apygardos balsavimo informacija</h2>
+                <div style={styles.line}></div>
+                <div className="panel panel-default">
+                    <div className="panel-heading"> <h4>Apygardų, užregistravusių balsus, skaičius: {districtSubmitted["submittedDistricts"]} / {districtSubmitted["totalDistricts"]}</h4></div>
+                    <div className="panel-body ">
+                        <div className="progress">
+                            <div className="progress-bar progress-bar-striped active" role="progressbar"
+                                 aria-valuenow={districtSubmitted} aria-valuemin="0" aria-valuemax="100" style={{ width: submittedPercentage }}>
+                                {submittedPercentage}
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div style={styles.line}></div>
                 <span id="resultsConstituencyInfo">Apygarda: </span><span>{this.props.constituency.title}</span>
                 <br/>

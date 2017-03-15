@@ -86,4 +86,6 @@ public class CandidatesService {
             }
         }
     }
+
+    public List<Candidates> findByElected(String elected) {return repository.findByElected(elected);}
 }

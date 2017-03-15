@@ -19,9 +19,10 @@ public class ConsolidatedResultCalculationController {
     private ConsolidatedResultCalculationService consolidateResult;
   
     @GetMapping
-    public List<Candidates> getResults() {
-        return consolidateResult.getMultiWinnerCandidates();
+    public void getResults() {
+        consolidateResult.consolidatedWinner();
     }
+
     @GetMapping("/1")
     public List<Candidates> getWinningSingleCandidates(){
         return consolidateResult.getWinningSingleCandidates();

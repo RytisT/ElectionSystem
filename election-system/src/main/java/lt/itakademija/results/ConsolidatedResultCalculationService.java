@@ -36,6 +36,11 @@ public class ConsolidatedResultCalculationService {
                 }
             }
         }
+
+        for (Candidates candidate : allWinningCandidates) {
+            candidate.setCandidate_elected("single");
+            candidateService.saveOrUpdate(candidate);
+        }
         return allWinningCandidates;
     }
 
@@ -71,6 +76,11 @@ public class ConsolidatedResultCalculationService {
                 numberMandates--;
                 
             }
+        }
+
+        for (Candidates candidate : multiWinners) {
+            candidate.setCandidate_elected("multi");
+            candidateService.saveOrUpdate(candidate);
         }
         return multiWinners;
     }
