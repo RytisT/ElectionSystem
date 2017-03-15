@@ -17,6 +17,7 @@ var routes = (
                     <Route path="/admin/candidates" component={CandidatesContainer} />
                     <Route path="/admin/candidates/add-candidate" component={AddCandidateContainer} />
                     <Route path="/admin/candidates/edit/:candidateId" component={EditCandidateContainer} />
+                    <Route path="/admin/results" component={ResultsContainer} />
                 </Route>
 
                 <Route path="/candidates" component={CandidatesContainer} />
