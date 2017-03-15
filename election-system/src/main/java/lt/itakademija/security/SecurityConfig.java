@@ -38,7 +38,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
         /*, "/js/config/**","js/index.jsx"
                , /#/login","/js/js.js","/js/index.jsx","/js/config/routes.jsx"
                ,"/js/components/App.jsx","/js/components/WelcomeComponent.jsx").permitAll().*/
-        antMatchers("/#/admin").hasRole("admin").
+        antMatchers("/#/admin").hasRole("ADMIN").
         antMatchers("/js/components/representatives/**","js/containers/representatives/").hasRole("user").      
         anyRequest().authenticated().
         and().formLogin().permitAll().//loginProcessingUrl("/post").permitAll().//loginPage("/#/login").
@@ -49,3 +49,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
     }
 
 }
+

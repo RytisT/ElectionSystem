@@ -29,7 +29,11 @@ public class ResultsForUserConsolidatedResultsContoller {
      */
     @GetMapping(value="/candidates")
     public List<Candidates> winerList(){
-        return service.winningCandidates();
+        return service.getwinningCandidates();
+    }
+    @GetMapping(value="/candidates/test")
+    public List<Candidates> winerNewList(){
+        return service.getList();
     }
     
     /*

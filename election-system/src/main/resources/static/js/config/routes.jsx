@@ -17,7 +17,9 @@ var routes = (
                     <Route path="/admin/candidates" component={CandidatesContainer} />
                     <Route path="/admin/candidates/add-candidate" component={AddCandidateContainer} />
                     <Route path="/admin/candidates/edit/:candidateId" component={EditCandidateContainer} />
-                </Route>
+
+                    <Route path="/admin/results" component={ResultsContainer} />
+
 
                 <Route path="/candidates" component={CandidatesContainer} />
                 <Route path="/parties" component={UserPartiesContainer} />
@@ -28,7 +30,8 @@ var routes = (
                 <Route path="/login" component={LoginPageContainer} />
                 <Route path="/replogin" component={LoginRepPageContainer} />
 
-                    <Route path="/admin/results" component={ResultsContainer} />
+
+
 
                 </Route>
 
@@ -57,7 +60,7 @@ var routes = (
 
 
 
-           
+        </Route>
         </Router>
     </Router>
 );
