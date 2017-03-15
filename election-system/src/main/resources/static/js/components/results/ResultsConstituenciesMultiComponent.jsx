@@ -11,11 +11,11 @@ var ResultsConstituenciesMultiComponent = React.createClass({
                     if (vote.party_id == party.id){
                         votesCount += vote.m_votes;
                     }
-                }.bind(this))
+                }.bind(this));
 
                 totalVotes += district.votedMulti;
                 corruptedVotes += district.votedMultiCorrupt;
-            }.bind(this))
+            }.bind(this));
             return {"votesCount": votesCount, "totalVotes": totalVotes, "corruptedVotes": corruptedVotes};
         }.bind(this);
 

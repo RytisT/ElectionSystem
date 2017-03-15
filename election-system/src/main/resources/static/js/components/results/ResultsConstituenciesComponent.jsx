@@ -97,13 +97,6 @@ var ResultsConstituenciesComponent = React.createClass({
                     {constituenciesList}
                     </tbody>
                 </table>
-                <button id="ResultsConstituenciesReturn"
-                        className="btn btn-success"
-                        style={{marginRight: '20px'}}
-                        onClick={this.props.onReturnHomeClick}
-                >
-                    Grįžti
-                </button>
             </div>
         )
     }
