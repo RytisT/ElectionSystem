@@ -13,16 +13,16 @@
 //
 //
 //@Configuration
-//@EnableWebSecurity
+//@EnableWebSecurity  
 //@EnableGlobalMethodSecurity(prePostEnabled = true)
 //public class SecurityConfig extends WebSecurityConfigurerAdapter{
-//
+//    
 //    @Autowired
 //    DataSource dataSource;
-//
-//
+//    
+//    
 //    private BCryptPasswordEncoder bcryptEncoder = new BCryptPasswordEncoder();
-//
+//    
 //    @Autowired
 //    public void configureGlobal (AuthenticationManagerBuilder auth) throws Exception{
 ////        auth.jdbcAuthentication().dataSource(dataSource)
@@ -30,22 +30,23 @@
 //        auth.inMemoryAuthentication().withUser("admin").password("admin").roles("ADMIN","USER");
 //        auth.inMemoryAuthentication().withUser("user").password("user").roles("USER");
 //    }
-//
+//    
 //    protected void configure(HttpSecurity http) throws Exception{
 //
-//        http.cors().and().
+//        http.//cors().and().
 //        authorizeRequests().antMatchers("/","/js/**", "/css/**","/images/**","/api/**").permitAll().
 //        /*, "/js/config/**","js/index.jsx"
 //               , /#/login","/js/js.js","/js/index.jsx","/js/config/routes.jsx"
 //               ,"/js/components/App.jsx","/js/components/WelcomeComponent.jsx").permitAll().*/
-//        antMatchers("/js/containers/admin/**").hasRole("ADMIN").
-//        antMatchers("/js/components/representatives/**","js/containers/representatives/").hasRole("USER").
+//        antMatchers("/#/admin").hasRole("ADMIN").
+//        antMatchers("/js/components/representatives/**","js/containers/representatives/").hasRole("user").      
 //        anyRequest().authenticated().
-//        and().formLogin().//loginPage("/#/login").permitAll().
+//        and().formLogin().permitAll().//loginProcessingUrl("/post").permitAll().//loginPage("/#/login").
 //        and().httpBasic();
-//
-//        http.csrf();
+//        
+//        http.csrf();//disable();
 //        //http.headers().frameOptions().disable();
 //    }
 //
 //}
+

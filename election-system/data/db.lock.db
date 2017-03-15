@@ -1,6 +1,14 @@
 #FileLock
+<<<<<<< HEAD
 #Wed Mar 15 21:29:51 EET 2017
 hostName=LAPTOP-J2JJOSIS
 id=15ad372a0bbed983e44f005c6c67073e81e7fe16969
 method=file
 server=192.168.1.66\:63888
+=======
+#Wed Mar 15 22:11:34 EET 2017
+hostName=Odinas
+id=15ad398adc9302ce80523d5969ee4c102b3e610b811
+method=file
+server=192.168.56.1\:54154
+>>>>>>> ed80aa16ea832c45180d3bca8a1072650f410362
