@@ -51,7 +51,7 @@ var AddDistrictComponent = React.createClass( {
                                     var voters = $( "#VotersCount" ).val();
                                     if ( voters < 1 || voters > 10000 ) {
                                         $( '#DistrictVotersNumberValidation' ).hide( "slow" );
-                                        $( '#DistrictVotersNumberValidation' ).show( "slow" );
+                                        $( '#DistrictVotersNumberValidation' ).show( "slow" );                                       
                                     }
                                     else { $( '#DistrictVotersNumberValidation' ).hide( "slow" ) }
 
@@ -61,6 +61,7 @@ var AddDistrictComponent = React.createClass( {
                                     else { $( '#DistrictAddressValidation' ).hide( "slow" ); $( '#DistrictAddressValidation' ).show( "slow" ) }
 
                                     if ( matches1 != null && matches3 != null && ( voters > 0 && voters <= 10000 ) ) {
+                                        $('#successAddDistrictValidation').show().delay(3000).fadeOut();
                                         this.props.onSubmitDist( this.props.district );
                                         this.changeAddingState();
                                     };

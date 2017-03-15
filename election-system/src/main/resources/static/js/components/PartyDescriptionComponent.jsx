@@ -61,9 +61,13 @@ var PartyDescriptionComponent = React.createClass( {
                 <h2 style={styles.blue}> Partijos nariai </h2>
                 <div style={styles.line}></div>
                 <div></div>
+                
+                <button id="export_members" className="btn btn-info" data-export="export" onClick={( event ) => {
+                    $( "#Members_Lits" ).tableToCSV();
+                } }>Atsisiųsti kandidatų sąraša</button>
 
                 <div className="panel panel-default" style={styles.marginTop}>
-                    <table className="table table-striped">
+                    <table id="Members_Lits" className="table table-striped">
                         <thead>
                             <tr>
                                 <th>Vieta<br />Sąraše</th>

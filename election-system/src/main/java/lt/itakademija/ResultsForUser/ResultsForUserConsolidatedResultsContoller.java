@@ -3,6 +3,7 @@ package lt.itakademija.ResultsForUser;
 import java.util.List;
 import java.util.Map;
 
+import lt.itakademija.results.ConsolidatedResultCalculationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +20,10 @@ public class ResultsForUserConsolidatedResultsContoller {
     
     @Autowired
     private ResultsForUserConsolidatedResultsService service;
+
+
+    @Autowired
+    private ConsolidatedResultCalculationService serviceConsolidated;
     
     @Autowired
     private ConsolidatedResultCalculationService serviceConsolidated;
@@ -44,6 +49,7 @@ public class ResultsForUserConsolidatedResultsContoller {
     public Map<String, Long> mandateCountFull(){
         return service.mandateCountFull();
     }
+<<<<<<< HEAD
     
     /*
      * Daugiamandates laimeje kandidatai
@@ -59,5 +65,22 @@ public class ResultsForUserConsolidatedResultsContoller {
     @GetMapping(value="/single")
     public  List<Candidates> getWinningSingleCandidates(){
         return serviceConsolidated.getWinningSingleCandidates();
+=======
+
+    /*
+    * laimejo vienmadtese
+     */
+    @GetMapping(value="/single")
+    public List<Candidates> getWinningSingleCandidates(){
+        return serviceConsolidated.getWinningSingleCandidates();
+    }
+
+    /*
+     * laimejo daugiamandatese
+     */
+    @GetMapping(value="/multi")
+    public List<Candidates> getMultiWinnerCandidates(){
+        return serviceConsolidated.getMultiWinnerCandidates();
+>>>>>>> a5f44d5443b0ed02b385927f80f3600997ded21d
     }
 }

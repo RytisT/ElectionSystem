@@ -34,7 +34,7 @@ var SinglePartyComponent = React.createClass( {
                 </td>
                 <td>
                     <button id="CandidatesInfo" type="button" className="btn btn-info"
-                        onClick={this.props.onCandidates( this.props.party )}>Kandidatai
+                        onClick={this.props.onCandidates( this.props.party )}>Sąrašas
                     </button>
                 </td>
                 <td>
@@ -53,7 +53,7 @@ var SinglePartyComponent = React.createClass( {
                 <td>{this.props.party.party_Code}</td>
                 <td>{this.props.party.title}</td>
                 <td><button id="CandidatesInfo" type="button" className="btn btn-info"
-                    onClick={this.props.onCandidates( this.props.party )}>Kandidatai
+                    onClick={this.props.onCandidates( this.props.party )}>Sąrašas
                 </button>
                 </td>
                 <td>

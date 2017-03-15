@@ -31,7 +31,7 @@ var App = React.createClass( {
         return (
             <div>
                 <ul className="header2">
-                    <li id="home"><IndexLink to="/" className="glyphicon glyphicon-home" style={styles.white}></IndexLink></li>
+                    <li id="home"><IndexLink to="/main" className="glyphicon glyphicon-home" style={styles.white}></IndexLink></li>
 
                     <div id="loginMenu" className="btn-group" role="group" aria-label="..." >
                         <div className="btn-group" role="group">
@@ -45,6 +45,7 @@ var App = React.createClass( {
                             </ul>
                         </div>
                     </div>
+                                
                     <li id="logOut" style={styles.logOut}><Link to="/main" style={styles.white} onClick={( event ) => {
                         $( '#logOut' ).hide( "slow" )
                         $( '#loginMenu' ).show( "slow" );

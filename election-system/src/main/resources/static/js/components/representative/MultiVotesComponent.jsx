@@ -47,7 +47,7 @@ var MultiVotesComponent = React.createClass( {
                             placeholder="Įveskite surinktų balsų skaičių"
                             value={this.props.votes[party.id].m_votes}
                             onChange={this.props.onVotesChange( party.id )}
-                            type="number" min="0"
+                            type="text"
                             />
                     </td>
                 </tr>
@@ -73,18 +73,7 @@ var MultiVotesComponent = React.createClass( {
                     </table>
                     <table className="table table-striped">
                         <thead>
-                            <tr>
-                                <th>Išduota daugiamandatės biuletenių:</th>
-                                <td>
-                                    <input
-                                        className="form-control"
-                                        placeholder="Įveskite atėjusių balsuoti rinkėjų skaičių"
-                                        type="text"
-                                        value={this.props.district.votedMulti ? this.props.district.votedMulti : ""}
-                                        onChange={this.props.onTotalVotesChange( "votedMulti" )}
-                                        />
-                                </td>
-                            </tr>
+                            <tr></tr>
                             <tr>
                                 <th>Sugadinta daugiamandatės biuletenių:</th>
                                 <td>
@@ -97,9 +86,21 @@ var MultiVotesComponent = React.createClass( {
                                         />
                                 </td>
                             </tr>
+                            <tr>
+                                <th>Išduota daugiamandatės biuletenių:</th>
+                                <td>
+                                    <input
+                                        className="form-control"
+                                        placeholder="Įveskite atėjusių balsuoti rinkėjų skaičių"
+                                        type="text"
+                                        value={this.props.district.votedMulti ? this.props.district.votedMulti : ""}
+                                        onChange={this.props.onTotalVotesChange( "votedMulti" )}
+                                        />
+                                </td>
+                            </tr>
                         </thead>
                     </table>
-                    <div id="MultiResultValidation" className="validationForm"><span>Neteisingai suvesti balsai.</span></div>
+                    <div id="MultiResultValidation" className="validationForm"><span>Balsų ir sugadintų biuletenių suma neatitinka išduotų biuletenių skaičiaus.</span></div>
                     <button className="btn btn-block btn-success" type="submit" onClick={this.props.onSubmit( event )}>
                         Patvirtinti partijų surinktus balsus ir biuletenių skaičių
                     </button>

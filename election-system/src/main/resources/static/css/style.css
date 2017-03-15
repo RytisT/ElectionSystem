@@ -123,6 +123,8 @@ h1, h2, p, ul, li {
 	background-color: #111;
 }
 
+
+
 .clear {
 	clear: both;
 }
@@ -139,11 +141,37 @@ h1, h2, p, ul, li {
 	display: none;
 }
 
+/* Welcome page */
+#link {
+	text-decoration: none;
+	color: #111;
+}
+
+#leftVytis {					
+	float: left;
+}
+
+#vytis {
+	cursor: pointer;
+}
+
+#welcomeText {
+	padding-top: 90px;
+}
 
 /* MainPage */
 
 #main h1 {
 	text-align: center;
+}
+
+#ResultsMenu {
+	float: right;
+	padding-right: 5px;	
+}
+
+#ResultsMunu_Drop_Drop:hover {
+	background-color: rgba(0, 128, 255, 0.2);
 }
 
 /* Results */
@@ -179,6 +207,14 @@ h1, h2, p, ul, li {
 
 .validationForm {
 	background-color: #ff9980;
+	color: #666666;
+	text-align: center;
+	font-style: italic;
+	font-size: 15px;
+}
+
+.successValidationForm {
+	background-color: #b3e6b3;
 	color: #666666;
 	text-align: center;
 	font-style: italic;
@@ -276,14 +312,15 @@ h1, h2, p, ul, li {
     background-color: #f44336;
 }
 
-#UserPassValidation, #UserNameValidation, #AdminPassValidation, #AdminNameValidation,
+#UserPassValidation, #UserNameValidation, #AdminPassValidation, #AdminNameValidation, #WronLoginValidation,
 #DistrictSearchValidation, #ConstituencyTitleValidation, #DistrictTitleValidation,
 #RepNameValidation, #RepLastNameValidation, #RepLoginNameValidation, #RepPassValidation,
 #PartyIdValidation, #PartyTitleValidation, #PartyCodeValidation, #ConstituencyNameValidation,
 #DistrictVotersNumberValidation, #DistrictAddressValidation,
 #PartyNumber_Validation, #PartyCode_Validation, #PartyTitle_Validation,
 #District_name_Validation, #Voters_Count_Validation, #District_address_Validation,
-#MultiResultValidation, #SinglResultValidation, #ResultsSearchValidation {
+#MultiResultValidation, #SinglResultValidation, #ResultsSearchValidation,
+#successAddConstituencyValidation, #successAddDistrictValidation, #successAddPartyValidation {
 	display: none;	
 }
 

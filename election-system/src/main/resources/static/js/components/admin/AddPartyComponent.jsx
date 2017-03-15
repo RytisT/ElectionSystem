@@ -54,6 +54,7 @@ var AddPartyComponent = React.createClass( {
                                             else { $( '#PartyCodeValidation' ).hide( "slow" ); $( '#PartyCodeValidation' ).show( "slow" ) }
 
                                             if ( matchesn != null && matchesc != null && ( partyNumb > 0 && partyNumb <= 99 ) ) {
+                                                $("#successAddPartyValidation").show().delay(3000).fadeOut();
                                                 this.props.onSubmit( this.props.party ), this.changeAddingState()
                                             };
 
