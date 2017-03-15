@@ -49,7 +49,7 @@ var UserPartiesComponent = React.createClass( {
             <div className="">
                 <button id="export_parties" className="btn btn-info" data-export="export" onClick={( event ) => {
                     $( "#Parties_Lits" ).tableToCSV();
-                } }>Atsisiųsti partijų sąraša</button>
+                } }>Atsisiųsti CSV failą</button>
 
                 <div className="panel panel-default" style={styles.marginTop}>
                     <table id="Parties_Lits" className="table table-striped">

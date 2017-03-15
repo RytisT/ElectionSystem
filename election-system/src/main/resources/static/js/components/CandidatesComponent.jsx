@@ -94,7 +94,7 @@ var CandidatesComponent = React.createClass( {
 
                 <button id="export_candidates" className="btn btn-info" data-export="export" onClick={( event ) => {
                     $( "#Candidates_Lits" ).tableToCSV();
-                } }>Atsisiųsti kandidatų sąraša</button>
+                } }>Atsisiųsti CSV failą</button>
 
                 <div className="panel panel-default" style={styles.marginTop} id="Table">
                     <table id="Candidates_Lits" className="table table-striped">
