@@ -17,17 +17,7 @@ var routes = (
                     <Route path="/admin/candidates" component={CandidatesContainer} />
                     <Route path="/admin/candidates/add-candidate" component={AddCandidateContainer} />
                     <Route path="/admin/candidates/edit/:candidateId" component={EditCandidateContainer} />
-
                     <Route path="/admin/results" component={ResultsContainer} />
-<<<<<<< HEAD
-
-=======
->>>>>>> a5f44d5443b0ed02b385927f80f3600997ded21d
-
-                </Route>
-
-
-
 
                 </Route>
 
@@ -56,7 +46,7 @@ var routes = (
 
 
 
-        </Route>
+            </Route>
         </Router>
     </Router>
 );
