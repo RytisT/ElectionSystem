@@ -45,6 +45,7 @@ var App = React.createClass( {
                             </ul>
                         </div>
                     </div>
+                                
                     <li id="logOut" style={styles.logOut}><Link to="/main" style={styles.white} onClick={( event ) => {
                         $( '#logOut' ).hide( "slow" )
                         $( '#loginMenu' ).show( "slow" );

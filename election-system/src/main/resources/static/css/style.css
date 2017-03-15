@@ -161,6 +161,15 @@ h1, h2, p, ul, li {
 	text-align: center;
 }
 
+#ResultsMenu {
+	float: right;
+	padding-right: 5px;	
+}
+
+#ResultsMunu_Drop_Drop:hover {
+	background-color: rgba(0, 128, 255, 0.2);
+}
+
 /* Results */
 
 #resultsDistrict span, #resultsConstituency span {
