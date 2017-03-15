@@ -18,16 +18,8 @@ var routes = (
                     <Route path="/admin/candidates/add-candidate" component={AddCandidateContainer} />
                     <Route path="/admin/candidates/edit/:candidateId" component={EditCandidateContainer} />
                     <Route path="/admin/results" component={ResultsContainer} />
-                </Route>
 
-                <Route path="/candidates" component={CandidatesContainer} />
-                <Route path="/parties" component={UserPartiesContainer} />
-                <Route path="/party/description/:partyId" component={PartyDescriptionContainer} />
-                <Route path="/partymember/description/:candidateId" component={MemberDescriptionContainer} />
-                <Route path="/candidate/description/:candidateId" component={CandidateDescriptionContainer} />
-                <Route path="/Representatives" component={SubmitVotesContainer} />
-                <Route path="/login" component={LoginPageContainer} />
-                <Route path="/replogin" component={LoginRepPageContainer} />
+                </Route>
 
                 <Route path="/" component={MainPageComponent}>
                     <IndexRoute component={MainPageComponent} />
