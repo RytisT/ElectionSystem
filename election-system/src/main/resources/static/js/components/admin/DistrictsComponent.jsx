@@ -1,6 +1,9 @@
-/**
- * Created by rytis on 17.2.10.
- */
+var styles = {
+    cursor: {
+        cursor: 'pointer'
+    },
+};
+
 var DistrictsComponent = React.createClass( {
 
 
@@ -30,9 +33,11 @@ var DistrictsComponent = React.createClass( {
 
                 <div id="successAddDistrictValidation" className="alert alert-success" role="alert"><span>Aplinkė pridėta sėkmingai.</span></div>
 
-                <table className="table table-striped">
+                <table id="Districts_Table" className="table table-striped">
                     <thead>
-                        <tr>
+                        <tr style={styles.cursor} onClick={( event ) => {
+                            $( "#Districts_Table" ).tablesorter( { sortList: [[0, 0], [1, 0]] });
+                        } }>
                             <th>Apylinkė</th>
                             <th>Rinkejų skaičius</th>
                             <th>Adresas</th>

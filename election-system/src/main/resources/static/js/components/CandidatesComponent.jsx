@@ -1,5 +1,3 @@
-
-
 var styles = {
     menu: {
         margin: '20 0 0 5',

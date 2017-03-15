@@ -2,6 +2,9 @@ var styles = {
     marginTop: {
         marginTop: '20px'
     },
+    cursor: {
+        cursor: 'pointer'
+    },
 };
 
 var PartyCandidatesComponent = React.createClass( {
@@ -46,16 +49,18 @@ var PartyCandidatesComponent = React.createClass( {
                 name="file" id="file-uploaded">Trinti sąrašą</button>
     },
 
-//    Pridėtas failas: {this.props.csvFile}
+    //    Pridėtas failas: {this.props.csvFile}
 
     render: function() {
         return <div>
             {this.handleFile()}
             <div className="">
                 <div className="panel panel-default" style={styles.marginTop}>
-                    <table className="table table-striped">
+                    <table id="Party_Candidates_Table" className="table table-striped">
                         <thead>
-                            <tr>
+                            <tr style={styles.cursor} onClick={( event ) => {
+                                $( "#Party_Candidates_Table" ).tablesorter( { sortList: [[0, 0], [1, 0]] });
+                            } }>
                                 <th>Vardas</th>
                                 <th>Pavardė</th>
                                 <th>Gimimo data</th>

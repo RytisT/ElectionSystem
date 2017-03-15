@@ -2,6 +2,9 @@ var styles = {
     marginTop: {
         marginTop: '20px'
     },
+    cursor: {
+        cursor: 'pointer'
+    },
 };
 
 var ResultsComponent = React.createClass( {
@@ -33,9 +36,11 @@ var ResultsComponent = React.createClass( {
                     <div id="ResultsSearchValidation" className="validationForm"><span>Naudojami netinkami simboliai.</span></div>
                 </div>
                 <div className="panel panel-default" style={styles.marginTop}>
-                    <table className="table table-striped">
+                    <table id="Rasults_Administration_Table" className="table table-striped">
                         <thead>
-                            <tr>
+                            <tr style={styles.cursor} onClick={( event ) => {
+                                $( "#Rasults_Administration_Table" ).tablesorter( { sortList: [[0, 0], [1, 0]] });
+                            } }>
                                 <th>Apylinkė</th>
                                 <th>Apylinkės atstovas</th>
                                 <th>Vienmandatės apygardos rezultatų registravimo laikas</th>

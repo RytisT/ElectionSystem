@@ -54,7 +54,9 @@ var UserPartiesComponent = React.createClass( {
                 <div className="panel panel-default" style={styles.marginTop}>
                     <table id="Parties_Lits" className="table table-striped">
                         <thead>
-                            <tr>
+                            <tr style={styles.cursor} onClick={( event ) => {
+                                $( "#Parties_Lits" ).tablesorter( { sortList: [[0, 0], [1, 0]] });
+                            } }>
                                 <th>Partijos Nr.</th>
                                 <th>Partijos Pavadinimas</th>
                                 <th>Trumpinys</th>

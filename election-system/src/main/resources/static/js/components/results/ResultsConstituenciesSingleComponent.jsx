@@ -2,6 +2,9 @@ var styles = {
     marginTop: {
         marginTop: '20px'
     },
+    cursor: {
+        cursor: 'pointer'
+    },
 };
 
 var ResultsConstituenciesSingleComponent = React.createClass( {
@@ -47,7 +50,9 @@ var ResultsConstituenciesSingleComponent = React.createClass( {
                 <div className="panel panel-default" style={styles.marginTop}>
                     <table id="ResultsConsSingle" className="table table-striped">
                         <thead>
-                            <tr>
+                            <tr style={styles.cursor} onClick={( event ) => {
+                                $( "#ResultsConsSingle" ).tablesorter( { sortList: [[0, 0], [1, 0]] });
+                            } }>
                                 <th>Kandidatas</th>
                                 <th>Partija</th>
                                 <th>Surinkta balsų</th>

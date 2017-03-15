@@ -2,6 +2,9 @@ var styles = {
     marginTop: {
         marginTop: '20px'
     },
+    cursor: {
+        cursor: 'pointer'
+    },
 };
 
 var ResultsDistrictsComponent = React.createClass( {
@@ -116,9 +119,11 @@ var ResultsDistrictsComponent = React.createClass( {
                     </div>
                 </div>
                 <div className="panel panel-default" style={styles.marginTop}>
-                    <table className="table table-striped">
+                    <table id="Results_Districts_Table" className="table table-striped">
                         <thead>
-                            <tr>
+                            <tr style={styles.cursor} onClick={( event ) => {
+                                $( "#Results_Districts_Table" ).tablesorter( { sortList: [[0, 0], [1, 0]] });
+                            } }>
                                 <th>Nr.</th>
                                 <th>Apylinkės</th>
                                 <th>Vienmandatės duomenų laikas</th>
