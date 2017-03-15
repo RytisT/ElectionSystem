@@ -35,6 +35,7 @@ var AddConstituencyComponent = React.createClass( {
                                                 var matches = val.match( ".*([a-zA-Z0-9ąčęėįšųūžĄČĘĖĮŠŲŪŽ„“]$)" );
                                                 if ( matches != null ) {
                                                     $( '#ConstituencyTitleValidation' ).hide( "slow" );
+                                                    $("#successAddConstituencyValidation").show().delay(3000).fadeOut();
                                                     this.props.onSubmitConst( this.props.constituency );
                                                     this.changeAddingState();
                                                 }

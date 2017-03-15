@@ -19,6 +19,7 @@ var PartiesComponent = React.createClass( {
         return (
             <div>
                 <div className="panel panel-default" style={styles.marginTop}>
+                <div id="successAddPartyValidation" className="alert alert-success" role="alert"><span>Partija pridėta sėkmingai.</span></div>
                     <table className="table table-striped">
                         <thead>
                             <tr>

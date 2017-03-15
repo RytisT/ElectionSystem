@@ -27,7 +27,6 @@ var ConstituenciesComponent = React.createClass( {
         return (
             <div className="">
                 <div className="panel panel-default">
-
                     <div className=" panel-body input-group">
                         <span className="input-group-addon" id="basic-addon3">Apygardos paieška: </span>
                         <input type="text" className="form-control" id="SearchByTitle" placeholder="Įveskite apygardos pavadinimą" maxLength="35"
@@ -35,6 +34,9 @@ var ConstituenciesComponent = React.createClass( {
                     </div>
                     <div id="DistrictSearchValidation" className="validationForm"><span>Naudojami netinkami simboliai.</span></div>
                 </div>
+
+                <div id="successAddConstituencyValidation" className="alert alert-success" role="alert"><span>Apygarda pridėta sėkmingai.</span></div>
+
                 <div className="panel panel-default" style={styles.marginTop}>
                     <table className="table table-striped">
                         <thead>
@@ -47,7 +49,7 @@ var ConstituenciesComponent = React.createClass( {
                             </tr>
                         </thead>
                         <tbody>
-                            {constituenciesList}                           
+                            {constituenciesList}
                         </tbody>
                     </table>
                 </div>
