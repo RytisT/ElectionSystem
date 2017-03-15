@@ -40,12 +40,12 @@ var SingleVotesComponent = React.createClass( {
                             placeholder="Įveskite surinktų balsų skaičių"
                             value={this.props.votes[candidate.id].vote}
                             onChange={this.props.onVotesChange( candidate.id )}
-                            type="number" min="0"
+                            type="text"
                             />
                     </td>
                 </tr>
             );
-        }.bind(this));
+        }.bind( this ) );
 
         return !this.props.district.singleVoteActive
             ? <div className="">
@@ -67,6 +67,19 @@ var SingleVotesComponent = React.createClass( {
                     </table>
                     <table className="table table-striped">
                         <thead>
+                            <tr></tr>
+                            <tr>
+                                <th>Sugadinta vienmandatės biuletenių:</th>
+                                <td>
+                                    <input
+                                        className="form-control"
+                                        placeholder="Įveskite sugadintų biuletenių skaičių"
+                                        type="text"
+                                        value={this.props.district.votedSingleCorrupt ? this.props.district.votedSingleCorrupt : ""}
+                                        onChange={this.props.onTotalVotesChange( "votedSingleCorrupt" )}
+                                        />
+                                </td>
+                            </tr>
                             <tr>
                                 <th>Išduota vienmandatės biuletenių:</th>
                                 <td>
@@ -80,21 +93,9 @@ var SingleVotesComponent = React.createClass( {
                                         />
                                 </td>
                             </tr>
-                            <tr>
-                                <th>Sugadinta vienmandatės biuletenių:</th>
-                                <td>
-                                    <input
-                                        className="form-control"
-                                        placeholder="Įveskite sugadintų biuletenių skaičių"
-                                        type="text"
-                                        value={this.props.district.votedSingleCorrupt ? this.props.district.votedSingleCorrupt : ""}
-                                        onChange={this.props.onTotalVotesChange( "votedSingleCorrupt" )}
-                                        />
-                                </td>
-                            </tr>
                         </thead>
                     </table>
-                    <div id="SinglResultValidation" className="validationForm"><span>Neteisingai suvesti balsai.</span></div>
+                    <div id="SinglResultValidation" className="validationForm"><span>Balsų ir sugadintų biuletenių suma neatitinka išduotų biuletenių skaičiaus.</span></div>
                     <button className="btn btn-block btn-success" type="submit" onClick={this.props.onSubmit( event )}>
                         Patvirtinti kandidatų surinktus balsus ir biuletenių skaičių
                     </button>

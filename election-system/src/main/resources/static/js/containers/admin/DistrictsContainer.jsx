@@ -38,8 +38,11 @@ var DistrictContainer = React.createClass( {
             axios.delete( '/api/districts/' + district.id ).then( function( response ) {
                 axios.get( '/api/constituencies/' + constId )
                     .then( function( response ) {
+                        var x = district.id;
+                        var y = "#Delete_district" + x;
+                        var z = "#x_district" + x;
+                        $( y ).hide(); $( z ).html( "Trinti" );
                         this.setState( { districts: response.data.districts });
-
                     }.bind( this ) )
             }.bind( this ) );
         }.bind( this );

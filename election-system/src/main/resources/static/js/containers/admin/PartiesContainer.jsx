@@ -30,10 +30,13 @@ var PartiesContainer = React.createClass({
                 .then(function (response) {
                     axios.get('/api/parties')
                         .then(function (response) {
+                            var x = party.id;
+                            var y = "#DeleteParty" + x;
+                            var z = "#x_party" + x;
+                            $( y ).hide(); $( z ).html( "Trinti" );
                                 this.setState({
                                     parties: response.data
                                 });
-
                             }.bind(this)
                         )
                 }.bind(this));

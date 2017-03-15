@@ -123,6 +123,8 @@ h1, h2, p, ul, li {
 	background-color: #111;
 }
 
+
+
 .clear {
 	clear: both;
 }
@@ -139,6 +141,19 @@ h1, h2, p, ul, li {
 	display: none;
 }
 
+/* Welcome page */
+
+#leftVytis {					
+	float: left;
+}
+
+#vytis {
+	cursor: pointer;
+}
+
+#welcomeText {
+	padding-top: 90px;
+}
 
 /* MainPage */
 
