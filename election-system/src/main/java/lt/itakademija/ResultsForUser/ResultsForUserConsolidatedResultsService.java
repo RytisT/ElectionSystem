@@ -20,13 +20,19 @@ public class ResultsForUserConsolidatedResultsService {
     private ConsolidatedResultCalculationService consolidatedService;
     @Autowired
     private PartiesService partiesService;
+    private List<Candidates> myCandidates = new ArrayList<>();
 
     /*
      * Visų būsimų Seimo narių sąrašas
      * returns List<winning candidates>
      */
-    public List<Candidates> winningCandidates(){
+    public List<Candidates> getwinningCandidates(){
+        myCandidates.clear();
+        myCandidates = consolidatedService.consolidatedWinner();
         return consolidatedService.consolidatedWinner();
+    }
+    public List<Candidates> getList(){
+        return myCandidates;
     }
     
     /*

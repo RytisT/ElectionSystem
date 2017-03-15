@@ -324,7 +324,11 @@ h1, h2, p, ul, li {
 	display: none;	
 }
 
-
+th.header { 
+    background-color: #fff; 
+    cursor: pointer; 
+    font-size: 16px;
+} 
 
 
 
