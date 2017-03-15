@@ -83,5 +83,10 @@ public class CandidatesController {
             @RequestParam(value = "party_list_seat", required = false) Integer partySeat){
         return service.findByPartyAndSeat(partyId, partySeat);
     }
+
+    @GetMapping(value = "/elected/{elected}")
+    public List<Candidates> findByElected(@PathVariable("elected") String elected) {
+        return service.findByElected(elected);
+    }
 }
 

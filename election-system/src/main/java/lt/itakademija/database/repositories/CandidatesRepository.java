@@ -36,4 +36,7 @@ public interface CandidatesRepository extends JpaRepository<Candidates, Integer>
     public Candidates findByPartyAndSeat(@Param("party_id") Integer partyId,
                                          @Param("party_list_seat") Integer partySeat);
 
+
+    @Query("SELECT c FROM Candidates c where c.candidate_elected=:candidate_elected")
+    public List<Candidates> findByElected(@Param("candidate_elected") String candidate_elected);
 }

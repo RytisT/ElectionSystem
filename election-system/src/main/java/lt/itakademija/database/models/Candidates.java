@@ -70,6 +70,8 @@ public class Candidates {
     //@Length(min = 0, max = 3, message = "Candidates PARTY LIST SEAT length can not be longer than {max} symbols. ")
     private Integer party_list_seat;
 
+    @Column(name = "candidate_elected")
+    private String candidate_elected = "false";
 
 //	public Candidates(Integer id, Integer constituency_id,Integer party_id, String name, String last_name, Date date_of_birth, String description) {
 //		this.id = id;
@@ -176,4 +178,11 @@ public class Candidates {
         return getName() + " " + getLast_name() + " " + getParty_id();
     }
 
+    public String getCandidate_elected() {
+        return candidate_elected;
+    }
+
+    public void setCandidate_elected(String candidate_elected) {
+        this.candidate_elected = candidate_elected;
+    }
 }
