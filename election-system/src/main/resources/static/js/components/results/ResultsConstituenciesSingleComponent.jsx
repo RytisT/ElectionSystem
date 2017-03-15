@@ -39,11 +39,11 @@ var ResultsConstituenciesSingleComponent = React.createClass( {
 
         return (
             <div className="">
-                
+
                 <button id="export_ConsSingle" className="btn btn-info" data-export="export" onClick={( event ) => {
                     $( "#ResultsConsSingle" ).tableToCSV();
                 } }>Atsisiųsti CSV failą</button>
-                
+
                 <div className="panel panel-default" style={styles.marginTop}>
                     <table id="ResultsConsSingle" className="table table-striped">
                         <thead>

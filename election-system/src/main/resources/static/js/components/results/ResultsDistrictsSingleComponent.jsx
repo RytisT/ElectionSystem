@@ -21,11 +21,11 @@ var ResultsDistrictsSingleComponent = React.createClass( {
 
         return (
             <div className="">
-                
+
                 <button id="export_ResultsDistrictSingle" className="btn btn-info" data-export="export" onClick={( event ) => {
                     $( "#ResultsDistrictSingle" ).tableToCSV();
                 } }>Atsisiųsti CSV failą</button>
-                
+
                 <div className="panel panel-default" style={styles.marginTop}>
                     <table id="ResultsDistrictSingle" className="table table-striped">
                         <thead>

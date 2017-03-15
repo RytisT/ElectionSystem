@@ -1,3 +1,5 @@
+
+
 var styles = {
     menu: {
         margin: '20 0 0 5',
@@ -99,9 +101,12 @@ var CandidatesComponent = React.createClass( {
                 <div className="panel panel-default" style={styles.marginTop} id="Table">
                     <table id="Candidates_Lits" className="table table-striped">
                         <thead>
-                            <tr>
-                                <th id="RowNumber">Eil.Nr.</th>
-                                <th>Vardas</th>
+                            <tr style={styles.cursor} onClick={( event ) => {
+                                $( "#Candidates_Lits" ).tablesorter( { sortList: [[0, 0], [1, 0]] });
+                            } }>
+
+                                <th id="RowNumber" >Eil.Nr.</th>
+                                <th >Vardas</th>
                                 <th>Pavardė</th>
                                 <th>Gimimo data</th>
                                 <th>Apygarda</th>
@@ -120,6 +125,8 @@ var CandidatesComponent = React.createClass( {
         )
     }
 });
+
+
 
 //<div>
 //    <button id="CandidateReturn" className="btn btn-success" style={{ marginRight: '20px' }}
