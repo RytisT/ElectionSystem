@@ -46,12 +46,7 @@ var UserPartiesComponent = React.createClass({
         });
 
         return (
-            <div className="">
-                <h2 style={styles.blue}> Partijos </h2>
-                <div style={styles.line}></div>
-                <div>
-
-                </div>
+            <div className="">                
                 <div className="panel panel-default" style={styles.marginTop}>
                     <table className="table table-striped">
                         <thead>

@@ -1,73 +1,79 @@
-var ResultsConstituenciesComponent = React.createClass({
+var styles = {
+    marginTop: {
+        marginTop: '20px'
+    },
+};
+
+var ResultsConstituenciesComponent = React.createClass( {
 
 
-    render: function () {
-        var constituenciesList = this.props.constituencies.map(function (constituency, index) {
+    render: function() {
+        var constituenciesList = this.props.constituencies.map( function( constituency, index ) {
             return (
                 <tr key={index}>
                     <td className="col-md-1">{constituency.id}</td>
                     <td className="col-md-3">{constituency.title}</td>
                     <td className="col-md-2">
-                        <button id={"ResultsConstituenciesInfo"+constituency.id} type="button" className="btn btn-info"
-                                onClick={this.props.onResultsConstituenciesInfoClick(constituency)}
-                                data-toggle="tooltip" data-placement="top" title="Apygardos rezultatai"
-                                data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
-                                aria-controls="collapseOne"
-                        >
+                        <button id={"ResultsConstituenciesInfo" + constituency.id} type="button" className="btn btn-info"
+                            onClick={this.props.onResultsConstituenciesInfoClick( constituency )}
+                            data-toggle="tooltip" data-placement="top" title="Apygardos rezultatai"
+                            data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
+                            aria-controls="collapseOne"
+                            >
                             Balsavimas apygardoje
                         </button>
                     </td>
                     <td className="col-md-2">
-                        <button id={"ResultsDistricts"+constituency.id} type="button" className="btn btn-success"
-                                onClick={this.props.onResultsDistrictsClick(constituency)}
-                                data-toggle="tooltip" data-placement="top" title="Apylinkės"
-                                data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
-                                aria-controls="collapseOne"
-                        >
+                        <button id={"ResultsDistricts" + constituency.id} type="button" className="btn btn-success"
+                            onClick={this.props.onResultsDistrictsClick( constituency )}
+                            data-toggle="tooltip" data-placement="top" title="Apylinkės"
+                            data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
+                            aria-controls="collapseOne"
+                            >
                             Apylinkių rezultatai
                         </button>
                     </td>
                     <td className="col-md-2">
-                        <button id={"ResultsConstituenciesMulti"+constituency.id} type="button" className="btn btn-warning"
-                                onClick={this.props.onResultsConstituenciesMultiClick(constituency)}
-                                data-toggle="tooltip" data-placement="top" title="Daugiamandatės rezultatai"
-                                data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
-                                aria-controls="collapseOne"
-                        >
+                        <button id={"ResultsConstituenciesMulti" + constituency.id} type="button" className="btn btn-warning"
+                            onClick={this.props.onResultsConstituenciesMultiClick( constituency )}
+                            data-toggle="tooltip" data-placement="top" title="Daugiamandatės rezultatai"
+                            data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
+                            aria-controls="collapseOne"
+                            >
                             Partijų rezultatai
                         </button>
                     </td>
                     <td className="col-md-2">
-                        <button id={"ResultsConstituenciesSingle"+constituency.id} type="button" className="btn btn-danger"
-                                onClick={this.props.onResultsConstituenciesSingleClick(constituency)}
-                                data-toggle="tooltip" data-placement="top" title="Vienmandatės rezultatai"
-                                data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
-                                aria-controls="collapseOne"
-                        >
+                        <button id={"ResultsConstituenciesSingle" + constituency.id} type="button" className="btn btn-danger"
+                            onClick={this.props.onResultsConstituenciesSingleClick( constituency )}
+                            data-toggle="tooltip" data-placement="top" title="Vienmandatės rezultatai"
+                            data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true"
+                            aria-controls="collapseOne"
+                            >
                             Kandidatų rezultatai
                         </button>
                     </td>
                 </tr>
             );
-        }.bind(this));
+        }.bind( this ) );
 
-        var progress = function () {
+        var progress = function() {
             var submittedDistricts = 0;
             var totalDistricts = 0;
-            this.props.constituencies.map(function (constituency, index) {
-                constituency.districts.map(function (district, index) {
-                    if (district.multiVoteActive && district.singleVoteActive) {
+            this.props.constituencies.map( function( constituency, index ) {
+                constituency.districts.map( function( district, index ) {
+                    if ( district.multiVoteActive && district.singleVoteActive ) {
                         submittedDistricts += 1;
                     }
-                }.bind(this))
+                }.bind( this ) )
                 totalDistricts += constituency.districts.length;
-            }.bind(this))
-            return {"submittedDistricts": submittedDistricts, "totalDistricts": totalDistricts};
-        }.bind(this);
+            }.bind( this ) )
+            return { "submittedDistricts": submittedDistricts, "totalDistricts": totalDistricts };
+        }.bind( this );
 
 
         var districtSubmitted = progress();
-        var submittedPercentage = Math.floor(districtSubmitted["submittedDistricts"] / districtSubmitted["totalDistricts"] * 100) + "%";
+        var submittedPercentage = Math.floor( districtSubmitted["submittedDistricts"] / districtSubmitted["totalDistricts"] * 100 ) + "%";
 
         return (
             <div className="">
@@ -76,27 +82,29 @@ var ResultsConstituenciesComponent = React.createClass({
                     <div className="panel-body ">
                         <div className="progress">
                             <div className="progress-bar progress-bar-striped active" role="progressbar"
-                                 aria-valuenow={districtSubmitted} aria-valuemin="0" aria-valuemax="100" style={{ width: submittedPercentage }}>
+                                aria-valuenow={districtSubmitted} aria-valuemin="0" aria-valuemax="100" style={{ width: submittedPercentage }}>
                                 {submittedPercentage}
                             </div>
                         </div>
                     </div>
                 </div>
-                <table className="table table-striped">
-                    <thead>
-                    <tr>
-                        <th>Nr.</th>
-                        <th>Apygardos</th>
-                        <th>Rezultatai</th>
-                        <th>Apylinkės</th>
-                        <th>Daugiamandatė</th>
-                        <th>Vienmandatė</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {constituenciesList}
-                    </tbody>
-                </table>
+                <div className="panel panel-default" style={styles.marginTop}>
+                    <table className="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Nr.</th>
+                                <th>Apygardos</th>
+                                <th>Rezultatai</th>
+                                <th>Apylinkės</th>
+                                <th>Daugiamandatė</th>
+                                <th>Vienmandatė</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {constituenciesList}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         )
     }

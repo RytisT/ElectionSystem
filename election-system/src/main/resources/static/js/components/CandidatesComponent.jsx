@@ -82,10 +82,6 @@ var CandidatesComponent = React.createClass( {
 
         return (
             <div className="">
-                <h2 style={styles.blue}> Kandidatai </h2>
-                <div style={styles.line}></div>
-                <div> </div>
-
                 <div className="panel panel-default">
                     <div className=" panel-body input-group">
 

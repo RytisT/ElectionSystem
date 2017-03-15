@@ -1,14 +1,20 @@
-var PartyCandidatesComponent = React.createClass({
+var styles = {
+    marginTop: {
+        marginTop: '20px'
+    },
+};
 
-    handleFileChange: function () {
+var PartyCandidatesComponent = React.createClass( {
+
+    handleFileChange: function() {
         return function() {
-            this.props.onFileChange(this.refs.file.files[0]);
-        }.bind(this)
+            this.props.onFileChange( this.refs.file.files[0] );
+        }.bind( this )
     },
 
 
-    candidateList: function () {
-        return this.props.candidates.map(function (candidate, index) {
+    candidateList: function() {
+        return this.props.candidates.map( function( candidate, index ) {
             // date
             var d = new Date( candidate.date_of_birth );
             var year = d.getFullYear();
@@ -29,44 +35,46 @@ var PartyCandidatesComponent = React.createClass({
 
                 </tr>
             )
-        }.bind(this))
+        }.bind( this ) )
     },
 
-    handleFile:function () {
-        return (this.props.csvFile === null)
+    handleFile: function() {
+        return ( this.props.csvFile === null )
             ? <input className="btn btn-block btn-primary btn-outline" onChange={this.handleFileChange()} ref="file" type="file"
-               name="file" id="file-select"/>
-            : <button className="btn btn-danger btn-outline" onClick={this.props.onFileDelete(this.props.csvFile)} type="button"
-                     name="file" id="file-uploaded">Pridėtas failas: {this.props.csvFile}</button>
+                name="file" id="file-select" />
+            : <button className="btn btn-danger btn-outline" onClick={this.props.onFileDelete( this.props.csvFile )} type="button"
+                name="file" id="file-uploaded">Pridėtas failas: {this.props.csvFile}</button>
     },
 
 
 
-    render: function () {
+    render: function() {
         return <div>
             {this.handleFile()}
             <div className="">
-                <table className="table table-striped">
-                    <thead>
-                    <tr>
-                        <th>Vardas</th>
-                        <th>Pavardė</th>
-                        <th>Gimimo data</th>
-                        <th>Asmens kodas</th>
-                        <th>Aprašymas</th>
-                        <th>Vieta sąraše</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {this.candidateList()}
+                <div className="panel panel-default" style={styles.marginTop}>
+                    <table className="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Vardas</th>
+                                <th>Pavardė</th>
+                                <th>Gimimo data</th>
+                                <th>Asmens kodas</th>
+                                <th>Aprašymas</th>
+                                <th>Vieta sąraše</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {this.candidateList()}
 
-                    </tbody>
+                        </tbody>
 
-                </table>
-            </div>
-            <button id="Return" className="btn btn-success" style={{ marginRight: '20px' }}
+                    </table>
+                </div>
+                <button id="Return" className="btn btn-success" style={{ marginRight: '20px' }}
                     onClick={this.props.onReturn}>Grįžti
             </button>
+            </div>
         </div>
     }
 });

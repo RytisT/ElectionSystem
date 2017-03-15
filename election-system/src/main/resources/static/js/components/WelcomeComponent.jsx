@@ -4,15 +4,15 @@ var WelcomeComponent = React.createClass( {
 
         return (
             <div id="main">
-                <div className="jumbotron">
+                <a id="link" href="/#/main"><div className="jumbotron">
                     
-                        <p id="leftVytis"><a href="/#/main">
+                        <p id="leftVytis">
                             <img id="vytis" src="../images/vytis.png" alt="Vytis" height="300px" />
-                        </a></p>
+                        </p>
                         <h1 id="welcomeText">Hello, world!</h1>
                         <div className="clear"></div>
                     
-                </div>
+                </div></a>
             </div>
         )
     }

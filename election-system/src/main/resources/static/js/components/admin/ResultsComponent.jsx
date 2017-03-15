@@ -1,3 +1,9 @@
+var styles = {
+    marginTop: {
+        marginTop: '20px'
+    },
+};
+
 var ResultsComponent = React.createClass( {
 
 
@@ -22,20 +28,22 @@ var ResultsComponent = React.createClass( {
                     </div>
                     <div id="ResultsSearchValidation" className="validationForm"><span>Naudojami netinkami simboliai.</span></div>
                 </div>
-                <table className="table table-striped">
-                    <thead>
-                        <tr>
-                            <th>Apylinkė</th>
-                            <th>Apylinkės atstovas</th>
-                            <th>Vienmandatės apygardos rezultatų registravimo laikas</th>
-                            <th>Daugiamandate apygardos rezultatų registravimo laikas</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.resultsList()}
-                    </tbody>
+                <div className="panel panel-default" style={styles.marginTop}>
+                    <table className="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Apylinkė</th>
+                                <th>Apylinkės atstovas</th>
+                                <th>Vienmandatės apygardos rezultatų registravimo laikas</th>
+                                <th>Daugiamandate apygardos rezultatų registravimo laikas</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {this.resultsList()}
+                        </tbody>
 
-                </table>
+                    </table>
+                </div>
             </div>
         )
     }
