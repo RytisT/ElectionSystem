@@ -36,9 +36,6 @@ var ResultsComponent = React.createClass( {
                     </tbody>
 
                 </table>
-                <button id="Return" className="btn btn-success" style={{ marginRight: '20px' }}
-                    onClick={this.props.onReturn}>Grįžti
-                </button>
             </div>
         )
     }
