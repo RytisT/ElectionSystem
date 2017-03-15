@@ -2,15 +2,7 @@ var ResultsConstituenciesInfoContainer = React.createClass({
 
     getInitialState: function() {
         return {
-            constituency: {
-                id: '',
-                title: '',
-                number_of_voters: '',
-                votedSingle: '',
-                votedSingleCorrupt: '',
-                votedMulti: '',
-                votedMultiCorrupt: ''
-            }
+            constituency: {}
         }
     },
 
@@ -31,11 +23,11 @@ var ResultsConstituenciesInfoContainer = React.createClass({
     },
 
     render: function () {
-        return (
-            <ResultsConstituenciesInfoComponent constituency={this.state.constituency}
-                                                onReturnConstituenciesClick={this.handleReturnConstituencies}
-            />
-        );
+            return this.state.constituency.id
+
+                ?<ResultsConstituenciesInfoComponent constituency={this.state.constituency}
+                                                    onReturnConstituenciesClick={this.handleReturnConstituencies}/>
+                : <div>kraunama</div>
     }
 });
 

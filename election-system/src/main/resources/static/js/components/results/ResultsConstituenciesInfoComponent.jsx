@@ -28,10 +28,9 @@ var ResultsConstituenciesInfoComponent = React.createClass({
             }.bind(this));
             return {"totalVotes": totalVotes, "singleVotes": singleVotes, "singleCorrupt": singleCorrupt, "multiVotes": multiVotes, "multiCorrupt": multiCorrupt};
         }.bind(this);
-
-        console.log(votesCounter);
-        var votesCount = votesCounter;
-        console.log(votesCounter);
+        console.log(this.props.constituency)
+        var votesCount = votesCounter();
+        console.log(votesCount);
         return (
             <div id="resultsConstituency">
                 <h2 style={styles.blue}>Apygardos balsavimo informacija</h2>
@@ -39,19 +38,19 @@ var ResultsConstituenciesInfoComponent = React.createClass({
                 <span id="resultsConstituencyInfo">Apygarda: </span><span>{this.props.constituency.title}</span>
                 <br/>
                 <br/>
-                <span id="resultsConstituencyInfo">Rinkėjų skaičius apygardoje: </span><span>{votesCounter.totalVotes}</span>
+                <span id="resultsConstituencyInfo">Rinkėjų skaičius apygardoje: </span><span>{votesCount.totalVotes}</span>
                 <br/>
                 <br/>
                 <br/>
-                <span id="resultsConstituencyInfo">Rinkėjų aktyvumas vienmandatėje: </span><span>{votesCounter.singleVotes + ' (' + Math.round(votesCounter.singleVotes / votesCounter.totalVotes * 10000) / 100 + '%)'}</span>
+                <span id="resultsConstituencyInfo">Rinkėjų aktyvumas vienmandatėje: </span><span>{votesCount.singleVotes + ' (' + Math.round(votesCount.singleVotes / votesCount.totalVotes * 10000) / 100 + '%)'}</span>
                 <br/>
-                <span id="resultsConstituencyInfo">Sugadinti vienmandatės biuleteniai: </span><span>{votesCounter.singleCorrupt}</span>
+                <span id="resultsConstituencyInfo">Sugadinti vienmandatės biuleteniai: </span><span>{votesCount.singleCorrupt}</span>
                 <br/>
                 <br/>
                 <br/>
-                <span id="resultsConstituencyInfo">Rinkėjų aktyvumas daugiamandatėje: </span><span>{votesCounter.multiVotes + ' (' + Math.round(votesCounter.multiVotes / votesCounter.totalVotes * 10000) / 100 + '%)'}</span>
+                <span id="resultsConstituencyInfo">Rinkėjų aktyvumas daugiamandatėje: </span><span>{votesCount.multiVotes + ' (' + Math.round(votesCount.multiVotes / votesCount.totalVotes * 10000) / 100 + '%)'}</span>
                 <br/>
-                <span id="resultsConstituencyInfo">Sugadinti daugiamandatės biuleteniai: </span><span>{votesCounter.multiCorrupt}</span>
+                <span id="resultsConstituencyInfo">Sugadinti daugiamandatės biuleteniai: </span><span>{votesCount.multiCorrupt}</span>
                 <br/>
                 <br/>
                 <br/>
