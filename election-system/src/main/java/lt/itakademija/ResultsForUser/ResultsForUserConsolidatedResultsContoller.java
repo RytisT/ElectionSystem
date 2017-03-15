@@ -25,8 +25,7 @@ public class ResultsForUserConsolidatedResultsContoller {
     @Autowired
     private ConsolidatedResultCalculationService serviceConsolidated;
     
-    @Autowired
-    private ConsolidatedResultCalculationService serviceConsolidated;
+
     
     /*
      * Visų būsimų Seimo narių sąrašas
@@ -49,7 +48,6 @@ public class ResultsForUserConsolidatedResultsContoller {
     public Map<String, Long> mandateCountFull(){
         return service.mandateCountFull();
     }
-<<<<<<< HEAD
     
     /*
      * Daugiamandates laimeje kandidatai
@@ -59,28 +57,4 @@ public class ResultsForUserConsolidatedResultsContoller {
         return serviceConsolidated.getMultiWinnerCandidates();
     }
     
-    /*
-     * Vienmandates laimeje kandidatai
-     */
-    @GetMapping(value="/single")
-    public  List<Candidates> getWinningSingleCandidates(){
-        return serviceConsolidated.getWinningSingleCandidates();
-=======
-
-    /*
-    * laimejo vienmadtese
-     */
-    @GetMapping(value="/single")
-    public List<Candidates> getWinningSingleCandidates(){
-        return serviceConsolidated.getWinningSingleCandidates();
-    }
-
-    /*
-     * laimejo daugiamandatese
-     */
-    @GetMapping(value="/multi")
-    public List<Candidates> getMultiWinnerCandidates(){
-        return serviceConsolidated.getMultiWinnerCandidates();
->>>>>>> a5f44d5443b0ed02b385927f80f3600997ded21d
-    }
 }
