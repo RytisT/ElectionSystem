@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="11" passed="11">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Test suite" duration-ms="199126" started-at="2017-03-16T11:09:31Z" finished-at="2017-03-16T11:12:50Z">
+    <groups>
+    </groups>
+    <test name="Test automation" duration-ms="199126" started-at="2017-03-16T11:09:31Z" finished-at="2017-03-16T11:12:50Z">
+      <class name="lt.itakademija.test.TestConstituencies">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:lt.itakademija.test.TestConstituencies@369f73a2]" name="initialize" is-config="true" duration-ms="3934" started-at="2017-03-16T13:09:31Z" finished-at="2017-03-16T13:09:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method status="PASS" signature="testConstituencies_Appear_Correct()[pri:0, instance:lt.itakademija.test.TestConstituencies@369f73a2]" name="testConstituencies_Appear_Correct" duration-ms="5870" started-at="2017-03-16T13:09:35Z" finished-at="2017-03-16T13:09:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testConstituencies_Appear_Correct -->
+        <test-method status="PASS" signature="testRegisterMultipleConstituencies()[pri:0, instance:lt.itakademija.test.TestConstituencies@369f73a2]" name="testRegisterMultipleConstituencies" duration-ms="102091" started-at="2017-03-16T13:09:40Z" finished-at="2017-03-16T13:11:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRegisterMultipleConstituencies -->
+        <test-method status="PASS" signature="testRegisterConstituencyAdDistrict()[pri:0, instance:lt.itakademija.test.TestConstituencies@369f73a2]" name="testRegisterConstituencyAdDistrict" duration-ms="1496" started-at="2017-03-16T13:11:23Z" finished-at="2017-03-16T13:11:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRegisterConstituencyAdDistrict -->
+        <test-method status="PASS" signature="testRegisterMultipleDistricts()[pri:0, instance:lt.itakademija.test.TestConstituencies@369f73a2]" name="testRegisterMultipleDistricts" duration-ms="7359" started-at="2017-03-16T13:11:24Z" finished-at="2017-03-16T13:11:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRegisterMultipleDistricts -->
+        <test-method status="PASS" signature="testAddSingleMandateCandidateListCSV()[pri:0, instance:lt.itakademija.test.TestConstituencies@369f73a2]" name="testAddSingleMandateCandidateListCSV" duration-ms="1236" started-at="2017-03-16T13:11:31Z" finished-at="2017-03-16T13:11:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddSingleMandateCandidateListCSV -->
+        <test-method status="PASS" signature="testMultiAddSingleMandateCandidateListCSV()[pri:0, instance:lt.itakademija.test.TestConstituencies@369f73a2]" name="testMultiAddSingleMandateCandidateListCSV" duration-ms="13989" started-at="2017-03-16T13:11:33Z" finished-at="2017-03-16T13:11:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testMultiAddSingleMandateCandidateListCSV -->
+        <test-method status="PASS" signature="testAddRepresentative()[pri:0, instance:lt.itakademija.test.TestConstituencies@369f73a2]" name="testAddRepresentative" duration-ms="2879" started-at="2017-03-16T13:11:47Z" finished-at="2017-03-16T13:11:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddRepresentative -->
+        <test-method status="PASS" signature="testAddMultipleRepresentatives()[pri:0, instance:lt.itakademija.test.TestConstituencies@369f73a2]" name="testAddMultipleRepresentatives" duration-ms="13985" started-at="2017-03-16T13:11:49Z" finished-at="2017-03-16T13:12:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddMultipleRepresentatives -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:lt.itakademija.test.TestConstituencies@369f73a2]" name="tearDown" is-config="true" duration-ms="566" started-at="2017-03-16T13:12:03Z" finished-at="2017-03-16T13:12:04Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- lt.itakademija.test.TestConstituencies -->
+      <class name="lt.itakademija.test.TestParties">
+        <test-method status="PASS" signature="initialize()[pri:0, instance:lt.itakademija.test.TestParties@6536e911]" name="initialize" is-config="true" duration-ms="3313" started-at="2017-03-16T13:12:04Z" finished-at="2017-03-16T13:12:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initialize -->
+        <test-method status="PASS" signature="testAddingCsvFileToParty()[pri:0, instance:lt.itakademija.test.TestParties@6536e911]" name="testAddingCsvFileToParty" duration-ms="18719" started-at="2017-03-16T13:12:07Z" finished-at="2017-03-16T13:12:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddingCsvFileToParty -->
+        <test-method status="PASS" signature="testRegisterMultipleParties()[pri:0, instance:lt.itakademija.test.TestParties@6536e911]" name="testRegisterMultipleParties" duration-ms="13886" started-at="2017-03-16T13:12:26Z" finished-at="2017-03-16T13:12:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRegisterMultipleParties -->
+        <test-method status="PASS" signature="testAddingMultiCsvFileToParties()[pri:0, instance:lt.itakademija.test.TestParties@6536e911]" name="testAddingMultiCsvFileToParties" duration-ms="9452" started-at="2017-03-16T13:12:40Z" finished-at="2017-03-16T13:12:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAddingMultiCsvFileToParties -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:lt.itakademija.test.TestParties@6536e911]" name="tearDown" is-config="true" duration-ms="323" started-at="2017-03-16T13:12:49Z" finished-at="2017-03-16T13:12:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- lt.itakademija.test.TestParties -->
+    </test> <!-- Test automation -->
+  </suite> <!-- Test suite -->
+</testng-results>

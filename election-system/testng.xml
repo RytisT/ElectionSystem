@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test suite" thread-count="2" parallel="false">
+
+	<test name="Test automation">
+
+		<classes>
+			<class name="lt.itakademija.test.TestConstituencies" />
+			<class name="lt.itakademija.test.TestParties" />
+		</classes>
+	</test>
+	
+
+</suite>

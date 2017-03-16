@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="2" name="Failed suite [Test suite]">
+  <test name="Test automation(failed)">
+    <classes>
+      <class name="lt.itakademija.test.TestConstituencies">
+        <methods>
+          <include name="initialize"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- lt.itakademija.test.TestConstituencies -->
+      <class name="lt.itakademija.test.TestParties">
+        <methods>
+          <include name="initialize"/>
+          <include name="testRegisterMultipleParties"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- lt.itakademija.test.TestParties -->
+    </classes>
+  </test> <!-- Test automation(failed) -->
+</suite> <!-- Failed suite [Test suite] -->
