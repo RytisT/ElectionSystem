@@ -20,9 +20,16 @@ var ResultsComponent = React.createClass( {
         }.bind( this ) )
     },
 
+    submitButton: function () {
+       return this.props.submitted
+           ? <div className="alert alert-success"><strong>Balsai patvirtinti!</strong></div>
+           :<button type="button" className="btn btn-success btn-lg btn-block" onClick={() => this.props.onSubmit(event, this.props.districts)}>Skelbti rinkimų rezultatus!</button>
+    },
+
     render: function() {
         return (
             <div className="">
+                {this.submitButton()}
                 <div className="panel panel-default">
                     <div className=" panel-body input-group">
                         <span className="input-group-addon" id="basic-addon3">Apylinkės paieška: </span>

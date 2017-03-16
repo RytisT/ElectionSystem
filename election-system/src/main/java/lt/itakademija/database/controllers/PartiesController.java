@@ -50,4 +50,9 @@ public class PartiesController {
         return service.findById(id);
     }
 
+    @GetMapping(value = "/mandates")
+    public List<Parties> findWithMandates() {
+        return service.findWithMandates();
+    }
+
 }

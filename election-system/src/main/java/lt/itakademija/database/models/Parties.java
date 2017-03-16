@@ -54,6 +54,17 @@ public class Parties {
     @JoinColumn(name = "PARTY_ID")
     private List<Multi_Results> multi_results;
 
+    public Integer getMandates() {
+        return mandates;
+    }
+
+    public void setMandates(Integer mandates) {
+        this.mandates = mandates;
+    }
+
+    @Column(name = "mandates")
+    private Integer mandates;
+
 //    @OneToMany(mappedBy="partyDependencies", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 //    private List<Candidates> members;
 

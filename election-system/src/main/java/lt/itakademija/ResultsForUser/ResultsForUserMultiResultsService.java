@@ -1,8 +1,10 @@
 package lt.itakademija.ResultsForUser;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Map.Entry;
 
+import lt.itakademija.database.models.Parties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -22,10 +24,10 @@ public class ResultsForUserMultiResultsService {
      * :Laimėtų balsų skaičių
      * Returns Map<Party name, number of votes>
      */
-    public HashMap<String, Integer> votesForParties(){
-        HashMap<String, Integer> partyList = new HashMap<>();
+    public HashMap<Integer, Integer> votesForParties(){
+        HashMap<Integer, Integer> partyList = new HashMap<>();
         for(Entry<Integer, Integer> partyRaw: multiCalculationService.multiResultList().entrySet()){
-            partyList.put(partiesService.findById(partyRaw.getKey()).getTitle(), partyRaw.getValue());
+            partyList.put(partiesService.findById(partyRaw.getKey()).getId(), partyRaw.getValue());
         }
         return partyList;
     }
@@ -47,12 +49,21 @@ public class ResultsForUserMultiResultsService {
     /*
      * Laimėtų mandatų skaičių
      */
-    public HashMap<String, Integer> mandatesForParties(){
-        HashMap<String, Integer> partyMandates = new HashMap<>();
+    public void mandatesForParties(){
+        HashMap<Integer, Integer> partyMandates = new HashMap<>();
         for(Entry<Integer, Integer> partyRaw: multiCalculationService.mandatesByParty().entrySet()){
-            partyMandates.put(partiesService.findById(partyRaw.getKey()).getTitle(), partyRaw.getValue());
+            partyMandates.put(partiesService.findById(partyRaw.getKey()).getId(), partyRaw.getValue());
         }
-        return partyMandates;
+
+        for (Map.Entry<Integer, Integer> partyMandate: partyMandates.entrySet()){
+            Integer id = partyMandate.getKey();
+            Integer mandates = partyMandate.getValue();
+
+            Parties party = partiesService.findById(id);
+            party.setMandates(mandates);
+
+            partiesService.saveOrUpdate(party);
+        }
     }
     
 }

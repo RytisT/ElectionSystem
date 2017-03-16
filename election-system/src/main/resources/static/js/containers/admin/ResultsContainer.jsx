@@ -3,6 +3,7 @@ var ResultsContainer = React.createClass( {
 
     getInitialState: function() {
         return {
+            submitted: false,
             searchQuery: "",
             districts: []
         }
@@ -15,6 +16,12 @@ var ResultsContainer = React.createClass( {
                     districts: response.data,
                 });
             }.bind( this ) )
+        axios.get('/api/candidates/elected')
+            .then(resp =>{
+                if (resp.data.length != 0){
+                    this.setState({submitted: true})
+                }
+            })
     },
 
     handleSearchQueryChange: function() {
@@ -29,12 +36,35 @@ var ResultsContainer = React.createClass( {
         }.bind( this )
     },
 
+    handleSubmit : function () {
+        return function (event, districts) {
+            event.preventDefault();
+            var readyToSubmit = true;
+            districts.map(function (district, index) {
+                if(!district.multiVoteActive || !district.singleVoteActive){
+                    readyToSubmit = false;
+                }
+            }.bind(this))
+            if (readyToSubmit){
+                axios.get('user/resultsmulti/mandates');
+                axios.get('api/calculation1')
+                    .then(resp => {
+                        this.setState({submitted: true})
+                    })
+            } else {
+                console.log("neužregistruotos visos apylinkės")
+            }
+        }.bind(this)
+    },
+
     render: function() {
         return(
         <ResultsComponent districts = {this.state.districts}
                           searchQuery={this.state.searchQuery}
                           onSearchQueryChange={this.handleSearchQueryChange}
                           candelSingleVotes = {this.cancelSingleVotes}
+                          onSubmit = {this.handleSubmit()}
+                          submitted = {this.state.submitted}
                           cancelMultiVotes = {this.cancelMultiVotes}
         />
         )

@@ -35,7 +35,8 @@ var AddPartyComponent = React.createClass( {
 
                                 <td className="col-md-2">
                                     <button id="Submit party" className="btn btn-block btn-success" type="submit"
-                                        onClick={() => {
+                                        onClick={(event) => {
+                                            event.preventDefault();
                                             var partyNumb = $( "#PartyId" ).val();
                                             if ( partyNumb < 1 || partyNumb > 99 ) {
                                                 $( '#PartyIdValidation' ).hide( "slow" );

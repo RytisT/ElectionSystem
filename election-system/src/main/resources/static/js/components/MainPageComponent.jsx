@@ -49,8 +49,7 @@ var MainPageComponent = React.createClass( {
                                 <li id="choise1"><Link to="/Results/constituencies" style={styles.width}>Apygardos</Link></li>
                                 <li id="choise2"><Link to="/results/consolidatedSingle" style={styles.width}>Vienmandatės rezultatai</Link></li>
                                 <li id="choise3"><Link to="results/consolidatedMulti" style={styles.width}>Daugiamandatės rezultatai</Link></li>
-                                <li id="choise4"><Link to="/Results/constituencies" style={styles.width}>Mygtukas4</Link></li>
-                                <li id="choise5"><Link to="/" style={styles.width}>Mygtukas5</Link></li>
+                                <li id="choise4"><Link to="/results/consolidated" style={styles.width}>Konsoliduoti rezultatai</Link></li>
                             </ul>
                         </div>
                     </div></li>

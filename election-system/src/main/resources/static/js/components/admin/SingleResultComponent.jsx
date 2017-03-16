@@ -119,6 +119,7 @@ var SingleResultComponent = React.createClass( {
     render: function() {
         return (
             <tr>
+                {console.log()}
                 <td className="col-md-2">{this.state.district.title}</td>
                 <td className="col-md-2">{this.state.district.district_representatives.name + " " + this.props.district.district_representatives.last_name}</td>
                 <td className="col-md-4">{this.singleVotes( this.state.district )}</td>

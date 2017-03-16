@@ -45,4 +45,6 @@ public class PartiesService {
     }
 
 
+    public List<Parties> findWithMandates() { return  repository.findWithMandates();
+    }
 }

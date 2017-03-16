@@ -30,7 +30,7 @@ var DistrictRepresentativeComponent = React.createClass( {
                                         onChange={this.props.onFieldChange( 'password' )} type="password" />
 
                                     <button id="Submit_Rep" className="btn btn-block btn-success" type="submit"
-                                        onClick={() => this.props.onSubmit( this.props.distRep )}>Pridėti
+                                        onClick={(event) =>{ event.preventDefault(); this.props.onSubmit( this.props.distRep )}}>Pridėti
                                     </button>
 
                                     <button id="Cancel" type="button" className="btn btn-block btn-danger" data-dismiss="modal">

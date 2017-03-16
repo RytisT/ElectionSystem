@@ -78,6 +78,8 @@ public class ConsolidatedResultCalculationService {
             }
         }
 
+        System.out.println(multiWinners.size());
+
         for (Candidates candidate : multiWinners) {
             candidate.setCandidate_elected("multi");
             candidateService.saveOrUpdate(candidate);

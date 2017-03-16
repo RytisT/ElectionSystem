@@ -39,4 +39,8 @@ public interface CandidatesRepository extends JpaRepository<Candidates, Integer>
 
     @Query("SELECT c FROM Candidates c where c.candidate_elected=:candidate_elected")
     public List<Candidates> findByElected(@Param("candidate_elected") String candidate_elected);
+
+
+    @Query("SELECT c FROM Candidates c where c.candidate_elected='multi' or c.candidate_elected='single' order by c.last_name, c.name")
+    public List<Candidates> findElected();
 }

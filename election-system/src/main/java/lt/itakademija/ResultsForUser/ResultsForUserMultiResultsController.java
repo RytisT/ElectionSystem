@@ -22,7 +22,7 @@ public class ResultsForUserMultiResultsController {
      * Returns Map<Party name, number of votes>
      */
     @GetMapping(value="/votes")
-    public HashMap<String, Integer> votesForParties(){
+    public HashMap<Integer, Integer> votesForParties(){
         return service.votesForParties();
     }
     /*
@@ -37,7 +37,7 @@ public class ResultsForUserMultiResultsController {
      * Laimėtų mandatų skaičių
      */
     @GetMapping(value="/mandates")
-    public HashMap<String, Integer> mandatesForParties(){
-        return service.mandatesForParties();
+    public void mandatesForParties(){
+        service.mandatesForParties();
     }
 }

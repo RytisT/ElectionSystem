@@ -84,6 +84,11 @@ public class CandidatesController {
         return service.findByPartyAndSeat(partyId, partySeat);
     }
 
+    @GetMapping(value = "/elected")
+    public List<Candidates> findByElected() {
+        return service.findElected();
+    }
+
     @GetMapping(value = "/elected/{elected}")
     public List<Candidates> findByElected(@PathVariable("elected") String elected) {
         return service.findByElected(elected);
