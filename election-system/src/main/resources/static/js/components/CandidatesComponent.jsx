@@ -47,7 +47,6 @@ var CandidatesComponent = React.createClass( {
                         <td>{candidate.name}</td>
                         <td>{candidate.last_name}</td>
                         <td>{fullDate}</td>
-                        <td>{candidate.constituency_id}</td>
                         <td>{candidate.party_id}</td>
                         <td>{candidate.party_list_seat}</td>
                         <td style={styles.width}>
@@ -107,7 +106,6 @@ var CandidatesComponent = React.createClass( {
                                 <th >Vardas</th>
                                 <th>Pavardė</th>
                                 <th>Gimimo data</th>
-                                <th>Apygarda</th>
                                 <th>Partijos<br />numeris</th>
                                 <th>Vieta<br />sąraše</th>
                                 <th></th>

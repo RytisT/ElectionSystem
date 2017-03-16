@@ -77,13 +77,6 @@ var ConsolidatedResultsComponent = React.createClass({
                     </tbody>
                 </table>
                 </div>
-                <button id="ResultsConstituenciesSingleReturn"
-                        className="btn btn-success"
-                        style={{marginRight: '20px'}}
-                        onClick={this.props.onReturnConstituenciesClick}
-                >
-                    Grįžti
-                </button>
             </div>
         )
     }

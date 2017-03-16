@@ -21,17 +21,17 @@ var ConsolidatedMultiResultsComponent = React.createClass({
                 data.addColumn('number', 'Mandatų skaičius');
 
                 _this.props.parties.map(function (party, index) {
-                    data.addRows([[party.party_Code, party.mandates]])
+                    data.addRows([[party.title, party.mandates]])
                 }.bind(this));
 
 
                 // Set chart options
                 var options = {'title':'Partijos ir jų laimėtų mandatų skaičius',
-                    'width':500,
-                    'height':300};
+                    'width':1000,
+                    'height':600};
 
                 // Instantiate and draw our chart, passing in some options.
-                var chart = new google.visualization.BarChart(document.getElementById('chart'));
+                var chart = new google.visualization.ColumnChart(document.getElementById('chart'));
                 chart.draw(data, options);
             }
         }.bind(this)
@@ -82,13 +82,6 @@ var ConsolidatedMultiResultsComponent = React.createClass({
                     {candidatesList}
                     </tbody>
                 </table>
-                <button id="ResultsConstituenciesSingleReturn"
-                        className="btn btn-success"
-                        style={{marginRight: '20px'}}
-                        onClick={this.props.onReturnConstituenciesClick}
-                >
-                    Grįžti
-                </button>
             </div>
         )
     }

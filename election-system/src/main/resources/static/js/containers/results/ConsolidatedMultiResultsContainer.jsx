@@ -13,6 +13,10 @@ var ConsolidatedMultiResultsContainer = React.createClass({
 
         axios.get('/api/constituencies/')
             .then(function (response) {
+                 var tempList;
+                response.data.map(function (consti, index) {
+
+                })
                 this.setState({
                     constituencies: response.data,
                 });
