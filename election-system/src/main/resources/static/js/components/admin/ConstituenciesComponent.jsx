@@ -2,6 +2,9 @@ var styles = {
     marginTop: {
         marginTop: '20px'
     },
+    cursor: {
+        cursor: 'pointer'
+    },
 };
 
 var Link = ReactRouter.Link;
@@ -38,9 +41,11 @@ var ConstituenciesComponent = React.createClass( {
                 <div id="successAddConstituencyValidation" className="alert alert-success" role="alert"><span>Apygarda pridėta sėkmingai.</span></div>
 
                 <div className="panel panel-default" style={styles.marginTop} id="Table">
-                    <table className="table table-striped">
+                    <table id="Constituencies_Table" className="table table-striped">
                         <thead>
-                            <tr>
+                            <tr style={styles.cursor} onClick={( event ) => {
+                                $( "#Constituencies_Table" ).tablesorter( { sortList: [[0, 0], [1, 0]] });
+                            } }>
                                 <th>Apygarda</th>
                                 <th>Apylinkės</th>
                                 <th>Kandidatai</th>

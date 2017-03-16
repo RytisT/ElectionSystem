@@ -2,6 +2,9 @@ var styles = {
     marginTop: {
         marginTop: '20px'
     },
+    cursor: {
+        cursor: 'pointer'
+    },
 };
 
 var PartiesComponent = React.createClass( {
@@ -19,10 +22,12 @@ var PartiesComponent = React.createClass( {
         return (
             <div>
                 <div className="panel panel-default" style={styles.marginTop}>
-                <div id="successAddPartyValidation" className="alert alert-success" role="alert"><span>Partija pridėta sėkmingai.</span></div>
-                    <table className="table table-striped">
+                    <div id="successAddPartyValidation" className="alert alert-success" role="alert"><span>Partija pridėta sėkmingai.</span></div>
+                    <table id="Parties_Table" className="table table-striped">
                         <thead>
-                            <tr>
+                            <tr style={styles.cursor} onClick={( event ) => {
+                                $( "#Parties_Table" ).tablesorter( { sortList: [[0, 0], [1, 0]] });
+                            } }>
                                 <th className="col-md-1">Partijos numeris</th>
                                 <th className="col-md-1">Partijos trumpinys</th>
                                 <th className="col-md-5">Partijos pavadinimas</th>

@@ -2,6 +2,9 @@ var styles = {
     marginTop: {
         marginTop: '20px'
     },
+    cursor: {
+        cursor: 'pointer'
+    },
 };
 
 var ResultsDistrictsSingleComponent = React.createClass( {
@@ -29,7 +32,9 @@ var ResultsDistrictsSingleComponent = React.createClass( {
                 <div className="panel panel-default" style={styles.marginTop}>
                     <table id="ResultsDistrictSingle" className="table table-striped">
                         <thead>
-                            <tr>
+                            <tr style={styles.cursor} onClick={( event ) => {
+                                $( "#ResultsDistrictSingle" ).tablesorter( { sortList: [[0, 0], [1, 0]] });
+                            } }>
                                 <th>Kandidatas</th>
                                 <th>Partija</th>
                                 <th>Surinkta balsų</th>

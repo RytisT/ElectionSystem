@@ -2,6 +2,9 @@ var styles = {
     marginTop: {
         marginTop: '20px'
     },
+    cursor: {
+        cursor: 'pointer'
+    },
 };
 
 var ResultsDistrictsMultiComponent = React.createClass( {
@@ -31,7 +34,9 @@ var ResultsDistrictsMultiComponent = React.createClass( {
                 <div className="panel panel-default" style={styles.marginTop}>
                     <table id="ResultsDistrictMulti" className="table table-striped">
                         <thead>
-                            <tr>
+                            <tr style={styles.cursor} onClick={( event ) => {
+                                $( "#ResultsDistrictMulti" ).tablesorter( { sortList: [[0, 0], [1, 0]] });
+                            } }>
                                 <th>Nr.</th>
                                 <th>Partija</th>
                                 <th>Surinkta balsų</th>
